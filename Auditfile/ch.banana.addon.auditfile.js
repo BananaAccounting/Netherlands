@@ -16,7 +16,7 @@
 // @api = 1.0
 // @pubdate = 2015-09-29
 // @publisher = Banana.ch SA
-// @description = Netherlands - Auditfile
+// @description = Auditfile
 // @task = export.file
 // @doctype = *.*
 // @docproperties = netherlands
@@ -28,16 +28,14 @@
 
 
 
-var arrayDiProva = [];
-
 
 
 //This variable is used to count the number of <transaction> elements
 var numberEntries = 0;
 
 
-
-function exec(string) {
+//Main function
+function exec() {
 
 	var xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
 	xml += '\n' + '<auditfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">' 
@@ -47,12 +45,7 @@ function exec(string) {
 	xml = addCustomerSuppliers(xml);
 	xml = addTransactions(xml);
 	
-
-tmpPrint() 
-
-
 	xml += '\n' + '</auditfile>';
-
 
 	return xml;
 }
@@ -61,8 +54,8 @@ tmpPrint()
 //Function that creates the <header> element of the xml file
 function addHeader(xml) {
 	var auditfileVersion = 'CLAIR2.00.00';
-	var companyID = checkStringLength('BAN', 50);
-	var taxRegistrationNr = Banana.document.info('AccountingDataBase','FiscalNumber');
+	var companyID = checkStringLength(Banana.document.info('AccountingDataBase','FiscalNumber'), 20);
+	var taxRegistrationNr = Banana.document.info('AccountingDataBase','VatNumber');
 	var companyName = Banana.document.info('AccountingDataBase','Company');
 
 	//Address1 and/or Address2
@@ -83,7 +76,7 @@ function addHeader(xml) {
 	var endDate = Banana.document.info('AccountingDataBase','ClosureDate');
 	var currencyCode = Banana.document.info('AccountingDataBase','BasicCurrency');
 	var dateCreated = Banana.document.info('Base','Date');
-	var productID = checkStringLength('Banana Accounting 8', 50);
+	var productID = checkStringLength('Banana Accounting', 50);
 	var productVersion = checkStringLength(Banana.document.info('Base', 'ProgramVersion'), 50);
 	
 	//Create the <header> element and add it to the final xml file
@@ -262,29 +255,8 @@ function addTransactions(xml) {
 }
 
 
-///////////// TMP function
-function tmpPrint() {
-
-	var arrLen = arrayDiProva.length;
-	for (var i = 0; i < arrLen; i++) {
-		for (var x = i+1; x < arrayDiProva.length; x++) {
-			if (arrayDiProva[x] === arrayDiProva[i]) {
-				arrayDiProva.splice(x,1);
-				--x;
-			}
-		}
-	}
-	//Banana.console.log(arrayDiProva);
-}
-///////////// TMP function end
-
-
-
-
-
-
-
-//This function allows to check the length of a string
+//This function allows to check the length of a string.
+//If a string is too long we have to cut it
 function checkStringLength(string, maxLength) {
    	if (string.length > maxLength) {
 	    string = string.substring(0,maxLength-3) + "...";
@@ -325,9 +297,11 @@ function groupBelongToGroup(mapGroup, current, find, start) {
 	if (!find) {
 		return false;
 	}
+
 	if (mapGroup[current].parent === find) {
 		return true;
 	}
+
 	if (mapGroup[current].parent === start) {
 		return false;
 	}
@@ -339,14 +313,14 @@ function groupBelongToGroup(mapGroup, current, find, start) {
 //Function that creates the customers xml elements
 function createCustomers(mapGroup, customersGroup) {
 	var tmpXmlCustomers = '';
-	for (var i = 0; i < Banana.document.table('Accounts').rowCount; i++) {	
+	var len = Banana.document.table('Accounts').rowCount;
+	
+	for (var i = 0; i < len; i++) {		
 		var tRow = Banana.document.table('Accounts').row(i);
 
 		if (tRow.value('Gr') === customersGroup || groupBelongToGroup(mapGroup, tRow.value('Gr'), customersGroup)) {
 
-			arrayDiProva.push(tRow.value('Gr'));
-
-			var custSupID = tRow.rowNr + 1;
+			var custSupID = tRow.value('Account');
 		    
 		    var type = '';
 	    	if (tRow.value('BClass') === '1') {
@@ -355,8 +329,13 @@ function createCustomers(mapGroup, customersGroup) {
 	    		type = 'Payable';
 	    	}
 
-		    var taxRegistrationNr = tRow.value('taxRegistrationNr');
-		    var taxVerificationDate = '2015-12-31';
+	    	//We take the Vat Number as "taxRegistrationNumber"
+	    	//We don't know which value to use between the "VatNumber" and "FiscalNumber"
+		    var taxRegistrationNr = tRow.value('VatNumber');
+
+		    //We don't have the tax verification date, so for now we let a blank value
+		    //If necessary we could add a specific column for this information
+		    var taxVerificationDate = '';
 		    
 		    if (tRow.value('OrganisationName')) {
 		    	var companyName = checkStringLength(tRow.value('OrganisationName'), 50);
@@ -364,24 +343,23 @@ function createCustomers(mapGroup, customersGroup) {
 		    	var companyName = '-';
 		    }
 
-		    var contact = checkStringLength(tRow.value('FirstName') + ' ' + tRow.value('FamilyName'), 50);
+			if (tRow.value('FirstName') && tRow.value('FamilyName')) {
+				var contact = checkStringLength(tRow.value('FirstName') + ' ' + tRow.value('FamilyName'), 50);
+			} else {
+				var contact = '';
+			}
+
 		    var telephone = tRow.value('PhoneMain');
 		    var fax = tRow.value('Fax');
 		    var eMail = tRow.value('EmailWork');
 		    var website = tRow.value('Website');
 
-		    var saddress = checkStringLength(tRow.value('Street'), 50);
-	        var sproperty = checkStringLength('STRING', 50);
-	        var scity = tRow.value('Locality');
-	        var spostalCode = tRow.value('PostalCode');
-	        var sregion = tRow.value('Region');
-	        var scountry = tRow.value('Country');
-
-	        var paddress = checkStringLength(tRow.value('POBox'), 50);
-	       	var pcity = tRow.value('PostalLocality');
-	        var ppostalCode = tRow.value('PostalPostalCode');
-	        var pregion = tRow.value('PostalRegion');
-	        var pcountry = tRow.value('Country');
+		    var address = checkStringLength(tRow.value('Street'), 50);
+	        var property = '';
+	        var city = tRow.value('Locality');
+	        var postalCode = tRow.value('PostalCode');
+	        var region = tRow.value('Region');
+	        var country = tRow.value('Country');
 
 	        //First part of customerSupplier at the beginning
 			var tmpCustomerSupplier1 = '\n' + '\t' + '\t' + '\t' + xml_createElement('custSupID',custSupID)
@@ -398,19 +376,12 @@ function createCustomers(mapGroup, customersGroup) {
 									+  '\n' + '\t' + '\t' + '\t' + xml_createElement('website',website);
 			
 			//StreedAddress
-	        var tmpStreetAddress = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('address',saddress)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('property',sproperty)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('city',scity)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('postalCode',spostalCode)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('region',sregion)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('country',scountry);
-
-			//PostalAddress
-	        var tmpPostalAddress = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('address',paddress)
-	               				+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('city',pcity)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('postalCode',ppostalCode)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('region',pregion)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('country',pcountry);
+	        var tmpStreetAddress = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('address',address)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('property',property)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('city',city)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('postalCode',postalCode)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('region',region)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('country',country);
 
 			
 			//Create the <customerSupplier> element
@@ -418,9 +389,6 @@ function createCustomers(mapGroup, customersGroup) {
 								+ tmpCustomerSupplier1
 								+ '\n' + '\t' + '\t' + '\t' + xml_createElement('streetAddress', ''
 									+ '\t' + '\t' + '\t' + '\t' + tmpStreetAddress 
-									+ '\n' + '\t' + '\t' + '\t')
-								+ '\n' + '\t' + '\t' + '\t' + xml_createElement('postalAddress', ''
-									+ '\t' + '\t' + '\t' + '\t' + tmpPostalAddress 
 									+ '\n' + '\t' + '\t' + '\t')
 								+ tmpCustomerSupplier2
 								+ '\n' + '\t' + '\t'
@@ -434,14 +402,14 @@ function createCustomers(mapGroup, customersGroup) {
 //Function that creates the suppliers xml elements
 function createSuppliers(mapGroup, suppliersGroup) {
 	var tmpXmlSuppliers = '';
-	for (var i = 0; i < Banana.document.table('Accounts').rowCount; i++) {
+	var len = Banana.document.table('Accounts').rowCount;
+	
+	for (var i = 0; i < len; i++) {
 		var tRow = Banana.document.table('Accounts').row(i);
 		
 		if (tRow.value('Gr') === suppliersGroup || groupBelongToGroup(mapGroup, tRow.value('Gr'), suppliersGroup)) {
 
-			arrayDiProva.push(tRow.value('Gr'));
-
-			var custSupID = tRow.rowNr + 1;
+			var custSupID = tRow.value('Account');
 		    
 		    var type = '';
 	    	if (tRow.value('BClass') === '1') {
@@ -450,33 +418,37 @@ function createSuppliers(mapGroup, suppliersGroup) {
 	    		type = 'Payable';
 	    	}
 
-		    var taxRegistrationNr = 'STRING';
-		    var taxVerificationDate = '2015-01-01';
+	    	//We take the Vat Number as "taxRegistrationNumber"
+	    	//We don't know which value to use between the "VatNumber" and "FiscalNumber"
+		    var taxRegistrationNr = tRow.value('VatNumber');
+
+		    //We don't have the tax verification date, so for now we let a blank value
+		    //If necessary we could add a specific column for this information
+		    var taxVerificationDate = ''; 
 		    
 		    if (tRow.value('OrganisationName')) {
 		    	var companyName = checkStringLength(tRow.value('OrganisationName'), 50);
 		    } else {
 		    	var companyName = '-';
 		    }
-		    
-		    var contact = checkStringLength(tRow.value('FirstName') + ' ' + tRow.value('FamilyName'), 50);
+
+		    if (tRow.value('FirstName') && tRow.value('FamilyName')) {
+				var contact = checkStringLength(tRow.value('FirstName') + ' ' + tRow.value('FamilyName'), 50);
+			} else {
+				var contact = '';
+			}
+
 		    var telephone = tRow.value('PhoneMain');
 		    var fax = tRow.value('Fax');
 		    var eMail = tRow.value('EmailWork');
 		    var website = tRow.value('Website');
 
-		    var saddress = checkStringLength(tRow.value('Street'), 50);
-	        var sproperty = checkStringLength('STRING', 50);
-	        var scity = tRow.value('Locality');
-	        var spostalCode = tRow.value('PostalCode');
-	        var sregion = tRow.value('Region');
-	        var scountry = tRow.value('Country');
-
-	        var paddress = checkStringLength(tRow.value('POBox'), 50);
-	       	var pcity = tRow.value('PostalLocality');
-	        var ppostalCode = tRow.value('PostalPostalCode');
-	        var pregion = tRow.value('PostalRegion');
-	        var pcountry = tRow.value('Country');
+		    var address = checkStringLength(tRow.value('Street'), 50);
+	        var property = '';
+	        var city = tRow.value('Locality');
+	        var postalCode = tRow.value('PostalCode');
+	        var region = tRow.value('Region');
+	        var country = tRow.value('Country');
 
 	        //First part of customerSupplier at the beginning
 			var tmpCustomerSupplier1 = '\n' + '\t' + '\t' + '\t' + xml_createElement('custSupID',custSupID)
@@ -493,19 +465,12 @@ function createSuppliers(mapGroup, suppliersGroup) {
 									+  '\n' + '\t' + '\t' + '\t' + xml_createElement('website',website);
 			
 			//StreedAddress
-	        var tmpStreetAddress = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('address',saddress)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('property',sproperty)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('city',scity)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('postalCode',spostalCode)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('region',sregion)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('country',scountry);
-
-			//PostalAddress
-	        var tmpPostalAddress = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('address',paddress)
-	               				+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('city',pcity)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('postalCode',ppostalCode)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('region',pregion)
-				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('country',pcountry);
+	        var tmpStreetAddress = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('address',address)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('property',property)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('city',city)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('postalCode',postalCode)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('region',region)
+				                + '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('country',country);
 
 			
 			//Create the <customerSupplier> element
@@ -513,9 +478,6 @@ function createSuppliers(mapGroup, suppliersGroup) {
 								+ tmpCustomerSupplier1
 								+ '\n' + '\t' + '\t' + '\t' + xml_createElement('streetAddress', ''
 									+ '\t' + '\t' + '\t' + '\t' + tmpStreetAddress 
-									+ '\n' + '\t' + '\t' + '\t')
-								+ '\n' + '\t' + '\t' + '\t' + xml_createElement('postalAddress', ''
-									+ '\t' + '\t' + '\t' + '\t' + tmpPostalAddress 
 									+ '\n' + '\t' + '\t' + '\t')
 								+ tmpCustomerSupplier2
 								+ '\n' + '\t' + '\t'
@@ -568,10 +530,10 @@ function createTransactions() {
 				//Take all the needed values for the <transaction> element and save them
 				var tmpTransaction = '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('transactionID',tRow.value('JRowOrigin'))
 					+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('description',checkStringLength(tRow.value('JDescription'), 50))
-					+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('period',Banana.Converter.toDate(tRow.value('JDate')).getFullYear())
+					+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('period',Banana.Converter.toDate(tRow.value('JDate')).getFullYear()) //We don't know exactly what is the "period" tag, so at the moment we insert the year of the accounting period
 					+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('transactionDate',tRow.value('JDate'))
-					+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('sourceID','');
-				
+					+ '\n' + '\t' + '\t' + '\t' + '\t' + xml_createElement('sourceID',''); //This kind of information doesn't exists in Banana, so we let a blank space
+			
 				//Increase the transaction's counter every time a there is a new <transaction> element
 				numberEntries++;
 
@@ -609,16 +571,25 @@ function createTransactions() {
 function createLine(tRow) {
 	
 	var tmpXml = '';
-
 	var recordID = tRow.value('JRowOrigin');
     var accountID = tRow.value('JAccount');
-    var custSupID = '';
+    var custSupID = ''; //We don't know exactly what is that tag, so at the moment we let it empty
     var documentID = tRow.value('Doc');
-   	var effectiveDate = tRow.value('JDate');
+   	var effectiveDate = tRow.value('JDate'); //We use the date of the transaction
    	var description = checkStringLength(tRow.value('JDescription'), 50);
-   	var costDesc = '';
-    var productDesc = '';
-    var projectDesc = '';
+ 
+ 	if (tRow.value('Cc1')) {
+ 		var costDesc = tRow.value('Cc1');
+ 	} else if (tRow.value('Cc2')) {
+		var costDesc = tRow.value('Cc2');
+ 	} else if (tRow.value('Cc3')) {
+		var costDesc = tRow.value('Cc3');
+ 	} else {
+ 		var costDesc = '';
+ 	}
+
+    var productDesc = ''; //We don't use it, so we let it empty
+    var projectDesc = ''; //We don't use it, so we let it empty
     var vatCode = tRow.value('VatCode');
     var currencyCode = Banana.document.info('AccountingDataBase','BasicCurrency');
     
