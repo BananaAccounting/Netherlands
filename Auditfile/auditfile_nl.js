@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.addon.auditfile
+// @id = ch.banana.bananaapp.nl.auditfile
 // @api = 1.0
-// @pubdate = 2015-09-29
+// @pubdate = 2015-12-03
 // @publisher = Banana.ch SA
 // @description = Auditfile
 // @task = export.file
-// @doctype = *.*
+// @doctype = 100.*;110.*
 // @docproperties = netherlands
 // @outputformat = none
 // @inputdatasource = none
@@ -26,13 +26,8 @@
 // @exportfiletype = xml
 
 
-
-
-
-
 //This variable is used to count the number of <transaction> elements
 var numberEntries = 0;
-
 
 //Main function
 function exec() {
