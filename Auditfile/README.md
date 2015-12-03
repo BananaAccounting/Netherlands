@@ -1,7 +1,8 @@
 #BananaApp for the NL Audit File
 
 With this BananaApps you can create the NL Audit file 
-It is still an Experimental Version.
+*It is still an Experimental Version.
+*If you use it please let us have your feedback.
 
 For the referemce documents that are at the base of this development see  the [Documentation page] (https://github.com/BananaAccounting/Netherlands/tree/master/Auditfile/Documentation)
 
