@@ -4,11 +4,11 @@ With this BananaApps you can create the NL Audit file
 * It is still an Experimental Version.
 * If you use it please let us have your feedback.
 
-For the referemce documents that are at the base of this development see  the [Documentation page] (https://github.com/BananaAccounting/Netherlands/tree/master/Auditfile/Documentation)
+For the reference documents that are at the base of this development see  the [Documentation page] (https://github.com/BananaAccounting/Netherlands/tree/master/Auditfile/Documentation)
 
 #Accounting file preparation
 Prior to using this BananaApp your accounting file 
-* In the properties you should have "netherlands"
+* In the file properties->Other->App Properties you should have "netherlands"
 * Complete the Address and company information
 * Complete the start and end date of the accounting
 
