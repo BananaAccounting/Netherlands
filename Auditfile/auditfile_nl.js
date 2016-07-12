@@ -16,10 +16,10 @@
 // @api = 1.0
 // @pubdate = 2015-12-03
 // @publisher = Banana.ch SA
-// @description = Auditfile
+// @description = Auditfile-OECD
 // @task = export.file
 // @doctype = 100.*;110.*
-// @docproperties = netherlands
+// @docproperties = 
 // @outputformat = none
 // @inputdatasource = none
 // @timeout = -1
