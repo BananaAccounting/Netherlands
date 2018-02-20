@@ -183,7 +183,7 @@
 					<xs:complexType>
 						<xs:sequence>
 
-							<xs:element name="customerSupplier" maxOccurs="unbounded" >
+							<xs:element name="customerSupplier" minOccurs="0" maxOccurs="unbounded" >
 								<xs:complexType>
 									<xs:sequence>
 

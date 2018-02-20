@@ -196,11 +196,15 @@ function addCustomerSuppliers(xml) {
 	//Check if there are customers
 	if (customersGroup) {
 		var tmpXmlCustomers = createCustomers(mapGroup, customersGroup);
+	} else {
+		var tmpXmlCustomers = '';	
 	}
 
 	//Check if there are suppliers
 	if (suppliersGroup) {
 		var tmpXmlSuppliers = createSuppliers(mapGroup, suppliersGroup);
+	} else {
+		var tmpXmlSuppliers = '';
 	}
 
 	//Create the <customerSuppliers> element and add it to the final xml file
