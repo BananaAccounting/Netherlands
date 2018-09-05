@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{/Users/ivan/Desktop/AuditFile/v3.2/test/auditfile_v3.2_nl.test.js}
+%%SCRIPT{/Users/ivan/Documents/GitHub/Netherlands/Auditfile_v3.2/test/auditfile_v3.2_nl.test.js}
 %
 \begin{testcase}{AUDITFILE\_NL}
 \begin{test}{testBananaApp}
@@ -31,9 +31,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2018-07-11</dateCreated>
+  <dateCreated>2018-09-05</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3</softwareVersion>
+  <softwareVersion>9.0.3.180804</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -50,16 +50,6 @@
    <region>Ticino</region>
    <country>CH</country>
   </streetAddress>
-  <postalAddress>
-   <streetname>Via Trevano 7A</streetname>
-   <number/>
-   <numberExtension/>
-   <property/>
-   <city>Lugano</city>
-   <postalCode>6900</postalCode>
-   <region>Ticino</region>
-   <country>CH</country>
-  </postalAddress>
   <customersSuppliers>
    <customerSupplier>
     <custSupID>11000</custSupID>
@@ -86,16 +76,6 @@
      <region/>
      <country>NL</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Weena 75</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Rotterdam</city>
-     <postalCode>3014 AB</postalCode>
-     <region/>
-     <country>NL</country>
-    </postalAddress>
     <bankAccount>
      <bankAccNr>1234567890</bankAccNr>
      <bankIdCd/>
@@ -125,16 +105,6 @@
      <region/>
      <country>NL</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Meeuwenstraat 15</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Maassluis</city>
-     <postalCode>3142 BA</postalCode>
-     <region/>
-     <country>NL</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>11020</custSupID>
@@ -160,16 +130,6 @@
      <region/>
      <country>NL</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Achterveld 18</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Den Bosch</city>
-     <postalCode>4753 XP</postalCode>
-     <region/>
-     <country>NL</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>11030</custSupID>
@@ -195,16 +155,6 @@
      <region/>
      <country>FR</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Avenue du Chateau 15</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Paris</city>
-     <postalCode>75001</postalCode>
-     <region/>
-     <country>FR</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>21000</custSupID>
@@ -230,16 +180,6 @@
      <region/>
      <country>NL</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Langedijk 200</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Vianen</city>
-     <postalCode>4132 XY</postalCode>
-     <region/>
-     <country>NL</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>21010</custSupID>
@@ -265,16 +205,6 @@
      <region/>
      <country>NL</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Seringenstraat 5</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Meerkerk</city>
-     <postalCode>4131 BC</postalCode>
-     <region/>
-     <country>NL</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>21020</custSupID>
@@ -300,16 +230,6 @@
      <region/>
      <country>NL</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>De Kogge 72</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Tiel</city>
-     <postalCode>4002 GT</postalCode>
-     <region/>
-     <country>NL</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>21030</custSupID>
@@ -335,16 +255,6 @@
      <region>Québec</region>
      <country>CA</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>Rue Ste-Anne 85</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Gatineau</city>
-     <postalCode>J9A 2KZ</postalCode>
-     <region>Québec</region>
-     <country>CA</country>
-    </postalAddress>
    </customerSupplier>
    <customerSupplier>
     <custSupID>21040</custSupID>
@@ -370,16 +280,6 @@
      <region/>
      <country>GG</country>
     </streetAddress>
-    <postalAddress>
-     <streetname>ccc</streetname>
-     <number/>
-     <numberExtension/>
-     <property/>
-     <city>Eee</city>
-     <postalCode>9999 AA</postalCode>
-     <region/>
-     <country>GG</country>
-    </postalAddress>
    </customerSupplier>
   </customersSuppliers>
   <generalLedger>

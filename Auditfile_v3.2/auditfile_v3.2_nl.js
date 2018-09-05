@@ -279,7 +279,7 @@ function addCompany(xml, banDoc, startDate, endDate) {
 	companyName = banDoc.info("AccountingDataBase", "Company");
 	taxRegIdent = banDoc.info("AccountingDataBase","VatNumber");
     streetname = banDoc.info("AccountingDataBase", "Address1");
-    postalstreetname = banDoc.info("AccountingDataBase", "Address2");
+    //postalstreetname = banDoc.info("AccountingDataBase", "Address2");
     city = banDoc.info("AccountingDataBase", "City");
     postalCode = banDoc.info("AccountingDataBase", "Zip");
     region = banDoc.info("AccountingDataBase", "State");
@@ -313,15 +313,15 @@ function addCompany(xml, banDoc, startDate, endDate) {
     var regionNode = streetAddressNode.addElement('region').addTextNode(region);
     var countryNode = streetAddressNode.addElement('country').addTextNode(country);
 
-    var postalAddressNode = companyNode.addElement('postalAddress');
-    var streetnameNode = postalAddressNode.addElement('streetname').addTextNode(streetname);
-    var numberNode = postalAddressNode.addElement('number').addTextNode(number);
-    var numberExtensionNode = postalAddressNode.addElement('numberExtension').addTextNode(numberExtension);
-    var propertyNode = postalAddressNode.addElement('property').addTextNode(property);
-    var cityNode = postalAddressNode.addElement('city').addTextNode(city);
-    var postalCodeNode = postalAddressNode.addElement('postalCode').addTextNode(postalCode);
-    var regionNode = postalAddressNode.addElement('region').addTextNode(region);
-    var countryNode = postalAddressNode.addElement('country').addTextNode(country);
+    // var postalAddressNode = companyNode.addElement('postalAddress');
+    // var streetnameNode = postalAddressNode.addElement('streetname').addTextNode(streetname);
+    // var numberNode = postalAddressNode.addElement('number').addTextNode(number);
+    // var numberExtensionNode = postalAddressNode.addElement('numberExtension').addTextNode(numberExtension);
+    // var propertyNode = postalAddressNode.addElement('property').addTextNode(property);
+    // var cityNode = postalAddressNode.addElement('city').addTextNode(city);
+    // var postalCodeNode = postalAddressNode.addElement('postalCode').addTextNode(postalCode);
+    // var regionNode = postalAddressNode.addElement('region').addTextNode(region);
+    // var countryNode = postalAddressNode.addElement('country').addTextNode(country);
 
     return companyNode;
 }
@@ -1163,15 +1163,15 @@ function createCustomersSuppliers(xml, customersSuppliersList) {
 		var regionNode = streedAddressNode.addElement('region').addTextNode(customersSuppliersList[i].region);
 		var countryNode = streedAddressNode.addElement('country').addTextNode(customersSuppliersList[i].country);
 
-		var postalAddressNode = customerSupplierNode.addElement('postalAddress');
-		var addressNode = postalAddressNode.addElement('streetname').addTextNode(customersSuppliersList[i].streetname);
-		var numberNode = postalAddressNode.addElement('number').addTextNode(customersSuppliersList[i].number);
-		var numberExtensionNode = postalAddressNode.addElement('numberExtension').addTextNode(customersSuppliersList[i].numberExtension);
-		var propertyNode = postalAddressNode.addElement('property').addTextNode(customersSuppliersList[i].property);
-		var cityNode = postalAddressNode.addElement('city').addTextNode(customersSuppliersList[i].city);
-		var postalCodeNode = postalAddressNode.addElement('postalCode').addTextNode(customersSuppliersList[i].postalCode);
-		var regionNode = postalAddressNode.addElement('region').addTextNode(customersSuppliersList[i].region);
-		var countryNode = postalAddressNode.addElement('country').addTextNode(customersSuppliersList[i].country);
+		// var postalAddressNode = customerSupplierNode.addElement('postalAddress');
+		// var addressNode = postalAddressNode.addElement('streetname').addTextNode(customersSuppliersList[i].streetname);
+		// var numberNode = postalAddressNode.addElement('number').addTextNode(customersSuppliersList[i].number);
+		// var numberExtensionNode = postalAddressNode.addElement('numberExtension').addTextNode(customersSuppliersList[i].numberExtension);
+		// var propertyNode = postalAddressNode.addElement('property').addTextNode(customersSuppliersList[i].property);
+		// var cityNode = postalAddressNode.addElement('city').addTextNode(customersSuppliersList[i].city);
+		// var postalCodeNode = postalAddressNode.addElement('postalCode').addTextNode(customersSuppliersList[i].postalCode);
+		// var regionNode = postalAddressNode.addElement('region').addTextNode(customersSuppliersList[i].region);
+		// var countryNode = postalAddressNode.addElement('country').addTextNode(customersSuppliersList[i].country);
 
 		if (customersSuppliersList[i].bankAccNr) {
 			checkStringLength(customersSuppliersList[i].bankAccNr, 1, 35, false);
