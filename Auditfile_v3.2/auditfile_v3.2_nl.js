@@ -14,10 +14,10 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2018-07-13
+// @pubdate = 2018-09-07
 // @publisher = Banana.ch SA
-// @description = XML Financial Auditfile (v3.2)
-// @description.nl = XML Auditfile Financieel (v3.2)
+// @description = XML Financial Auditfile
+// @description.nl = XML Auditfile Financieel
 // @task = app.command
 // @doctype = 100.*;110.*
 // @encoding = utf-8
@@ -99,7 +99,6 @@ function createXml(banDoc, startDate, endDate, isTest) {
     var generalLedger = addGeneralLedger(company, banDoc, startDate, endDate);
     var vatCodes = addVatCodes(company, banDoc, startDate, endDate);
     var periods = addPeriods(company, banDoc, startDate, endDate);
-    // DO WE USE IT ???
     //var openingBalance = addOpeningBalance(company, banDoc, startDate, endDate);
     var transactions = addTransactions(company, banDoc, startDate, endDate);
 
@@ -108,10 +107,10 @@ function createXml(banDoc, startDate, endDate, isTest) {
 
     if (!isTest) {
 
-		//Check errors and stop script execution if errors occurs
-		if (ERROR_STRING_MIN_LENGTH || ERROR_STRING_MAX_LENGTH || ERROR_VALUE_NOT_ALLOWED) {
-		    return;
-		}
+		// //Check errors and stop script execution if errors occurs
+		// if (ERROR_STRING_MIN_LENGTH || ERROR_STRING_MAX_LENGTH || ERROR_VALUE_NOT_ALLOWED) {
+		//     return;
+		// }
 
 	    saveData(output);
 	}
@@ -1665,7 +1664,7 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	return trLineNode;
 }
 
-// DO WE USE IT ???
+//
 function addSubledgers(transactionsNode, banDoc, startDate, endDate) {
 
 	/*
@@ -1710,7 +1709,7 @@ function addSubledgers(transactionsNode, banDoc, startDate, endDate) {
 	return subledgersNode;
 }
 
-// DO WE USE IT ???
+//
 function createSubledgerLine(tRow, transactionNode, banDoc, startDate, endDate) {
 
 	/*
@@ -1830,13 +1829,13 @@ function checkStringLength(value, minLength, maxLength, isTest) {
    	if (value.length > maxLength) {
 	    ERROR_STRING_MAX_LENGTH = true;
 	    if (!isTest) {
-	    	Banana.document.addMessage('ERROR_STRING_MAX_LENGTH');
+	    	Banana.document.addMessage('<' + value + '> is too long: maximum allowed characters ' + maxLength);
 	    }
 	}
 	if (value.length < minLength) {
 		ERROR_STRING_MIN_LENGTH = true;
 	    if (!isTest) {
-	    	Banana.document.addMessage('ERROR_STRING_MIN_LENGTH');
+	    	Banana.document.addMessage('<' + value + '> is too short: minimum allowed characters ' + minLength);
 	    }
 	}
 }
@@ -1901,7 +1900,10 @@ function saveData(output) {
             Banana.Ui.showInformation("Write error", file.errorString);
         }
         else {
-            Banana.IO.openUrl(fileName);
+        	var answer = Banana.Ui.showQuestion("XML Auditfile NL", "Het gegenereerde xml bestand bekijken?");
+        	if (answer) {
+        		Banana.IO.openUrl(fileName);
+        	}
         }
     }
 }
