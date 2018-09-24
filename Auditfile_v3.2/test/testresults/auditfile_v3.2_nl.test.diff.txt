@@ -1,8 +1,8 @@
 Test Banana Apps
 ----------------
 
-Date:        2018-09-07 10:43:39.022
-Duration:    00:00:10.811
+Date:        2018-09-24 09:10:48.759
+Duration:    00:01:33.873
 Application: BananaExpm90 9.0.3.180804
 OS:          macOS Sierra (10.12)
 Qt:          5.11.1
@@ -10,26 +10,13 @@ Qt:          5.11.1
 Test summary
 ------------
 
-Test failed
+Test succesfully completed
 
 > Fatal errors:  0
-> Differences:   1
+> Differences:   0
 > Added:         0
 > Deleted:       0
-> Identical:     5405
-> Total results: 5406
+> Identical:     16933
+> Total results: 16933
 > Total files:   1
-
-Differences Summary
--------------------
-
-> Files with differences
->> testresults/auditfile_v3.2_nl.test/auditfile_v3.2_nl.test.txt
-
-Differences Details
--------------------
-
->> testresults/auditfile_v3.2_nl.test/auditfile_v3.2_nl.test.txt
-			12  +   <dateCreated>2018-09-07</dateCreated>
-			 12 -   <dateCreated>2018-09-05</dateCreated>
 

@@ -16,7 +16,7 @@
 
 // @id = ch.banana.nl.app.auditfile.xml.test
 // @api = 1.0
-// @pubdate = 2018-07-11
+// @pubdate = 2018-09-24
 // @publisher = Banana.ch SA
 // @description = <TEST ch.banana.nl.app.auditfile.js>
 // @task = app.command
@@ -60,17 +60,27 @@ AUDITFILE_NL.prototype.cleanup = function() {
 // Generate the expected (correct) file
 AUDITFILE_NL.prototype.testBananaApp = function() {
 
-  //Open the banana document
-  var banDoc = Banana.application.openDocument("file:script/../test/testcases/File_auditfile_NL_finale.ac2");
+  var banDoc = "";
+
+  //Test file 1
+  banDoc = Banana.application.openDocument("file:script/../test/testcases/File_auditfile_NL_finale.ac2");
   Test.assert(banDoc);
-  
   this.xml_test(banDoc, '2018-01-01', '2018-12-31');
-  // this.xml_test(banDoc, '2018-01-01', '2018-06-30');
-  // this.xml_test(banDoc, '2018-07-01', '2018-12-31');
-  // this.xml_test(banDoc, '2018-01-01', '2018-03-31');
-  // this.xml_test(banDoc, '2018-04-01', '2018-06-30');
-  // this.xml_test(banDoc, '2018-07-01', '2018-09-30');
-  // this.xml_test(banDoc, '2018-10-01', '2018-12-31');
+
+  //Test file 2
+  banDoc = Banana.application.openDocument("file:script/../test/testcases/auditfile_nl_without_customers_and_suppliers.ac2");
+  Test.assert(banDoc);
+  this.xml_test(banDoc, '2018-01-01', '2018-12-31');
+
+  //Test file 3
+  banDoc = Banana.application.openDocument("file:script/../test/testcases/auditfile_nl_only_customers.ac2");
+  Test.assert(banDoc);
+  this.xml_test(banDoc, '2018-01-01', '2018-12-31');
+
+  //Test file 4
+  banDoc = Banana.application.openDocument("file:script/../test/testcases/auditfile_nl_only_suppliers.ac2");
+  Test.assert(banDoc);
+  this.xml_test(banDoc, '2018-01-01', '2018-12-31');
 
 }
 

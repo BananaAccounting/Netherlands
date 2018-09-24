@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2018-09-07
+// @pubdate = 2018-09-24
 // @publisher = Banana.ch SA
 // @description = XML Financial Auditfile
 // @description.nl = XML Auditfile Financieel
@@ -345,8 +345,18 @@ function addCustomersSuppliers(xml, banDoc, startDate, endDate) {
 		var suppliersList = createSuppliersList(banDoc, mapGroup, suppliersGroup);
 	}
 
-	var customersSuppliersList = customersList.concat(suppliersList);
-	createCustomersSuppliers(customersSuppliers, customersSuppliersList);
+	if (customersGroup && suppliersGroup) { //customers and suppliers exist
+		var customersSuppliersList = customersList.concat(suppliersList);
+		createCustomersSuppliers(customersSuppliers, customersSuppliersList);
+	}
+	else if (customersGroup && !suppliersGroup) { //only customers exist
+		var customersSuppliersList = customersList;
+		createCustomersSuppliers(customersSuppliers, customersSuppliersList);
+	}
+	else if (!customersGroup && suppliersGroup) { //only supplier exist
+		var customersSuppliersList = suppliersList;
+		createCustomersSuppliers(customersSuppliers, customersSuppliersList);
+	}
 
 	return customersSuppliers;
 }
