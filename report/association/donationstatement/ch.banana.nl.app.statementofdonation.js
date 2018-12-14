@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.statementofdonation.js
 // @api = 1.0
-// @pubdate = 2018-12-12
+// @pubdate = 2018-12-14
 // @publisher = Banana.ch SA
 // @description = Kwitantie voor giften in Nederland
 // @description.nl = Kwitantie voor giften in Nederland
@@ -69,7 +69,7 @@ function exec(inData, options) {
 /* The report is created using the selected period and the data of the dialog */
 function createReport(banDoc, startDate, endDate, userParam) {
 
-    var report = Banana.Report.newReport(texts.title);
+    var report = Banana.Report.newReport(texts.reportTitle);
     var lang = getLang(banDoc);
 
     // Get the list of all the donors (CC3)
@@ -104,6 +104,13 @@ function createReport(banDoc, startDate, endDate, userParam) {
     // Create the report for the inserted cc3 accounts (or all cc3 accounts if empty)
     for (var k = 0; k < donorsToPrint.length; k++) {
 
+        var transactionsObj = calculateTotalTransactions(banDoc, donorsToPrint[k], startDate, endDate);
+        var totalOfDonations = transactionsObj.total;
+        var numberOfDonations = transactionsObj.numberOfTransactions;
+        var trDate = getTransactionDate(banDoc, donorsToPrint[k], startDate, endDate);
+        var titleText = "";
+        var text = "";
+        
         // Address of the sender (Organization)
         var company = banDoc.info("AccountingDataBase","Company");
         var name = banDoc.info("AccountingDataBase","Name");
@@ -202,13 +209,6 @@ function createReport(banDoc, startDate, endDate, userParam) {
         report.addParagraph(" ", "");
 
         // Title, text and table details of donations
-        var transactionsObj = calculateTotalTransactions(banDoc, donorsToPrint[k], startDate, endDate);
-        var totalOfDonations = transactionsObj.total;
-        var numberOfDonations = transactionsObj.numberOfTransactions;
-        var trDate = getTransactionDate(banDoc, donorsToPrint[k], startDate, endDate);
-        var titleText = "";
-        var text = "";
-
         titleText = convertFields(banDoc, userParam.titleText, address, trDate, startDate, endDate, totalOfDonations, donorsToPrint[k]);
         report.addParagraph(titleText, "bold");
         report.addParagraph(" ", "");
@@ -945,7 +945,7 @@ function initUserParam() {
 function parametersDialog(userParam) {
 
     if (typeof(Banana.Ui.openPropertyEditor) !== 'undefined') {
-        var dialogTitle = userParam.xmldialogtitle;
+        var dialogTitle = texts.dialogTitle;
         var convertedParam = convertParam(userParam);
         var pageAnchor = 'dlgSettings';
         if (!Banana.Ui.openPropertyEditor(dialogTitle, convertedParam, pageAnchor)) {
@@ -980,7 +980,7 @@ function settingsDialog() {
     var docEndDate = Banana.document.endPeriod();   
     
     //A dialog window is opened asking the user to insert the desired period. By default is the accounting period
-    var selectedDates = Banana.Ui.getPeriod(texts.title, docStartDate, docEndDate, 
+    var selectedDates = Banana.Ui.getPeriod(texts.reportTitle, docStartDate, docEndDate, 
         scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
         
     //We take the values entered by the user and save them as "new default" values.
@@ -1042,6 +1042,8 @@ function loadTexts(banDoc) {
     }
 
     if (lang === "nl") {
+        texts.reportTitle = "Kwitantie voor giften";
+        texts.dialogTitle = "Omgevingen";
         texts.title = "Kwitantie voor giften <Period>";
         texts.warningMessage = "Ongeldige rekening gever";
         texts.accountNumber = "Rekening gever invoeren (leeg = alles afdrukken)";
@@ -1060,11 +1062,13 @@ function loadTexts(banDoc) {
         texts.text4 = "Tekst 4 (facultatief)";
         texts.useDefaultTexts = "Gebruik standaard teksten";
         //texts.singleTransactionText = "Wij verklaren hierbij dat **<FirstName> <FamilyName>**, **<Address>** op **<TrDate>** het bedrag van **<Currency> <Amount>** geschonken heeft aan onze instelling.";
-        texts.multiTransactionText = "Wij verklaren hierbij dat **<FirstName> <FamilyName>**, **<Address>** tussen **<StartDate> en <EndDate>** het bedrag van **<Currency> <Amount>** geschonken heeft aan onze instelling.";
+        texts.multiTransactionText = "Wij verklaren hierbij dat **<FirstName> <FamilyName>**, **<Address>** tussen **<StartDate>** en **<EndDate>** het bedrag van **<Currency> <Amount>** geschonken heeft aan onze instelling.";
         texts.textsGroup = "Teksten";
         texts.details = "Giften detail opnemen";
     }
     else {
+        texts.reportTitle = "Statement of donation";
+        texts.dialogTitle = "Settings";
         texts.title = "Statement of donation <Period>";
         texts.warningMessage = "Invalid member account";
         texts.accountNumber = "Insert account member (empty = print all)";
@@ -1083,7 +1087,7 @@ function loadTexts(banDoc) {
         texts.text4 = "Text 4 (optional)";
         texts.useDefaultTexts = "Use standard texts";
         //texts.singleTransactionText = "We hereby declare that **<FirstName> <FamilyName>**, **<Address>** on **<TrDate>** donated **<Currency> <Amount>** to our Association.";
-        texts.multiTransactionText = "We hereby declare that **<FirstName> <FamilyName>**, **<Address>** between **<StartDate> and <EndDate>** donated **<Currency> <Amount>** to our Association.";
+        texts.multiTransactionText = "We hereby declare that **<FirstName> <FamilyName>**, **<Address>** between **<StartDate>** and **<EndDate>** donated **<Currency> <Amount>** to our Association.";
         texts.textsGroup = "Texts";
         texts.details = "Include donation details";
     }

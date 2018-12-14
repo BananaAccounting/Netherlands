@@ -18,7 +18,7 @@
 \newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
 \newenvironment{test}[1]{\section*{Test case: #1}}{}
 %Begin test data
-%%SCRIPT{/Users/ivan/Documents/GitHub/Netherlands/report/association/./test/ch.banana.nl.app.statementofdonation.test.js}
+%%SCRIPT{/Users/ivan/Documents/GitHub/Netherlands/report/association/donationstatement/./test/ch.banana.nl.app.statementofdonation.test.js}
 %
 \begin{testcase}{ReportTest}
 \begin{test}{testBananaApp}
@@ -41,7 +41,7 @@ Statement of donation 2018 \\
   \\
   \\
   \\
-We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018 and 31.12.2018  donated  CHF 500.35  to our Association. \\
+We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018  and  31.12.2018  donated  CHF 500.35  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -91,7 +91,7 @@ Statement of donation 2018 \\
   \\
   \\
   \\
-We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018 and 31.12.2018  donated  CHF 1'200.00  to our Association. \\
+We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018  and  31.12.2018  donated  CHF 1'200.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -141,7 +141,7 @@ Statement of donation 2018 \\
   \\
   \\
   \\
-We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018 and 31.12.2018  donated  CHF 270.00  to our Association. \\
+We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018  and  31.12.2018  donated  CHF 270.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -191,7 +191,7 @@ Statement of donation 2018 \\
   \\
   \\
   \\
-We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018 and 31.12.2018  donated  CHF 250.00  to our Association. \\
+We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018  and  31.12.2018  donated  CHF 250.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -243,7 +243,7 @@ Statement of donation 1. Quarter 2018 \\
   \\
   \\
   \\
-We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018 and 31.03.2018  donated  CHF 500.35  to our Association. \\
+We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018  and  31.03.2018  donated  CHF 500.35  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -293,7 +293,7 @@ Statement of donation 1. Quarter 2018 \\
   \\
   \\
   \\
-We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018 and 31.03.2018  donated  CHF 300.00  to our Association. \\
+We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018  and  31.03.2018  donated  CHF 300.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -343,7 +343,7 @@ Statement of donation 1. Quarter 2018 \\
   \\
   \\
   \\
-We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018 and 31.03.2018  donated  CHF 0.00  to our Association. \\
+We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018  and  31.03.2018  donated  CHF 0.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -393,7 +393,7 @@ Statement of donation 1. Quarter 2018 \\
   \\
   \\
   \\
-We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018 and 31.03.2018  donated  CHF 0.00  to our Association. \\
+We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018  and  31.03.2018  donated  CHF 0.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -445,7 +445,7 @@ Statement of donation 1. Semester 2018 \\
   \\
   \\
   \\
-We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018 and 30.06.2018  donated  CHF 500.35  to our Association. \\
+We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018  and  30.06.2018  donated  CHF 500.35  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -495,7 +495,7 @@ Statement of donation 1. Semester 2018 \\
   \\
   \\
   \\
-We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018 and 30.06.2018  donated  CHF 600.00  to our Association. \\
+We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018  and  30.06.2018  donated  CHF 600.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -545,7 +545,7 @@ Statement of donation 1. Semester 2018 \\
   \\
   \\
   \\
-We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018 and 30.06.2018  donated  CHF 60.00  to our Association. \\
+We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018  and  30.06.2018  donated  CHF 60.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -595,7 +595,7 @@ Statement of donation 1. Semester 2018 \\
   \\
   \\
   \\
-We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018 and 30.06.2018  donated  CHF 150.00  to our Association. \\
+We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018  and  30.06.2018  donated  CHF 150.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -647,7 +647,7 @@ Statement of donation 01.01.2018 - 30.11.2018 \\
   \\
   \\
   \\
-We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018 and 30.11.2018  donated  CHF 500.35  to our Association. \\
+We hereby declare that  Gianpaolo Bianchi ,  Via Beltramina, 6962 Viganello  between  01.01.2018  and  30.11.2018  donated  CHF 500.35  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -697,7 +697,7 @@ Statement of donation 01.01.2018 - 30.11.2018 \\
   \\
   \\
   \\
-We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018 and 30.11.2018  donated  CHF 1'100.00  to our Association. \\
+We hereby declare that  Mario Rossi ,  Via Trevano, 6900 Lugano  between  01.01.2018  and  30.11.2018  donated  CHF 1'100.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -747,7 +747,7 @@ Statement of donation 01.01.2018 - 30.11.2018 \\
   \\
   \\
   \\
-We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018 and 30.11.2018  donated  CHF 270.00  to our Association. \\
+We hereby declare that  Sara Guidi ,  Via Boschetto 45, 6901 Lugano  between  01.01.2018  and  30.11.2018  donated  CHF 270.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
@@ -797,7 +797,7 @@ Statement of donation 01.01.2018 - 30.11.2018 \\
   \\
   \\
   \\
-We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018 and 30.11.2018  donated  CHF 250.00  to our Association. \\
+We hereby declare that  Voit Ulrich ,  Via alla Chiesa, 6800 Mendrisio  between  01.01.2018  and  30.11.2018  donated  CHF 250.00  to our Association. \\
   \\
   \\
 \begin{longtable}[l]{ l  l  l  l  l }
