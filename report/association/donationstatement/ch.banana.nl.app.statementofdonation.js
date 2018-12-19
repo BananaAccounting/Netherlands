@@ -1055,7 +1055,7 @@ function loadTexts(banDoc) {
         texts.donor = "Naam en adres van de gever";
         texts.memberAccount = "Rekening gever";
         texts.donationDate = "Periode";
-        texts.titleText = "Titel";
+        texts.titleText = "Titel (facultatief)";
         texts.text1 = "Tekst 1 (facultatief)";
         texts.text2 = "Tekst 2 (facultatief)";
         texts.text3 = "Tekst 3 (facultatief)";
@@ -1080,7 +1080,7 @@ function loadTexts(banDoc) {
         texts.donor = "Name and addres of the donor";
         texts.memberAccount = "Member account";
         texts.donationDate = "Period";
-        texts.titleText = "Title";
+        texts.titleText = "Title (optional)";
         texts.text1 = "Text 1 (optional)";
         texts.text2 = "Text 2 (optional)";
         texts.text3 = "Text 3 (optional)";
