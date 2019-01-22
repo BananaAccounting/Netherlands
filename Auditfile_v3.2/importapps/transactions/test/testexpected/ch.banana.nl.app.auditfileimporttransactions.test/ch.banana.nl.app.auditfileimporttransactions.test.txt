@@ -1,0 +1,321 @@
+%%info_test_name{ch.banana.nl.app.auditfileimporttransactions.test}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+%%SCRIPT{/Users/ivan/Documents/GitHub/Netherlands/Auditfile_v3.2/importapps/transactions/test/ch.banana.nl.app.auditfileimporttransactions.test.js}
+%
+\begin{testcase}{ImportTransactionsTest}
+\begin{test}{testBananaApps}
+\textvalue{--- TRANSACTIONS LINES ---}\\
+\textvalue{**********}\\
+\textvalue{Doc:1, Date:2018-01-01, Description:Contante verkoop van goederen, Kas, DebitAccount:1000, CreditAccount:, Amount:500.00}\\
+\textvalue{Doc:1, Date:2018-01-01, Description:Contante verkoop van goederen, Opbrengst verkopen, DebitAccount:, CreditAccount:8100, Amount:413.22}\\
+\textvalue{Doc:1, Date:2018-01-01, Description:Contante verkoop van goederen, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:86.78}\\
+\textvalue{**********}\\
+\textvalue{Doc:4, Date:2018-01-19, Description:Aankoop verpakkingsmateriaal, factuur 15, Verkoopkosten, DebitAccount:4815, CreditAccount:, Amount:330.58}\\
+\textvalue{Doc:4, Date:2018-01-19, Description:Aankoop verpakkingsmateriaal, factuur 15, Van Bekkum, DebitAccount:, CreditAccount:21000, Amount:400.00}\\
+\textvalue{Doc:4, Date:2018-01-19, Description:Aankoop verpakkingsmateriaal, factuur 15, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:69.42}\\
+\textvalue{**********}\\
+\textvalue{Doc:5, Date:2018-02-19, Description:Betaling faktuur 15 aan leverancier Van Bekkum, Van Bekkum, DebitAccount:21000, CreditAccount:, Amount:400.00}\\
+\textvalue{Doc:5, Date:2018-02-19, Description:Betaling faktuur 15 aan leverancier Van Bekkum, Rekening ING, DebitAccount:, CreditAccount:1010, Amount:400.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:8, Date:2018-02-23, Description:Verkoop van goederen, factuur 203, Pierre Dupont, DebitAccount:11030, CreditAccount:, Amount:12000.00}\\
+\textvalue{Doc:8, Date:2018-02-23, Description:Verkoop van goederen, factuur 203, Opbrengst verkopen, DebitAccount:, CreditAccount:8100, Amount:9917.36}\\
+\textvalue{Doc:8, Date:2018-02-23, Description:Verkoop van goederen, factuur 203, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:2082.64}\\
+\textvalue{**********}\\
+\textvalue{Doc:9, Date:2018-02-27, Description:Credit nota op factuur 203, Opbrengst verkopen, DebitAccount:8100, CreditAccount:, Amount:165.29}\\
+\textvalue{Doc:9, Date:2018-02-27, Description:Credit nota op factuur 203, Pierre Dupont, DebitAccount:, CreditAccount:11030, Amount:200.00}\\
+\textvalue{Doc:9, Date:2018-02-27, Description:Credit nota op factuur 203, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:34.71}\\
+\textvalue{**********}\\
+\textvalue{Doc:12, Date:2018-03-31, Description:Omboeking "BTW volgens BTW overzicht" - 1ste kwartaal, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:2065.00}\\
+\textvalue{Doc:12, Date:2018-03-31, Description:Omboeking "BTW volgens BTW overzicht" - 1ste kwartaal, Verschuldigde BTW, DebitAccount:, CreditAccount:1505, Amount:2065.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:13, Date:2018-03-31, Description:afronding BTW 1ste kwartaal, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:0.29}\\
+\textvalue{Doc:13, Date:2018-03-31, Description:afronding BTW 1ste kwartaal, DIVERSE BATEN EN LASTEN, DebitAccount:, CreditAccount:8140, Amount:0.29}\\
+\textvalue{**********}\\
+\textvalue{Doc:14, Date:2018-04-10, Description:Betaling BTW 1ste kwartaal, Verschuldigde BTW, DebitAccount:1505, CreditAccount:, Amount:2065.00}\\
+\textvalue{Doc:14, Date:2018-04-10, Description:Betaling BTW 1ste kwartaal, Rekening ING, DebitAccount:, CreditAccount:1010, Amount:2065.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:17, Date:2018-04-15, Description:Factuur van leverancier Manen, Manen, DebitAccount:, CreditAccount:21010, Amount:1300.00}\\
+\textvalue{Doc:17, Date:2018-04-15, Description:Factuur van leverancier Manen, Kostprijs verkopen, DebitAccount:8000, CreditAccount:, Amount:661.16}\\
+\textvalue{Doc:17, Date:2018-04-15, Description:Factuur van leverancier Manen, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:138.84}\\
+\textvalue{Doc:17, Date:2018-04-15, Description:Factuur van leverancier Manen, Kostprijs verkopen, DebitAccount:8000, CreditAccount:, Amount:471.70}\\
+\textvalue{Doc:17, Date:2018-04-15, Description:Factuur van leverancier Manen, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:28.30}\\
+\textvalue{**********}\\
+\textvalue{Doc:22, Date:2018-05-01, Description:BTW contant betaald aan douane, Kas, DebitAccount:, CreditAccount:1000, Amount:209.00}\\
+\textvalue{Doc:22, Date:2018-05-01, Description:BTW contant betaald aan douane, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:209.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:25, Date:2018-05-15, Description:Rekening betaald aan vervoersdienst, Rekening ING, DebitAccount:, CreditAccount:1010, Amount:359.00}\\
+\textvalue{Doc:25, Date:2018-05-15, Description:Rekening betaald aan vervoersdienst, Algemene kosten, DebitAccount:4775, CreditAccount:, Amount:150.00}\\
+\textvalue{Doc:25, Date:2018-05-15, Description:Rekening betaald aan vervoersdienst, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:209.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:30, Date:2018-06-12, Description:Faktuur leverancier B (Duitsland), Kostprijs verkopen, DebitAccount:8000, CreditAccount:, Amount:1210.00}\\
+\textvalue{Doc:30, Date:2018-06-12, Description:Faktuur leverancier B (Duitsland), Rekening ING, DebitAccount:, CreditAccount:1010, Amount:1000.00}\\
+\textvalue{Doc:30, Date:2018-06-12, Description:Faktuur leverancier B (Duitsland), BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:210.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:31, Date:2018-06-12, Description:BTW op intercommunautaire verwerving, Hulprekening bij boeken ICP, DebitAccount:8015, CreditAccount:, Amount:1000.00}\\
+\textvalue{Doc:31, Date:2018-06-12, Description:BTW op intercommunautaire verwerving, Hulprekening bij boeken ICP, DebitAccount:, CreditAccount:8015, Amount:1210.00}\\
+\textvalue{Doc:31, Date:2018-06-12, Description:BTW op intercommunautaire verwerving, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:210.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:34, Date:2018-07-02, Description:Factuur zonder BTW (BTW verlegd), Voorraad goederen, DebitAccount:3000, CreditAccount:, Amount:2750.00}\\
+\textvalue{Doc:34, Date:2018-07-02, Description:Factuur zonder BTW (BTW verlegd), Lepage, DebitAccount:, CreditAccount:21030, Amount:2750.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:35, Date:2018-07-02, Description:Aankoop met BTW verlegd, Voorraad goederen, DebitAccount:3000, CreditAccount:, Amount:3327.50}\\
+\textvalue{Doc:35, Date:2018-07-02, Description:Aankoop met BTW verlegd, Lepage, DebitAccount:, CreditAccount:21030, Amount:2750.00}\\
+\textvalue{Doc:35, Date:2018-07-02, Description:Aankoop met BTW verlegd, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:577.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:36, Date:2018-07-02, Description:Voorbelasting BTW verlegd, Lepage, DebitAccount:21030, CreditAccount:, Amount:2750.00}\\
+\textvalue{Doc:36, Date:2018-07-02, Description:Voorbelasting BTW verlegd, Voorraad goederen, DebitAccount:, CreditAccount:3000, Amount:3327.50}\\
+\textvalue{Doc:36, Date:2018-07-02, Description:Voorbelasting BTW verlegd, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:577.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:39, Date:2018-09-30, Description:KOR 3e kwartaal, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:300.00}\\
+\textvalue{Doc:39, Date:2018-09-30, Description:KOR 3e kwartaal, Kleine ondernemersregeling BTW, DebitAccount:, CreditAccount:8110, Amount:300.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:42, Date:2018-10-04, Description:afboeking van een oninbare vordering, Oninbare vorderingen, DebitAccount:8130, CreditAccount:, Amount:300.00}\\
+\textvalue{Doc:42, Date:2018-10-04, Description:afboeking van een oninbare vordering, Annelies Schenk, DebitAccount:, CreditAccount:11020, Amount:363.00}\\
+\textvalue{Doc:42, Date:2018-10-04, Description:afboeking van een oninbare vordering, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:63.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:45, Date:2018-10-05, Description:Verkoop in contanten, Kas, DebitAccount:1000, CreditAccount:, Amount:8000.00}\\
+\textvalue{Doc:45, Date:2018-10-05, Description:Verkoop in contanten, Opbrengst verkopen, DebitAccount:, CreditAccount:8100, Amount:6611.57}\\
+\textvalue{Doc:45, Date:2018-10-05, Description:Verkoop in contanten, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:1388.43}\\
+\textvalue{**********}\\
+\textvalue{Doc:46, Date:2018-10-05, Description:Storting contanten op Rabobank, Kruisposten, DebitAccount:2000, CreditAccount:, Amount:3000.00}\\
+\textvalue{Doc:46, Date:2018-10-05, Description:Storting contanten op Rabobank, Kas, DebitAccount:, CreditAccount:1000, Amount:3000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:47, Date:2018-10-05, Description:Storting contanten op ING, Kruisposten, DebitAccount:2000, CreditAccount:, Amount:3000.00}\\
+\textvalue{Doc:47, Date:2018-10-05, Description:Storting contanten op ING, Kas, DebitAccount:, CreditAccount:1000, Amount:3000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:48, Date:2018-10-06, Description:Storting contanten op Rabobank, Rekening Rabobank, DebitAccount:1020, CreditAccount:, Amount:3000.00}\\
+\textvalue{Doc:48, Date:2018-10-06, Description:Storting contanten op Rabobank, Kruisposten, DebitAccount:, CreditAccount:2000, Amount:3000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:49, Date:2018-10-07, Description:Storting contanten op ING, Rekening ING, DebitAccount:1010, CreditAccount:, Amount:3000.00}\\
+\textvalue{Doc:49, Date:2018-10-07, Description:Storting contanten op ING, Kruisposten, DebitAccount:, CreditAccount:2000, Amount:3000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:50, Date:2018-10-08, Description:Opname van Rekening ING, Kas, DebitAccount:1000, CreditAccount:, Amount:300.00}\\
+\textvalue{Doc:50, Date:2018-10-08, Description:Opname van Rekening ING, Kruisposten, DebitAccount:, CreditAccount:2000, Amount:300.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:51, Date:2018-10-08, Description:Betaling huur september, Huur, DebitAccount:4500, CreditAccount:, Amount:650.00}\\
+\textvalue{Doc:51, Date:2018-10-08, Description:Betaling huur september, Rekening Rabobank, DebitAccount:, CreditAccount:1020, Amount:650.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:52, Date:2018-10-09, Description:Kasstorting, Kruisposten, DebitAccount:2000, CreditAccount:, Amount:300.00}\\
+\textvalue{Doc:52, Date:2018-10-09, Description:Kasstorting, Rekening ING, DebitAccount:, CreditAccount:1010, Amount:300.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:53, Date:2018-10-10, Description:Huishoudgeld, Privé opnamen, DebitAccount:0510, CreditAccount:, Amount:925.00}\\
+\textvalue{Doc:53, Date:2018-10-10, Description:Huishoudgeld, Kas, DebitAccount:, CreditAccount:1000, Amount:925.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:54, Date:2018-10-10, Description:Aankoop computer, factuur 1256, Computers, DebitAccount:0220, CreditAccount:, Amount:661.16}\\
+\textvalue{Doc:54, Date:2018-10-10, Description:Aankoop computer, factuur 1256, Crediteuren, DebitAccount:, CreditAccount:1600, Amount:800.00}\\
+\textvalue{Doc:54, Date:2018-10-10, Description:Aankoop computer, factuur 1256, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:138.84}\\
+\textvalue{**********}\\
+\textvalue{Doc:55, Date:2018-10-11, Description:KPN, factuur 345, aug/sep, Te betalen diverse kosten, DebitAccount:1835, CreditAccount:, Amount:41.32}\\
+\textvalue{Doc:55, Date:2018-10-11, Description:KPN, factuur 345, aug/sep, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:8.68}\\
+\textvalue{Doc:55, Date:2018-10-11, Description:KPN, factuur 345, aug/sep, Telefoonkosten, DebitAccount:4750, CreditAccount:, Amount:62.27}\\
+\textvalue{Doc:55, Date:2018-10-11, Description:KPN, factuur 345, aug/sep, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:13.08}\\
+\textvalue{Doc:55, Date:2018-10-11, Description:KPN, factuur 345, aug/sep, KPN, DebitAccount:, CreditAccount:21040, Amount:125.35}\\
+\textvalue{**********}\\
+\textvalue{Doc:58, Date:2018-10-12, Description:Benzine voor bedrijfsauto, Brandstof auto's, DebitAccount:4605, CreditAccount:, Amount:41.32}\\
+\textvalue{Doc:58, Date:2018-10-12, Description:Benzine voor bedrijfsauto, Kas, DebitAccount:, CreditAccount:1000, Amount:50.00}\\
+\textvalue{Doc:58, Date:2018-10-12, Description:Benzine voor bedrijfsauto, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:8.68}\\
+\textvalue{**********}\\
+\textvalue{Doc:59, Date:2018-10-13, Description:Betaling factuur 1256 voor computer, Crediteuren, DebitAccount:1600, CreditAccount:, Amount:800.00}\\
+\textvalue{Doc:59, Date:2018-10-13, Description:Betaling factuur 1256 voor computer, Rekening ING, DebitAccount:, CreditAccount:1010, Amount:800.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:60, Date:2018-10-14, Description:Betaling factuur 345 KPN, KPN, DebitAccount:21040, CreditAccount:, Amount:125.35}\\
+\textvalue{Doc:60, Date:2018-10-14, Description:Betaling factuur 345 KPN, Rekening ING, DebitAccount:, CreditAccount:1010, Amount:125.35}\\
+\textvalue{**********}\\
+\textvalue{Doc:61, Date:2018-11-01, Description:Betaling huur oktober , Huur, DebitAccount:4500, CreditAccount:, Amount:650.00}\\
+\textvalue{Doc:61, Date:2018-11-01, Description:Betaling huur oktober , Rekening Rabobank, DebitAccount:, CreditAccount:1020, Amount:650.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:62, Date:2018-11-01, Description:Verkoop maand oktober, Kas, DebitAccount:1000, CreditAccount:, Amount:6500.00}\\
+\textvalue{Doc:62, Date:2018-11-01, Description:Verkoop maand oktober, Opbrengst verkopen, DebitAccount:, CreditAccount:8100, Amount:3305.79}\\
+\textvalue{Doc:62, Date:2018-11-01, Description:Verkoop maand oktober, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:694.21}\\
+\textvalue{Doc:62, Date:2018-11-01, Description:Verkoop maand oktober, Opbrengst verkopen, DebitAccount:, CreditAccount:8100, Amount:1886.79}\\
+\textvalue{Doc:62, Date:2018-11-01, Description:Verkoop maand oktober, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:113.21}\\
+\textvalue{Doc:62, Date:2018-11-01, Description:Verkoop maand oktober, Opbrengst verkopen, DebitAccount:, CreditAccount:8100, Amount:500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:66, Date:2018-11-01, Description:Kostprijs van de verkopen oktober, Kostprijs verkopen, DebitAccount:8000, CreditAccount:, Amount:2200.00}\\
+\textvalue{Doc:66, Date:2018-11-01, Description:Kostprijs van de verkopen oktober, Voorraad goederen, DebitAccount:, CreditAccount:3000, Amount:2200.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:67, Date:2018-11-01, Description:Gefactureerde diensten oktober, Debiteuren, DebitAccount:1100, CreditAccount:, Amount:2250.00}\\
+\textvalue{Doc:67, Date:2018-11-01, Description:Gefactureerde diensten oktober, Opbrengst diensten, DebitAccount:, CreditAccount:8105, Amount:1859.50}\\
+\textvalue{Doc:67, Date:2018-11-01, Description:Gefactureerde diensten oktober, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:390.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:68, Date:2018-11-01, Description:Factuur 8910 publiciteit , Verkoopkosten, DebitAccount:4815, CreditAccount:, Amount:1000.00}\\
+\textvalue{Doc:68, Date:2018-11-01, Description:Factuur 8910 publiciteit , Crediteuren, DebitAccount:, CreditAccount:1600, Amount:1000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:69, Date:2018-11-01, Description:Betaling huur november, Huur, DebitAccount:4500, CreditAccount:, Amount:650.00}\\
+\textvalue{Doc:69, Date:2018-11-01, Description:Betaling huur november, Rekening Rabobank, DebitAccount:, CreditAccount:1020, Amount:650.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:70, Date:2018-11-02, Description:Storting contanten op bankrekening, Kruisposten, DebitAccount:2000, CreditAccount:, Amount:7200.00}\\
+\textvalue{Doc:70, Date:2018-11-02, Description:Storting contanten op bankrekening, Kas, DebitAccount:, CreditAccount:1000, Amount:7200.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:71, Date:2018-11-02, Description:Betaling factuur 8910 publiciteit, Crediteuren, DebitAccount:1600, CreditAccount:, Amount:1000.00}\\
+\textvalue{Doc:71, Date:2018-11-02, Description:Betaling factuur 8910 publiciteit, Rekening Rabobank, DebitAccount:, CreditAccount:1020, Amount:1000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:72, Date:2018-11-02, Description:Storting contanten op bankrekening, Rekening ING, DebitAccount:1010, CreditAccount:, Amount:7200.00}\\
+\textvalue{Doc:72, Date:2018-11-02, Description:Storting contanten op bankrekening, Kruisposten, DebitAccount:, CreditAccount:2000, Amount:7200.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:75, Date:2018-11-04, Description:Artikel A, Vermeulen BV, DebitAccount:11000, CreditAccount:, Amount:540.00}\\
+\textvalue{Doc:75, Date:2018-11-04, Description:Artikel A, Opbrengst Product A, DebitAccount:, CreditAccount:8101, Amount:446.28}\\
+\textvalue{Doc:75, Date:2018-11-04, Description:Artikel A, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:93.72}\\
+\textvalue{**********}\\
+\textvalue{Doc:78, Date:2018-11-04, Description:Artikel A, Vermeulen BV, DebitAccount:11000, CreditAccount:, Amount:216.00}\\
+\textvalue{Doc:78, Date:2018-11-04, Description:Artikel A, Opbrengst Product A, DebitAccount:, CreditAccount:8101, Amount:178.51}\\
+\textvalue{Doc:78, Date:2018-11-04, Description:Artikel A, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:37.49}\\
+\textvalue{**********}\\
+\textvalue{Doc:79, Date:2018-11-04, Description:Artikel B, Vermeulen BV, DebitAccount:11000, CreditAccount:, Amount:307.50}\\
+\textvalue{Doc:79, Date:2018-11-04, Description:Artikel B, Opbrengst Product B, DebitAccount:, CreditAccount:8102, Amount:290.09}\\
+\textvalue{Doc:79, Date:2018-11-04, Description:Artikel B, BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:17.41}\\
+\textvalue{**********}\\
+\textvalue{Doc:82, Date:2018-11-05, Description:Artikel A , Annelies Schenk, DebitAccount:11020, CreditAccount:, Amount:5000.00}\\
+\textvalue{Doc:82, Date:2018-11-05, Description:Artikel A , Opbrengst Product A, DebitAccount:, CreditAccount:8101, Amount:4132.23}\\
+\textvalue{Doc:82, Date:2018-11-05, Description:Artikel A , BTW overeenkomstig het BTW overzicht, DebitAccount:, CreditAccount:1500, Amount:867.77}\\
+\textvalue{**********}\\
+\textvalue{Doc:83, Date:2018-11-05, Description:10 \% korting, Opbrengst diensten, DebitAccount:8105, CreditAccount:, Amount:413.22}\\
+\textvalue{Doc:83, Date:2018-11-05, Description:10 \% korting, Annelies Schenk, DebitAccount:, CreditAccount:11020, Amount:500.00}\\
+\textvalue{Doc:83, Date:2018-11-05, Description:10 \% korting, BTW overeenkomstig het BTW overzicht, DebitAccount:1500, CreditAccount:, Amount:86.78}\\
+\textvalue{ }\\
+\textvalue{IMPORT FILE}\\
+\textvalue{Date \textbackslash{t} Doc \textbackslash{t} DocType \textbackslash{t} Description \textbackslash{t} Account \textbackslash{t} ContraAccount \textbackslash{t} Income
+ewline 2018-01-01 \textbackslash{t} 1 \textbackslash{t}  \textbackslash{t} Contante verkoop van goederen, Kas \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 500.00
+ewline 2018-01-01 \textbackslash{t} 1 \textbackslash{t}  \textbackslash{t} Contante verkoop van goederen, Opbrengst verkopen \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 413.22
+ewline 2018-01-01 \textbackslash{t} 1 \textbackslash{t}  \textbackslash{t} Contante verkoop van goederen, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 86.78
+ewline 2018-01-19 \textbackslash{t} 4 \textbackslash{t}  \textbackslash{t} Aankoop verpakkingsmateriaal, factuur 15, Verkoopkosten \textbackslash{t} 4815 \textbackslash{t}  \textbackslash{t} 330.58
+ewline 2018-01-19 \textbackslash{t} 4 \textbackslash{t}  \textbackslash{t} Aankoop verpakkingsmateriaal, factuur 15, Van Bekkum \textbackslash{t}  \textbackslash{t} 21000 \textbackslash{t} 400.00
+ewline 2018-01-19 \textbackslash{t} 4 \textbackslash{t}  \textbackslash{t} Aankoop verpakkingsmateriaal, factuur 15, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 69.42
+ewline 2018-02-19 \textbackslash{t} 5 \textbackslash{t}  \textbackslash{t} Betaling faktuur 15 aan leverancier Van Bekkum, Van Bekkum \textbackslash{t} 21000 \textbackslash{t}  \textbackslash{t} 400.00
+ewline 2018-02-19 \textbackslash{t} 5 \textbackslash{t}  \textbackslash{t} Betaling faktuur 15 aan leverancier Van Bekkum, Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 400.00
+ewline 2018-02-23 \textbackslash{t} 8 \textbackslash{t}  \textbackslash{t} Verkoop van goederen, factuur 203, Pierre Dupont \textbackslash{t} 11030 \textbackslash{t}  \textbackslash{t} 12000.00
+ewline 2018-02-23 \textbackslash{t} 8 \textbackslash{t}  \textbackslash{t} Verkoop van goederen, factuur 203, Opbrengst verkopen \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 9917.36
+ewline 2018-02-23 \textbackslash{t} 8 \textbackslash{t}  \textbackslash{t} Verkoop van goederen, factuur 203, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 2082.64
+ewline 2018-02-27 \textbackslash{t} 9 \textbackslash{t}  \textbackslash{t} Credit nota op factuur 203, Opbrengst verkopen \textbackslash{t} 8100 \textbackslash{t}  \textbackslash{t} 165.29
+ewline 2018-02-27 \textbackslash{t} 9 \textbackslash{t}  \textbackslash{t} Credit nota op factuur 203, Pierre Dupont \textbackslash{t}  \textbackslash{t} 11030 \textbackslash{t} 200.00
+ewline 2018-02-27 \textbackslash{t} 9 \textbackslash{t}  \textbackslash{t} Credit nota op factuur 203, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 34.71
+ewline 2018-03-31 \textbackslash{t} 12 \textbackslash{t}  \textbackslash{t} Omboeking "BTW volgens BTW overzicht" - 1ste kwartaal, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 2065.00
+ewline 2018-03-31 \textbackslash{t} 12 \textbackslash{t}  \textbackslash{t} Omboeking "BTW volgens BTW overzicht" - 1ste kwartaal, Verschuldigde BTW \textbackslash{t}  \textbackslash{t} 1505 \textbackslash{t} 2065.00
+ewline 2018-03-31 \textbackslash{t} 13 \textbackslash{t}  \textbackslash{t} afronding BTW 1ste kwartaal, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 0.29
+ewline 2018-03-31 \textbackslash{t} 13 \textbackslash{t}  \textbackslash{t} afronding BTW 1ste kwartaal, DIVERSE BATEN EN LASTEN \textbackslash{t}  \textbackslash{t} 8140 \textbackslash{t} 0.29
+ewline 2018-04-10 \textbackslash{t} 14 \textbackslash{t}  \textbackslash{t} Betaling BTW 1ste kwartaal, Verschuldigde BTW \textbackslash{t} 1505 \textbackslash{t}  \textbackslash{t} 2065.00
+ewline 2018-04-10 \textbackslash{t} 14 \textbackslash{t}  \textbackslash{t} Betaling BTW 1ste kwartaal, Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 2065.00
+ewline 2018-04-15 \textbackslash{t} 17 \textbackslash{t}  \textbackslash{t} Factuur van leverancier Manen, Manen \textbackslash{t}  \textbackslash{t} 21010 \textbackslash{t} 1300.00
+ewline 2018-04-15 \textbackslash{t} 17 \textbackslash{t}  \textbackslash{t} Factuur van leverancier Manen, Kostprijs verkopen \textbackslash{t} 8000 \textbackslash{t}  \textbackslash{t} 661.16
+ewline 2018-04-15 \textbackslash{t} 17 \textbackslash{t}  \textbackslash{t} Factuur van leverancier Manen, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 138.84
+ewline 2018-04-15 \textbackslash{t} 17 \textbackslash{t}  \textbackslash{t} Factuur van leverancier Manen, Kostprijs verkopen \textbackslash{t} 8000 \textbackslash{t}  \textbackslash{t} 471.70
+ewline 2018-04-15 \textbackslash{t} 17 \textbackslash{t}  \textbackslash{t} Factuur van leverancier Manen, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 28.30
+ewline 2018-05-01 \textbackslash{t} 22 \textbackslash{t}  \textbackslash{t} BTW contant betaald aan douane, Kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 209.00
+ewline 2018-05-01 \textbackslash{t} 22 \textbackslash{t}  \textbackslash{t} BTW contant betaald aan douane, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 209.00
+ewline 2018-05-15 \textbackslash{t} 25 \textbackslash{t}  \textbackslash{t} Rekening betaald aan vervoersdienst, Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 359.00
+ewline 2018-05-15 \textbackslash{t} 25 \textbackslash{t}  \textbackslash{t} Rekening betaald aan vervoersdienst, Algemene kosten \textbackslash{t} 4775 \textbackslash{t}  \textbackslash{t} 150.00
+ewline 2018-05-15 \textbackslash{t} 25 \textbackslash{t}  \textbackslash{t} Rekening betaald aan vervoersdienst, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 209.00
+ewline 2018-06-12 \textbackslash{t} 30 \textbackslash{t}  \textbackslash{t} Faktuur leverancier B (Duitsland), Kostprijs verkopen \textbackslash{t} 8000 \textbackslash{t}  \textbackslash{t} 1210.00
+ewline 2018-06-12 \textbackslash{t} 30 \textbackslash{t}  \textbackslash{t} Faktuur leverancier B (Duitsland), Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 1000.00
+ewline 2018-06-12 \textbackslash{t} 30 \textbackslash{t}  \textbackslash{t} Faktuur leverancier B (Duitsland), BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 210.00
+ewline 2018-06-12 \textbackslash{t} 31 \textbackslash{t}  \textbackslash{t} BTW op intercommunautaire verwerving, Hulprekening bij boeken ICP \textbackslash{t} 8015 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2018-06-12 \textbackslash{t} 31 \textbackslash{t}  \textbackslash{t} BTW op intercommunautaire verwerving, Hulprekening bij boeken ICP \textbackslash{t}  \textbackslash{t} 8015 \textbackslash{t} 1210.00
+ewline 2018-06-12 \textbackslash{t} 31 \textbackslash{t}  \textbackslash{t} BTW op intercommunautaire verwerving, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 210.00
+ewline 2018-07-02 \textbackslash{t} 34 \textbackslash{t}  \textbackslash{t} Factuur zonder BTW (BTW verlegd), Voorraad goederen \textbackslash{t} 3000 \textbackslash{t}  \textbackslash{t} 2750.00
+ewline 2018-07-02 \textbackslash{t} 34 \textbackslash{t}  \textbackslash{t} Factuur zonder BTW (BTW verlegd), Lepage \textbackslash{t}  \textbackslash{t} 21030 \textbackslash{t} 2750.00
+ewline 2018-07-02 \textbackslash{t} 35 \textbackslash{t}  \textbackslash{t} Aankoop met BTW verlegd, Voorraad goederen \textbackslash{t} 3000 \textbackslash{t}  \textbackslash{t} 3327.50
+ewline 2018-07-02 \textbackslash{t} 35 \textbackslash{t}  \textbackslash{t} Aankoop met BTW verlegd, Lepage \textbackslash{t}  \textbackslash{t} 21030 \textbackslash{t} 2750.00
+ewline 2018-07-02 \textbackslash{t} 35 \textbackslash{t}  \textbackslash{t} Aankoop met BTW verlegd, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 577.50
+ewline 2018-07-02 \textbackslash{t} 36 \textbackslash{t}  \textbackslash{t} Voorbelasting BTW verlegd, Lepage \textbackslash{t} 21030 \textbackslash{t}  \textbackslash{t} 2750.00
+ewline 2018-07-02 \textbackslash{t} 36 \textbackslash{t}  \textbackslash{t} Voorbelasting BTW verlegd, Voorraad goederen \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} 3327.50
+ewline 2018-07-02 \textbackslash{t} 36 \textbackslash{t}  \textbackslash{t} Voorbelasting BTW verlegd, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 577.50
+ewline 2018-09-30 \textbackslash{t} 39 \textbackslash{t}  \textbackslash{t} KOR 3e kwartaal, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 300.00
+ewline 2018-09-30 \textbackslash{t} 39 \textbackslash{t}  \textbackslash{t} KOR 3e kwartaal, Kleine ondernemersregeling BTW \textbackslash{t}  \textbackslash{t} 8110 \textbackslash{t} 300.00
+ewline 2018-10-04 \textbackslash{t} 42 \textbackslash{t}  \textbackslash{t} afboeking van een oninbare vordering, Oninbare vorderingen \textbackslash{t} 8130 \textbackslash{t}  \textbackslash{t} 300.00
+ewline 2018-10-04 \textbackslash{t} 42 \textbackslash{t}  \textbackslash{t} afboeking van een oninbare vordering, Annelies Schenk \textbackslash{t}  \textbackslash{t} 11020 \textbackslash{t} 363.00
+ewline 2018-10-04 \textbackslash{t} 42 \textbackslash{t}  \textbackslash{t} afboeking van een oninbare vordering, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 63.00
+ewline 2018-10-05 \textbackslash{t} 45 \textbackslash{t}  \textbackslash{t} Verkoop in contanten, Kas \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 8000.00
+ewline 2018-10-05 \textbackslash{t} 45 \textbackslash{t}  \textbackslash{t} Verkoop in contanten, Opbrengst verkopen \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 6611.57
+ewline 2018-10-05 \textbackslash{t} 45 \textbackslash{t}  \textbackslash{t} Verkoop in contanten, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 1388.43
+ewline 2018-10-05 \textbackslash{t} 46 \textbackslash{t}  \textbackslash{t} Storting contanten op Rabobank, Kruisposten \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 3000.00
+ewline 2018-10-05 \textbackslash{t} 46 \textbackslash{t}  \textbackslash{t} Storting contanten op Rabobank, Kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 3000.00
+ewline 2018-10-05 \textbackslash{t} 47 \textbackslash{t}  \textbackslash{t} Storting contanten op ING, Kruisposten \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 3000.00
+ewline 2018-10-05 \textbackslash{t} 47 \textbackslash{t}  \textbackslash{t} Storting contanten op ING, Kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 3000.00
+ewline 2018-10-06 \textbackslash{t} 48 \textbackslash{t}  \textbackslash{t} Storting contanten op Rabobank, Rekening Rabobank \textbackslash{t} 1020 \textbackslash{t}  \textbackslash{t} 3000.00
+ewline 2018-10-06 \textbackslash{t} 48 \textbackslash{t}  \textbackslash{t} Storting contanten op Rabobank, Kruisposten \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} 3000.00
+ewline 2018-10-07 \textbackslash{t} 49 \textbackslash{t}  \textbackslash{t} Storting contanten op ING, Rekening ING \textbackslash{t} 1010 \textbackslash{t}  \textbackslash{t} 3000.00
+ewline 2018-10-07 \textbackslash{t} 49 \textbackslash{t}  \textbackslash{t} Storting contanten op ING, Kruisposten \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} 3000.00
+ewline 2018-10-08 \textbackslash{t} 50 \textbackslash{t}  \textbackslash{t} Opname van Rekening ING, Kas \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 300.00
+ewline 2018-10-08 \textbackslash{t} 50 \textbackslash{t}  \textbackslash{t} Opname van Rekening ING, Kruisposten \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} 300.00
+ewline 2018-10-08 \textbackslash{t} 51 \textbackslash{t}  \textbackslash{t} Betaling huur september, Huur \textbackslash{t} 4500 \textbackslash{t}  \textbackslash{t} 650.00
+ewline 2018-10-08 \textbackslash{t} 51 \textbackslash{t}  \textbackslash{t} Betaling huur september, Rekening Rabobank \textbackslash{t}  \textbackslash{t} 1020 \textbackslash{t} 650.00
+ewline 2018-10-09 \textbackslash{t} 52 \textbackslash{t}  \textbackslash{t} Kasstorting, Kruisposten \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 300.00
+ewline 2018-10-09 \textbackslash{t} 52 \textbackslash{t}  \textbackslash{t} Kasstorting, Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 300.00
+ewline 2018-10-10 \textbackslash{t} 53 \textbackslash{t}  \textbackslash{t} Huishoudgeld, Privé opnamen \textbackslash{t} 0510 \textbackslash{t}  \textbackslash{t} 925.00
+ewline 2018-10-10 \textbackslash{t} 53 \textbackslash{t}  \textbackslash{t} Huishoudgeld, Kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 925.00
+ewline 2018-10-10 \textbackslash{t} 54 \textbackslash{t}  \textbackslash{t} Aankoop computer, factuur 1256, Computers \textbackslash{t} 0220 \textbackslash{t}  \textbackslash{t} 661.16
+ewline 2018-10-10 \textbackslash{t} 54 \textbackslash{t}  \textbackslash{t} Aankoop computer, factuur 1256, Crediteuren \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 800.00
+ewline 2018-10-10 \textbackslash{t} 54 \textbackslash{t}  \textbackslash{t} Aankoop computer, factuur 1256, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 138.84
+ewline 2018-10-11 \textbackslash{t} 55 \textbackslash{t}  \textbackslash{t} KPN, factuur 345, aug/sep, Te betalen diverse kosten \textbackslash{t} 1835 \textbackslash{t}  \textbackslash{t} 41.32
+ewline 2018-10-11 \textbackslash{t} 55 \textbackslash{t}  \textbackslash{t} KPN, factuur 345, aug/sep, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 8.68
+ewline 2018-10-11 \textbackslash{t} 55 \textbackslash{t}  \textbackslash{t} KPN, factuur 345, aug/sep, Telefoonkosten \textbackslash{t} 4750 \textbackslash{t}  \textbackslash{t} 62.27
+ewline 2018-10-11 \textbackslash{t} 55 \textbackslash{t}  \textbackslash{t} KPN, factuur 345, aug/sep, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 13.08
+ewline 2018-10-11 \textbackslash{t} 55 \textbackslash{t}  \textbackslash{t} KPN, factuur 345, aug/sep, KPN \textbackslash{t}  \textbackslash{t} 21040 \textbackslash{t} 125.35
+ewline 2018-10-12 \textbackslash{t} 58 \textbackslash{t}  \textbackslash{t} Benzine voor bedrijfsauto, Brandstof auto's \textbackslash{t} 4605 \textbackslash{t}  \textbackslash{t} 41.32
+ewline 2018-10-12 \textbackslash{t} 58 \textbackslash{t}  \textbackslash{t} Benzine voor bedrijfsauto, Kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 50.00
+ewline 2018-10-12 \textbackslash{t} 58 \textbackslash{t}  \textbackslash{t} Benzine voor bedrijfsauto, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 8.68
+ewline 2018-10-13 \textbackslash{t} 59 \textbackslash{t}  \textbackslash{t} Betaling factuur 1256 voor computer, Crediteuren \textbackslash{t} 1600 \textbackslash{t}  \textbackslash{t} 800.00
+ewline 2018-10-13 \textbackslash{t} 59 \textbackslash{t}  \textbackslash{t} Betaling factuur 1256 voor computer, Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 800.00
+ewline 2018-10-14 \textbackslash{t} 60 \textbackslash{t}  \textbackslash{t} Betaling factuur 345 KPN, KPN \textbackslash{t} 21040 \textbackslash{t}  \textbackslash{t} 125.35
+ewline 2018-10-14 \textbackslash{t} 60 \textbackslash{t}  \textbackslash{t} Betaling factuur 345 KPN, Rekening ING \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} 125.35
+ewline 2018-11-01 \textbackslash{t} 61 \textbackslash{t}  \textbackslash{t} Betaling huur oktober , Huur \textbackslash{t} 4500 \textbackslash{t}  \textbackslash{t} 650.00
+ewline 2018-11-01 \textbackslash{t} 61 \textbackslash{t}  \textbackslash{t} Betaling huur oktober , Rekening Rabobank \textbackslash{t}  \textbackslash{t} 1020 \textbackslash{t} 650.00
+ewline 2018-11-01 \textbackslash{t} 62 \textbackslash{t}  \textbackslash{t} Verkoop maand oktober, Kas \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 6500.00
+ewline 2018-11-01 \textbackslash{t} 62 \textbackslash{t}  \textbackslash{t} Verkoop maand oktober, Opbrengst verkopen \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 3305.79
+ewline 2018-11-01 \textbackslash{t} 62 \textbackslash{t}  \textbackslash{t} Verkoop maand oktober, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 694.21
+ewline 2018-11-01 \textbackslash{t} 62 \textbackslash{t}  \textbackslash{t} Verkoop maand oktober, Opbrengst verkopen \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 1886.79
+ewline 2018-11-01 \textbackslash{t} 62 \textbackslash{t}  \textbackslash{t} Verkoop maand oktober, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 113.21
+ewline 2018-11-01 \textbackslash{t} 62 \textbackslash{t}  \textbackslash{t} Verkoop maand oktober, Opbrengst verkopen \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 500.00
+ewline 2018-11-01 \textbackslash{t} 66 \textbackslash{t}  \textbackslash{t} Kostprijs van de verkopen oktober, Kostprijs verkopen \textbackslash{t} 8000 \textbackslash{t}  \textbackslash{t} 2200.00
+ewline 2018-11-01 \textbackslash{t} 66 \textbackslash{t}  \textbackslash{t} Kostprijs van de verkopen oktober, Voorraad goederen \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} 2200.00
+ewline 2018-11-01 \textbackslash{t} 67 \textbackslash{t}  \textbackslash{t} Gefactureerde diensten oktober, Debiteuren \textbackslash{t} 1100 \textbackslash{t}  \textbackslash{t} 2250.00
+ewline 2018-11-01 \textbackslash{t} 67 \textbackslash{t}  \textbackslash{t} Gefactureerde diensten oktober, Opbrengst diensten \textbackslash{t}  \textbackslash{t} 8105 \textbackslash{t} 1859.50
+ewline 2018-11-01 \textbackslash{t} 67 \textbackslash{t}  \textbackslash{t} Gefactureerde diensten oktober, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 390.50
+ewline 2018-11-01 \textbackslash{t} 68 \textbackslash{t}  \textbackslash{t} Factuur 8910 publiciteit , Verkoopkosten \textbackslash{t} 4815 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2018-11-01 \textbackslash{t} 68 \textbackslash{t}  \textbackslash{t} Factuur 8910 publiciteit , Crediteuren \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 1000.00
+ewline 2018-11-01 \textbackslash{t} 69 \textbackslash{t}  \textbackslash{t} Betaling huur november, Huur \textbackslash{t} 4500 \textbackslash{t}  \textbackslash{t} 650.00
+ewline 2018-11-01 \textbackslash{t} 69 \textbackslash{t}  \textbackslash{t} Betaling huur november, Rekening Rabobank \textbackslash{t}  \textbackslash{t} 1020 \textbackslash{t} 650.00
+ewline 2018-11-02 \textbackslash{t} 70 \textbackslash{t}  \textbackslash{t} Storting contanten op bankrekening, Kruisposten \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 7200.00
+ewline 2018-11-02 \textbackslash{t} 70 \textbackslash{t}  \textbackslash{t} Storting contanten op bankrekening, Kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 7200.00
+ewline 2018-11-02 \textbackslash{t} 71 \textbackslash{t}  \textbackslash{t} Betaling factuur 8910 publiciteit, Crediteuren \textbackslash{t} 1600 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2018-11-02 \textbackslash{t} 71 \textbackslash{t}  \textbackslash{t} Betaling factuur 8910 publiciteit, Rekening Rabobank \textbackslash{t}  \textbackslash{t} 1020 \textbackslash{t} 1000.00
+ewline 2018-11-02 \textbackslash{t} 72 \textbackslash{t}  \textbackslash{t} Storting contanten op bankrekening, Rekening ING \textbackslash{t} 1010 \textbackslash{t}  \textbackslash{t} 7200.00
+ewline 2018-11-02 \textbackslash{t} 72 \textbackslash{t}  \textbackslash{t} Storting contanten op bankrekening, Kruisposten \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} 7200.00
+ewline 2018-11-04 \textbackslash{t} 75 \textbackslash{t}  \textbackslash{t} Artikel A, Vermeulen BV \textbackslash{t} 11000 \textbackslash{t}  \textbackslash{t} 540.00
+ewline 2018-11-04 \textbackslash{t} 75 \textbackslash{t}  \textbackslash{t} Artikel A, Opbrengst Product A \textbackslash{t}  \textbackslash{t} 8101 \textbackslash{t} 446.28
+ewline 2018-11-04 \textbackslash{t} 75 \textbackslash{t}  \textbackslash{t} Artikel A, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 93.72
+ewline 2018-11-04 \textbackslash{t} 78 \textbackslash{t}  \textbackslash{t} Artikel A, Vermeulen BV \textbackslash{t} 11000 \textbackslash{t}  \textbackslash{t} 216.00
+ewline 2018-11-04 \textbackslash{t} 78 \textbackslash{t}  \textbackslash{t} Artikel A, Opbrengst Product A \textbackslash{t}  \textbackslash{t} 8101 \textbackslash{t} 178.51
+ewline 2018-11-04 \textbackslash{t} 78 \textbackslash{t}  \textbackslash{t} Artikel A, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 37.49
+ewline 2018-11-04 \textbackslash{t} 79 \textbackslash{t}  \textbackslash{t} Artikel B, Vermeulen BV \textbackslash{t} 11000 \textbackslash{t}  \textbackslash{t} 307.50
+ewline 2018-11-04 \textbackslash{t} 79 \textbackslash{t}  \textbackslash{t} Artikel B, Opbrengst Product B \textbackslash{t}  \textbackslash{t} 8102 \textbackslash{t} 290.09
+ewline 2018-11-04 \textbackslash{t} 79 \textbackslash{t}  \textbackslash{t} Artikel B, BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 17.41
+ewline 2018-11-05 \textbackslash{t} 82 \textbackslash{t}  \textbackslash{t} Artikel A , Annelies Schenk \textbackslash{t} 11020 \textbackslash{t}  \textbackslash{t} 5000.00
+ewline 2018-11-05 \textbackslash{t} 82 \textbackslash{t}  \textbackslash{t} Artikel A , Opbrengst Product A \textbackslash{t}  \textbackslash{t} 8101 \textbackslash{t} 4132.23
+ewline 2018-11-05 \textbackslash{t} 82 \textbackslash{t}  \textbackslash{t} Artikel A , BTW overeenkomstig het BTW overzicht \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 867.77
+ewline 2018-11-05 \textbackslash{t} 83 \textbackslash{t}  \textbackslash{t} 10 \% korting, Opbrengst diensten \textbackslash{t} 8105 \textbackslash{t}  \textbackslash{t} 413.22
+ewline 2018-11-05 \textbackslash{t} 83 \textbackslash{t}  \textbackslash{t} 10 \% korting, Annelies Schenk \textbackslash{t}  \textbackslash{t} 11020 \textbackslash{t} 500.00
+ewline 2018-11-05 \textbackslash{t} 83 \textbackslash{t}  \textbackslash{t} 10 \% korting, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 86.78
+ewline }\\
+\keyvalue{Result}{Passed}
+\end{test}
+\end{testcase}
+\end{document}

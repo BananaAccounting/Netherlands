@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2018-09-24
+// @pubdate = 2019-01-22
 // @publisher = Banana.ch SA
 // @description = XML Financial Auditfile
 // @description.nl = XML Auditfile Financieel
@@ -99,19 +99,12 @@ function createXml(banDoc, startDate, endDate, isTest) {
     var generalLedger = addGeneralLedger(company, banDoc, startDate, endDate);
     var vatCodes = addVatCodes(company, banDoc, startDate, endDate);
     var periods = addPeriods(company, banDoc, startDate, endDate);
-    //var openingBalance = addOpeningBalance(company, banDoc, startDate, endDate);
+    var openingBalance = addOpeningBalance(company, banDoc, startDate, endDate);
     var transactions = addTransactions(company, banDoc, startDate, endDate);
 
     var output = Banana.Xml.save(xmlDocument);
-    //banDoc.addMessage(output);
 
     if (!isTest) {
-
-		// //Check errors and stop script execution if errors occurs
-		// if (ERROR_STRING_MIN_LENGTH || ERROR_STRING_MAX_LENGTH || ERROR_VALUE_NOT_ALLOWED) {
-		//     return;
-		// }
-
 	    saveData(output);
 	}
 
@@ -278,7 +271,6 @@ function addCompany(xml, banDoc, startDate, endDate) {
 	companyName = banDoc.info("AccountingDataBase", "Company");
 	taxRegIdent = banDoc.info("AccountingDataBase","VatNumber");
     streetname = banDoc.info("AccountingDataBase", "Address1");
-    //postalstreetname = banDoc.info("AccountingDataBase", "Address2");
     city = banDoc.info("AccountingDataBase", "City");
     postalCode = banDoc.info("AccountingDataBase", "Zip");
     region = banDoc.info("AccountingDataBase", "State");
@@ -312,15 +304,15 @@ function addCompany(xml, banDoc, startDate, endDate) {
     var regionNode = streetAddressNode.addElement('region').addTextNode(region);
     var countryNode = streetAddressNode.addElement('country').addTextNode(country);
 
-    // var postalAddressNode = companyNode.addElement('postalAddress');
-    // var streetnameNode = postalAddressNode.addElement('streetname').addTextNode(streetname);
-    // var numberNode = postalAddressNode.addElement('number').addTextNode(number);
-    // var numberExtensionNode = postalAddressNode.addElement('numberExtension').addTextNode(numberExtension);
-    // var propertyNode = postalAddressNode.addElement('property').addTextNode(property);
-    // var cityNode = postalAddressNode.addElement('city').addTextNode(city);
-    // var postalCodeNode = postalAddressNode.addElement('postalCode').addTextNode(postalCode);
-    // var regionNode = postalAddressNode.addElement('region').addTextNode(region);
-    // var countryNode = postalAddressNode.addElement('country').addTextNode(country);
+    var postalAddressNode = companyNode.addElement('postalAddress');
+    var streetnameNode = postalAddressNode.addElement('streetname').addTextNode(streetname);
+    var numberNode = postalAddressNode.addElement('number').addTextNode(number);
+    var numberExtensionNode = postalAddressNode.addElement('numberExtension').addTextNode(numberExtension);
+    var propertyNode = postalAddressNode.addElement('property').addTextNode(property);
+    var cityNode = postalAddressNode.addElement('city').addTextNode(city);
+    var postalCodeNode = postalAddressNode.addElement('postalCode').addTextNode(postalCode);
+    var regionNode = postalAddressNode.addElement('region').addTextNode(region);
+    var countryNode = postalAddressNode.addElement('country').addTextNode(country);
 
     return companyNode;
 }
@@ -373,46 +365,7 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 			<leadCode>String</leadCode>
 			<leadDescription>String</leadDescription>
 			<leadReference>String</leadReference>
-			<leadCrossRef>String</leadCrossRef>
-			<taxonomy>
-				<taxoRef>String</taxoRef>
-				<entryPoint>
-					<entryPointRef>String</entryPointRef>
-					<conceptRef>String</conceptRef>
-					<domainMember>
-						<domainMemberRef>String</domainMemberRef>
-					</domainMember>
-				</entryPoint>
-			</taxonomy>
-			<changeInfo>
-				<userID>String</userID>
-				<changeDateTime>2001-12-17T09:30:47-05:00</changeDateTime>
-				<changeDescription>String</changeDescription>
-			</changeInfo>
-			<glAccountHistory>
-				<glAccount>
-					<accID>String</accID>
-					<accDesc>String</accDesc>
-					<accTp>B</accTp>
-					<leadCode>String</leadCode>
-					<leadDescription>String</leadDescription>
-					<leadReference>String</leadReference>
-					<leadCrossRef>String</leadCrossRef>
-					<changeInfo>
-						<userID>String</userID>
-						<changeDateTime>2001-12-17T09:30:47-05:00</changeDateTime>
-						<changeDescription>String</changeDescription>
-					</changeInfo>
-				</glAccount>
-			</glAccountHistory>
 		</ledgerAccount>
-		<basics>
-			<basic>
-				<basicType>02</basicType>
-				<basicID>String</basicID>
-				<basicDesc>String</basicDesc>
-			</basic>
-		</basics>
 	</generalLedger>
 	*/
 
@@ -420,19 +373,8 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 	var accDesc = '';
 	var accTp = ''; //B=Balance; M=Mixed; P=Profit and Loss
 	var leadCode = ''; // Gr ??
-	var leadDescription = ''; //Description ??
-	var leadReference = '';
-	var leadCrossRef = '';
-	var taxoRef = '';
-	var entryPointRef = '';
-	var conceptRef = '';
-	var domainMemberRef = '';
-	var userID = '';
-	var changeDateTime = '';
-	var changeDescription = '';
-	var basicType = '';
-	var basicID = '';
-	var basicDesc = '';
+	var leadDescription = ''; //Gr Description ??
+	var leadReference = ''; //BClass??
 
 	var generalLedgerNode = xml.addElement('generalLedger');
 
@@ -451,6 +393,11 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 
 	        accID = tRow.value('Account');
 	    	accDesc = tRow.value('Description');
+	    	leadCode = tRow.value('Gr');
+	    	leadDescription = banDoc.table('Accounts').findRowByValue('Group',leadCode).value("Description");
+	    	if (!banDoc.table('Categories')) {
+	    		leadReference = tRow.value('BClass');
+	    	}
 	    	
 	    	//accTp
 	    	if (tRow.value('BClass') === '1' || tRow.value('BClass') === '2') {
@@ -479,17 +426,6 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 			checkStringLength(leadCode, 0, 999, false);
 			checkStringLength(leadDescription, 0, 999, false);
 			checkStringLength(leadReference, 0, 999, false);
-			checkStringLength(leadCrossRef, 0, 999, false);
-			checkStringLength(taxoRef, 0, 9999, false);
-			checkStringLength(entryPointRef, 0, 9999, false);
-			checkStringLength(conceptRef, 0, 9999, false);
-			checkStringLength(domainMemberRef, 0, 9999, false);
-			checkStringLength(userID, 0, 35, false);
-			checkStringLength(changeDateTime, 0, 24, false);
-			checkStringLength(changeDescription, 0, 999, false);
-			checkStringLength(basicType, 0, 2, false);
-			checkStringLength(basicID, 0, 35, false);
-			checkStringLength(basicDesc, 0, 9999, false);
 
 			var ledgerAccountNode = generalLedgerNode.addElement('ledgerAccount');
 			var accIDNode = ledgerAccountNode.addElement('accID').addTextNode(accID);
@@ -498,32 +434,6 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 			var leadCodeNode = ledgerAccountNode.addElement('leadCode').addTextNode(leadCode);
 			var leadDescriptionNode = ledgerAccountNode.addElement('leadDescription').addTextNode(leadDescription);
 			var leadReferenceNode = ledgerAccountNode.addElement('leadReference').addTextNode(leadReference);
-			var leadCrossRefNode = ledgerAccountNode.addElement('leadCrossRef').addTextNode(leadCrossRef);
-
-			// //taxonomy element: we don't know exactly what to insert here. Can we do not use it?
-			// var taxonomyNode = ledgerAccountNode.addElement('taxonomy');
-			// var taxoRefNode = taxonomyNode.addElement('taxoRef').addTextNode(taxoRef);
-			// var entryPointNode = taxonomyNode.addElement('entryPoint');
-			// var entryPointRefNode = entryPointNode.addElement('entryPointRef').addTextNode(entryPointRef);
-			// var conceptRefNode = entryPointNode.addElement('conceptRef').addTextNode(conceptRef);
-			// var domainMemberNode = entryPointNode.addElement('domainMember');
-			// var domainMemberRefNode = domainMemberNode.addElement('domainMemberRef').addTextNode(domainMemberRef);
-
-			// //changeInfo element: we don't know exactly what to insert here. Can we do not use it?
-			// var changeInfoNode = ledgerAccountNode.addElement('changeInfo');
-			// var userIDNode = changeInfoNode.addElement('userID').addTextNode(userID);
-			// var changeDateTimeNode = changeInfoNode.addElement('changeDateTime').addTextNode(changeDateTime);
-			// var changeDescriptionNode = changeInfoNode.addElement('changeDescription').addTextNode(changeDescription);
-
-			// //glAccountHistory element: we don't know exactly what to insert here. Can we do not use it?
-			// var glAccountHistoryNode = ledgerAccountNode.addElement('glAccountHistory');
-
-			// //basics element: we don't know exactly what to insert here. Can we do not use it?
-			// var basicsNode = generalLedgerNode.addElement('basics');
-			// var basicNode = basicsNode.addElement('basic');
-			// var basicTypeNode = basicNode.addElement('basicType').addTextNode(basicType);
-			// var basicIDNode = basicNode.addElement('basicID').addTextNode(basicID);
-			// var basicDescNode = basicNode.addElement('basicDesc').addTextNode(basicDesc);
 		}  
 	}
 
@@ -546,7 +456,7 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 		    	accDesc = tRow.value('Description');
 		    	accTp = 'P';
 		    	leadCode = tRow.value('Gr');
-		    	leadDescription = tRow.value('Description');
+		    	leadDescription = banDoc.table('Categories').findRowByValue('Group',leadCode).value("Description");
 
 		    	/* basicType:
 					02	Cost codes / Cost ID
@@ -566,17 +476,6 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 				checkStringLength(leadCode, 0, 999, false);
 				checkStringLength(leadDescription, 0, 999, false);
 				checkStringLength(leadReference, 0, 999, false);
-				checkStringLength(leadCrossRef, 0, 999, false);
-				checkStringLength(taxoRef, 0, 9999, false);
-				checkStringLength(entryPointRef, 0, 9999, false);
-				checkStringLength(conceptRef, 0, 9999, false);
-				checkStringLength(domainMemberRef, 0, 9999, false);
-				checkStringLength(userID, 0, 35, false);
-				checkStringLength(changeDateTime, 0, 24, false);
-				checkStringLength(changeDescription, 0, 999, false);
-				checkStringLength(basicType, 0, 2, false);
-				checkStringLength(basicID, 0, 35, false);
-				checkStringLength(basicDesc, 0, 9999, false);
 
 				var ledgerAccountNode = generalLedgerNode.addElement('ledgerAccount');
 				var accIDNode = ledgerAccountNode.addElement('accID').addTextNode(accID);
@@ -585,32 +484,6 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 				var leadCodeNode = ledgerAccountNode.addElement('leadCode').addTextNode(leadCode);
 				var leadDescriptionNode = ledgerAccountNode.addElement('leadDescription').addTextNode(leadDescription);
 				var leadReferenceNode = ledgerAccountNode.addElement('leadReference').addTextNode(leadReference);
-				var leadCrossRefNode = ledgerAccountNode.addElement('leadCrossRef').addTextNode(leadCrossRef);
-
-				// //taxonomy element: we don't know exactly what to insert here. Can we do not use it?
-				// var taxonomyNode = ledgerAccountNode.addElement('taxonomy');
-				// var taxoRefNode = taxonomyNode.addElement('taxoRef').addTextNode(taxoRef);
-				// var entryPointNode = taxonomyNode.addElement('entryPoint');
-				// var entryPointRefNode = entryPointNode.addElement('entryPointRef').addTextNode(entryPointRef);
-				// var conceptRefNode = entryPointNode.addElement('conceptRef').addTextNode(conceptRef);
-				// var domainMemberNode = entryPointNode.addElement('domainMember');
-				// var domainMemberRefNode = domainMemberNode.addElement('domainMemberRef').addTextNode(domainMemberRef);
-
-				// //changeInfo element: we don't know exactly what to insert here. Can we do not use it?
-				// var changeInfoNode = ledgerAccountNode.addElement('changeInfo');
-				// var userIDNode = changeInfoNode.addElement('userID').addTextNode(userID);
-				// var changeDateTimeNode = changeInfoNode.addElement('changeDateTime').addTextNode(changeDateTime);
-				// var changeDescriptionNode = changeInfoNode.addElement('changeDescription').addTextNode(changeDescription);			
-
-				// //glAccountHistory element: we don't know exactly what to insert here. Can we do not use it?
-				// var glAccountHistoryNode = ledgerAccountNode.addElement('glAccountHistory');
-
-				// //basics element: we don't know exactly what to insert here. Can we do not use it?
-				// var basicsNode = generalLedgerNode.addElement('basics');
-				// var basicNode = basicsNode.addElement('basic');
-				// var basicTypeNode = basicNode.addElement('basicType').addTextNode(basicType);
-				// var basicIDNode = basicNode.addElement('basicID').addTextNode(basicID);
-				// var basicDescNode = basicNode.addElement('basicDesc').addTextNode(basicDesc);
 			}
 		}
 	}
@@ -674,169 +547,182 @@ function addVatCodes(xml, banDoc, startDate, endDate) {
 /* Function that creates the <periods> element of the xml file */
 function addPeriods(xml, banDoc, startDate, endDate) {
 	/*
-	<periods>
-		<period>
-			<periodNumber>1</periodNumber>
-			<periodDesc>String</periodDesc>
-			<startDatePeriod>1967-08-13</startDatePeriod>
-			<startTimePeriod>14:20:00-05:00</startTimePeriod>
-			<endDatePeriod>1967-08-13</endDatePeriod>
-			<endTimePeriod>14:20:00-05:00</endTimePeriod>
-		</period>
-	</periods>
+    <periods>
+        <period>
+            <periodNumber>1</periodNumber>
+            <startDatePeriod>2016-01-01</startDatePeriod>
+            <endDatePeriod>2016-01-31</endDatePeriod>
+        </period>
+        <period>
+            <periodNumber>2</periodNumber>
+            <startDatePeriod>2016-02-01</startDatePeriod>
+            <endDatePeriod>2016-02-29</endDatePeriod>
+        </period>
+		...
+    </periods>
 	*/
 
-	var periodNumber = '1'; //??
-	var periodDesc = 'van ' + startDate + ' tot ' + endDate;
-	var startDatePeriod = startDate;
-	var startTimePeriod = '00:00:00'; //00:00:00-00:00
-	var endDatePeriod = endDate;
-	var endTimePeriod = '23:59:59'; //23:59:59-00:00
-
-	checkStringLength(periodNumber, 1, 3, false);
-	checkStringLength(periodDesc, 0, 50, false);
-	checkStringLength(startDatePeriod, 1, 16, false);
-	checkStringLength(startTimePeriod, 0, 14, false);
-	checkStringLength(endDatePeriod, 1, 16, false);
-	checkStringLength(endTimePeriod, 0, 14, false);
-
+	var year = Banana.Converter.toDate(startDate).getFullYear();
 	var periodsNode = xml.addElement('periods');
-	var periodNode = periodsNode.addElement('period');
-	var periodNumberNode = periodNode.addElement('periodNumber').addTextNode(periodNumber);
-	var periodDescNode = periodNode.addElement('periodDesc').addTextNode(periodDesc);
-	var startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(startDatePeriod);
-	var startTimePeriodNode = periodNode.addElement('startTimePeriod').addTextNode(startTimePeriod);
-	var endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(endDatePeriod);
-	var endTimePeriodNode = periodNode.addElement('endTimePeriod').addTextNode(endTimePeriod);
+	var periodNumber = "";
+	var periodNumberNode = "";
+	var startDatePeriodNode = "";
+	var endDatePeriodNode = "";
+	for (var i = 1; i <= 12; i++) {
+
+		periodNumber = i;
+		periodNode = periodsNode.addElement('period');
+		periodNumberNode = periodNode.addElement('periodNumber').addTextNode(periodNumber);
+
+		if (periodNumber == 1) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-01-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-01-31");
+		}
+		else if (periodNumber == 2) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-02-01");
+			if (year === "2020" || year === "2024" || year === "2028") {
+				endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-02-29");
+			} else {
+				endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-02-28");
+			}
+		}
+		else if (periodNumber == 3) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-03-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-03-31");		
+		}
+		else if (periodNumber == 4) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-04-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-04-30");		
+		}
+		else if (periodNumber == 5) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-05-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-05-31");	
+		}
+		else if (periodNumber == 6) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-06-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-06-30");	
+		}
+		else if (periodNumber == 7) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-07-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-07-31");		
+		}
+		else if (periodNumber == 8) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-08-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-08-31");		
+		}
+		else if (periodNumber == 9) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-09-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-09-30");		
+		}
+		else if (periodNumber == 10) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-10-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-10-31");		
+		}
+		else if (periodNumber == 11) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-11-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-11-30");		
+		}
+		else if (periodNumber == 12) {
+			startDatePeriodNode = periodNode.addElement('startDatePeriod').addTextNode(year + "-12-01");
+			endDatePeriodNode = periodNode.addElement('endDatePeriod').addTextNode(year + "-12-31");		
+		}
+	}
 
 	return periodsNode;
 }
 
-/* Function that creates the <openingBalance> element of the xml file */
-// WE DON'T USE IT. THIS ELEMENT IS EMPTY.
+/* Function that creates the <openingBalance> element of the xml file (only if there are opening balances) */
 function addOpeningBalance(xml, banDoc, startDate, endDate) {
 	/*
 	<openingBalance>
-		<opBalDate>1967-08-13</opBalDate>
-		<opBalDesc>String</opBalDesc>
-		<linesCount>1</linesCount>
-		<totalDebit>3.14</totalDebit>
-		<totalCredit>3.14</totalCredit>
-		<obLine>
-			<nr>String</nr>
-			<accID>String</accID>
-			<amnt>3.14</amnt>
-			<amntTp>C</amntTp>
-		</obLine>
-		<obSubledgers>
-			<obSubledger>
-				<sbType>CS</sbType>
-				<sbDesc>String</sbDesc>
-				<linesCount>1</linesCount>
-				<totalDebit>3.14</totalDebit>
-				<totalCredit>3.14</totalCredit>
-				<obSbLine>
-					<nr>String</nr>
-					<obLineNr>String</obLineNr>
-					<desc>String</desc>
-					<amnt>3.14</amnt>
-					<amntTp>C</amntTp>
-					<docRef>String</docRef>
-					<recRef>String</recRef>
-					<matchKeyID>String</matchKeyID>
-					<custSupID>String</custSupID>
-					<invRef>String</invRef>
-					<invPurSalTp>P</invPurSalTp>
-					<invTp>C</invTp>
-					<invDt>1967-08-13</invDt>
-					<invDueDt>1967-08-13</invDueDt>
-					<mutTp>I</mutTp>
-					<costID>String</costID>
-					<prodID>String</prodID>
-					<projID>String</projID>
-					<artGrpID>String</artGrpID>
-					<qntityID>String</qntityID>
-					<qntity>1</qntity>
-				</obSbLine>
-			</obSubledger>
-		</obSubledgers>
+	   <opBalDate>2017-01-01</opBalDate>
+	   <opBalDesc>openings balans</opBalDesc>
+	   <linesCount>22</linesCount>
+	   <totalDebit>1109753.22</totalDebit>
+	   <totalCredit>1109753.22</totalCredit>
+	   <obLine>
+	      <nr>1</nr>
+	      <accID>0020</accID>
+	      <amnt>516225.00</amnt>
+	      <amntTp>D</amntTp>
+	   </obLine>
+	   <obLine>
+	      <nr>2</nr>
+	      <accID>0025</accID>
+	      <amnt>260000.00</amnt>
+	      <amntTp>D</amntTp>
+	   </obLine>
+	   ...
 	</openingBalance>
 	*/
 
+	var openingBalanceNode = '';
 	var opBalDate = '';
 	var opBalDesc = '';
-	var linesCount = '';
+	var linesCount = 0;
 	var totalDebit = '';
 	var totalCredit = '';
-	var nr = '';
+	var nr = 0;
 	var accID = '';
 	var amnt = '';
 	var amntTp = '';
-	var sbType = '';
-	var sbDesc = '';
-	var obLineNr = '';
-	var desc = '';
-	var docRef = '';
-	var recRef = '';
-	var matchKeyID = '';
-	var custSupID = '';
-	var invRef = '';
-	var invPurSalTp = '';
-	var invTp = '';
-	var invDt = '';
-	var invDueDt = '';
-	var mutTp = '';
-	var costID = '';
-	var prodID = '';
-	var projID = '';
-	var artGrpID = '';
-	var qntityID = '';
-	var qntity = '';
 
-	var openingBalanceNode = xml.addElement('openingBalance');
-	var opBalDateNode = openingBalanceNode.addElement('opBalDate').addTextNode(opBalDate);
-	var opBalDescNode = openingBalanceNode.addElement('opBalDesc').addTextNode(opBalDesc);
-	var linesCountNode = openingBalanceNode.addElement('linesCount').addTextNode(linesCount);
-	var totalDebitNode = openingBalanceNode.addElement('totalDebit').addTextNode(totalDebit);
-	var totalCreditNode = openingBalanceNode.addElement('totalCredit').addTextNode(totalCredit);
-	
-	var obLineNode = openingBalanceNode.addElement('obLine');
-	var nrNode = obLineNode.addElement('nr').addTextNode(nr);
-	var accIDNode = obLineNode.addElement('accID').addTextNode(accID);
-	var amntNode = obLineNode.addElement('amnt').addTextNode(amnt);
-	var amntTpNode = obLineNode.addElement('amntTp').addTextNode(amntTp);
+	var year = Banana.Converter.toDate(startDate).getFullYear();
+	opBalDate = year+'-01-01';
+	opBalDesc = 'Beginsaldi';
 
-	var obSubledgersNode = openingBalanceNode.addElement('obSubledgers');
-	var obSubledgerNode = obSubledgersNode.addElement('obSubledger');
-	var sbTypeNode = obSubledgerNode.addElement('sbType').addTextNode(sbType);
-	var sbDescNode = obSubledgerNode.addElement('sbDesc').addTextNode(sbDesc);
-	var linesCountNode = obSubledgerNode.addElement('linesCount').addTextNode(linesCount);
-	var totalDebitNode = obSubledgerNode.addElement('totalDebit').addTextNode(totalDebit);
-	var totalCreditNode = obSubledgerNode.addElement('totalCredit').addTextNode(totalCredit);
-	var obSbLineNode = obSubledgerNode.addElement('obSbLine');
-	var nrNode = obSbLineNode.addElement('nr').addTextNode(nr);
-	var obLineNrNode = obSbLineNode.addElement('obLineNr').addTextNode(obLineNr);
-	var descNode = obSbLineNode.addElement('desc').addTextNode(desc);
-	var amntNode = obSbLineNode.addElement('amnt').addTextNode(amnt);
-	var amntTpNode = obSbLineNode.addElement('amntTp').addTextNode(amntTp);
-	var docRefNode = obSbLineNode.addElement('docRef').addTextNode(docRef);
-	var recRefNode = obSbLineNode.addElement('recRef').addTextNode(recRef);
-	var matchKeyIDNode = obSbLineNode.addElement('matchKeyID').addTextNode(matchKeyID);
-	var custSupIDNode = obSbLineNode.addElement('custSupID').addTextNode(custSupID);
-	var invRefNode = obSbLineNode.addElement('invRef').addTextNode(invRef);
-	var invPurSalTpNode = obSbLineNode.addElement('invPurSalTpinvPurSalTp').addTextNode(invPurSalTp);
-	var invTpNode = obSbLineNode.addElement('invTp').addTextNode(invTp);
-	var invDtNode = obSbLineNode.addElement('invDt').addTextNode(invDt);
-	var invDueDtNode = obSbLineNode.addElement('invDueDt').addTextNode(invDueDt);
-	var mutTpNode = obSbLineNode.addElement('mutTpmutTp').addTextNode(mutTp);
-	var costIDcostIDNode = obSbLineNode.addElement('costID').addTextNode(costID);
-	var prodIDNode = obSbLineNode.addElement('prodID').addTextNode(prodID);
-	var projIDNode = obSbLineNode.addElement('projID').addTextNode(projID);
-	var artGrpIDNode = obSbLineNode.addElement('artGrpID').addTextNode(artGrpID);
-	var qntityIDNode = obSbLineNode.addElement('qntityID').addTextNode(qntityID);
-	var qntityNode = obSbLineNode.addElement('qntity').addTextNode(qntity);
+	//count lines number with opening balances and totalDebit/totalCredit amounts
+    var accountsTable = banDoc.table("Accounts");
+    for (var i = 0; i < accountsTable.rowCount; i++) {
+        var tRow = accountsTable.row(i);
+        if (tRow.value('Account') && tRow.value('Opening')) {
+        	linesCount++;
+        	if (Banana.SDecimal.sign(tRow.value('Opening')) == 1) {
+	        	totalDebit = Banana.SDecimal.add(totalDebit,tRow.value('Opening'));
+	        } else if (Banana.SDecimal.sign(tRow.value('Opening')) == -1) {
+	        	totalCredit = Banana.SDecimal.add(totalCredit,tRow.value('Opening'));
+	        }
+        }
+    }
 
-	return openingBalanceNode;
+	if (linesCount > 0) {
+		var openingBalanceNode = xml.addElement('openingBalance');
+		var opBalDateNode = openingBalanceNode.addElement('opBalDate').addTextNode(opBalDate);
+		var opBalDescNode = openingBalanceNode.addElement('opBalDesc').addTextNode(opBalDesc);
+		var linesCountNode = openingBalanceNode.addElement('linesCount').addTextNode(linesCount);
+		var totalDebitNode = openingBalanceNode.addElement('totalDebit').addTextNode(totalDebit);
+		var totalCreditNode = openingBalanceNode.addElement('totalCredit').addTextNode(Banana.SDecimal.abs(totalCredit));	
+		
+		// Get all the opening balances
+	    var accountsTable = banDoc.table("Accounts");
+	    for (var i = 0; i < accountsTable.rowCount; i++) {
+	        
+	        var tRow = accountsTable.row(i);
+	        var account = tRow.value('Account');
+	        var openingAmount = tRow.value('Opening');
+
+	        if (account && openingAmount) {
+		        nr = nr + 1;
+		        accID = account;
+		        amnt = Banana.SDecimal.abs(openingAmount);
+		        if (Banana.SDecimal.sign(openingAmount) == 1) {
+		        	amntTp = "D";
+		        } else if (Banana.SDecimal.sign(openingAmount) == -1) {
+		        	amntTp = "C";
+		        }
+				var obLineNode = openingBalanceNode.addElement('obLine');
+				var nrNode = obLineNode.addElement('nr').addTextNode(nr);
+				var accIDNode = obLineNode.addElement('accID').addTextNode(accID);
+				var amntNode = obLineNode.addElement('amnt').addTextNode(amnt);
+				var amntTpNode = obLineNode.addElement('amntTp').addTextNode(amntTp);
+		    }
+		}
+		return openingBalanceNode;
+	}
+	else {
+		//Returns the xml only if there are opening balances
+		return;
+	}
 }
 
 /* Function that creates the <transactions> element of the xml file */
@@ -866,7 +752,6 @@ function addTransactions(xml, banDoc, startDate, endDate) {
 	//Add journal element
 	var journal = addJournal(transactionsNode, banDoc, startDate, endDate);
 
-	// DO WE USE IT ???
 	//Add subledgers element
 	//var subledgers = addSubledgers(transactionsNode, banDoc, startDate, endDate);
 	
@@ -958,7 +843,6 @@ function createCustomersList(banDoc, mapGroup, customersGroup) {
 				customersList.custCreditLimit = tRow.value('CreditLimit'); //??? importo limite del debitore
 			}
 			
-			// //supplierLimit element: we don't know exactly what to insert here. Can we do not use it?
 			// customersList.supplierLimit = ''; //??? importo limite del creditore
 
 		    customersList.streetname = tRow.value('Street');
@@ -974,8 +858,7 @@ function createCustomersList(banDoc, mapGroup, customersGroup) {
 				customersList.bankAccNr = tRow.value('BankIban'); //Bank account number
 				customersList.bankIdCd = '';
 			}
-
-			// //changeInfo element: we don't know exactly what to insert here. Can we do not use it?			
+			
 			// customersList.userID = userID;
 			// customersList.changeDateTime = changeDateTime;
 			// customersList.changeDescription = changeDescription;
@@ -1030,7 +913,6 @@ function createSuppliersList(banDoc, mapGroup, suppliersGroup) {
 				suppliersList.custCreditLimit = tRow.value('CreditLimit'); //??? importo limite del debitore
 			}
 			
-			// //supplierLimit element: we don't know exactly what to insert here. Can we do not use it?
 			// suppliersList.supplierLimit = ''; //??? importo limite del creditore
 
 		    suppliersList.streetname = tRow.value('Street');
@@ -1046,8 +928,7 @@ function createSuppliersList(banDoc, mapGroup, suppliersGroup) {
 				suppliersList.bankAccNr = tRow.value('BankIban'); //Bank account number
 				suppliersList.bankIdCd = '';
 			}
-
-			// //changeInfo element: we don't know exactly what to insert here. Can we do not use it?			
+		
 			// suppliersList.userID = userID;
 			// suppliersList.changeDateTime = changeDateTime;
 			// suppliersList.changeDescription = changeDescription;
@@ -1315,8 +1196,6 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 			<trDt>1967-08-13</trDt>
 			<amnt>3.14</amnt>
 			<amntTp>C</amntTp>
-			<sourceID>String</sourceID>
-			<userID>String</userID>
 			<trLine>
 				<nr>String</nr>
 				<accID>String</accID>
@@ -1325,22 +1204,6 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 				<desc>String</desc>
 				<amnt>3.14</amnt>
 				<amntTp>C</amntTp>
-				<recRef>String</recRef>
-				<matchKeyID>String</matchKeyID>
-				<custSupID>String</custSupID>
-				<invRef>String</invRef>
-				<orderRef>String</orderRef>
-				<receivingDocRef>String</receivingDocRef>
-				<shipDocRef>String</shipDocRef>
-				<costID>String</costID>
-				<prodID>String</prodID>
-				<projID>String</projID>
-				<artGrpID>String</artGrpID>
-				<workCostArrRef>String</workCostArrRef>
-				<qntityID>String</qntityID>
-				<qntity>1</qntity>
-				<bankAccNr>String</bankAccNr>
-				<bankIdCd>String</bankIdCd>
 				<vat>
 					<vatID>String</vatID>
 					<vatPerc>0</vatPerc>
@@ -1404,42 +1267,48 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 					var desc = ''; //string
 					var periodNumber = ''; //number
 					var trDt = ''; //transaction date
-					var amnt = ''; //transaction amount: JAmount??
-					var amntTp = ''; //transaction amount type (debit / credit)
-					var sourceID = ''; // string
-					var userID = ''; //string
 
 					//Get values
 					nr = tRow.value('JRowOrigin');
 					desc = tRow.value('JDescription');
-					periodNumber = '1'; //??
 					trDt = tRow.value('JDate');
-					amnt = tRow.value('JAmount');
-					if (Banana.SDecimal.sign(amnt) > 0) {
-						amntTp = 'D'; //debit
-					} else if (Banana.SDecimal.sign(amnt) < 0) {
-						amntTp = 'C'; //credit
+
+					if (trDt.substring(5,7) === '01') {
+						periodNumber = '1';
+					} else if (trDt.substring(5,7) === '02') {
+						periodNumber = '2';
+					} else if (trDt.substring(5,7) === '03') {
+						periodNumber = '3';
+					} else if (trDt.substring(5,7) === '04') {
+						periodNumber = '4';
+					} else if (trDt.substring(5,7) === '05') {
+						periodNumber = '5';
+					} else if (trDt.substring(5,7) === '06') {
+						periodNumber = '6';
+					} else if (trDt.substring(5,7) === '07') {
+						periodNumber = '7';
+					} else if (trDt.substring(5,7) === '08') {
+						periodNumber = '8';
+					} else if (trDt.substring(5,7) === '09') {
+						periodNumber = '9';
+					} else if (trDt.substring(5,7) === '10') {
+						periodNumber = '10';
+					} else if (trDt.substring(5,7) === '11') {
+						periodNumber = '11';
+					} else if (trDt.substring(5,7) === '12') {
+						periodNumber = '12';
 					}
-					sourceID = ''; //This kind of information doesn't exists in Banana, so we let a blank space
-					userID = '';  //This kind of information doesn't exists in Banana, so we let a blank space
 
 					checkStringLength(nr, 1, 35, false);
 					checkStringLength(desc, 0, 9999, false);
 					checkStringLength(periodNumber, 1, 3, false);
 					checkStringLength(trDt, 1, 16, false);
-					checkStringLength(amntTp, 0, 1, false);
-					checkStringLength(sourceID, 0, 35, false);
-					checkStringLength(userID, 0, 35, false);
 
 					transactionNode = journalNode.addElement('transaction');
 					var nrNode = transactionNode.addElement('nr').addTextNode(nr);
 					var descNode = transactionNode.addElement('desc').addTextNode(desc);
 					var periodNumberNode = transactionNode.addElement('periodNumber').addTextNode(periodNumber); 
 					var trDtNode = transactionNode.addElement('trDt').addTextNode(trDt);
-					var amntNode = transactionNode.addElement('amnt').addTextNode(amnt); 
-					var amntTpNode = transactionNode.addElement('amntTp').addTextNode(amntTp);
-					var sourceIDNode = transactionNode.addElement('sourceID').addTextNode(sourceID);
-					var userIDNode = transactionNode.addElement('userID').addTextNode(userID);
 
 					//Reset value of the lines text
 					trLineNode = '';
@@ -1481,22 +1350,6 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 		<desc>String</desc>
 		<amnt>3.14</amnt>
 		<amntTp>C</amntTp>
-		<recRef>String</recRef>
-		<matchKeyID>String</matchKeyID>
-		<custSupID>String</custSupID>
-		<invRef>String</invRef>
-		<orderRef>String</orderRef>
-		<receivingDocRef>String</receivingDocRef>
-		<shipDocRef>String</shipDocRef>
-		<costID>String</costID>
-		<prodID>String</prodID>
-		<projID>String</projID>
-		<artGrpID>String</artGrpID>
-		<workCostArrRef>String</workCostArrRef>
-		<qntityID>String</qntityID>
-		<qntity>1</qntity>
-		<bankAccNr>String</bankAccNr>
-		<bankIdCd>String</bankIdCd>
 		<vat>
 			<vatID>String</vatID>
 			<vatPerc>0</vatPerc>
@@ -1517,48 +1370,12 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	var desc = tRow.value('JAccountDescription'); //string
 	var amnt = ''; //amount
 	var amntTp = ''; //string
-	var recRef = ''; //string
-	var matchKeyID = ''; //string
-	var custSupID = ''; //string
-	var invRef = tRow.value('DocInvoice'); //string
-	var orderRef = ''; //string
-	var receivingDocRef = ''; //string
-	var shipDocRef = ''; //string
-	var costID = ''; //string
-	var prodID = ''; //string
-	var projID = ''; //string
-	var artGrpID = ''; //string
-	var workCostArrRef = ''; //string
-	var qntityID = ''; //string
-	var qntity = ''; //number => tRow.value('Quantity')?
-	var bankAccNr = ''; //string
-	var bankIdCd = ''; //string
-	var vatID = ''; //string
-	var vatPerc = ''; //number
-	var vatAmnt = ''; //amount
-	var vatAmntTp = ''; //string
-	var curCode = ''; //string
-	var curAmnt = ''; //amount
 
- 	//Get values trLine element
- 	if (tRow.value('Cc1')) {
- 		costID = tRow.value('Cc1');
- 	} else if (tRow.value('Cc2')) {
-		costID = tRow.value('Cc2');
- 	} else if (tRow.value('Cc3')) {
-		costID = tRow.value('Cc3');
- 	}
-
- 	amnt = tRow.value('JAmount');
-    if (Banana.SDecimal.sign(amnt) > 0) {
+	amnt = tRow.value('JAmount');
+    if (Banana.SDecimal.sign(amnt) >= 0) {
 		amntTp = 'D';
     } else if (Banana.SDecimal.sign(amnt) < 0) {
     	amntTp = 'C';
-    }
-
-    // Quantity ???
-    if (tRow.value('Quantity')) {
-    	qntity = tRow.value('Quantity');
     }
 
     //Get values vat element
@@ -1586,13 +1403,14 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 		}
 	}
 
-	// //currency element not in basic currency: Can we do not use it?
+	// //currency element not in basic currency
 	// curCode = tRow.value('JTransactionCurrency');
 	// curAmnt = tRow.value('JAmountTransactionCurrency');
 	
 
 	//If the transaction line has an Amount, then we retrieve the data
 	if (amnt) {
+		amnt = Banana.SDecimal.abs(amnt); //amounts must always be positive (D,C for the sign)
 
 		checkStringLength(nr, 1, 35, false);
 		checkStringLength(accID, 1, 35, false);
@@ -1601,27 +1419,6 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 		checkStringLength(desc, 0, 9999, false);
 		checkStringLength(amnt, 0, 20, false);
 		checkStringLength(amntTp, 0, 1, false);
-		checkStringLength(recRef, 0, 255, false);
-		checkStringLength(matchKeyID, 0, 35, false);
-		checkStringLength(custSupID, 0, 35, false);
-		checkStringLength(invRef, 0, 255, false);
-		checkStringLength(orderRef, 0, 255, false);
-		checkStringLength(receivingDocRef, 0, 255, false);
-		checkStringLength(shipDocRef, 0, 255, false);
-		checkStringLength(costID, 0 , 35, false);
-		checkStringLength(prodID, 0, 35, false);
-		checkStringLength(projID, 0, 35, false);
-		checkStringLength(artGrpID, 0, 35, false);
-		checkStringLength(workCostArrRef, 0, 255, false);
-		checkStringLength(qntityID, 0, 35, false);
-		checkStringLength(bankAccNr, 0, 35, false);
-		checkStringLength(bankIdCd, 0, 35, false);
-		checkStringLength(vatID, 0, 35, false);
-		checkStringLength(vatPerc, 0, 8, false);
-		checkStringLength(vatAmnt, 0, 20, false);
-		checkStringLength(vatAmntTp, 0, 1, false);
-		checkStringLength(curCode, 0, 3, false);
-		checkStringLength(curAmnt, 0, 20, false);
 
 		var trLineNode = transactionNode.addElement('trLine');
 		
@@ -1632,38 +1429,17 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 		var descNode = trLineNode.addElement('desc').addTextNode(desc);
 		var amntNode = trLineNode.addElement('amnt').addTextNode(amnt);
 		var amntTpNode = trLineNode.addElement('amntTp').addTextNode(amntTp);
-		var recRefNode = trLineNode.addElement('recRef').addTextNode(recRef);
-		var matchKeyIDNode = trLineNode.addElement('matchKeyID').addTextNode(matchKeyID);
-		var custSupIDNode = trLineNode.addElement('custSupID').addTextNode(custSupID);
-		var invRefNode = trLineNode.addElement('invRef').addTextNode(invRef);
-		var orderRefNode = trLineNode.addElement('orderRef').addTextNode(orderRef);
-		var receivingDocRefNode = trLineNode.addElement('receivingDocRef').addTextNode(receivingDocRef);
-		var shipDocRefNode = trLineNode.addElement('shipDocRef').addTextNode(shipDocRef);
-		var costIDNode = trLineNode.addElement('costID').addTextNode(costID);
-		var prodIDNode = trLineNode.addElement('prodID').addTextNode(prodID);
-		var projIDNode = trLineNode.addElement('projID').addTextNode(projID);
-		var artGrpIDNode = trLineNode.addElement('artGrpID').addTextNode(artGrpID);
-		var workCostArrRefNode = trLineNode.addElement('workCostArrRef').addTextNode(workCostArrRef);
-		var qntityIDNode = trLineNode.addElement('qntityID').addTextNode(qntityID);
-		
-		if (qntity) {
-			checkStringLength(qntity, 0, 10, false);
-			var qntityNode = trLineNode.addElement('qntity').addTextNode(qntity);
-		}
-
-		var bankAccNrNode = trLineNode.addElement('bankAccNr').addTextNode(bankAccNr);
-		var bankIdCdNode = trLineNode.addElement('bankIdCd').addTextNode(bankIdCd);
 
 		//vat element only if there is a vat code (vatID) on the transaction
 		if (vatID) {
 			var vatNode = trLineNode.addElement('vat');
 			var vatIDNode = vatNode.addElement('vatID').addTextNode(vatID);
 			var vatPercNode = vatNode.addElement('vatPerc').addTextNode(vatPerc);
-			var vatAmntNode = vatNode.addElement('vatAmnt').addTextNode(vatAmnt);
+			var vatAmntNode = vatNode.addElement('vatAmnt').addTextNode(Banana.SDecimal.abs(vatAmnt));
 			var vatAmntTpNode = vatNode.addElement('vatAmntTp').addTextNode(vatAmntTp);
 		}
 
-		// //currency element when not in basic currency: we don't know exactly what to insert here. Can we do not use it?
+		// //currency element when not in basic currency
 		// var currencyNode = trLineNode.addElement('currency');
 		// var curCodeNode = currencyNode.addElement('curCode').addTextNode(curCode);
 		// var curAmntNode = currencyNode.addElement('curAmnt').addTextNode(curAmnt);
@@ -1674,7 +1450,7 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	return trLineNode;
 }
 
-//
+// NOT USED
 function addSubledgers(transactionsNode, banDoc, startDate, endDate) {
 
 	/*
@@ -1719,7 +1495,7 @@ function addSubledgers(transactionsNode, banDoc, startDate, endDate) {
 	return subledgersNode;
 }
 
-//
+// NOT USED
 function createSubledgerLine(tRow, transactionNode, banDoc, startDate, endDate) {
 
 	/*
