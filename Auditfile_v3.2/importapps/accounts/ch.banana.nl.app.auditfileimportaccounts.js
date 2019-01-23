@@ -87,7 +87,7 @@ function loadForm(inData, form) {
         var accountNumber = ledgerAccountNode.firstChildElement('accID').text;
         var accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
         var accType = ledgerAccountNode.firstChildElement('accTp').text;
-        var gr = "";
+        var gr = setGrByAccount(accountNumber);
         var bclass = setBclassByAccount(accountNumber, accType);
 
         // if (ledgerAccountNode.hasChildElements('leadCode')) {
