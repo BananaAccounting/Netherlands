@@ -16,8 +16,8 @@
 // @api = 1.0
 // @pubdate = 2019-01-23
 // @publisher = Banana.ch SA
-// @description.en = Auditfile NL - Import Accounts
-// @description.nl = Auditfile NL - Invoerrekeningen
+// @description.en = Auditfile NL - Import Accounts (BETA)
+// @description.nl = Auditfile NL - Invoerrekeningen (BETA)
 // @doctype = *
 // @encoding = utf-8
 // @task = import.accounts
