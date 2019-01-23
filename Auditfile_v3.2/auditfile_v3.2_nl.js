@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2019-01-22
+// @pubdate = 2019-01-23
 // @publisher = Banana.ch SA
 // @description = XML Financial Auditfile
 // @description.nl = XML Auditfile Financieel
@@ -1393,7 +1393,7 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 		var amntTpNode = trLineNode.addElement('amntTp').addTextNode(amntTp);
 
 		//vat element only if there is a vat code (vatID) on the transaction
-		if (vatID) {
+		if (tRow.value('VatCode')) {
 			var vatNode = trLineNode.addElement('vat');
 			var vatIDNode = vatNode.addElement('vatID').addTextNode(vatID);
 			var vatPercNode = vatNode.addElement('vatPerc').addTextNode(vatPerc);

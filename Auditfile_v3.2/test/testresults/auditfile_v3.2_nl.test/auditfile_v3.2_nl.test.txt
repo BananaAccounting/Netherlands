@@ -1694,12 +1694,6 @@
       <desc>Van Bekkum</desc>
       <amnt>400.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>5</nr>
@@ -1709,12 +1703,6 @@
       <desc>Rekening ING</desc>
       <amnt>400.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -1832,12 +1820,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>12</nr>
@@ -1847,12 +1829,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -1868,12 +1844,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>0.29</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>13</nr>
@@ -1883,12 +1853,6 @@
       <desc>DIVERSE BATEN EN LASTEN</desc>
       <amnt>0.29</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -1904,12 +1868,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>14</nr>
@@ -1919,12 +1877,6 @@
       <desc>Rekening ING</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -1940,12 +1892,6 @@
       <desc>Manen</desc>
       <amnt>1300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>18</nr>
@@ -2057,12 +2003,6 @@
       <desc>Rekening ING</desc>
       <amnt>359.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>26</nr>
@@ -2072,12 +2012,6 @@
       <desc>Algemene kosten</desc>
       <amnt>150.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>27</nr>
@@ -2210,12 +2144,6 @@
       <desc>Voorraad goederen</desc>
       <amnt>2750.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>34</nr>
@@ -2225,12 +2153,6 @@
       <desc>Lepage</desc>
       <amnt>2750.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2348,12 +2270,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>577.50</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>39</nr>
@@ -2363,12 +2279,6 @@
       <desc>Kleine ondernemersregeling BTW</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>577.50</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2486,12 +2396,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>46</nr>
@@ -2501,12 +2405,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2522,12 +2420,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>47</nr>
@@ -2537,12 +2429,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2558,12 +2444,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>48</nr>
@@ -2573,12 +2453,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2594,12 +2468,6 @@
       <desc>Rekening ING</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>49</nr>
@@ -2609,12 +2477,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2630,12 +2492,6 @@
       <desc>Kas</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>50</nr>
@@ -2645,12 +2501,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2666,12 +2516,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>51</nr>
@@ -2681,12 +2525,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2702,12 +2540,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>52</nr>
@@ -2717,12 +2549,6 @@
       <desc>Rekening ING</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2738,12 +2564,6 @@
       <desc>Privé opnamen</desc>
       <amnt>925.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>53</nr>
@@ -2753,12 +2573,6 @@
       <desc>Kas</desc>
       <amnt>925.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2885,12 +2699,6 @@
       <desc>KPN</desc>
       <amnt>125.35</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2957,12 +2765,6 @@
       <desc>Crediteuren</desc>
       <amnt>800.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>59</nr>
@@ -2972,12 +2774,6 @@
       <desc>Rekening ING</desc>
       <amnt>800.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -2993,12 +2789,6 @@
       <desc>KPN</desc>
       <amnt>125.35</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>60</nr>
@@ -3008,12 +2798,6 @@
       <desc>Rekening ING</desc>
       <amnt>125.35</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3029,12 +2813,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>61</nr>
@@ -3044,12 +2822,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3065,12 +2837,6 @@
       <desc>Kas</desc>
       <amnt>6500.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>8.68</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>63</nr>
@@ -3161,12 +2927,6 @@
       <desc>Kostprijs verkopen</desc>
       <amnt>2200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>66</nr>
@@ -3176,12 +2936,6 @@
       <desc>Voorraad goederen</desc>
       <amnt>2200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3248,12 +3002,6 @@
       <desc>Verkoopkosten</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>68</nr>
@@ -3263,12 +3011,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3284,12 +3026,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>69</nr>
@@ -3299,12 +3035,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3320,12 +3050,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>70</nr>
@@ -3335,12 +3059,6 @@
       <desc>Kas</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3356,12 +3074,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>71</nr>
@@ -3371,12 +3083,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -3392,12 +3098,6 @@
       <desc>Rekening ING</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>72</nr>
@@ -3407,12 +3107,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -4994,12 +4688,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>86.78</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>5</nr>
@@ -5009,12 +4697,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>86.78</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5030,12 +4712,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>0.29</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>86.78</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>6</nr>
@@ -5045,12 +4721,6 @@
       <desc>DIVERSE BATEN EN LASTEN</desc>
       <amnt>0.29</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>86.78</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5066,12 +4736,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>86.78</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>7</nr>
@@ -5081,12 +4745,6 @@
       <desc>Rekening ING</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>86.78</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5138,12 +4796,6 @@
       <desc>Rekening ING</desc>
       <amnt>359.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>15</nr>
@@ -5153,12 +4805,6 @@
       <desc>Algemene kosten</desc>
       <amnt>150.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>16</nr>
@@ -5291,12 +4937,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>24</nr>
@@ -5306,12 +4946,6 @@
       <desc>Kleine ondernemersregeling BTW</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5378,12 +5012,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>29</nr>
@@ -5393,12 +5021,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5414,12 +5036,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>30</nr>
@@ -5429,12 +5045,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5450,12 +5060,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>31</nr>
@@ -5465,12 +5069,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5486,12 +5084,6 @@
       <desc>Rekening ING</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>32</nr>
@@ -5501,12 +5093,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5522,12 +5108,6 @@
       <desc>Kas</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>33</nr>
@@ -5537,12 +5117,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5558,12 +5132,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>34</nr>
@@ -5573,12 +5141,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5594,12 +5156,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>35</nr>
@@ -5609,12 +5165,6 @@
       <desc>Rekening ING</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5630,12 +5180,6 @@
       <desc>Privé opnamen</desc>
       <amnt>925.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>36</nr>
@@ -5645,12 +5189,6 @@
       <desc>Kas</desc>
       <amnt>925.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5666,12 +5204,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>37</nr>
@@ -5681,12 +5213,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5702,12 +5228,6 @@
       <desc>Kas</desc>
       <amnt>6500.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>39</nr>
@@ -5798,12 +5318,6 @@
       <desc>Kostprijs verkopen</desc>
       <amnt>2200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>42</nr>
@@ -5813,12 +5327,6 @@
       <desc>Voorraad goederen</desc>
       <amnt>2200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5885,12 +5393,6 @@
       <desc>Verkoopkosten</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>44</nr>
@@ -5900,12 +5402,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5921,12 +5417,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>45</nr>
@@ -5936,12 +5426,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5957,12 +5441,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>46</nr>
@@ -5972,12 +5450,6 @@
       <desc>Kas</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -5993,12 +5465,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>47</nr>
@@ -6008,12 +5474,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -6029,12 +5489,6 @@
       <desc>Rekening ING</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>48</nr>
@@ -6044,12 +5498,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
    </journal>
@@ -7616,12 +7064,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>8</nr>
@@ -7631,12 +7073,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -7652,12 +7088,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>0.29</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>9</nr>
@@ -7667,12 +7097,6 @@
       <desc>DIVERSE BATEN EN LASTEN</desc>
       <amnt>0.29</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -7688,12 +7112,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>10</nr>
@@ -7703,12 +7121,6 @@
       <desc>Rekening ING</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>-V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>34.71</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -7760,12 +7172,6 @@
       <desc>Rekening ING</desc>
       <amnt>359.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>18</nr>
@@ -7775,12 +7181,6 @@
       <desc>Algemene kosten</desc>
       <amnt>150.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>19</nr>
@@ -7913,12 +7313,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>27</nr>
@@ -7928,12 +7322,6 @@
       <desc>Kleine ondernemersregeling BTW</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8000,12 +7388,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>32</nr>
@@ -8015,12 +7397,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8036,12 +7412,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>33</nr>
@@ -8051,12 +7421,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8072,12 +7436,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>34</nr>
@@ -8087,12 +7445,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8108,12 +7460,6 @@
       <desc>Rekening ING</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>35</nr>
@@ -8123,12 +7469,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8144,12 +7484,6 @@
       <desc>Kas</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>36</nr>
@@ -8159,12 +7493,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8180,12 +7508,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>37</nr>
@@ -8195,12 +7517,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8216,12 +7532,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>38</nr>
@@ -8231,12 +7541,6 @@
       <desc>Rekening ING</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8252,12 +7556,6 @@
       <desc>Privé opnamen</desc>
       <amnt>925.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>39</nr>
@@ -8267,12 +7565,6 @@
       <desc>Kas</desc>
       <amnt>925.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8288,12 +7580,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>40</nr>
@@ -8303,12 +7589,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8324,12 +7604,6 @@
       <desc>Kas</desc>
       <amnt>6500.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>42</nr>
@@ -8420,12 +7694,6 @@
       <desc>Kostprijs verkopen</desc>
       <amnt>2200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>45</nr>
@@ -8435,12 +7703,6 @@
       <desc>Voorraad goederen</desc>
       <amnt>2200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8507,12 +7769,6 @@
       <desc>Verkoopkosten</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>47</nr>
@@ -8522,12 +7778,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8543,12 +7793,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>48</nr>
@@ -8558,12 +7802,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8579,12 +7817,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>49</nr>
@@ -8594,12 +7826,6 @@
       <desc>Kas</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8615,12 +7841,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>50</nr>
@@ -8630,12 +7850,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -8651,12 +7865,6 @@
       <desc>Rekening ING</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>51</nr>
@@ -8666,12 +7874,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -10470,12 +9672,6 @@
       <desc>Van Bekkum</desc>
       <amnt>400.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>5</nr>
@@ -10485,12 +9681,6 @@
       <desc>Rekening ING</desc>
       <amnt>400.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -10506,12 +9696,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>8</nr>
@@ -10521,12 +9705,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -10542,12 +9720,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>0.29</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>9</nr>
@@ -10557,12 +9729,6 @@
       <desc>DIVERSE BATEN EN LASTEN</desc>
       <amnt>0.29</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -10578,12 +9744,6 @@
       <desc>Verschuldigde BTW</desc>
       <amnt>2065.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>10</nr>
@@ -10593,12 +9753,6 @@
       <desc>Rekening ING</desc>
       <amnt>2065.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -10614,12 +9768,6 @@
       <desc>Manen</desc>
       <amnt>1300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>69.42</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>14</nr>
@@ -10731,12 +9879,6 @@
       <desc>Rekening ING</desc>
       <amnt>359.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>22</nr>
@@ -10746,12 +9888,6 @@
       <desc>Algemene kosten</desc>
       <amnt>150.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>D21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>209.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>23</nr>
@@ -10884,12 +10020,6 @@
       <desc>Voorraad goederen</desc>
       <amnt>2750.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>30</nr>
@@ -10899,12 +10029,6 @@
       <desc>Lepage</desc>
       <amnt>2750.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21-1</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>210.00</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11022,12 +10146,6 @@
       <desc>BTW overeenkomstig het BTW overzicht</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>577.50</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>35</nr>
@@ -11037,12 +10155,6 @@
       <desc>Kleine ondernemersregeling BTW</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21-2</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>577.50</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11109,12 +10221,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>40</nr>
@@ -11124,12 +10230,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11145,12 +10245,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>41</nr>
@@ -11160,12 +10254,6 @@
       <desc>Kas</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11181,12 +10269,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>42</nr>
@@ -11196,12 +10278,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11217,12 +10293,6 @@
       <desc>Rekening ING</desc>
       <amnt>3000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>43</nr>
@@ -11232,12 +10302,6 @@
       <desc>Kruisposten</desc>
       <amnt>3000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11253,12 +10317,6 @@
       <desc>Kas</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>44</nr>
@@ -11268,12 +10326,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11289,12 +10341,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>45</nr>
@@ -11304,12 +10350,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11325,12 +10365,6 @@
       <desc>Kruisposten</desc>
       <amnt>300.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>46</nr>
@@ -11340,12 +10374,6 @@
       <desc>Rekening ING</desc>
       <amnt>300.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11361,12 +10389,6 @@
       <desc>Privé opnamen</desc>
       <amnt>925.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>47</nr>
@@ -11376,12 +10398,6 @@
       <desc>Kas</desc>
       <amnt>925.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>1388.43</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11457,12 +10473,6 @@
       <desc>KPN</desc>
       <amnt>125.35</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11478,12 +10488,6 @@
       <desc>KPN</desc>
       <amnt>125.35</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>51</nr>
@@ -11493,12 +10497,6 @@
       <desc>Rekening ING</desc>
       <amnt>125.35</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11514,12 +10512,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>52</nr>
@@ -11529,12 +10521,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11550,12 +10536,6 @@
       <desc>Kas</desc>
       <amnt>6500.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>IG21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>13.08</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>54</nr>
@@ -11646,12 +10626,6 @@
       <desc>Kostprijs verkopen</desc>
       <amnt>2200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>57</nr>
@@ -11661,12 +10635,6 @@
       <desc>Voorraad goederen</desc>
       <amnt>2200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V0</vatID>
-       <vatPerc>0.00</vatPerc>
-       <vatAmnt>0</vatAmnt>
-       <vatAmntTp>D</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11733,12 +10701,6 @@
       <desc>Verkoopkosten</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>59</nr>
@@ -11748,12 +10710,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11769,12 +10725,6 @@
       <desc>Huur</desc>
       <amnt>650.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>60</nr>
@@ -11784,12 +10734,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>650.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11805,12 +10749,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>61</nr>
@@ -11820,12 +10758,6 @@
       <desc>Kas</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11841,12 +10773,6 @@
       <desc>Crediteuren</desc>
       <amnt>1000.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>62</nr>
@@ -11856,12 +10782,6 @@
       <desc>Rekening Rabobank</desc>
       <amnt>1000.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
     <transaction>
@@ -11877,12 +10797,6 @@
       <desc>Rekening ING</desc>
       <amnt>7200.00</amnt>
       <amntTp>D</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
      <trLine>
       <nr>63</nr>
@@ -11892,12 +10806,6 @@
       <desc>Kruisposten</desc>
       <amnt>7200.00</amnt>
       <amntTp>C</amntTp>
-      <vat>
-       <vatID>V21</vatID>
-       <vatPerc>21.00</vatPerc>
-       <vatAmnt>390.50</vatAmnt>
-       <vatAmntTp>C</vatAmntTp>
-      </vat>
      </trLine>
     </transaction>
    </journal>
