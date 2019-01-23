@@ -28,7 +28,7 @@ ewline   \{
 ewline     "Account": "0100",
 ewline     "BClass": "1",
 ewline     "Description": "Goodwill",
-ewline     "Gr": "1A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -36,7 +36,7 @@ ewline   \{
 ewline     "Account": "0105",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving goodwill",
-ewline     "Gr": "1A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -44,7 +44,7 @@ ewline   \{
 ewline     "Account": "0110",
 ewline     "BClass": "1",
 ewline     "Description": "Aanloopkosten",
-ewline     "Gr": "1A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -52,7 +52,7 @@ ewline   \{
 ewline     "Account": "0115",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving aanloopkosten",
-ewline     "Gr": "1A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -60,7 +60,7 @@ ewline   \{
 ewline     "Account": "0150",
 ewline     "BClass": "1",
 ewline     "Description": "Gebouwen",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -68,7 +68,7 @@ ewline   \{
 ewline     "Account": "0155",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving gebouwen",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -76,7 +76,7 @@ ewline   \{
 ewline     "Account": "0160",
 ewline     "BClass": "1",
 ewline     "Description": "Verbouwing",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -84,7 +84,7 @@ ewline   \{
 ewline     "Account": "0165",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving verbouwingen",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -92,7 +92,7 @@ ewline   \{
 ewline     "Account": "0200",
 ewline     "BClass": "1",
 ewline     "Description": "Machines",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -100,7 +100,7 @@ ewline   \{
 ewline     "Account": "0205",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving machines",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -108,7 +108,7 @@ ewline   \{
 ewline     "Account": "0210",
 ewline     "BClass": "1",
 ewline     "Description": "Inventaris",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -116,7 +116,7 @@ ewline   \{
 ewline     "Account": "0215",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving inventaris",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -124,7 +124,7 @@ ewline   \{
 ewline     "Account": "0220",
 ewline     "BClass": "1",
 ewline     "Description": "Computers",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -132,7 +132,7 @@ ewline   \{
 ewline     "Account": "0225",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving computers",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -140,7 +140,7 @@ ewline   \{
 ewline     "Account": "0230",
 ewline     "BClass": "1",
 ewline     "Description": "Auto's",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -148,7 +148,7 @@ ewline   \{
 ewline     "Account": "0235",
 ewline     "BClass": "1",
 ewline     "Description": "Afschrijving auto's",
-ewline     "Gr": "1B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -156,7 +156,7 @@ ewline   \{
 ewline     "Account": "0300",
 ewline     "BClass": "1",
 ewline     "Description": "Leningen u/g",
-ewline     "Gr": "1C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -164,7 +164,7 @@ ewline   \{
 ewline     "Account": "1000",
 ewline     "BClass": "1",
 ewline     "Description": "Kas",
-ewline     "Gr": "1D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -172,7 +172,7 @@ ewline   \{
 ewline     "Account": "1010",
 ewline     "BClass": "1",
 ewline     "Description": "Rekening ING",
-ewline     "Gr": "1D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -180,7 +180,7 @@ ewline   \{
 ewline     "Account": "1020",
 ewline     "BClass": "1",
 ewline     "Description": "Rekening Rabobank",
-ewline     "Gr": "1D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -188,7 +188,7 @@ ewline   \{
 ewline     "Account": "1050",
 ewline     "BClass": "1",
 ewline     "Description": "Deposito's",
-ewline     "Gr": "1D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -196,7 +196,7 @@ ewline   \{
 ewline     "Account": "1100",
 ewline     "BClass": "1",
 ewline     "Description": "Debiteuren",
-ewline     "Gr": "1E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -204,7 +204,7 @@ ewline   \{
 ewline     "Account": "1110",
 ewline     "BClass": "1",
 ewline     "Description": "Dubieuze debiteuren",
-ewline     "Gr": "1F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -212,7 +212,7 @@ ewline   \{
 ewline     "Account": "1120",
 ewline     "BClass": "1",
 ewline     "Description": "Voorziening dubieuze debiteuren",
-ewline     "Gr": "1F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -220,7 +220,7 @@ ewline   \{
 ewline     "Account": "1200",
 ewline     "BClass": "1",
 ewline     "Description": "Waarborgsommen",
-ewline     "Gr": "1F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -228,7 +228,7 @@ ewline   \{
 ewline     "Account": "1300",
 ewline     "BClass": "1",
 ewline     "Description": "Transitoria actief",
-ewline     "Gr": "1F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -236,7 +236,7 @@ ewline   \{
 ewline     "Account": "1305",
 ewline     "BClass": "1",
 ewline     "Description": "Te vorderen intrest",
-ewline     "Gr": "1F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -244,7 +244,7 @@ ewline   \{
 ewline     "Account": "1310",
 ewline     "BClass": "1",
 ewline     "Description": "Te vorderen diverse posten",
-ewline     "Gr": "1F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -252,7 +252,7 @@ ewline   \{
 ewline     "Account": "2000",
 ewline     "BClass": "1",
 ewline     "Description": "Kruisposten",
-ewline     "Gr": "1G",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -260,7 +260,7 @@ ewline   \{
 ewline     "Account": "2100",
 ewline     "BClass": "1",
 ewline     "Description": "Verschillenrekening",
-ewline     "Gr": "1G",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -268,7 +268,7 @@ ewline   \{
 ewline     "Account": "2200",
 ewline     "BClass": "1",
 ewline     "Description": "Bankgiro betalingen",
-ewline     "Gr": "1G",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -276,7 +276,7 @@ ewline   \{
 ewline     "Account": "3000",
 ewline     "BClass": "1",
 ewline     "Description": "Voorraad goederen",
-ewline     "Gr": "1H",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -284,135 +284,135 @@ ewline   \{
 ewline     "Account": "3100",
 ewline     "BClass": "1",
 ewline     "Description": "Voorziening incourant",
-ewline     "Gr": "1H",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "0500",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Eigen Vermogen",
-ewline     "Gr": "2A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "0505",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Privé stortingen",
-ewline     "Gr": "2A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "0510",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Privé opnamen",
-ewline     "Gr": "2A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "0400",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Leningen o/g",
-ewline     "Gr": "2B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "0600",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Hypotheek o/g",
-ewline     "Gr": "2B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1600",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Crediteuren",
-ewline     "Gr": "2C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1400",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Transitoria passief",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1500",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "BTW overeenkomstig het BTW overzicht",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1505",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Verschuldigde BTW",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1800",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen accountantskosten",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1805",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen administratiekosten",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1815",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen autokosten",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1820",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen advieskosten",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1825",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen huisvestingskosten",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1830",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen intrest",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "1835",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Te betalen diverse kosten",
-ewline     "Gr": "2D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -420,7 +420,7 @@ ewline   \{
 ewline     "Account": "4400",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten goodwill",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -428,7 +428,7 @@ ewline   \{
 ewline     "Account": "4405",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten aanloopkosten",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -436,7 +436,7 @@ ewline   \{
 ewline     "Account": "4410",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten gebouwen",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -444,7 +444,7 @@ ewline   \{
 ewline     "Account": "4415",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten verbouwingen",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -452,7 +452,7 @@ ewline   \{
 ewline     "Account": "4420",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten machines",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -460,7 +460,7 @@ ewline   \{
 ewline     "Account": "4425",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten inventaris",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -468,7 +468,7 @@ ewline   \{
 ewline     "Account": "4430",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten computers",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -476,7 +476,7 @@ ewline   \{
 ewline     "Account": "4435",
 ewline     "BClass": "3",
 ewline     "Description": "Afschrijvingskosten auto's",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -484,7 +484,7 @@ ewline   \{
 ewline     "Account": "4450",
 ewline     "BClass": "3",
 ewline     "Description": "Resultaten verkoop vaste activa",
-ewline     "Gr": "3A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -492,7 +492,7 @@ ewline   \{
 ewline     "Account": "4500",
 ewline     "BClass": "3",
 ewline     "Description": "Huur",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -500,7 +500,7 @@ ewline   \{
 ewline     "Account": "4505",
 ewline     "BClass": "3",
 ewline     "Description": "Servicekosten",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -508,7 +508,7 @@ ewline   \{
 ewline     "Account": "4510",
 ewline     "BClass": "3",
 ewline     "Description": "Energiekosten",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -516,7 +516,7 @@ ewline   \{
 ewline     "Account": "4515",
 ewline     "BClass": "3",
 ewline     "Description": "Onderhoud bedrijfspand",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -524,7 +524,7 @@ ewline   \{
 ewline     "Account": "4520",
 ewline     "BClass": "3",
 ewline     "Description": "Schoonmaakkosten",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -532,7 +532,7 @@ ewline   \{
 ewline     "Account": "4525",
 ewline     "BClass": "3",
 ewline     "Description": "Verzekering bedrijfspand",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -540,7 +540,7 @@ ewline   \{
 ewline     "Account": "4530",
 ewline     "BClass": "3",
 ewline     "Description": "Overige huisvestingskosten",
-ewline     "Gr": "3B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -548,7 +548,7 @@ ewline   \{
 ewline     "Account": "4535",
 ewline     "BClass": "3",
 ewline     "Description": "Onderhoud machines",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -556,7 +556,7 @@ ewline   \{
 ewline     "Account": "4540",
 ewline     "BClass": "3",
 ewline     "Description": "Verzekering machines",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -564,7 +564,7 @@ ewline   \{
 ewline     "Account": "4545",
 ewline     "BClass": "3",
 ewline     "Description": "Overige kosten machines",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -572,7 +572,7 @@ ewline   \{
 ewline     "Account": "4550",
 ewline     "BClass": "3",
 ewline     "Description": "Onderhoud inventaris",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -580,7 +580,7 @@ ewline   \{
 ewline     "Account": "4555",
 ewline     "BClass": "3",
 ewline     "Description": "Verzekering inventaris",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -588,7 +588,7 @@ ewline   \{
 ewline     "Account": "4560",
 ewline     "BClass": "3",
 ewline     "Description": "Overige kosten inventaris",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -596,7 +596,7 @@ ewline   \{
 ewline     "Account": "4565",
 ewline     "BClass": "3",
 ewline     "Description": "Onderhoud computers",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -604,7 +604,7 @@ ewline   \{
 ewline     "Account": "4570",
 ewline     "BClass": "3",
 ewline     "Description": "Verzekering computers",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -612,7 +612,7 @@ ewline   \{
 ewline     "Account": "4575",
 ewline     "BClass": "3",
 ewline     "Description": "Hosting",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -620,7 +620,7 @@ ewline   \{
 ewline     "Account": "4580",
 ewline     "BClass": "3",
 ewline     "Description": "Kosten domeinnamen",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -628,7 +628,7 @@ ewline   \{
 ewline     "Account": "4585",
 ewline     "BClass": "3",
 ewline     "Description": "Onderhoud websites",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -636,7 +636,7 @@ ewline   \{
 ewline     "Account": "4590",
 ewline     "BClass": "3",
 ewline     "Description": "Overige kosten computers",
-ewline     "Gr": "3C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -644,7 +644,7 @@ ewline   \{
 ewline     "Account": "4600",
 ewline     "BClass": "3",
 ewline     "Description": "Leasekosten auto's",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -652,7 +652,7 @@ ewline   \{
 ewline     "Account": "4605",
 ewline     "BClass": "3",
 ewline     "Description": "Brandstof auto's",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -660,7 +660,7 @@ ewline   \{
 ewline     "Account": "4610",
 ewline     "BClass": "3",
 ewline     "Description": "Onderhoud auto's",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -668,7 +668,7 @@ ewline   \{
 ewline     "Account": "4615",
 ewline     "BClass": "3",
 ewline     "Description": "Verzekering auto's",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -676,7 +676,7 @@ ewline   \{
 ewline     "Account": "4620",
 ewline     "BClass": "3",
 ewline     "Description": "Motorrijtuigenbelasting",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -684,7 +684,7 @@ ewline   \{
 ewline     "Account": "4625",
 ewline     "BClass": "3",
 ewline     "Description": "Kilometervergoedingen",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -692,7 +692,7 @@ ewline   \{
 ewline     "Account": "4630",
 ewline     "BClass": "3",
 ewline     "Description": "Privé gebruik auto's",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -700,7 +700,7 @@ ewline   \{
 ewline     "Account": "4635",
 ewline     "BClass": "3",
 ewline     "Description": "Bijdragen auto's",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -708,7 +708,7 @@ ewline   \{
 ewline     "Account": "4640",
 ewline     "BClass": "3",
 ewline     "Description": "Overige autokosten",
-ewline     "Gr": "3D",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -716,7 +716,7 @@ ewline   \{
 ewline     "Account": "4700",
 ewline     "BClass": "3",
 ewline     "Description": "Kantoorartikelen",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -724,7 +724,7 @@ ewline   \{
 ewline     "Account": "4705",
 ewline     "BClass": "3",
 ewline     "Description": "Kleine aanschaffingen kantoor",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -732,7 +732,7 @@ ewline   \{
 ewline     "Account": "4710",
 ewline     "BClass": "3",
 ewline     "Description": "Vakliteratuur",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -740,7 +740,7 @@ ewline   \{
 ewline     "Account": "4715",
 ewline     "BClass": "3",
 ewline     "Description": "Administratiekosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -748,7 +748,7 @@ ewline   \{
 ewline     "Account": "4720",
 ewline     "BClass": "3",
 ewline     "Description": "Advieskosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -756,7 +756,7 @@ ewline   \{
 ewline     "Account": "4725",
 ewline     "BClass": "3",
 ewline     "Description": "Accountantskosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -764,7 +764,7 @@ ewline   \{
 ewline     "Account": "4730",
 ewline     "BClass": "3",
 ewline     "Description": "Porti",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -772,7 +772,7 @@ ewline   \{
 ewline     "Account": "4735",
 ewline     "BClass": "3",
 ewline     "Description": "Drukwerk",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -780,7 +780,7 @@ ewline   \{
 ewline     "Account": "4740",
 ewline     "BClass": "3",
 ewline     "Description": "Bankkosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -788,7 +788,7 @@ ewline   \{
 ewline     "Account": "4745",
 ewline     "BClass": "3",
 ewline     "Description": "Contributies en abonnementen",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -796,7 +796,7 @@ ewline   \{
 ewline     "Account": "4750",
 ewline     "BClass": "3",
 ewline     "Description": "Telefoonkosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -804,7 +804,7 @@ ewline   \{
 ewline     "Account": "4755",
 ewline     "BClass": "3",
 ewline     "Description": "Representatiekosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -812,7 +812,7 @@ ewline   \{
 ewline     "Account": "4760",
 ewline     "BClass": "3",
 ewline     "Description": "Verzekeringen algemeen",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -820,7 +820,7 @@ ewline   \{
 ewline     "Account": "4765",
 ewline     "BClass": "3",
 ewline     "Description": "Kasverschillen",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -828,7 +828,7 @@ ewline   \{
 ewline     "Account": "4770",
 ewline     "BClass": "3",
 ewline     "Description": "Reis- en verblijfkosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -836,7 +836,7 @@ ewline   \{
 ewline     "Account": "4775",
 ewline     "BClass": "3",
 ewline     "Description": "Algemene kosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -844,7 +844,7 @@ ewline   \{
 ewline     "Account": "4800",
 ewline     "BClass": "3",
 ewline     "Description": "Reklamekosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -852,7 +852,7 @@ ewline   \{
 ewline     "Account": "4805",
 ewline     "BClass": "3",
 ewline     "Description": "Advertentiekosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -860,7 +860,7 @@ ewline   \{
 ewline     "Account": "4810",
 ewline     "BClass": "3",
 ewline     "Description": "Relatiegeschenken",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -868,7 +868,7 @@ ewline   \{
 ewline     "Account": "4815",
 ewline     "BClass": "3",
 ewline     "Description": "Verkoopkosten",
-ewline     "Gr": "3E",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -876,127 +876,127 @@ ewline   \{
 ewline     "Account": "4900",
 ewline     "BClass": "3",
 ewline     "Description": "Bijzondere baten en lasten",
-ewline     "Gr": "3F",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8000",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Kostprijs verkopen",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8010",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Prijsverschillen bij inkoop",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8015",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Hulprekening bij boeken ICP",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8100",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Opbrengst verkopen",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8101",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Opbrengst Product A",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8102",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Opbrengst Product B",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8103",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Opbrengst Product C",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8104",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Opbrengst Product D",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8105",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Opbrengst diensten",
-ewline     "Gr": "4A",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8110",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Kleine ondernemersregeling BTW",
-ewline     "Gr": "4B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8120",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Kortingen bij verkoop",
-ewline     "Gr": "4B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8130",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Oninbare vorderingen",
-ewline     "Gr": "4B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8140",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "DIVERSE BATEN EN LASTEN",
-ewline     "Gr": "4B",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8200",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Rentebaten",
-ewline     "Gr": "4C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "8210",
-ewline     "BClass": "4",
+ewline     "BClass": "3",
 ewline     "Description": "Rentelasten",
-ewline     "Gr": "4C",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -1004,7 +1004,7 @@ ewline   \{
 ewline     "Account": "11000",
 ewline     "BClass": "1",
 ewline     "Description": "Vermeulen BV",
-ewline     "Gr": "DEB",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -1012,7 +1012,7 @@ ewline   \{
 ewline     "Account": "11010",
 ewline     "BClass": "1",
 ewline     "Description": "Pieter Vermaas",
-ewline     "Gr": "DEB",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -1020,7 +1020,7 @@ ewline   \{
 ewline     "Account": "11020",
 ewline     "BClass": "1",
 ewline     "Description": "Annelies Schenk",
-ewline     "Gr": "DEB",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
@@ -1028,184 +1028,2554 @@ ewline   \{
 ewline     "Account": "11030",
 ewline     "BClass": "1",
 ewline     "Description": "Pierre Dupont",
-ewline     "Gr": "DEB",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "21000",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Van Bekkum",
-ewline     "Gr": "CRE",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "21010",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Manen",
-ewline     "Gr": "CRE",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "21020",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Pietersen",
-ewline     "Gr": "CRE",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "21030",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "Lepage",
-ewline     "Gr": "CRE",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \},
 ewline   \{
 ewline     "Account": "21040",
-ewline     "BClass": "2",
+ewline     "BClass": "1",
 ewline     "Description": "KPN",
-ewline     "Gr": "CRE",
+ewline     "Gr": "",
 ewline     "Group": "",
 ewline     "Section": ""
 ewline   \}
 ewline ]}\\
 \textvalue{IMPORT FILE}\\
 \textvalue{Section \textbackslash{t} Group \textbackslash{t} Account \textbackslash{t} Description \textbackslash{t} BClass \textbackslash{t} Gr
-ewline  \textbackslash{t}  \textbackslash{t} 0100 \textbackslash{t} Goodwill \textbackslash{t} 1 \textbackslash{t} 1A
-ewline  \textbackslash{t}  \textbackslash{t} 0105 \textbackslash{t} Afschrijving goodwill \textbackslash{t} 1 \textbackslash{t} 1A
-ewline  \textbackslash{t}  \textbackslash{t} 0110 \textbackslash{t} Aanloopkosten \textbackslash{t} 1 \textbackslash{t} 1A
-ewline  \textbackslash{t}  \textbackslash{t} 0115 \textbackslash{t} Afschrijving aanloopkosten \textbackslash{t} 1 \textbackslash{t} 1A
-ewline  \textbackslash{t}  \textbackslash{t} 0150 \textbackslash{t} Gebouwen \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0155 \textbackslash{t} Afschrijving gebouwen \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0160 \textbackslash{t} Verbouwing \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0165 \textbackslash{t} Afschrijving verbouwingen \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0200 \textbackslash{t} Machines \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0205 \textbackslash{t} Afschrijving machines \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0210 \textbackslash{t} Inventaris \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0215 \textbackslash{t} Afschrijving inventaris \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0220 \textbackslash{t} Computers \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0225 \textbackslash{t} Afschrijving computers \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0230 \textbackslash{t} Auto's \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0235 \textbackslash{t} Afschrijving auto's \textbackslash{t} 1 \textbackslash{t} 1B
-ewline  \textbackslash{t}  \textbackslash{t} 0300 \textbackslash{t} Leningen u/g \textbackslash{t} 1 \textbackslash{t} 1C
-ewline  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} Kas \textbackslash{t} 1 \textbackslash{t} 1D
-ewline  \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} Rekening ING \textbackslash{t} 1 \textbackslash{t} 1D
-ewline  \textbackslash{t}  \textbackslash{t} 1020 \textbackslash{t} Rekening Rabobank \textbackslash{t} 1 \textbackslash{t} 1D
-ewline  \textbackslash{t}  \textbackslash{t} 1050 \textbackslash{t} Deposito's \textbackslash{t} 1 \textbackslash{t} 1D
-ewline  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} Debiteuren \textbackslash{t} 1 \textbackslash{t} 1E
-ewline  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t} Dubieuze debiteuren \textbackslash{t} 1 \textbackslash{t} 1F
-ewline  \textbackslash{t}  \textbackslash{t} 1120 \textbackslash{t} Voorziening dubieuze debiteuren \textbackslash{t} 1 \textbackslash{t} 1F
-ewline  \textbackslash{t}  \textbackslash{t} 1200 \textbackslash{t} Waarborgsommen \textbackslash{t} 1 \textbackslash{t} 1F
-ewline  \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} Transitoria actief \textbackslash{t} 1 \textbackslash{t} 1F
-ewline  \textbackslash{t}  \textbackslash{t} 1305 \textbackslash{t} Te vorderen intrest \textbackslash{t} 1 \textbackslash{t} 1F
-ewline  \textbackslash{t}  \textbackslash{t} 1310 \textbackslash{t} Te vorderen diverse posten \textbackslash{t} 1 \textbackslash{t} 1F
-ewline  \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} Kruisposten \textbackslash{t} 1 \textbackslash{t} 1G
-ewline  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} Verschillenrekening \textbackslash{t} 1 \textbackslash{t} 1G
-ewline  \textbackslash{t}  \textbackslash{t} 2200 \textbackslash{t} Bankgiro betalingen \textbackslash{t} 1 \textbackslash{t} 1G
-ewline  \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} Voorraad goederen \textbackslash{t} 1 \textbackslash{t} 1H
-ewline  \textbackslash{t}  \textbackslash{t} 3100 \textbackslash{t} Voorziening incourant \textbackslash{t} 1 \textbackslash{t} 1H
-ewline  \textbackslash{t}  \textbackslash{t} 0500 \textbackslash{t} Eigen Vermogen \textbackslash{t} 2 \textbackslash{t} 2A
-ewline  \textbackslash{t}  \textbackslash{t} 0505 \textbackslash{t} Privé stortingen \textbackslash{t} 2 \textbackslash{t} 2A
-ewline  \textbackslash{t}  \textbackslash{t} 0510 \textbackslash{t} Privé opnamen \textbackslash{t} 2 \textbackslash{t} 2A
-ewline  \textbackslash{t}  \textbackslash{t} 0400 \textbackslash{t} Leningen o/g \textbackslash{t} 2 \textbackslash{t} 2B
-ewline  \textbackslash{t}  \textbackslash{t} 0600 \textbackslash{t} Hypotheek o/g \textbackslash{t} 2 \textbackslash{t} 2B
-ewline  \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} Crediteuren \textbackslash{t} 2 \textbackslash{t} 2C
-ewline  \textbackslash{t}  \textbackslash{t} 1400 \textbackslash{t} Transitoria passief \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} BTW overeenkomstig het BTW overzicht \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1505 \textbackslash{t} Verschuldigde BTW \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1800 \textbackslash{t} Te betalen accountantskosten \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1805 \textbackslash{t} Te betalen administratiekosten \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1815 \textbackslash{t} Te betalen autokosten \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1820 \textbackslash{t} Te betalen advieskosten \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1825 \textbackslash{t} Te betalen huisvestingskosten \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1830 \textbackslash{t} Te betalen intrest \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 1835 \textbackslash{t} Te betalen diverse kosten \textbackslash{t} 2 \textbackslash{t} 2D
-ewline  \textbackslash{t}  \textbackslash{t} 4400 \textbackslash{t} Afschrijvingskosten goodwill \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4405 \textbackslash{t} Afschrijvingskosten aanloopkosten \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4410 \textbackslash{t} Afschrijvingskosten gebouwen \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4415 \textbackslash{t} Afschrijvingskosten verbouwingen \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4420 \textbackslash{t} Afschrijvingskosten machines \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4425 \textbackslash{t} Afschrijvingskosten inventaris \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4430 \textbackslash{t} Afschrijvingskosten computers \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4435 \textbackslash{t} Afschrijvingskosten auto's \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4450 \textbackslash{t} Resultaten verkoop vaste activa \textbackslash{t} 3 \textbackslash{t} 3A
-ewline  \textbackslash{t}  \textbackslash{t} 4500 \textbackslash{t} Huur \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4505 \textbackslash{t} Servicekosten \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4510 \textbackslash{t} Energiekosten \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4515 \textbackslash{t} Onderhoud bedrijfspand \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4520 \textbackslash{t} Schoonmaakkosten \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4525 \textbackslash{t} Verzekering bedrijfspand \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4530 \textbackslash{t} Overige huisvestingskosten \textbackslash{t} 3 \textbackslash{t} 3B
-ewline  \textbackslash{t}  \textbackslash{t} 4535 \textbackslash{t} Onderhoud machines \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4540 \textbackslash{t} Verzekering machines \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4545 \textbackslash{t} Overige kosten machines \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4550 \textbackslash{t} Onderhoud inventaris \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4555 \textbackslash{t} Verzekering inventaris \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4560 \textbackslash{t} Overige kosten inventaris \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4565 \textbackslash{t} Onderhoud computers \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4570 \textbackslash{t} Verzekering computers \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4575 \textbackslash{t} Hosting \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4580 \textbackslash{t} Kosten domeinnamen \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4585 \textbackslash{t} Onderhoud websites \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4590 \textbackslash{t} Overige kosten computers \textbackslash{t} 3 \textbackslash{t} 3C
-ewline  \textbackslash{t}  \textbackslash{t} 4600 \textbackslash{t} Leasekosten auto's \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4605 \textbackslash{t} Brandstof auto's \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4610 \textbackslash{t} Onderhoud auto's \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4615 \textbackslash{t} Verzekering auto's \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4620 \textbackslash{t} Motorrijtuigenbelasting \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4625 \textbackslash{t} Kilometervergoedingen \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4630 \textbackslash{t} Privé gebruik auto's \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4635 \textbackslash{t} Bijdragen auto's \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4640 \textbackslash{t} Overige autokosten \textbackslash{t} 3 \textbackslash{t} 3D
-ewline  \textbackslash{t}  \textbackslash{t} 4700 \textbackslash{t} Kantoorartikelen \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4705 \textbackslash{t} Kleine aanschaffingen kantoor \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4710 \textbackslash{t} Vakliteratuur \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4715 \textbackslash{t} Administratiekosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4720 \textbackslash{t} Advieskosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4725 \textbackslash{t} Accountantskosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4730 \textbackslash{t} Porti \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4735 \textbackslash{t} Drukwerk \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4740 \textbackslash{t} Bankkosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4745 \textbackslash{t} Contributies en abonnementen \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4750 \textbackslash{t} Telefoonkosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4755 \textbackslash{t} Representatiekosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4760 \textbackslash{t} Verzekeringen algemeen \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4765 \textbackslash{t} Kasverschillen \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4770 \textbackslash{t} Reis- en verblijfkosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4775 \textbackslash{t} Algemene kosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4800 \textbackslash{t} Reklamekosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4805 \textbackslash{t} Advertentiekosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4810 \textbackslash{t} Relatiegeschenken \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4815 \textbackslash{t} Verkoopkosten \textbackslash{t} 3 \textbackslash{t} 3E
-ewline  \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t} Bijzondere baten en lasten \textbackslash{t} 3 \textbackslash{t} 3F
-ewline  \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} Kostprijs verkopen \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} Prijsverschillen bij inkoop \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8015 \textbackslash{t} Hulprekening bij boeken ICP \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} Opbrengst verkopen \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8101 \textbackslash{t} Opbrengst Product A \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8102 \textbackslash{t} Opbrengst Product B \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8103 \textbackslash{t} Opbrengst Product C \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8104 \textbackslash{t} Opbrengst Product D \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8105 \textbackslash{t} Opbrengst diensten \textbackslash{t} 4 \textbackslash{t} 4A
-ewline  \textbackslash{t}  \textbackslash{t} 8110 \textbackslash{t} Kleine ondernemersregeling BTW \textbackslash{t} 4 \textbackslash{t} 4B
-ewline  \textbackslash{t}  \textbackslash{t} 8120 \textbackslash{t} Kortingen bij verkoop \textbackslash{t} 4 \textbackslash{t} 4B
-ewline  \textbackslash{t}  \textbackslash{t} 8130 \textbackslash{t} Oninbare vorderingen \textbackslash{t} 4 \textbackslash{t} 4B
-ewline  \textbackslash{t}  \textbackslash{t} 8140 \textbackslash{t} DIVERSE BATEN EN LASTEN \textbackslash{t} 4 \textbackslash{t} 4B
-ewline  \textbackslash{t}  \textbackslash{t} 8200 \textbackslash{t} Rentebaten \textbackslash{t} 4 \textbackslash{t} 4C
-ewline  \textbackslash{t}  \textbackslash{t} 8210 \textbackslash{t} Rentelasten \textbackslash{t} 4 \textbackslash{t} 4C
-ewline  \textbackslash{t}  \textbackslash{t} 11000 \textbackslash{t} Vermeulen BV \textbackslash{t} 1 \textbackslash{t} DEB
-ewline  \textbackslash{t}  \textbackslash{t} 11010 \textbackslash{t} Pieter Vermaas \textbackslash{t} 1 \textbackslash{t} DEB
-ewline  \textbackslash{t}  \textbackslash{t} 11020 \textbackslash{t} Annelies Schenk \textbackslash{t} 1 \textbackslash{t} DEB
-ewline  \textbackslash{t}  \textbackslash{t} 11030 \textbackslash{t} Pierre Dupont \textbackslash{t} 1 \textbackslash{t} DEB
-ewline  \textbackslash{t}  \textbackslash{t} 21000 \textbackslash{t} Van Bekkum \textbackslash{t} 2 \textbackslash{t} CRE
-ewline  \textbackslash{t}  \textbackslash{t} 21010 \textbackslash{t} Manen \textbackslash{t} 2 \textbackslash{t} CRE
-ewline  \textbackslash{t}  \textbackslash{t} 21020 \textbackslash{t} Pietersen \textbackslash{t} 2 \textbackslash{t} CRE
-ewline  \textbackslash{t}  \textbackslash{t} 21030 \textbackslash{t} Lepage \textbackslash{t} 2 \textbackslash{t} CRE
-ewline  \textbackslash{t}  \textbackslash{t} 21040 \textbackslash{t} KPN \textbackslash{t} 2 \textbackslash{t} CRE
+ewline  \textbackslash{t}  \textbackslash{t} 0100 \textbackslash{t} Goodwill \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0105 \textbackslash{t} Afschrijving goodwill \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0110 \textbackslash{t} Aanloopkosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0115 \textbackslash{t} Afschrijving aanloopkosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0150 \textbackslash{t} Gebouwen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0155 \textbackslash{t} Afschrijving gebouwen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0160 \textbackslash{t} Verbouwing \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0165 \textbackslash{t} Afschrijving verbouwingen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0200 \textbackslash{t} Machines \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0205 \textbackslash{t} Afschrijving machines \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0210 \textbackslash{t} Inventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0215 \textbackslash{t} Afschrijving inventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0220 \textbackslash{t} Computers \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0225 \textbackslash{t} Afschrijving computers \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0230 \textbackslash{t} Auto's \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0235 \textbackslash{t} Afschrijving auto's \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0300 \textbackslash{t} Leningen u/g \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} Kas \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1010 \textbackslash{t} Rekening ING \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1020 \textbackslash{t} Rekening Rabobank \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1050 \textbackslash{t} Deposito's \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} Debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t} Dubieuze debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1120 \textbackslash{t} Voorziening dubieuze debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1200 \textbackslash{t} Waarborgsommen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} Transitoria actief \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1305 \textbackslash{t} Te vorderen intrest \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1310 \textbackslash{t} Te vorderen diverse posten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} Kruisposten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} Verschillenrekening \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2200 \textbackslash{t} Bankgiro betalingen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} Voorraad goederen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3100 \textbackslash{t} Voorziening incourant \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0500 \textbackslash{t} Eigen Vermogen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0505 \textbackslash{t} Privé stortingen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0510 \textbackslash{t} Privé opnamen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0400 \textbackslash{t} Leningen o/g \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0600 \textbackslash{t} Hypotheek o/g \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} Crediteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1400 \textbackslash{t} Transitoria passief \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} BTW overeenkomstig het BTW overzicht \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1505 \textbackslash{t} Verschuldigde BTW \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1800 \textbackslash{t} Te betalen accountantskosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1805 \textbackslash{t} Te betalen administratiekosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1815 \textbackslash{t} Te betalen autokosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1820 \textbackslash{t} Te betalen advieskosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1825 \textbackslash{t} Te betalen huisvestingskosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1830 \textbackslash{t} Te betalen intrest \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1835 \textbackslash{t} Te betalen diverse kosten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4400 \textbackslash{t} Afschrijvingskosten goodwill \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4405 \textbackslash{t} Afschrijvingskosten aanloopkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4410 \textbackslash{t} Afschrijvingskosten gebouwen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4415 \textbackslash{t} Afschrijvingskosten verbouwingen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4420 \textbackslash{t} Afschrijvingskosten machines \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4425 \textbackslash{t} Afschrijvingskosten inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4430 \textbackslash{t} Afschrijvingskosten computers \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4435 \textbackslash{t} Afschrijvingskosten auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4450 \textbackslash{t} Resultaten verkoop vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4500 \textbackslash{t} Huur \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4505 \textbackslash{t} Servicekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4510 \textbackslash{t} Energiekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4515 \textbackslash{t} Onderhoud bedrijfspand \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4520 \textbackslash{t} Schoonmaakkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4525 \textbackslash{t} Verzekering bedrijfspand \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4530 \textbackslash{t} Overige huisvestingskosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4535 \textbackslash{t} Onderhoud machines \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4540 \textbackslash{t} Verzekering machines \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4545 \textbackslash{t} Overige kosten machines \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4550 \textbackslash{t} Onderhoud inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4555 \textbackslash{t} Verzekering inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4560 \textbackslash{t} Overige kosten inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4565 \textbackslash{t} Onderhoud computers \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4570 \textbackslash{t} Verzekering computers \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4575 \textbackslash{t} Hosting \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4580 \textbackslash{t} Kosten domeinnamen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4585 \textbackslash{t} Onderhoud websites \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4590 \textbackslash{t} Overige kosten computers \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4600 \textbackslash{t} Leasekosten auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4605 \textbackslash{t} Brandstof auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4610 \textbackslash{t} Onderhoud auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4615 \textbackslash{t} Verzekering auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4620 \textbackslash{t} Motorrijtuigenbelasting \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4625 \textbackslash{t} Kilometervergoedingen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4630 \textbackslash{t} Privé gebruik auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4635 \textbackslash{t} Bijdragen auto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4640 \textbackslash{t} Overige autokosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4700 \textbackslash{t} Kantoorartikelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4705 \textbackslash{t} Kleine aanschaffingen kantoor \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4710 \textbackslash{t} Vakliteratuur \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4715 \textbackslash{t} Administratiekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4720 \textbackslash{t} Advieskosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4725 \textbackslash{t} Accountantskosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4730 \textbackslash{t} Porti \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4735 \textbackslash{t} Drukwerk \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4740 \textbackslash{t} Bankkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4745 \textbackslash{t} Contributies en abonnementen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4750 \textbackslash{t} Telefoonkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4755 \textbackslash{t} Representatiekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4760 \textbackslash{t} Verzekeringen algemeen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4765 \textbackslash{t} Kasverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4770 \textbackslash{t} Reis- en verblijfkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4775 \textbackslash{t} Algemene kosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4800 \textbackslash{t} Reklamekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4805 \textbackslash{t} Advertentiekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4810 \textbackslash{t} Relatiegeschenken \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4815 \textbackslash{t} Verkoopkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t} Bijzondere baten en lasten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} Kostprijs verkopen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} Prijsverschillen bij inkoop \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8015 \textbackslash{t} Hulprekening bij boeken ICP \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} Opbrengst verkopen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8101 \textbackslash{t} Opbrengst Product A \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8102 \textbackslash{t} Opbrengst Product B \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8103 \textbackslash{t} Opbrengst Product C \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8104 \textbackslash{t} Opbrengst Product D \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8105 \textbackslash{t} Opbrengst diensten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8110 \textbackslash{t} Kleine ondernemersregeling BTW \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8120 \textbackslash{t} Kortingen bij verkoop \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8130 \textbackslash{t} Oninbare vorderingen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8140 \textbackslash{t} DIVERSE BATEN EN LASTEN \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8200 \textbackslash{t} Rentebaten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8210 \textbackslash{t} Rentelasten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 11000 \textbackslash{t} Vermeulen BV \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 11010 \textbackslash{t} Pieter Vermaas \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 11020 \textbackslash{t} Annelies Schenk \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 11030 \textbackslash{t} Pierre Dupont \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 21000 \textbackslash{t} Van Bekkum \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 21010 \textbackslash{t} Manen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 21020 \textbackslash{t} Pietersen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 21030 \textbackslash{t} Lepage \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 21040 \textbackslash{t} KPN \textbackslash{t} 1 \textbackslash{t} 
+ewline }\\
+\textvalue{--- FORM ---}\\
+\textvalue{[
+ewline   \{
+ewline     "Account": "0310",
+ewline     "BClass": "1",
+ewline     "Description": "Geplaatst kapitaal",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1101",
+ewline     "BClass": "1",
+ewline     "Description": "473677091",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5110",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijvingskosten gebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5300",
+ewline     "BClass": "3",
+ewline     "Description": "Resultaat verkoop activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8900",
+ewline     "BClass": "3",
+ewline     "Description": "Overige bedrijfsopbrengsten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1670",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening assurantiën",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9405",
+ewline     "BClass": "3",
+ewline     "Description": "Inkoopkortingen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0300",
+ewline     "BClass": "1",
+ewline     "Description": "Gebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1300",
+ewline     "BClass": "1",
+ewline     "Description": "Debiteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5130",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijvingskosten bedrijfsinventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9400",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopkortingen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7100",
+ewline     "BClass": "3",
+ewline     "Description": "Inkoopkosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3330",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad supplementen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5510",
+ewline     "BClass": "3",
+ewline     "Description": "Exploitatiekosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9415",
+ewline     "BClass": "3",
+ewline     "Description": "Betalingsverschillen inkoop",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9410",
+ewline     "BClass": "3",
+ewline     "Description": "Betalingsverschillen verkoop",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4040",
+ewline     "BClass": "3",
+ewline     "Description": "Pensioenlasten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0700",
+ewline     "BClass": "1",
+ewline     "Description": "Eigen vermogen/Aandelenkapitaal",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1500",
+ewline     "BClass": "1",
+ewline     "Description": "Af te dragen BTW hoog",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2200",
+ewline     "BClass": "1",
+ewline     "Description": "Nog te ontvangen facturen/goederen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3000",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad handelsgoederen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9001",
+ewline     "BClass": "3",
+ewline     "Description": "VAT test",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8320",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet outdoor sports",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4900",
+ewline     "BClass": "3",
+ewline     "Description": "Werkkostenregeling",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8330",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet sports supplementen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4901",
+ewline     "BClass": "3",
+ewline     "Description": "Diverse personeelsbeloningen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0301",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving gebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9150",
+ewline     "BClass": "3",
+ewline     "Description": "Resultaat correcties BTW aangifte",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7330",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs verkopen supplementen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7400",
+ewline     "BClass": "3",
+ewline     "Description": "Assemblage",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0750",
+ewline     "BClass": "1",
+ewline     "Description": "Overige reserve",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9200",
+ewline     "BClass": "3",
+ewline     "Description": "Rekenverschillen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5590",
+ewline     "BClass": "3",
+ewline     "Description": "Overige kosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1510",
+ewline     "BClass": "1",
+ewline     "Description": "Af te dragen BTW laag",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2000",
+ewline     "BClass": "1",
+ewline     "Description": "Vraagposten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9300",
+ewline     "BClass": "3",
+ewline     "Description": "Valutaverschillen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2400",
+ewline     "BClass": "1",
+ewline     "Description": "Goederen onderweg",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0800",
+ewline     "BClass": "1",
+ewline     "Description": "Voorziening pensioenen DGA",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9265",
+ewline     "BClass": "3",
+ewline     "Description": "Activa afstoting resultaat",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8310",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet indoor sports",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1000",
+ewline     "BClass": "1",
+ewline     "Description": "Kas",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9270",
+ewline     "BClass": "3",
+ewline     "Description": "Activa realisatie winst",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1599",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening correcties BTW aangifte",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0860",
+ewline     "BClass": "1",
+ewline     "Description": "Activa herwaarderingen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0440",
+ewline     "BClass": "1",
+ewline     "Description": "Bedrijfsinventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0420",
+ewline     "BClass": "1",
+ewline     "Description": "Transport en vervoermiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0485",
+ewline     "BClass": "1",
+ewline     "Description": "Herwaardering bedrijfsinventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1830",
+ewline     "BClass": "1",
+ewline     "Description": "vakantiegeld",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4100",
+ewline     "BClass": "3",
+ewline     "Description": "Sociale lasten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8110",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet buitenland leveringen buiten de EU",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5403",
+ewline     "BClass": "3",
+ewline     "Description": "Kosten ontwikkeling",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1100",
+ewline     "BClass": "1",
+ewline     "Description": "Bank",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0110",
+ewline     "BClass": "1",
+ewline     "Description": "Personeelsactiviteiten \textbackslash{}"buitenshuis\textbackslash{}"",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0480",
+ewline     "BClass": "1",
+ewline     "Description": "Herwaarderingen transport- en vervoersmiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1700",
+ewline     "BClass": "1",
+ewline     "Description": "Loonheffingen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9275",
+ewline     "BClass": "3",
+ewline     "Description": "Activa realisatie verlies",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8010",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet binnenland laag tarief",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1520",
+ewline     "BClass": "1",
+ewline     "Description": "Te vorderen BTW",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2300",
+ewline     "BClass": "1",
+ewline     "Description": "uitgestelde omzet",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9260",
+ewline     "BClass": "3",
+ewline     "Description": "Activa verkoop resultaat",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4010",
+ewline     "BClass": "3",
+ewline     "Description": "Vakantiegeld",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5120",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijvingskosten transport en vervoermiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1512",
+ewline     "BClass": "1",
+ewline     "Description": "Af te dragen BTW verwerving goederen binnen EU",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0450",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving bedrijfsinventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1600",
+ewline     "BClass": "1",
+ewline     "Description": "Crediteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9000",
+ewline     "BClass": "3",
+ewline     "Description": "test grootboekrekening",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2100",
+ewline     "BClass": "1",
+ewline     "Description": "Netto lonen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1310",
+ewline     "BClass": "1",
+ewline     "Description": "Voorziening oninbare debiteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4000",
+ewline     "BClass": "3",
+ewline     "Description": "Bruto lonen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7310",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs verkopen indoor sports",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0430",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving transport en vervoermiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7300",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs verkopen overig",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3320",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad outdoor sports",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1295",
+ewline     "BClass": "1",
+ewline     "Description": "Niet toegewezen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5560",
+ewline     "BClass": "3",
+ewline     "Description": "Bankkosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3700",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraadherwaardering",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7200",
+ewline     "BClass": "3",
+ewline     "Description": "Prijsverschillen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3600",
+ewline     "BClass": "1",
+ewline     "Description": "Goederen in bewerking",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5530",
+ewline     "BClass": "3",
+ewline     "Description": "Autokosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "005",
+ewline     "BClass": "1",
+ewline     "Description": "Goodwill",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8000",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet binnenland hoog tarief",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8020",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet binnenland nultarief",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0770",
+ewline     "BClass": "1",
+ewline     "Description": "Onverdeeld resultaat over dit jaar",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1102",
+ewline     "BClass": "1",
+ewline     "Description": "bank test",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3310",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad indoor sports",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9002",
+ewline     "BClass": "1",
+ewline     "Description": "AP test",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1290",
+ewline     "BClass": "1",
+ewline     "Description": "Kruisposten liquide middelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1511",
+ewline     "BClass": "1",
+ewline     "Description": "Af te dragen BTW levering buiten EU (invoer)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8100",
+ewline     "BClass": "3",
+ewline     "Description": "Omzet buitenland intracommunautair",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5550",
+ewline     "BClass": "3",
+ewline     "Description": "Algemene kosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2900",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening beginbalans",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9250",
+ewline     "BClass": "3",
+ewline     "Description": "Resultaat activa herwaarderingen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1513",
+ewline     "BClass": "1",
+ewline     "Description": "BTW prive-gebruik",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5520",
+ewline     "BClass": "3",
+ewline     "Description": "Kantoorkosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7320",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs verkopen outdoor sports",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5500",
+ewline     "BClass": "3",
+ewline     "Description": "Huisvestingskosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5540",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopkosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \}
+ewline ]}\\
+\textvalue{IMPORT FILE}\\
+\textvalue{Section \textbackslash{t} Group \textbackslash{t} Account \textbackslash{t} Description \textbackslash{t} BClass \textbackslash{t} Gr
+ewline  \textbackslash{t}  \textbackslash{t} 0310 \textbackslash{t} Geplaatst kapitaal \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1101 \textbackslash{t} 473677091 \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5110 \textbackslash{t} Afschrijvingskosten gebouwen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5300 \textbackslash{t} Resultaat verkoop activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8900 \textbackslash{t} Overige bedrijfsopbrengsten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1670 \textbackslash{t} Tussenrekening assurantiën \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9405 \textbackslash{t} Inkoopkortingen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0300 \textbackslash{t} Gebouwen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} Debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5130 \textbackslash{t} Afschrijvingskosten bedrijfsinventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9400 \textbackslash{t} Verkoopkortingen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7100 \textbackslash{t} Inkoopkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3330 \textbackslash{t} Voorraad supplementen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5510 \textbackslash{t} Exploitatiekosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9415 \textbackslash{t} Betalingsverschillen inkoop \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9410 \textbackslash{t} Betalingsverschillen verkoop \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4040 \textbackslash{t} Pensioenlasten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0700 \textbackslash{t} Eigen vermogen/Aandelenkapitaal \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} Af te dragen BTW hoog \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2200 \textbackslash{t} Nog te ontvangen facturen/goederen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} Voorraad handelsgoederen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9001 \textbackslash{t} VAT test \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} Omzet outdoor sports \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t} Werkkostenregeling \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} Omzet sports supplementen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4901 \textbackslash{t} Diverse personeelsbeloningen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0301 \textbackslash{t} Afschrijving gebouwen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9150 \textbackslash{t} Resultaat correcties BTW aangifte \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7330 \textbackslash{t} Kostprijs verkopen supplementen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7400 \textbackslash{t} Assemblage \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0750 \textbackslash{t} Overige reserve \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9200 \textbackslash{t} Rekenverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5590 \textbackslash{t} Overige kosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1510 \textbackslash{t} Af te dragen BTW laag \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} Vraagposten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9300 \textbackslash{t} Valutaverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2400 \textbackslash{t} Goederen onderweg \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0800 \textbackslash{t} Voorziening pensioenen DGA \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9265 \textbackslash{t} Activa afstoting resultaat \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8310 \textbackslash{t} Omzet indoor sports \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} Kas \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9270 \textbackslash{t} Activa realisatie winst \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1599 \textbackslash{t} Tussenrekening correcties BTW aangifte \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0860 \textbackslash{t} Activa herwaarderingen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0440 \textbackslash{t} Bedrijfsinventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0420 \textbackslash{t} Transport en vervoermiddelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0485 \textbackslash{t} Herwaardering bedrijfsinventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1830 \textbackslash{t} vakantiegeld \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4100 \textbackslash{t} Sociale lasten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8110 \textbackslash{t} Omzet buitenland leveringen buiten de EU \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5403 \textbackslash{t} Kosten ontwikkeling \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} Bank \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0110 \textbackslash{t} Personeelsactiviteiten "buitenshuis" \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0480 \textbackslash{t} Herwaarderingen transport- en vervoersmiddelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1700 \textbackslash{t} Loonheffingen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9275 \textbackslash{t} Activa realisatie verlies \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} Omzet binnenland laag tarief \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1520 \textbackslash{t} Te vorderen BTW \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2300 \textbackslash{t} uitgestelde omzet \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9260 \textbackslash{t} Activa verkoop resultaat \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4010 \textbackslash{t} Vakantiegeld \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5120 \textbackslash{t} Afschrijvingskosten transport en vervoermiddelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1512 \textbackslash{t} Af te dragen BTW verwerving goederen binnen EU \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0450 \textbackslash{t} Afschrijving bedrijfsinventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} Crediteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9000 \textbackslash{t} test grootboekrekening \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} Netto lonen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1310 \textbackslash{t} Voorziening oninbare debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4000 \textbackslash{t} Bruto lonen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7310 \textbackslash{t} Kostprijs verkopen indoor sports \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0430 \textbackslash{t} Afschrijving transport en vervoermiddelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7300 \textbackslash{t} Kostprijs verkopen overig \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3320 \textbackslash{t} Voorraad outdoor sports \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1295 \textbackslash{t} Niet toegewezen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5560 \textbackslash{t} Bankkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3700 \textbackslash{t} Voorraadherwaardering \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7200 \textbackslash{t} Prijsverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3600 \textbackslash{t} Goederen in bewerking \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5530 \textbackslash{t} Autokosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 005 \textbackslash{t} Goodwill \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} Omzet binnenland hoog tarief \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8020 \textbackslash{t} Omzet binnenland nultarief \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0770 \textbackslash{t} Onverdeeld resultaat over dit jaar \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1102 \textbackslash{t} bank test \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3310 \textbackslash{t} Voorraad indoor sports \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9002 \textbackslash{t} AP test \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1290 \textbackslash{t} Kruisposten liquide middelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1511 \textbackslash{t} Af te dragen BTW levering buiten EU (invoer) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} Omzet buitenland intracommunautair \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5550 \textbackslash{t} Algemene kosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2900 \textbackslash{t} Tussenrekening beginbalans \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9250 \textbackslash{t} Resultaat activa herwaarderingen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1513 \textbackslash{t} BTW prive-gebruik \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5520 \textbackslash{t} Kantoorkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7320 \textbackslash{t} Kostprijs verkopen outdoor sports \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5500 \textbackslash{t} Huisvestingskosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5540 \textbackslash{t} Verkoopkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline }\\
+\textvalue{--- FORM ---}\\
+\textvalue{[
+ewline   \{
+ewline     "Account": "0020",
+ewline     "BClass": "1",
+ewline     "Description": "Bedrijfsgebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0025",
+ewline     "BClass": "1",
+ewline     "Description": "Bedrijfsterreinen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0030",
+ewline     "BClass": "1",
+ewline     "Description": "Computers en software",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0035",
+ewline     "BClass": "1",
+ewline     "Description": "Machines en installaties",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0040",
+ewline     "BClass": "1",
+ewline     "Description": "Transportmiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0050",
+ewline     "BClass": "1",
+ewline     "Description": "Inventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0120",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving bedrijfsgebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0125",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving bedrijfsterreinen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0130",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving computers en software",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0135",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving machines en installaties",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0140",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving transportmiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0150",
+ewline     "BClass": "1",
+ewline     "Description": "Afschrijving inventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0280",
+ewline     "BClass": "1",
+ewline     "Description": "Effecten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0600",
+ewline     "BClass": "1",
+ewline     "Description": "Aandelenkapitaal",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0610",
+ewline     "BClass": "1",
+ewline     "Description": "Onverdeelde winst",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0620",
+ewline     "BClass": "1",
+ewline     "Description": "Algemene reserve",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0650",
+ewline     "BClass": "1",
+ewline     "Description": "Vermogen firmant A",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0800",
+ewline     "BClass": "1",
+ewline     "Description": "Leningen O/G",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0810",
+ewline     "BClass": "1",
+ewline     "Description": "Hypotheken O/G",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0820",
+ewline     "BClass": "1",
+ewline     "Description": "Leasing",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "0934",
+ewline     "BClass": "1",
+ewline     "Description": "Herinvesteringsreserve",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1000",
+ewline     "BClass": "1",
+ewline     "Description": "Kas",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1100",
+ewline     "BClass": "1",
+ewline     "Description": "RABOBANK NL44RABO0123456789",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1110",
+ewline     "BClass": "1",
+ewline     "Description": "ING BANK NL39INGB0661262286",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1200",
+ewline     "BClass": "1",
+ewline     "Description": "ABN AMRO BANK NL87ABNA0614973465",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1240",
+ewline     "BClass": "1",
+ewline     "Description": "Vervangingsreserve",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1250",
+ewline     "BClass": "1",
+ewline     "Description": "Vervangingsreserve",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1300",
+ewline     "BClass": "1",
+ewline     "Description": "Debiteuren binnenland",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1310",
+ewline     "BClass": "1",
+ewline     "Description": "Debiteuren buitenland",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1320",
+ewline     "BClass": "1",
+ewline     "Description": "Voorziening dub. debiteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1350",
+ewline     "BClass": "1",
+ewline     "Description": "Dubieuze debiteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1400",
+ewline     "BClass": "1",
+ewline     "Description": "Prive firmant A",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1600",
+ewline     "BClass": "1",
+ewline     "Description": "Crediteuren binnenland",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1610",
+ewline     "BClass": "1",
+ewline     "Description": "Crediteuren buitenland",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1710",
+ewline     "BClass": "1",
+ewline     "Description": "Te vorderen btw",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1750",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen btw 0\%",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1760",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen btw laag (6\%)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1770",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen btw hoog (21\%)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1780",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen btw overige tar.",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1785",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen btw privegebruik",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1790",
+ewline     "BClass": "1",
+ewline     "Description": "Te verrekenen btw",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1810",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen AOW/AWW/AKW/AWBZ",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1820",
+ewline     "BClass": "1",
+ewline     "Description": "Te betalen sociale lasten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1910",
+ewline     "BClass": "1",
+ewline     "Description": "Vooruitbetaalde bedragen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1920",
+ewline     "BClass": "1",
+ewline     "Description": "Vooruitontvangen bedragen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1960",
+ewline     "BClass": "1",
+ewline     "Description": "Nog te ontvangen bedragen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1970",
+ewline     "BClass": "1",
+ewline     "Description": "Nog te betalen bedragen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1980",
+ewline     "BClass": "1",
+ewline     "Description": "Overloop permanence activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "1985",
+ewline     "BClass": "1",
+ewline     "Description": "Overloop permanence passiva",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2000",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening financieel",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2010",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening betalingen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2016",
+ewline     "BClass": "1",
+ewline     "Description": "Gefactureerd op projecten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2017",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2020",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening voorraad",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2030",
+ewline     "BClass": "1",
+ewline     "Description": "Ontvangen facturen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2035",
+ewline     "BClass": "1",
+ewline     "Description": "Ontvangen goederen afstemmen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2040",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening Activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2050",
+ewline     "BClass": "1",
+ewline     "Description": "Kruisposten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2080",
+ewline     "BClass": "1",
+ewline     "Description": "Tussenrekening permanence",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2090",
+ewline     "BClass": "1",
+ewline     "Description": "Vraagposten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "2222",
+ewline     "BClass": "1",
+ewline     "Description": "Vooruitbetalingen onderhoud",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3000",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad kamerplanten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3010",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad aardewerk",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3020",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad tuinmeubelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3030",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad tuingereedschap",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3040",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad overige tuinbenodigdheden",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3050",
+ewline     "BClass": "1",
+ewline     "Description": "Voorraad vijvers en toebehoren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "3090",
+ewline     "BClass": "1",
+ewline     "Description": "Overige inkopen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4000",
+ewline     "BClass": "3",
+ewline     "Description": "Lonen en salarissen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4010",
+ewline     "BClass": "3",
+ewline     "Description": "Vakantiegeld",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4040",
+ewline     "BClass": "3",
+ewline     "Description": "Ziekengeld",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4050",
+ewline     "BClass": "3",
+ewline     "Description": "Sociale lasten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4090",
+ewline     "BClass": "3",
+ewline     "Description": "Overige personeelskosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4091",
+ewline     "BClass": "3",
+ewline     "Description": "Verstrekkingen personeel",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4095",
+ewline     "BClass": "3",
+ewline     "Description": "Interne kosten medewerkers",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4110",
+ewline     "BClass": "3",
+ewline     "Description": "Huur gebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4130",
+ewline     "BClass": "3",
+ewline     "Description": "Belastingen onroerend goed",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4160",
+ewline     "BClass": "3",
+ewline     "Description": "Onderhoud/Schoonmaken gebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4170",
+ewline     "BClass": "3",
+ewline     "Description": "Gas, licht en water",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4260",
+ewline     "BClass": "3",
+ewline     "Description": "Onderhoud inventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4300",
+ewline     "BClass": "3",
+ewline     "Description": "Kantoorbenodigdheden",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4310",
+ewline     "BClass": "3",
+ewline     "Description": "Zegel- en portokosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4320",
+ewline     "BClass": "3",
+ewline     "Description": "Telefoonkosten (mobiel)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4330",
+ewline     "BClass": "3",
+ewline     "Description": "Drukwerk",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4410",
+ewline     "BClass": "3",
+ewline     "Description": "Kosten bedrijfsauto's",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4500",
+ewline     "BClass": "3",
+ewline     "Description": "Reclame / Advertenties",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4610",
+ewline     "BClass": "3",
+ewline     "Description": "Interest",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4700",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving dub. debiteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4730",
+ewline     "BClass": "3",
+ewline     "Description": "Accountantskosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4750",
+ewline     "BClass": "3",
+ewline     "Description": "Assuranties",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4790",
+ewline     "BClass": "3",
+ewline     "Description": "Diverse algemene kosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4801",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving oprichting en uitgifte van aandelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4803",
+ewline     "BClass": "3",
+ewline     "Description": "Afschr. onderzoek en ontwikkeling",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4811",
+ewline     "BClass": "3",
+ewline     "Description": "Afschr. overige immateri�le vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4820",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving bedrijfsgebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4825",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving bedrijfsterreinen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4830",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving computer en software",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4835",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving machines en installaties",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4840",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving transportmiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "4850",
+ewline     "BClass": "3",
+ewline     "Description": "Afschrijving inventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5000",
+ewline     "BClass": "1",
+ewline     "Description": "Dekking",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "5500",
+ewline     "BClass": "3",
+ewline     "Description": "Dekking Projectkosten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6050",
+ewline     "BClass": "1",
+ewline     "Description": "Dekking assemblage",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6510",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Materiaal (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6512",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Materiaal (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6515",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Materiaal (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6520",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Urenl (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6522",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Uren (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6525",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Uren (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6530",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Werk Derden (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6532",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Werk Derden (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6535",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Werk Derden (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6540",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Diversen (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6542",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Diversen (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "6545",
+ewline     "BClass": "1",
+ewline     "Description": "OHW Diversen (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7000",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs kamerplanten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7010",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs aardewerk",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7020",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs tuinmeubelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7030",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs tuingereedschap",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7040",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs overige tuinbenodigdheden",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7050",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs vijvers en toebehoren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7080",
+ewline     "BClass": "3",
+ewline     "Description": "Inkoopprijsverschillen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7090",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Inkopen diversen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7510",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Materiaal (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7512",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Materiaal (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7515",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Materiaal (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7520",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Uren (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7522",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Uren (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7525",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Uren (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7530",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Werk Derden (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7532",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Werk Derden (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7535",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Werk Derden  (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7540",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Diversen (Tuinaanleg en Onderhoud)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7542",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Diversen (Aanleg- en constructiewerk)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "7545",
+ewline     "BClass": "3",
+ewline     "Description": "Kostprijs Diversen (Bestrating en Montage)",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8000",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst kamerplanten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8010",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst aardewerk",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8020",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst tuinmeubelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8030",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst tuingereedschap",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8040",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst overige tuinbenodigdheden",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8050",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst vijvers en toebehoren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8060",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst onderhoud",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8070",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst tuinaanleg en bestrating",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8090",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst diversen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "8600",
+ewline     "BClass": "3",
+ewline     "Description": "Opbrengst projecten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9030",
+ewline     "BClass": "3",
+ewline     "Description": "Betalingsverschillen debiteur",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9035",
+ewline     "BClass": "3",
+ewline     "Description": "Betalingsverschillen crediteur",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9040",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat imm. vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9041",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat bedrijfsgebouwen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9042",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat bedrijfsterreinen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9043",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat computers  en software",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9044",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat machines en installaties",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9045",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat transportmiddelen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9046",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaat inventaris",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9050",
+ewline     "BClass": "3",
+ewline     "Description": "Betalingskortingen debiteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9055",
+ewline     "BClass": "3",
+ewline     "Description": "Betalingskortingen crediteuren",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9070",
+ewline     "BClass": "3",
+ewline     "Description": "Koersverschillen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9080",
+ewline     "BClass": "3",
+ewline     "Description": "Herwaardering voorraad",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9090",
+ewline     "BClass": "3",
+ewline     "Description": "Diverse baten en lasten",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9170",
+ewline     "BClass": "3",
+ewline     "Description": "Kasverschillen",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9300",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaten vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9800",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopwinst imm. vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9810",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopwinst materi�le. vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9900",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopresultaten imm. vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \},
+ewline   \{
+ewline     "Account": "9910",
+ewline     "BClass": "3",
+ewline     "Description": "Verkoopverlies materi�le vaste activa",
+ewline     "Gr": "",
+ewline     "Group": "",
+ewline     "Section": ""
+ewline   \}
+ewline ]}\\
+\textvalue{IMPORT FILE}\\
+\textvalue{Section \textbackslash{t} Group \textbackslash{t} Account \textbackslash{t} Description \textbackslash{t} BClass \textbackslash{t} Gr
+ewline  \textbackslash{t}  \textbackslash{t} 0020 \textbackslash{t} Bedrijfsgebouwen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0025 \textbackslash{t} Bedrijfsterreinen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0030 \textbackslash{t} Computers en software \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0035 \textbackslash{t} Machines en installaties \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0040 \textbackslash{t} Transportmiddelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0050 \textbackslash{t} Inventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0120 \textbackslash{t} Afschrijving bedrijfsgebouwen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0125 \textbackslash{t} Afschrijving bedrijfsterreinen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0130 \textbackslash{t} Afschrijving computers en software \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0135 \textbackslash{t} Afschrijving machines en installaties \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0140 \textbackslash{t} Afschrijving transportmiddelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0150 \textbackslash{t} Afschrijving inventaris \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0280 \textbackslash{t} Effecten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0600 \textbackslash{t} Aandelenkapitaal \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0610 \textbackslash{t} Onverdeelde winst \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0620 \textbackslash{t} Algemene reserve \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0650 \textbackslash{t} Vermogen firmant A \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0800 \textbackslash{t} Leningen O/G \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0810 \textbackslash{t} Hypotheken O/G \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0820 \textbackslash{t} Leasing \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 0934 \textbackslash{t} Herinvesteringsreserve \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} Kas \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} RABOBANK NL44RABO0123456789 \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t} ING BANK NL39INGB0661262286 \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1200 \textbackslash{t} ABN AMRO BANK NL87ABNA0614973465 \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1240 \textbackslash{t} Vervangingsreserve \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1250 \textbackslash{t} Vervangingsreserve \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} Debiteuren binnenland \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1310 \textbackslash{t} Debiteuren buitenland \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1320 \textbackslash{t} Voorziening dub. debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1350 \textbackslash{t} Dubieuze debiteuren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1400 \textbackslash{t} Prive firmant A \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} Crediteuren binnenland \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1610 \textbackslash{t} Crediteuren buitenland \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1710 \textbackslash{t} Te vorderen btw \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1750 \textbackslash{t} Te betalen btw 0\% \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1760 \textbackslash{t} Te betalen btw laag (6\%) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} Te betalen btw hoog (21\%) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1780 \textbackslash{t} Te betalen btw overige tar. \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1785 \textbackslash{t} Te betalen btw privegebruik \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1790 \textbackslash{t} Te verrekenen btw \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1810 \textbackslash{t} Te betalen AOW/AWW/AKW/AWBZ \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1820 \textbackslash{t} Te betalen sociale lasten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1910 \textbackslash{t} Vooruitbetaalde bedragen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1920 \textbackslash{t} Vooruitontvangen bedragen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1960 \textbackslash{t} Nog te ontvangen bedragen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1970 \textbackslash{t} Nog te betalen bedragen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1980 \textbackslash{t} Overloop permanence activa \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 1985 \textbackslash{t} Overloop permanence passiva \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} Tussenrekening financieel \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2010 \textbackslash{t} Tussenrekening betalingen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2016 \textbackslash{t} Gefactureerd op projecten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2017 \textbackslash{t} Tussenrekening vaste activa \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} Tussenrekening voorraad \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2030 \textbackslash{t} Ontvangen facturen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} Ontvangen goederen afstemmen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2040 \textbackslash{t} Tussenrekening Activa \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2050 \textbackslash{t} Kruisposten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2080 \textbackslash{t} Tussenrekening permanence \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} Vraagposten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 2222 \textbackslash{t} Vooruitbetalingen onderhoud \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} Voorraad kamerplanten \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3010 \textbackslash{t} Voorraad aardewerk \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3020 \textbackslash{t} Voorraad tuinmeubelen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3030 \textbackslash{t} Voorraad tuingereedschap \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} Voorraad overige tuinbenodigdheden \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3050 \textbackslash{t} Voorraad vijvers en toebehoren \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 3090 \textbackslash{t} Overige inkopen \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4000 \textbackslash{t} Lonen en salarissen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4010 \textbackslash{t} Vakantiegeld \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4040 \textbackslash{t} Ziekengeld \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4050 \textbackslash{t} Sociale lasten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4090 \textbackslash{t} Overige personeelskosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4091 \textbackslash{t} Verstrekkingen personeel \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4095 \textbackslash{t} Interne kosten medewerkers \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4110 \textbackslash{t} Huur gebouwen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4130 \textbackslash{t} Belastingen onroerend goed \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4160 \textbackslash{t} Onderhoud/Schoonmaken gebouwen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4170 \textbackslash{t} Gas, licht en water \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4260 \textbackslash{t} Onderhoud inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4300 \textbackslash{t} Kantoorbenodigdheden \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4310 \textbackslash{t} Zegel- en portokosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4320 \textbackslash{t} Telefoonkosten (mobiel) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4330 \textbackslash{t} Drukwerk \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4410 \textbackslash{t} Kosten bedrijfsauto's \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4500 \textbackslash{t} Reclame / Advertenties \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4610 \textbackslash{t} Interest \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4700 \textbackslash{t} Afschrijving dub. debiteuren \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4730 \textbackslash{t} Accountantskosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4750 \textbackslash{t} Assuranties \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4790 \textbackslash{t} Diverse algemene kosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4801 \textbackslash{t} Afschrijving oprichting en uitgifte van aandelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4803 \textbackslash{t} Afschr. onderzoek en ontwikkeling \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4811 \textbackslash{t} Afschr. overige immateri�le vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4820 \textbackslash{t} Afschrijving bedrijfsgebouwen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4825 \textbackslash{t} Afschrijving bedrijfsterreinen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4830 \textbackslash{t} Afschrijving computer en software \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4835 \textbackslash{t} Afschrijving machines en installaties \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4840 \textbackslash{t} Afschrijving transportmiddelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 4850 \textbackslash{t} Afschrijving inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} Dekking \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 5500 \textbackslash{t} Dekking Projectkosten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6050 \textbackslash{t} Dekking assemblage \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6510 \textbackslash{t} OHW Materiaal (Tuinaanleg en Onderhoud) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6512 \textbackslash{t} OHW Materiaal (Aanleg- en constructiewerk) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6515 \textbackslash{t} OHW Materiaal (Bestrating en Montage) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6520 \textbackslash{t} OHW Urenl (Tuinaanleg en Onderhoud) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6522 \textbackslash{t} OHW Uren (Aanleg- en constructiewerk) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6525 \textbackslash{t} OHW Uren (Bestrating en Montage) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6530 \textbackslash{t} OHW Werk Derden (Tuinaanleg en Onderhoud) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6532 \textbackslash{t} OHW Werk Derden (Aanleg- en constructiewerk) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6535 \textbackslash{t} OHW Werk Derden (Bestrating en Montage) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6540 \textbackslash{t} OHW Diversen (Tuinaanleg en Onderhoud) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6542 \textbackslash{t} OHW Diversen (Aanleg- en constructiewerk) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 6545 \textbackslash{t} OHW Diversen (Bestrating en Montage) \textbackslash{t} 1 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7000 \textbackslash{t} Kostprijs kamerplanten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7010 \textbackslash{t} Kostprijs aardewerk \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7020 \textbackslash{t} Kostprijs tuinmeubelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7030 \textbackslash{t} Kostprijs tuingereedschap \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7040 \textbackslash{t} Kostprijs overige tuinbenodigdheden \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7050 \textbackslash{t} Kostprijs vijvers en toebehoren \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7080 \textbackslash{t} Inkoopprijsverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7090 \textbackslash{t} Kostprijs Inkopen diversen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7510 \textbackslash{t} Kostprijs Materiaal (Tuinaanleg en Onderhoud) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7512 \textbackslash{t} Kostprijs Materiaal (Aanleg- en constructiewerk) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7515 \textbackslash{t} Kostprijs Materiaal (Bestrating en Montage) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7520 \textbackslash{t} Kostprijs Uren (Tuinaanleg en Onderhoud) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7522 \textbackslash{t} Kostprijs Uren (Aanleg- en constructiewerk) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7525 \textbackslash{t} Kostprijs Uren (Bestrating en Montage) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7530 \textbackslash{t} Kostprijs Werk Derden (Tuinaanleg en Onderhoud) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7532 \textbackslash{t} Kostprijs Werk Derden (Aanleg- en constructiewerk) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7535 \textbackslash{t} Kostprijs Werk Derden  (Bestrating en Montage) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7540 \textbackslash{t} Kostprijs Diversen (Tuinaanleg en Onderhoud) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7542 \textbackslash{t} Kostprijs Diversen (Aanleg- en constructiewerk) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 7545 \textbackslash{t} Kostprijs Diversen (Bestrating en Montage) \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} Opbrengst kamerplanten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} Opbrengst aardewerk \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8020 \textbackslash{t} Opbrengst tuinmeubelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8030 \textbackslash{t} Opbrengst tuingereedschap \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8040 \textbackslash{t} Opbrengst overige tuinbenodigdheden \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8050 \textbackslash{t} Opbrengst vijvers en toebehoren \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8060 \textbackslash{t} Opbrengst onderhoud \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8070 \textbackslash{t} Opbrengst tuinaanleg en bestrating \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} Opbrengst diversen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 8600 \textbackslash{t} Opbrengst projecten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9030 \textbackslash{t} Betalingsverschillen debiteur \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9035 \textbackslash{t} Betalingsverschillen crediteur \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9040 \textbackslash{t} Verkoopresultaat imm. vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9041 \textbackslash{t} Verkoopresultaat bedrijfsgebouwen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9042 \textbackslash{t} Verkoopresultaat bedrijfsterreinen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9043 \textbackslash{t} Verkoopresultaat computers  en software \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9044 \textbackslash{t} Verkoopresultaat machines en installaties \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9045 \textbackslash{t} Verkoopresultaat transportmiddelen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9046 \textbackslash{t} Verkoopresultaat inventaris \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9050 \textbackslash{t} Betalingskortingen debiteuren \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9055 \textbackslash{t} Betalingskortingen crediteuren \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9070 \textbackslash{t} Koersverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9080 \textbackslash{t} Herwaardering voorraad \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9090 \textbackslash{t} Diverse baten en lasten \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9170 \textbackslash{t} Kasverschillen \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9300 \textbackslash{t} Verkoopresultaten vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9800 \textbackslash{t} Verkoopwinst imm. vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9810 \textbackslash{t} Verkoopwinst materi�le. vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9900 \textbackslash{t} Verkoopresultaten imm. vaste activa \textbackslash{t} 3 \textbackslash{t} 
+ewline  \textbackslash{t}  \textbackslash{t} 9910 \textbackslash{t} Verkoopverlies materi�le vaste activa \textbackslash{t} 3 \textbackslash{t} 
 ewline }\\
 \keyvalue{Result}{Passed}
 \end{test}

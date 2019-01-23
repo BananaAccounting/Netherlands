@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfileimportaccounts.js
 // @api = 1.0
-// @pubdate = 2019-01-22
+// @pubdate = 2019-01-23
 // @publisher = Banana.ch SA
 // @description.en = Auditfile NL - Import Accounts
 // @description.nl = Auditfile NL - Invoerrekeningen
@@ -31,36 +31,6 @@
 *
 *   Import the accounts taken from the xml file.
 *   Accounts that already exist are not imported.
-*
-*
-    Account, BClass and Gr based on the ac2 template for NL
-
-    accounts                BClass  Gr
-    ==================================
-    0100 … 0149             1       1A
-    0150 … 0299             1       1B
-    0300 … 0499             1       1C
-    1000 … 1099             1       1D
-    1100 … 1109             1       1E
-    1110 … 1399             1       1F
-    2000 … 2999             1       1G
-    3000 … 3999             1       1H
-    0500 … 0599             2       2A
-    0400 … 0499             2       2B
-    0600 … 0699             2       2B
-    1600 … 1699             2       2C
-    1400 … 1999 !=1600…1699 2       2D
-    4400 … 4499             3       3A
-    4500 … 4534             3       3B
-    4535 … 4599             3       3C
-    4600 … 4699             3       3D
-    4700 … 4899             3       3E
-    4900 … 4999             3       3F
-    8000 … 8109             4       4A
-    8110 … 8199             4       4B
-    8200 … 8299             4       4C
-    11000 … 11999           1       DEB
-    21000 … 21999           2       CRE
 *
 */
 
@@ -117,9 +87,32 @@ function loadForm(inData, form) {
         var accountNumber = ledgerAccountNode.firstChildElement('accID').text;
         var accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
         var accType = ledgerAccountNode.firstChildElement('accTp').text;
-        var gr = ledgerAccountNode.firstChildElement('leadCode').text; //setGrByAccount(accountNumber);
-        var groupDescription = ledgerAccountNode.firstChildElement('leadDescription').text;
-        var bclass = ledgerAccountNode.firstChildElement('leadReference').text; // setBclassByAccount(accountNumber, accType);
+        var gr = "";
+        var bclass = setBclassByAccount(accountNumber, accType);
+
+        // if (ledgerAccountNode.hasChildElements('leadCode')) {
+        //     gr = ledgerAccountNode.firstChildElement('leadCode').text; 
+        // } else {
+        //     gr = setGrByAccount(accountNumber);
+        // }
+
+        // if (ledgerAccountNode.hasChildElements('leadDescription')) {
+        //     var groupDescription = ledgerAccountNode.firstChildElement('leadDescription').text;
+        // } else {
+        //     var groupDescription = "";
+        // }
+
+        // if (ledgerAccountNode.hasChildElements('leadReference')) {
+        //     var value = ledgerAccountNode.firstChildElement('leadReference').text;
+        //     if (value === "1" || value === "2" || value === "3" || value === "4") {
+        //         bclass = value;
+        //     } else {
+        //         bclass = setBclassByAccount(accountNumber, accType);
+        //     }
+        // } else {
+        //     bclass = setBclassByAccount(accountNumber, accType);
+        // }
+        
         form.push({"Section":"", "Group":"", "Account":accountNumber, "Description":accountDescription, "BClass":bclass, "Gr":gr});
         ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount'); // Next ledgerAccount
     }

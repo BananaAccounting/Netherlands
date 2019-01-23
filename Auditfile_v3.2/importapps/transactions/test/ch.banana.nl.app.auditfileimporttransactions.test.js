@@ -58,7 +58,22 @@ ImportTransactionsTest.prototype.cleanup = function() {
 
 ImportTransactionsTest.prototype.testBananaApps = function() {
 
-    var file = Banana.IO.getLocalFile("file:script/../test/testcases/auditfile_v3.2_nl_20180101_20181231.xml");
+    var filePath = "";
+
+    filePath = "file:script/../test/testcases/auditfile_v3.2_nl_20180101_20181231.xml";
+    this.displayData(filePath);
+
+    filePath = "file:script/../test/testcases/ExactOnline_V32_2016.xml";
+    this.displayData(filePath);
+
+    filePath = "file:script/../test/testcases/Multivers_V32_2017.xml";
+    this.displayData(filePath);
+
+}
+
+ImportTransactionsTest.prototype.displayData = function(filePath) {
+
+    var file = Banana.IO.getLocalFile(filePath);
     var parsedfile = JSON.stringify(file.read(), "", "");
     var xmlfile = JSON.parse(parsedfile);
 
@@ -82,4 +97,8 @@ ImportTransactionsTest.prototype.testBananaApps = function() {
     Test.logger.addText(importTransactionsFile);
 
 }
+
+
+
+
 

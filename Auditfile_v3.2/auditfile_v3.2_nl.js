@@ -133,7 +133,6 @@ function initNamespaces() {
 }
 
 
-
 /********************************
 *
 *	XML document creation
@@ -408,18 +407,6 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 	    		accTp = 'M'; //?
 	    	}
 
-	    	/* basicType:
-				02	Cost codes / Cost ID
-				03	Product codes / Product ID
-				04	Project codes / Project ID
-				05	Article Group codes / Article Group ID
-				12	Journal codes / Journal ID
-				14	Quantity codes / Quantity ID
-				23	Relationship codes / Relationship ID
-				29	Source codes / Source ID
-				30	User codes / User ID
-			*/
-
 			checkStringLength(accID, 1, 35, false);
 			checkStringLength(accDesc, 1, 255, false);
 			checkStringLength(accTp, 1, 2, false);
@@ -458,18 +445,6 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 		    	leadCode = tRow.value('Gr');
 		    	leadDescription = banDoc.table('Categories').findRowByValue('Group',leadCode).value("Description");
 
-		    	/* basicType:
-					02	Cost codes / Cost ID
-					03	Product codes / Product ID
-					04	Project codes / Project ID
-					05	Article Group codes / Article Group ID
-					12	Journal codes / Journal ID
-					14	Quantity codes / Quantity ID
-					23	Relationship codes / Relationship ID
-					29	Source codes / Source ID
-					30	User codes / User ID
-				*/
-			
 				checkStringLength(accID, 1, 35, false);
 				checkStringLength(accDesc, 1, 255, false);
 				checkStringLength(accTp, 1, 2, false);
@@ -1039,7 +1014,7 @@ function createCustomersSuppliers(xml, customersSuppliersList) {
 			var custCreditLimitNode = customerSupplierNode.addElement('custCreditLimit').addTextNode(customersSuppliersList[i].custCreditLimit);
 		}
 
-		// //supplierLimit element: we don't know exactly what to insert here. Can we do not use it?
+		// //supplierLimit element
 		// checkStringLength(customersSuppliersList[i].supplierLimit, 0, 20, false);
 		// var supplierLimitNode = customerSupplierNode.addElement('supplierLimit').addTextNode(customersSuppliersList[i].supplierLimit);
 
@@ -1071,23 +1046,10 @@ function createCustomersSuppliers(xml, customersSuppliersList) {
 			var bankAccNrNode = bankAccountNode.addElement('bankAccNr').addTextNode(customersSuppliersList[i].bankAccNr);
 			var bankIdCdNode = bankAccountNode.addElement('bankIdCd').addTextNode(customersSuppliersList[i].bankIdCd);
 		}
-
-		// //changeInfo element: we don't know exactly what to insert here. Can we do not use it?	
-		// var changeInfoNode = customerSupplierNode.addElement('changeInfo');
-		// var userIDNode = changeInfoNode.addElement('userID').addTextNode(customersSuppliersList[i].userID);
-		// var changeDateTimeNode = changeInfoNode.addElement('changeDateTime').addTextNode(customersSuppliersList[i].changeDateTime);
-		// var changeDescriptionNode = changeInfoNode.addElement('changeDescription').addTextNode(customersSuppliersList[i].changeDescription);
-
-		// //customerSupplierHistory element: we don't know exactly what to insert here. Can we do not use it?
-		// var customerSupplierHistoryNode = customerSupplierNode.addElement('customerSupplierHistory');
 	}
 
 	return customerSupplierNode;
 }
-
-
-
-
 
 
 /************************* 

@@ -315,6 +315,1217 @@ ewline 2018-11-05 \textbackslash{t} 83 \textbackslash{t}  \textbackslash{t} 10 \
 ewline 2018-11-05 \textbackslash{t} 83 \textbackslash{t}  \textbackslash{t} 10 \% korting, Annelies Schenk \textbackslash{t}  \textbackslash{t} 11020 \textbackslash{t} 500.00
 ewline 2018-11-05 \textbackslash{t} 83 \textbackslash{t}  \textbackslash{t} 10 \% korting, BTW overeenkomstig het BTW overzicht \textbackslash{t} 1500 \textbackslash{t}  \textbackslash{t} 86.78
 ewline }\\
+\textvalue{--- TRANSACTIONS LINES ---}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100001, Date:2016-02-15, Description:, DebitAccount:0300, CreditAccount:, Amount:15000.00}\\
+\textvalue{Doc:16100001, Date:2016-02-15, Description:, DebitAccount:, CreditAccount:1000, Amount:15000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100002, Date:2016-03-03, Description:Partij tweedehands trampolines - contant, DebitAccount:, CreditAccount:1000, Amount:15000.00}\\
+\textvalue{Doc:16100002, Date:2016-03-03, Description:Partij tweedehands trampolines - contant, DebitAccount:1520, CreditAccount:, Amount:2603.31}\\
+\textvalue{Doc:16100002, Date:2016-03-03, Description:Partij tweedehands trampolines - contant, DebitAccount:7320, CreditAccount:, Amount:12396.69}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100003, Date:2016-03-26, Description:testboeking negatieve kas, DebitAccount:, CreditAccount:1000, Amount:35000.00}\\
+\textvalue{Doc:16100003, Date:2016-03-26, Description:testboeking negatieve kas, DebitAccount:8000, CreditAccount:, Amount:35000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100004, Date:2016-04-13, Description:nieuwe keuken, DebitAccount:, CreditAccount:1000, Amount:7500.00}\\
+\textvalue{Doc:16100004, Date:2016-04-13, Description:nieuwe keuken, DebitAccount:7100, CreditAccount:, Amount:7500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100005, Date:2016-05-05, Description:witwassen drugsgeld, DebitAccount:1000, CreditAccount:, Amount:4000.00}\\
+\textvalue{Doc:16100005, Date:2016-05-05, Description:witwassen drugsgeld, DebitAccount:, CreditAccount:8010, Amount:4000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100006, Date:2016-05-05, Description:nachtclub, DebitAccount:1000, CreditAccount:, Amount:7500.00}\\
+\textvalue{Doc:16100006, Date:2016-05-05, Description:nachtclub, DebitAccount:, CreditAccount:4901, Amount:7500.00}\\
+\textvalue{Doc:16100006, Date:2016-05-05, Description:Dom Perignon 1995 “White Gold Jeroboam”, DebitAccount:1000, CreditAccount:, Amount:4840.00}\\
+\textvalue{Doc:16100006, Date:2016-05-05, Description:Dom Perignon 1995 “White Gold Jeroboam”, DebitAccount:, CreditAccount:1520, Amount:840.00}\\
+\textvalue{Doc:16100006, Date:2016-05-05, Description:Dom Perignon 1995 “White Gold Jeroboam”, DebitAccount:, CreditAccount:4900, Amount:4000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100007, Date:2016-06-03, Description:, DebitAccount:1000, CreditAccount:, Amount:10000.00}\\
+\textvalue{Doc:16100007, Date:2016-06-03, Description:, DebitAccount:, CreditAccount:1500, Amount:1735.54}\\
+\textvalue{Doc:16100007, Date:2016-06-03, Description:, DebitAccount:, CreditAccount:8000, Amount:8264.46}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100008, Date:2016-07-24, Description:, DebitAccount:1000, CreditAccount:, Amount:10350.00}\\
+\textvalue{Doc:16100008, Date:2016-07-24, Description:, DebitAccount:, CreditAccount:1500, Amount:1796.28}\\
+\textvalue{Doc:16100008, Date:2016-07-24, Description:, DebitAccount:, CreditAccount:4901, Amount:8553.72}\\
+\textvalue{**********}\\
+\textvalue{Doc:16100009, Date:2016-10-31, Description:, DebitAccount:1000, CreditAccount:, Amount:1452.00}\\
+\textvalue{Doc:16100009, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:1520, Amount:252.00}\\
+\textvalue{Doc:16100009, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:4900, Amount:1200.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200002, Date:2016-02-15, Description:, DebitAccount:, CreditAccount:1100, Amount:6500.00}\\
+\textvalue{Doc:16200002, Date:2016-02-15, Description:, DebitAccount:2100, CreditAccount:, Amount:6500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200003, Date:2016-03-14, Description:ontvangst, DebitAccount:1100, CreditAccount:, Amount:10000.00}\\
+\textvalue{Doc:16200003, Date:2016-03-14, Description:ontvangst, DebitAccount:, CreditAccount:1300, Amount:10000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200004, Date:2016-02-26, Description:, DebitAccount:, CreditAccount:1100, Amount:6500.00}\\
+\textvalue{Doc:16200004, Date:2016-02-26, Description:, DebitAccount:2100, CreditAccount:, Amount:6500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200005, Date:2016-03-28, Description:testboeking, DebitAccount:1100, CreditAccount:, Amount:391842.46}\\
+\textvalue{Doc:16200005, Date:2016-03-28, Description:testboeking, DebitAccount:, CreditAccount:1300, Amount:391842.46}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200006, Date:2016-03-28, Description:, DebitAccount:, CreditAccount:1100, Amount:1000.00}\\
+\textvalue{Doc:16200006, Date:2016-03-28, Description:, DebitAccount:1600, CreditAccount:, Amount:1000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200007, Date:2016-10-30, Description:, DebitAccount:1100, CreditAccount:, Amount:11162.00}\\
+\textvalue{Doc:16200007, Date:2016-10-30, Description:, DebitAccount:, CreditAccount:1290, Amount:11162.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16200008, Date:2016-12-05, Description:, DebitAccount:, CreditAccount:1100, Amount:2300.00}\\
+\textvalue{Doc:16200008, Date:2016-12-05, Description:, DebitAccount:2100, CreditAccount:, Amount:2300.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600001, Date:2016-02-29, Description:PC privé project, PC privé project, DebitAccount:, CreditAccount:1600, Amount:4000.00}\\
+\textvalue{Doc:16600001, Date:2016-02-29, Description:PC privé project, PC privé project, DebitAccount:4901, CreditAccount:, Amount:3305.79}\\
+\textvalue{Doc:16600001, Date:2016-02-29, Description:PC privé project, PC privé project, DebitAccount:1520, CreditAccount:, Amount:694.21}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600002, Date:2016-02-28, Description:Boekstuknummer: 16600002, Boekstuknummer: 16600002, DebitAccount:, CreditAccount:1600, Amount:12100.00}\\
+\textvalue{Doc:16600002, Date:2016-02-28, Description:Boekstuknummer: 16600002, test BTL BTW afwijkend, DebitAccount:7310, CreditAccount:, Amount:10000.00}\\
+\textvalue{Doc:16600002, Date:2016-02-28, Description:Boekstuknummer: 16600002, Boekstuknummer: 16600002, DebitAccount:1520, CreditAccount:, Amount:2100.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600003, Date:2016-04-25, Description:Boekstuknummer: 16600003, Boekstuknummer: 16600003, DebitAccount:, CreditAccount:1600, Amount:4000.00}\\
+\textvalue{Doc:16600003, Date:2016-04-25, Description:Boekstuknummer: 16600003, Bedrijfsfeest, DebitAccount:4900, CreditAccount:, Amount:2305.78}\\
+\textvalue{Doc:16600003, Date:2016-04-25, Description:Boekstuknummer: 16600003, Aquariumvergoeding, DebitAccount:4901, CreditAccount:, Amount:1000.00}\\
+\textvalue{Doc:16600003, Date:2016-04-25, Description:Boekstuknummer: 16600003, Boekstuknummer: 16600003, DebitAccount:1520, CreditAccount:, Amount:694.22}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600004, Date:2016-01-12, Description:Factuur: 16600004, Factuur: 16600004, DebitAccount:, CreditAccount:1600, Amount:6000.00}\\
+\textvalue{Doc:16600004, Date:2016-01-12, Description:Factuur: 16600004, Verhuiskosten, DebitAccount:4901, CreditAccount:, Amount:4958.68}\\
+\textvalue{Doc:16600004, Date:2016-01-12, Description:Factuur: 16600004, Factuur: 16600004, DebitAccount:1520, CreditAccount:, Amount:1041.32}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600005, Date:2016-05-05, Description:Buitenlandse factuur met BTW, Buitenlandse factuur met BTW, DebitAccount:, CreditAccount:1600, Amount:12000.00}\\
+\textvalue{Doc:16600005, Date:2016-05-05, Description:Buitenlandse factuur met BTW, Buitenlandse factuur met BTW, DebitAccount:7310, CreditAccount:, Amount:9917.36}\\
+\textvalue{Doc:16600005, Date:2016-05-05, Description:Buitenlandse factuur met BTW, Buitenlandse factuur met BTW, DebitAccount:1520, CreditAccount:, Amount:2082.64}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600006, Date:2016-08-14, Description:Boekstuknummer: 16600006, Boekstuknummer: 16600006, DebitAccount:, CreditAccount:1600, Amount:12000.00}\\
+\textvalue{Doc:16600006, Date:2016-08-14, Description:Boekstuknummer: 16600006, Vakantietrip, DebitAccount:4901, CreditAccount:, Amount:9917.36}\\
+\textvalue{Doc:16600006, Date:2016-08-14, Description:Boekstuknummer: 16600006, Boekstuknummer: 16600006, DebitAccount:1520, CreditAccount:, Amount:2082.64}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600007, Date:2016-08-20, Description:IPAD, IPAD, DebitAccount:, CreditAccount:1600, Amount:1000.00}\\
+\textvalue{Doc:16600007, Date:2016-08-20, Description:IPAD, IPAD, DebitAccount:4000, CreditAccount:, Amount:826.45}\\
+\textvalue{Doc:16600007, Date:2016-08-20, Description:IPAD, IPAD, DebitAccount:1520, CreditAccount:, Amount:173.55}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600008, Date:2016-10-18, Description:aankoop pyrolyse machihne, aankoop pyrolyse machihne, DebitAccount:, CreditAccount:1600, Amount:10000.00}\\
+\textvalue{Doc:16600008, Date:2016-10-18, Description:aankoop pyrolyse machihne, aankoop pyrolyse machihne, DebitAccount:0110, CreditAccount:, Amount:8264.46}\\
+\textvalue{Doc:16600008, Date:2016-10-18, Description:aankoop pyrolyse machihne, aankoop pyrolyse machihne, DebitAccount:1520, CreditAccount:, Amount:1735.54}\\
+\textvalue{**********}\\
+\textvalue{Doc:16600009, Date:2016-10-18, Description:LED armaturen, LED armaturen, DebitAccount:, CreditAccount:1600, Amount:1800.00}\\
+\textvalue{Doc:16600009, Date:2016-10-18, Description:LED armaturen, LED armaturen, DebitAccount:0300, CreditAccount:, Amount:1487.60}\\
+\textvalue{Doc:16600009, Date:2016-10-18, Description:LED armaturen, LED armaturen, DebitAccount:1520, CreditAccount:, Amount:312.40}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700001, Date:2016-01-28, Description:foutieve BTW, foutieve BTW, DebitAccount:1300, CreditAccount:, Amount:8000.00}\\
+\textvalue{Doc:16700001, Date:2016-01-28, Description:foutieve BTW, foutieve BTW, DebitAccount:, CreditAccount:8000, Amount:7547.17}\\
+\textvalue{Doc:16700001, Date:2016-01-28, Description:foutieve BTW, foutieve BTW, DebitAccount:, CreditAccount:1510, Amount:452.83}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Verkooporder eerste kwartaal, DebitAccount:1300, CreditAccount:, Amount:43922.37}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:3196.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:500.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:437.50}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:2397.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:2397.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:500.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:350.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:4794.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:300.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:262.50}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:200.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:131.25}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:4794.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:550.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:481.25}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:7990.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:400.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:350.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Trampoline, DebitAccount:, CreditAccount:8320, Amount:6392.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energy reep, DebitAccount:, CreditAccount:8330, Amount:350.00}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Energydrink, DebitAccount:, CreditAccount:8330, Amount:288.75}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Verkooporder eerste kwartaal, DebitAccount:, CreditAccount:1500, Amount:6777.79}\\
+\textvalue{Doc:16700002, Date:2016-02-17, Description:Verkooporder eerste kwartaal, Verkooporder eerste kwartaal, DebitAccount:, CreditAccount:1510, Amount:83.33}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700003, Date:2016-02-29, Description:verkoop darts equipment Italië, verkoop darts equipment Italië, DebitAccount:1300, CreditAccount:, Amount:8000.00}\\
+\textvalue{Doc:16700003, Date:2016-02-29, Description:verkoop darts equipment Italië, verkoop darts equipment Italië, DebitAccount:, CreditAccount:8100, Amount:6611.57}\\
+\textvalue{Doc:16700003, Date:2016-02-29, Description:verkoop darts equipment Italië, verkoop darts equipment Italië, DebitAccount:, CreditAccount:1500, Amount:1388.43}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700004, Date:2016-02-29, Description:Kitchen Equipment, Kitchen Equipment, DebitAccount:1300, CreditAccount:, Amount:2000.00}\\
+\textvalue{Doc:16700004, Date:2016-02-29, Description:Kitchen Equipment, Kitchen Equipment, DebitAccount:, CreditAccount:8010, Amount:1886.79}\\
+\textvalue{Doc:16700004, Date:2016-02-29, Description:Kitchen Equipment, Kitchen Equipment, DebitAccount:, CreditAccount:1510, Amount:113.21}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700005, Date:2016-03-26, Description:test buitenlandse btw op verkoop, test buitenlandse btw op verkoop, DebitAccount:1300, CreditAccount:, Amount:12100.00}\\
+\textvalue{Doc:16700005, Date:2016-03-26, Description:test buitenlandse btw op verkoop, test buitenlandse btw op verkoop7, DebitAccount:, CreditAccount:8100, Amount:10000.00}\\
+\textvalue{Doc:16700005, Date:2016-03-26, Description:test buitenlandse btw op verkoop, test buitenlandse btw op verkoop, DebitAccount:, CreditAccount:1500, Amount:2100.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700006, Date:2016-02-26, Description:test afwijkende BTW, test afwijkende BTW, DebitAccount:1300, CreditAccount:, Amount:1000.00}\\
+\textvalue{Doc:16700006, Date:2016-02-26, Description:test afwijkende BTW, test afwijkende BTW, DebitAccount:, CreditAccount:8000, Amount:1000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700007, Date:2016-02-26, Description:Boekstuknummer: 16700007, Boekstuknummer: 16700007, DebitAccount:1300, CreditAccount:, Amount:12100.00}\\
+\textvalue{Doc:16700007, Date:2016-02-26, Description:Boekstuknummer: 16700007, test afwijkende BTW BTL7, DebitAccount:, CreditAccount:8100, Amount:10000.00}\\
+\textvalue{Doc:16700007, Date:2016-02-26, Description:Boekstuknummer: 16700007, Boekstuknummer: 16700007, DebitAccount:, CreditAccount:1500, Amount:2100.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700008, Date:2016-04-25, Description:factuur met afwijkende BTW, factuur met afwijkende BTW, DebitAccount:1300, CreditAccount:, Amount:5000.00}\\
+\textvalue{Doc:16700008, Date:2016-04-25, Description:factuur met afwijkende BTW, factuur met afwijkende BTW, DebitAccount:, CreditAccount:8010, Amount:5000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16700009, Date:2016-05-05, Description:factuur met verkeerde BTW, factuur met verkeerde BTW, DebitAccount:1300, CreditAccount:, Amount:12000.00}\\
+\textvalue{Doc:16700009, Date:2016-05-05, Description:factuur met verkeerde BTW, factuur met verkeerde BTW, DebitAccount:, CreditAccount:8020, Amount:12000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900001, Date:2016-01-31, Description:, DebitAccount:4900, CreditAccount:, Amount:2000.00}\\
+\textvalue{Doc:16900001, Date:2016-01-31, Description:, DebitAccount:, CreditAccount:2000, Amount:2000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900003, Date:2016-02-15, Description:, DebitAccount:, CreditAccount:2100, Amount:6000.00}\\
+\textvalue{Doc:16900003, Date:2016-02-15, Description:, DebitAccount:4000, CreditAccount:, Amount:10000.00}\\
+\textvalue{Doc:16900003, Date:2016-02-15, Description:, DebitAccount:, CreditAccount:1700, Amount:4000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900004, Date:2016-02-17, Description:Trampoline, DebitAccount:, CreditAccount:3320, Amount:1200.00}\\
+\textvalue{Doc:16900004, Date:2016-02-17, Description:Trampoline, DebitAccount:7320, CreditAccount:, Amount:1200.00}\\
+\textvalue{Doc:16900004, Date:2016-02-17, Description:Trampoline, DebitAccount:, CreditAccount:3320, Amount:2400.00}\\
+\textvalue{Doc:16900004, Date:2016-02-17, Description:Trampoline, DebitAccount:7320, CreditAccount:, Amount:2400.00}\\
+\textvalue{Doc:16900004, Date:2016-02-17, Description:Energydrink, DebitAccount:, CreditAccount:3330, Amount:150.00}\\
+\textvalue{Doc:16900004, Date:2016-02-17, Description:Energydrink, DebitAccount:7330, CreditAccount:, Amount:150.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900005, Date:2016-02-17, Description:Energydrink, DebitAccount:, CreditAccount:3330, Amount:5.00}\\
+\textvalue{Doc:16900005, Date:2016-02-17, Description:Energydrink, DebitAccount:7330, CreditAccount:, Amount:5.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900006, Date:2016-02-17, Description:Basebal handschoen rechts, DebitAccount:, CreditAccount:3320, Amount:77.90}\\
+\textvalue{Doc:16900006, Date:2016-02-17, Description:Basebal handschoen rechts, DebitAccount:7320, CreditAccount:, Amount:77.90}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900007, Date:2016-02-17, Description:Dartbord, DebitAccount:, CreditAccount:3310, Amount:31.50}\\
+\textvalue{Doc:16900007, Date:2016-02-17, Description:Dartbord, DebitAccount:7310, CreditAccount:, Amount:31.50}\\
+\textvalue{Doc:16900007, Date:2016-02-17, Description:Dartpijlen 22 gram, DebitAccount:, CreditAccount:3310, Amount:16.67}\\
+\textvalue{Doc:16900007, Date:2016-02-17, Description:Dartpijlen 22 gram, DebitAccount:7310, CreditAccount:, Amount:16.67}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900008, Date:2016-03-02, Description:boeking op 2 maart 2016 gemaakt, DebitAccount:0300, CreditAccount:, Amount:500.00}\\
+\textvalue{Doc:16900008, Date:2016-03-02, Description:boeking op 2 maart 2016 gemaakt, DebitAccount:, CreditAccount:2000, Amount:500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900009, Date:2016-03-03, Description:tijdelijke correctie omzet, DebitAccount:8330, CreditAccount:, Amount:5000.00}\\
+\textvalue{Doc:16900009, Date:2016-03-03, Description:tijdelijke correctie omzet, DebitAccount:, CreditAccount:1300, Amount:5000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900010, Date:2016-02-26, Description:, DebitAccount:4000, CreditAccount:, Amount:6000.00}\\
+\textvalue{Doc:16900010, Date:2016-02-26, Description:, DebitAccount:, CreditAccount:2100, Amount:6000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900011, Date:2016-02-26, Description:loonbelasting, DebitAccount:4000, CreditAccount:, Amount:4000.00}\\
+\textvalue{Doc:16900011, Date:2016-02-26, Description:loonbelasting, DebitAccount:, CreditAccount:1700, Amount:4000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900012, Date:2016-02-26, Description:correctie debiteuren, DebitAccount:, CreditAccount:1300, Amount:1000.00}\\
+\textvalue{Doc:16900012, Date:2016-02-26, Description:correctie debiteuren, DebitAccount:1600, CreditAccount:, Amount:1000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900013, Date:2016-04-24, Description:correctie, DebitAccount:1600, CreditAccount:, Amount:500.00}\\
+\textvalue{Doc:16900013, Date:2016-04-24, Description:correctie, DebitAccount:, CreditAccount:1300, Amount:500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900014, Date:2016-04-25, Description:vraagpost, DebitAccount:2000, CreditAccount:, Amount:834.00}\\
+\textvalue{Doc:16900014, Date:2016-04-25, Description:vraagpost, DebitAccount:, CreditAccount:2100, Amount:834.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900015, Date:2016-05-29, Description:onduidelijke afschrijving, DebitAccount:2000, CreditAccount:, Amount:1250.00}\\
+\textvalue{Doc:16900015, Date:2016-05-29, Description:onduidelijke afschrijving, DebitAccount:, CreditAccount:1310, Amount:1250.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900016, Date:2016-05-15, Description:correctie onjuiste boeking, DebitAccount:4901, CreditAccount:, Amount:15000.00}\\
+\textvalue{Doc:16900016, Date:2016-05-15, Description:correctie onjuiste boeking, DebitAccount:, CreditAccount:4900, Amount:15000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900017, Date:2016-09-30, Description:, DebitAccount:4000, CreditAccount:, Amount:45000.00}\\
+\textvalue{Doc:16900017, Date:2016-09-30, Description:, DebitAccount:, CreditAccount:1700, Amount:45000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900018, Date:2016-10-31, Description:, DebitAccount:4000, CreditAccount:, Amount:6500.00}\\
+\textvalue{Doc:16900018, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:1700, Amount:6500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900019, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:2100, Amount:166.00}\\
+\textvalue{Doc:16900019, Date:2016-10-31, Description:, DebitAccount:4901, CreditAccount:, Amount:166.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900020, Date:2016-10-31, Description:, DebitAccount:1700, CreditAccount:, Amount:136559.00}\\
+\textvalue{Doc:16900020, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:8000, Amount:136559.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900021, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:2100, Amount:1.46}\\
+\textvalue{Doc:16900021, Date:2016-10-31, Description:, DebitAccount:4901, CreditAccount:, Amount:1.46}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900022, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:0301, Amount:5000.00}\\
+\textvalue{Doc:16900022, Date:2016-10-31, Description:, DebitAccount:0301, CreditAccount:, Amount:5000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16900023, Date:2016-10-31, Description:, DebitAccount:2000, CreditAccount:, Amount:31543.70}\\
+\textvalue{Doc:16900023, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:7310, Amount:31543.70}\\
+\textvalue{Doc:16900023, Date:2016-10-31, Description:, DebitAccount:1670, CreditAccount:, Amount:13250.00}\\
+\textvalue{Doc:16900023, Date:2016-10-31, Description:, DebitAccount:, CreditAccount:8110, Amount:13250.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:16950001, Date:2016-11-05, Description:, DebitAccount:, CreditAccount:0301, Amount:5000.00}\\
+\textvalue{Doc:16950001, Date:2016-11-05, Description:, DebitAccount:5110, CreditAccount:, Amount:5000.00}\\
+\textvalue{ }\\
+\textvalue{IMPORT FILE}\\
+\textvalue{Date \textbackslash{t} Doc \textbackslash{t} DocType \textbackslash{t} Description \textbackslash{t} Account \textbackslash{t} ContraAccount \textbackslash{t} Income
+ewline 2016-02-15 \textbackslash{t} 16100001 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 0300 \textbackslash{t}  \textbackslash{t} 15000.00
+ewline 2016-02-15 \textbackslash{t} 16100001 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 15000.00
+ewline 2016-03-03 \textbackslash{t} 16100002 \textbackslash{t}  \textbackslash{t} Partij tweedehands trampolines - contant \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 15000.00
+ewline 2016-03-03 \textbackslash{t} 16100002 \textbackslash{t}  \textbackslash{t} Partij tweedehands trampolines - contant \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 2603.31
+ewline 2016-03-03 \textbackslash{t} 16100002 \textbackslash{t}  \textbackslash{t} Partij tweedehands trampolines - contant \textbackslash{t} 7320 \textbackslash{t}  \textbackslash{t} 12396.69
+ewline 2016-03-26 \textbackslash{t} 16100003 \textbackslash{t}  \textbackslash{t} testboeking negatieve kas \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 35000.00
+ewline 2016-03-26 \textbackslash{t} 16100003 \textbackslash{t}  \textbackslash{t} testboeking negatieve kas \textbackslash{t} 8000 \textbackslash{t}  \textbackslash{t} 35000.00
+ewline 2016-04-13 \textbackslash{t} 16100004 \textbackslash{t}  \textbackslash{t} nieuwe keuken \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 7500.00
+ewline 2016-04-13 \textbackslash{t} 16100004 \textbackslash{t}  \textbackslash{t} nieuwe keuken \textbackslash{t} 7100 \textbackslash{t}  \textbackslash{t} 7500.00
+ewline 2016-05-05 \textbackslash{t} 16100005 \textbackslash{t}  \textbackslash{t} witwassen drugsgeld \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 4000.00
+ewline 2016-05-05 \textbackslash{t} 16100005 \textbackslash{t}  \textbackslash{t} witwassen drugsgeld \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 4000.00
+ewline 2016-05-05 \textbackslash{t} 16100006 \textbackslash{t}  \textbackslash{t} nachtclub \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 7500.00
+ewline 2016-05-05 \textbackslash{t} 16100006 \textbackslash{t}  \textbackslash{t} nachtclub \textbackslash{t}  \textbackslash{t} 4901 \textbackslash{t} 7500.00
+ewline 2016-05-05 \textbackslash{t} 16100006 \textbackslash{t}  \textbackslash{t} Dom Perignon 1995 “White Gold Jeroboam” \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 4840.00
+ewline 2016-05-05 \textbackslash{t} 16100006 \textbackslash{t}  \textbackslash{t} Dom Perignon 1995 “White Gold Jeroboam” \textbackslash{t}  \textbackslash{t} 1520 \textbackslash{t} 840.00
+ewline 2016-05-05 \textbackslash{t} 16100006 \textbackslash{t}  \textbackslash{t} Dom Perignon 1995 “White Gold Jeroboam” \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t} 4000.00
+ewline 2016-06-03 \textbackslash{t} 16100007 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 10000.00
+ewline 2016-06-03 \textbackslash{t} 16100007 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 1735.54
+ewline 2016-06-03 \textbackslash{t} 16100007 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} 8264.46
+ewline 2016-07-24 \textbackslash{t} 16100008 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 10350.00
+ewline 2016-07-24 \textbackslash{t} 16100008 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 1796.28
+ewline 2016-07-24 \textbackslash{t} 16100008 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4901 \textbackslash{t} 8553.72
+ewline 2016-10-31 \textbackslash{t} 16100009 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t}  \textbackslash{t} 1452.00
+ewline 2016-10-31 \textbackslash{t} 16100009 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1520 \textbackslash{t} 252.00
+ewline 2016-10-31 \textbackslash{t} 16100009 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t} 1200.00
+ewline 2016-02-15 \textbackslash{t} 16200002 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} 6500.00
+ewline 2016-02-15 \textbackslash{t} 16200002 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t}  \textbackslash{t} 6500.00
+ewline 2016-03-14 \textbackslash{t} 16200003 \textbackslash{t}  \textbackslash{t} ontvangst \textbackslash{t} 1100 \textbackslash{t}  \textbackslash{t} 10000.00
+ewline 2016-03-14 \textbackslash{t} 16200003 \textbackslash{t}  \textbackslash{t} ontvangst \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 10000.00
+ewline 2016-02-26 \textbackslash{t} 16200004 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} 6500.00
+ewline 2016-02-26 \textbackslash{t} 16200004 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t}  \textbackslash{t} 6500.00
+ewline 2016-03-28 \textbackslash{t} 16200005 \textbackslash{t}  \textbackslash{t} testboeking \textbackslash{t} 1100 \textbackslash{t}  \textbackslash{t} 391842.46
+ewline 2016-03-28 \textbackslash{t} 16200005 \textbackslash{t}  \textbackslash{t} testboeking \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 391842.46
+ewline 2016-03-28 \textbackslash{t} 16200006 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} 1000.00
+ewline 2016-03-28 \textbackslash{t} 16200006 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2016-10-30 \textbackslash{t} 16200007 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t}  \textbackslash{t} 11162.00
+ewline 2016-10-30 \textbackslash{t} 16200007 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1290 \textbackslash{t} 11162.00
+ewline 2016-12-05 \textbackslash{t} 16200008 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1100 \textbackslash{t} 2300.00
+ewline 2016-12-05 \textbackslash{t} 16200008 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t}  \textbackslash{t} 2300.00
+ewline 2016-02-29 \textbackslash{t} 16600001 \textbackslash{t}  \textbackslash{t} PC privé project, PC privé project \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 4000.00
+ewline 2016-02-29 \textbackslash{t} 16600001 \textbackslash{t}  \textbackslash{t} PC privé project, PC privé project \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 3305.79
+ewline 2016-02-29 \textbackslash{t} 16600001 \textbackslash{t}  \textbackslash{t} PC privé project, PC privé project \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 694.21
+ewline 2016-02-28 \textbackslash{t} 16600002 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600002, Boekstuknummer: 16600002 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 12100.00
+ewline 2016-02-28 \textbackslash{t} 16600002 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600002, test BTL BTW afwijkend \textbackslash{t} 7310 \textbackslash{t}  \textbackslash{t} 10000.00
+ewline 2016-02-28 \textbackslash{t} 16600002 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600002, Boekstuknummer: 16600002 \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 2100.00
+ewline 2016-04-25 \textbackslash{t} 16600003 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600003, Boekstuknummer: 16600003 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 4000.00
+ewline 2016-04-25 \textbackslash{t} 16600003 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600003, Bedrijfsfeest \textbackslash{t} 4900 \textbackslash{t}  \textbackslash{t} 2305.78
+ewline 2016-04-25 \textbackslash{t} 16600003 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600003, Aquariumvergoeding \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2016-04-25 \textbackslash{t} 16600003 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600003, Boekstuknummer: 16600003 \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 694.22
+ewline 2016-01-12 \textbackslash{t} 16600004 \textbackslash{t}  \textbackslash{t} Factuur: 16600004, Factuur: 16600004 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 6000.00
+ewline 2016-01-12 \textbackslash{t} 16600004 \textbackslash{t}  \textbackslash{t} Factuur: 16600004, Verhuiskosten \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 4958.68
+ewline 2016-01-12 \textbackslash{t} 16600004 \textbackslash{t}  \textbackslash{t} Factuur: 16600004, Factuur: 16600004 \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 1041.32
+ewline 2016-05-05 \textbackslash{t} 16600005 \textbackslash{t}  \textbackslash{t} Buitenlandse factuur met BTW, Buitenlandse factuur met BTW \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 12000.00
+ewline 2016-05-05 \textbackslash{t} 16600005 \textbackslash{t}  \textbackslash{t} Buitenlandse factuur met BTW, Buitenlandse factuur met BTW \textbackslash{t} 7310 \textbackslash{t}  \textbackslash{t} 9917.36
+ewline 2016-05-05 \textbackslash{t} 16600005 \textbackslash{t}  \textbackslash{t} Buitenlandse factuur met BTW, Buitenlandse factuur met BTW \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 2082.64
+ewline 2016-08-14 \textbackslash{t} 16600006 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600006, Boekstuknummer: 16600006 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 12000.00
+ewline 2016-08-14 \textbackslash{t} 16600006 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600006, Vakantietrip \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 9917.36
+ewline 2016-08-14 \textbackslash{t} 16600006 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16600006, Boekstuknummer: 16600006 \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 2082.64
+ewline 2016-08-20 \textbackslash{t} 16600007 \textbackslash{t}  \textbackslash{t} IPAD, IPAD \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 1000.00
+ewline 2016-08-20 \textbackslash{t} 16600007 \textbackslash{t}  \textbackslash{t} IPAD, IPAD \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 826.45
+ewline 2016-08-20 \textbackslash{t} 16600007 \textbackslash{t}  \textbackslash{t} IPAD, IPAD \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 173.55
+ewline 2016-10-18 \textbackslash{t} 16600008 \textbackslash{t}  \textbackslash{t} aankoop pyrolyse machihne, aankoop pyrolyse machihne \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 10000.00
+ewline 2016-10-18 \textbackslash{t} 16600008 \textbackslash{t}  \textbackslash{t} aankoop pyrolyse machihne, aankoop pyrolyse machihne \textbackslash{t} 0110 \textbackslash{t}  \textbackslash{t} 8264.46
+ewline 2016-10-18 \textbackslash{t} 16600008 \textbackslash{t}  \textbackslash{t} aankoop pyrolyse machihne, aankoop pyrolyse machihne \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 1735.54
+ewline 2016-10-18 \textbackslash{t} 16600009 \textbackslash{t}  \textbackslash{t} LED armaturen, LED armaturen \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 1800.00
+ewline 2016-10-18 \textbackslash{t} 16600009 \textbackslash{t}  \textbackslash{t} LED armaturen, LED armaturen \textbackslash{t} 0300 \textbackslash{t}  \textbackslash{t} 1487.60
+ewline 2016-10-18 \textbackslash{t} 16600009 \textbackslash{t}  \textbackslash{t} LED armaturen, LED armaturen \textbackslash{t} 1520 \textbackslash{t}  \textbackslash{t} 312.40
+ewline 2016-01-28 \textbackslash{t} 16700001 \textbackslash{t}  \textbackslash{t} foutieve BTW, foutieve BTW \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 8000.00
+ewline 2016-01-28 \textbackslash{t} 16700001 \textbackslash{t}  \textbackslash{t} foutieve BTW, foutieve BTW \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} 7547.17
+ewline 2016-01-28 \textbackslash{t} 16700001 \textbackslash{t}  \textbackslash{t} foutieve BTW, foutieve BTW \textbackslash{t}  \textbackslash{t} 1510 \textbackslash{t} 452.83
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Verkooporder eerste kwartaal \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 43922.37
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 3196.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 500.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 437.50
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 2397.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 2397.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 500.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 350.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 4794.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 300.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 262.50
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 200.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 131.25
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 4794.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 550.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 481.25
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 7990.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 400.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 350.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Trampoline \textbackslash{t}  \textbackslash{t} 8320 \textbackslash{t} 6392.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energy reep \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 350.00
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Energydrink \textbackslash{t}  \textbackslash{t} 8330 \textbackslash{t} 288.75
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Verkooporder eerste kwartaal \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 6777.79
+ewline 2016-02-17 \textbackslash{t} 16700002 \textbackslash{t}  \textbackslash{t} Verkooporder eerste kwartaal, Verkooporder eerste kwartaal \textbackslash{t}  \textbackslash{t} 1510 \textbackslash{t} 83.33
+ewline 2016-02-29 \textbackslash{t} 16700003 \textbackslash{t}  \textbackslash{t} verkoop darts equipment Italië, verkoop darts equipment Italië \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 8000.00
+ewline 2016-02-29 \textbackslash{t} 16700003 \textbackslash{t}  \textbackslash{t} verkoop darts equipment Italië, verkoop darts equipment Italië \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 6611.57
+ewline 2016-02-29 \textbackslash{t} 16700003 \textbackslash{t}  \textbackslash{t} verkoop darts equipment Italië, verkoop darts equipment Italië \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 1388.43
+ewline 2016-02-29 \textbackslash{t} 16700004 \textbackslash{t}  \textbackslash{t} Kitchen Equipment, Kitchen Equipment \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 2000.00
+ewline 2016-02-29 \textbackslash{t} 16700004 \textbackslash{t}  \textbackslash{t} Kitchen Equipment, Kitchen Equipment \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 1886.79
+ewline 2016-02-29 \textbackslash{t} 16700004 \textbackslash{t}  \textbackslash{t} Kitchen Equipment, Kitchen Equipment \textbackslash{t}  \textbackslash{t} 1510 \textbackslash{t} 113.21
+ewline 2016-03-26 \textbackslash{t} 16700005 \textbackslash{t}  \textbackslash{t} test buitenlandse btw op verkoop, test buitenlandse btw op verkoop \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 12100.00
+ewline 2016-03-26 \textbackslash{t} 16700005 \textbackslash{t}  \textbackslash{t} test buitenlandse btw op verkoop, test buitenlandse btw op verkoop7 \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 10000.00
+ewline 2016-03-26 \textbackslash{t} 16700005 \textbackslash{t}  \textbackslash{t} test buitenlandse btw op verkoop, test buitenlandse btw op verkoop \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 2100.00
+ewline 2016-02-26 \textbackslash{t} 16700006 \textbackslash{t}  \textbackslash{t} test afwijkende BTW, test afwijkende BTW \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2016-02-26 \textbackslash{t} 16700006 \textbackslash{t}  \textbackslash{t} test afwijkende BTW, test afwijkende BTW \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} 1000.00
+ewline 2016-02-26 \textbackslash{t} 16700007 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16700007, Boekstuknummer: 16700007 \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 12100.00
+ewline 2016-02-26 \textbackslash{t} 16700007 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16700007, test afwijkende BTW BTL7 \textbackslash{t}  \textbackslash{t} 8100 \textbackslash{t} 10000.00
+ewline 2016-02-26 \textbackslash{t} 16700007 \textbackslash{t}  \textbackslash{t} Boekstuknummer: 16700007, Boekstuknummer: 16700007 \textbackslash{t}  \textbackslash{t} 1500 \textbackslash{t} 2100.00
+ewline 2016-04-25 \textbackslash{t} 16700008 \textbackslash{t}  \textbackslash{t} factuur met afwijkende BTW, factuur met afwijkende BTW \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 5000.00
+ewline 2016-04-25 \textbackslash{t} 16700008 \textbackslash{t}  \textbackslash{t} factuur met afwijkende BTW, factuur met afwijkende BTW \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 5000.00
+ewline 2016-05-05 \textbackslash{t} 16700009 \textbackslash{t}  \textbackslash{t} factuur met verkeerde BTW, factuur met verkeerde BTW \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 12000.00
+ewline 2016-05-05 \textbackslash{t} 16700009 \textbackslash{t}  \textbackslash{t} factuur met verkeerde BTW, factuur met verkeerde BTW \textbackslash{t}  \textbackslash{t} 8020 \textbackslash{t} 12000.00
+ewline 2016-01-31 \textbackslash{t} 16900001 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t}  \textbackslash{t} 2000.00
+ewline 2016-01-31 \textbackslash{t} 16900001 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} 2000.00
+ewline 2016-02-15 \textbackslash{t} 16900003 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} 6000.00
+ewline 2016-02-15 \textbackslash{t} 16900003 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 10000.00
+ewline 2016-02-15 \textbackslash{t} 16900003 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1700 \textbackslash{t} 4000.00
+ewline 2016-02-17 \textbackslash{t} 16900004 \textbackslash{t}  \textbackslash{t} Trampoline \textbackslash{t}  \textbackslash{t} 3320 \textbackslash{t} 1200.00
+ewline 2016-02-17 \textbackslash{t} 16900004 \textbackslash{t}  \textbackslash{t} Trampoline \textbackslash{t} 7320 \textbackslash{t}  \textbackslash{t} 1200.00
+ewline 2016-02-17 \textbackslash{t} 16900004 \textbackslash{t}  \textbackslash{t} Trampoline \textbackslash{t}  \textbackslash{t} 3320 \textbackslash{t} 2400.00
+ewline 2016-02-17 \textbackslash{t} 16900004 \textbackslash{t}  \textbackslash{t} Trampoline \textbackslash{t} 7320 \textbackslash{t}  \textbackslash{t} 2400.00
+ewline 2016-02-17 \textbackslash{t} 16900004 \textbackslash{t}  \textbackslash{t} Energydrink \textbackslash{t}  \textbackslash{t} 3330 \textbackslash{t} 150.00
+ewline 2016-02-17 \textbackslash{t} 16900004 \textbackslash{t}  \textbackslash{t} Energydrink \textbackslash{t} 7330 \textbackslash{t}  \textbackslash{t} 150.00
+ewline 2016-02-17 \textbackslash{t} 16900005 \textbackslash{t}  \textbackslash{t} Energydrink \textbackslash{t}  \textbackslash{t} 3330 \textbackslash{t} 5.00
+ewline 2016-02-17 \textbackslash{t} 16900005 \textbackslash{t}  \textbackslash{t} Energydrink \textbackslash{t} 7330 \textbackslash{t}  \textbackslash{t} 5.00
+ewline 2016-02-17 \textbackslash{t} 16900006 \textbackslash{t}  \textbackslash{t} Basebal handschoen rechts \textbackslash{t}  \textbackslash{t} 3320 \textbackslash{t} 77.90
+ewline 2016-02-17 \textbackslash{t} 16900006 \textbackslash{t}  \textbackslash{t} Basebal handschoen rechts \textbackslash{t} 7320 \textbackslash{t}  \textbackslash{t} 77.90
+ewline 2016-02-17 \textbackslash{t} 16900007 \textbackslash{t}  \textbackslash{t} Dartbord \textbackslash{t}  \textbackslash{t} 3310 \textbackslash{t} 31.50
+ewline 2016-02-17 \textbackslash{t} 16900007 \textbackslash{t}  \textbackslash{t} Dartbord \textbackslash{t} 7310 \textbackslash{t}  \textbackslash{t} 31.50
+ewline 2016-02-17 \textbackslash{t} 16900007 \textbackslash{t}  \textbackslash{t} Dartpijlen 22 gram \textbackslash{t}  \textbackslash{t} 3310 \textbackslash{t} 16.67
+ewline 2016-02-17 \textbackslash{t} 16900007 \textbackslash{t}  \textbackslash{t} Dartpijlen 22 gram \textbackslash{t} 7310 \textbackslash{t}  \textbackslash{t} 16.67
+ewline 2016-03-02 \textbackslash{t} 16900008 \textbackslash{t}  \textbackslash{t} boeking op 2 maart 2016 gemaakt \textbackslash{t} 0300 \textbackslash{t}  \textbackslash{t} 500.00
+ewline 2016-03-02 \textbackslash{t} 16900008 \textbackslash{t}  \textbackslash{t} boeking op 2 maart 2016 gemaakt \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t} 500.00
+ewline 2016-03-03 \textbackslash{t} 16900009 \textbackslash{t}  \textbackslash{t} tijdelijke correctie omzet \textbackslash{t} 8330 \textbackslash{t}  \textbackslash{t} 5000.00
+ewline 2016-03-03 \textbackslash{t} 16900009 \textbackslash{t}  \textbackslash{t} tijdelijke correctie omzet \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 5000.00
+ewline 2016-02-26 \textbackslash{t} 16900010 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 6000.00
+ewline 2016-02-26 \textbackslash{t} 16900010 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} 6000.00
+ewline 2016-02-26 \textbackslash{t} 16900011 \textbackslash{t}  \textbackslash{t} loonbelasting \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 4000.00
+ewline 2016-02-26 \textbackslash{t} 16900011 \textbackslash{t}  \textbackslash{t} loonbelasting \textbackslash{t}  \textbackslash{t} 1700 \textbackslash{t} 4000.00
+ewline 2016-02-26 \textbackslash{t} 16900012 \textbackslash{t}  \textbackslash{t} correctie debiteuren \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 1000.00
+ewline 2016-02-26 \textbackslash{t} 16900012 \textbackslash{t}  \textbackslash{t} correctie debiteuren \textbackslash{t} 1600 \textbackslash{t}  \textbackslash{t} 1000.00
+ewline 2016-04-24 \textbackslash{t} 16900013 \textbackslash{t}  \textbackslash{t} correctie \textbackslash{t} 1600 \textbackslash{t}  \textbackslash{t} 500.00
+ewline 2016-04-24 \textbackslash{t} 16900013 \textbackslash{t}  \textbackslash{t} correctie \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 500.00
+ewline 2016-04-25 \textbackslash{t} 16900014 \textbackslash{t}  \textbackslash{t} vraagpost \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 834.00
+ewline 2016-04-25 \textbackslash{t} 16900014 \textbackslash{t}  \textbackslash{t} vraagpost \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} 834.00
+ewline 2016-05-29 \textbackslash{t} 16900015 \textbackslash{t}  \textbackslash{t} onduidelijke afschrijving \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 1250.00
+ewline 2016-05-29 \textbackslash{t} 16900015 \textbackslash{t}  \textbackslash{t} onduidelijke afschrijving \textbackslash{t}  \textbackslash{t} 1310 \textbackslash{t} 1250.00
+ewline 2016-05-15 \textbackslash{t} 16900016 \textbackslash{t}  \textbackslash{t} correctie onjuiste boeking \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 15000.00
+ewline 2016-05-15 \textbackslash{t} 16900016 \textbackslash{t}  \textbackslash{t} correctie onjuiste boeking \textbackslash{t}  \textbackslash{t} 4900 \textbackslash{t} 15000.00
+ewline 2016-09-30 \textbackslash{t} 16900017 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 45000.00
+ewline 2016-09-30 \textbackslash{t} 16900017 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1700 \textbackslash{t} 45000.00
+ewline 2016-10-31 \textbackslash{t} 16900018 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 6500.00
+ewline 2016-10-31 \textbackslash{t} 16900018 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1700 \textbackslash{t} 6500.00
+ewline 2016-10-31 \textbackslash{t} 16900019 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} 166.00
+ewline 2016-10-31 \textbackslash{t} 16900019 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 166.00
+ewline 2016-10-31 \textbackslash{t} 16900020 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1700 \textbackslash{t}  \textbackslash{t} 136559.00
+ewline 2016-10-31 \textbackslash{t} 16900020 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} 136559.00
+ewline 2016-10-31 \textbackslash{t} 16900021 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2100 \textbackslash{t} 1.46
+ewline 2016-10-31 \textbackslash{t} 16900021 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 4901 \textbackslash{t}  \textbackslash{t} 1.46
+ewline 2016-10-31 \textbackslash{t} 16900022 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 0301 \textbackslash{t} 5000.00
+ewline 2016-10-31 \textbackslash{t} 16900022 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 0301 \textbackslash{t}  \textbackslash{t} 5000.00
+ewline 2016-10-31 \textbackslash{t} 16900023 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 2000 \textbackslash{t}  \textbackslash{t} 31543.70
+ewline 2016-10-31 \textbackslash{t} 16900023 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 7310 \textbackslash{t} 31543.70
+ewline 2016-10-31 \textbackslash{t} 16900023 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1670 \textbackslash{t}  \textbackslash{t} 13250.00
+ewline 2016-10-31 \textbackslash{t} 16900023 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 8110 \textbackslash{t} 13250.00
+ewline 2016-11-05 \textbackslash{t} 16950001 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 0301 \textbackslash{t} 5000.00
+ewline 2016-11-05 \textbackslash{t} 16950001 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 5110 \textbackslash{t}  \textbackslash{t} 5000.00
+ewline }\\
+\textvalue{--- TRANSACTIONS LINES ---}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, 020 Bedrijfsgebouwen, DebitAccount:4820, CreditAccount:, Amount:876.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 1, DebitAccount:, CreditAccount:0120, Amount:876.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, 030 Computers en software, DebitAccount:4830, CreditAccount:, Amount:113.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 1, DebitAccount:, CreditAccount:0130, Amount:113.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, 035 Machines en installaties, DebitAccount:4835, CreditAccount:, Amount:1491.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 1, DebitAccount:, CreditAccount:0135, Amount:1491.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, 040 Transportmiddelen, DebitAccount:4840, CreditAccount:, Amount:1444.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 1, DebitAccount:, CreditAccount:0140, Amount:1444.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, 050 Inventaris, DebitAccount:4850, CreditAccount:, Amount:275.00}\\
+\textvalue{Doc:1-1, Date:2017-01-31, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 1, DebitAccount:, CreditAccount:0150, Amount:275.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, 020 Bedrijfsgebouwen, DebitAccount:4820, CreditAccount:, Amount:790.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 2, DebitAccount:, CreditAccount:0120, Amount:790.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, 030 Computers en software, DebitAccount:4830, CreditAccount:, Amount:99.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 2, DebitAccount:, CreditAccount:0130, Amount:99.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, 035 Machines en installaties, DebitAccount:4835, CreditAccount:, Amount:1347.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 2, DebitAccount:, CreditAccount:0135, Amount:1347.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, 040 Transportmiddelen, DebitAccount:4840, CreditAccount:, Amount:1303.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 2, DebitAccount:, CreditAccount:0140, Amount:1303.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, 050 Inventaris, DebitAccount:4850, CreditAccount:, Amount:248.00}\\
+\textvalue{Doc:2-2, Date:2017-02-28, Description:020 Bedrijfsgebouwen, Automat. afschrijving per. 2, DebitAccount:, CreditAccount:0150, Amount:248.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-1, Date:2017-02-15, Description:, DebitAccount:1200, CreditAccount:, Amount:76.20}\\
+\textvalue{Doc:2-1, Date:2017-02-15, Description:Van Haaften International B.V., DebitAccount:, CreditAccount:1300, Amount:76.20}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-01-04, Description:Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"", DebitAccount:, CreditAccount:1600, Amount:132.77}\\
+\textvalue{Doc:1-1, Date:2017-01-04, Description:Ass.kantoor ""OP GOED GELUK"", Diverse premies, DebitAccount:4750, CreditAccount:, Amount:132.77}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-2, Date:2017-01-06, Description:Cadeau-actie, Cadeau-actie, DebitAccount:, CreditAccount:1600, Amount:176.66}\\
+\textvalue{Doc:1-2, Date:2017-01-06, Description:Cadeau-actie, Cadeau-actie, DebitAccount:1710, CreditAccount:, Amount:30.66}\\
+\textvalue{Doc:1-2, Date:2017-01-06, Description:Cadeau-actie, Cadeau-actie 10 potten 15cm, DebitAccount:7010, CreditAccount:, Amount:146.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-3, Date:2017-01-06, Description:Tuingereedschap, Tuingereedschap, DebitAccount:, CreditAccount:1600, Amount:644.33}\\
+\textvalue{Doc:1-3, Date:2017-01-06, Description:Tuingereedschap, Tuingereedschap, DebitAccount:1710, CreditAccount:, Amount:111.83}\\
+\textvalue{Doc:1-3, Date:2017-01-06, Description:Tuingereedschap, Bladhark 'Autumn' 50st, DebitAccount:7030, CreditAccount:, Amount:532.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-4, Date:2017-01-07, Description:Flyer voorjaar 2017, Flyer voorjaar 2017, DebitAccount:, CreditAccount:1600, Amount:453.97}\\
+\textvalue{Doc:1-4, Date:2017-01-07, Description:Flyer voorjaar 2017, Flyer voorjaar 2017, DebitAccount:1710, CreditAccount:, Amount:78.79}\\
+\textvalue{Doc:1-4, Date:2017-01-07, Description:Flyer voorjaar 2017, Flyer voorjaar 2017, DebitAccount:3090, CreditAccount:, Amount:375.18}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-5, Date:2017-01-07, Description:Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"", DebitAccount:, CreditAccount:1600, Amount:157.12}\\
+\textvalue{Doc:1-5, Date:2017-01-07, Description:Ass.kantoor ""OP GOED GELUK"", Diverse kwartaalpremies, DebitAccount:4750, CreditAccount:, Amount:157.12}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-6, Date:2017-01-08, Description:Grondhark 'Wolf', Grondhark 'Wolf', DebitAccount:, CreditAccount:1600, Amount:143.99}\\
+\textvalue{Doc:1-6, Date:2017-01-08, Description:Grondhark 'Wolf', Grondhark 'Wolf', DebitAccount:1710, CreditAccount:, Amount:24.99}\\
+\textvalue{Doc:1-6, Date:2017-01-08, Description:Grondhark 'Wolf', Grondhark 'Wolf' 10 st, DebitAccount:7030, CreditAccount:, Amount:119.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-7, Date:2017-01-09, Description:Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"", DebitAccount:, CreditAccount:1600, Amount:121.00}\\
+\textvalue{Doc:1-7, Date:2017-01-09, Description:Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"", DebitAccount:1710, CreditAccount:, Amount:21.00}\\
+\textvalue{Doc:1-7, Date:2017-01-09, Description:Ass.kantoor ""OP GOED GELUK"", Verleende diensten, DebitAccount:4750, CreditAccount:, Amount:100.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-8, Date:2017-01-10, Description:Maandnota energie, Maandnota energie, DebitAccount:, CreditAccount:1600, Amount:234.86}\\
+\textvalue{Doc:1-8, Date:2017-01-10, Description:Maandnota energie, Maandnota energie, DebitAccount:1710, CreditAccount:, Amount:40.76}\\
+\textvalue{Doc:1-8, Date:2017-01-10, Description:Maandnota energie, Maandkosten januari elektra, DebitAccount:4170, CreditAccount:, Amount:115.30}\\
+\textvalue{Doc:1-8, Date:2017-01-10, Description:Maandnota energie, Maandkosten januari gas, DebitAccount:4170, CreditAccount:, Amount:78.80}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-9, Date:2017-01-12, Description:Firma Muller's Kantoorbenodigd, Firma Muller's Kantoorbenodigd, DebitAccount:, CreditAccount:1600, Amount:473.11}\\
+\textvalue{Doc:1-9, Date:2017-01-12, Description:Firma Muller's Kantoorbenodigd, Firma Muller's Kantoorbenodigd, DebitAccount:1710, CreditAccount:, Amount:82.11}\\
+\textvalue{Doc:1-9, Date:2017-01-12, Description:Firma Muller's Kantoorbenodigd, Bureaulampen, DebitAccount:4300, CreditAccount:, Amount:256.25}\\
+\textvalue{Doc:1-9, Date:2017-01-12, Description:Firma Muller's Kantoorbenodigd, Whiteboard, DebitAccount:4300, CreditAccount:, Amount:134.75}\\
+\textvalue{Doc:1-9, Date:2017-01-18, Description:Firma Muller's Kantoorbenodigd, De Terrafirm B.V., DebitAccount:, CreditAccount:1600, Amount:127.66}\\
+\textvalue{Doc:1-9, Date:2017-01-18, Description:Firma Muller's Kantoorbenodigd, De Terrafirm B.V., DebitAccount:1710, CreditAccount:, Amount:22.16}\\
+\textvalue{Doc:1-9, Date:2017-01-18, Description:Firma Muller's Kantoorbenodigd, Tuinscherm 'Classic' 2 st, DebitAccount:7040, CreditAccount:, Amount:105.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-10, Date:2017-01-20, Description:De Terrafirm B.V., De Terrafirm B.V., DebitAccount:, CreditAccount:1600, Amount:383.57}\\
+\textvalue{Doc:1-10, Date:2017-01-20, Description:De Terrafirm B.V., De Terrafirm B.V., DebitAccount:1710, CreditAccount:, Amount:66.57}\\
+\textvalue{Doc:1-10, Date:2017-01-20, Description:De Terrafirm B.V., Terracottapot 15cm 10 st, DebitAccount:7010, CreditAccount:, Amount:165.00}\\
+\textvalue{Doc:1-10, Date:2017-01-20, Description:De Terrafirm B.V., Terracottaschaal 15cm 10 st, DebitAccount:7010, CreditAccount:, Amount:152.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-11, Date:2017-02-05, Description:L. de Lange Aardewerk, L. de Lange Aardewerk, DebitAccount:, CreditAccount:1600, Amount:266.20}\\
+\textvalue{Doc:2-11, Date:2017-02-05, Description:L. de Lange Aardewerk, L. de Lange Aardewerk, DebitAccount:1710, CreditAccount:, Amount:46.20}\\
+\textvalue{Doc:2-11, Date:2017-02-05, Description:L. de Lange Aardewerk, Terrapotten 15cm 10st, DebitAccount:7010, CreditAccount:, Amount:220.00}\\
+\textvalue{Doc:2-11, Date:2017-02-17, Description:L. de Lange Aardewerk, De Terrafirm B.V., DebitAccount:, CreditAccount:1600, Amount:181.50}\\
+\textvalue{Doc:2-11, Date:2017-02-17, Description:L. de Lange Aardewerk, De Terrafirm B.V., DebitAccount:1710, CreditAccount:, Amount:31.50}\\
+\textvalue{Doc:2-11, Date:2017-02-17, Description:L. de Lange Aardewerk, Tuinscherm 'Rondo' 2 st, DebitAccount:7040, CreditAccount:, Amount:150.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-12, Date:2017-02-16, Description:De Terrafirm B.V., De Terrafirm B.V., DebitAccount:, CreditAccount:1600, Amount:488.84}\\
+\textvalue{Doc:2-12, Date:2017-02-16, Description:De Terrafirm B.V., De Terrafirm B.V., DebitAccount:1710, CreditAccount:, Amount:84.84}\\
+\textvalue{Doc:2-12, Date:2017-02-16, Description:De Terrafirm B.V., Parasol Hawa� grijs 1st, DebitAccount:7020, CreditAccount:, Amount:229.00}\\
+\textvalue{Doc:2-12, Date:2017-02-16, Description:De Terrafirm B.V., Madison Parasol 350 cm 1st, DebitAccount:7020, CreditAccount:, Amount:175.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-13, Date:2017-01-27, Description:Merit Garden Products Ltd, Merit Garden Products Ltd, DebitAccount:, CreditAccount:1600, Amount:140.19}\\
+\textvalue{Doc:1-13, Date:2017-01-27, Description:Merit Garden Products Ltd, Merit Garden Products Ltd, DebitAccount:1710, CreditAccount:, Amount:8.41}\\
+\textvalue{Doc:1-13, Date:2017-01-27, Description:Merit Garden Products Ltd, Merit Garden Products Ltd, DebitAccount:, CreditAccount:1770, Amount:8.41}\\
+\textvalue{Doc:1-13, Date:2017-01-27, Description:Merit Garden Products Ltd, Yucca-stekken 10 kg, DebitAccount:7000, CreditAccount:, Amount:140.19}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-14, Date:2017-01-11, Description:McDonall Douglas Co., McDonall Douglas Co., DebitAccount:, CreditAccount:1610, Amount:732.60}\\
+\textvalue{Doc:1-14, Date:2017-01-11, Description:McDonall Douglas Co., Vijver Lobelia SII 9 st, DebitAccount:7050, CreditAccount:, Amount:732.60}\\
+\textvalue{Doc:1-14, Date:2017-01-25, Description:McDonall Douglas Co., Janssens \& Zn B.V. Plantenkwek, DebitAccount:, CreditAccount:1600, Amount:1770.20}\\
+\textvalue{Doc:1-14, Date:2017-01-25, Description:McDonall Douglas Co., Janssens \& Zn B.V. Plantenkwek, DebitAccount:1710, CreditAccount:, Amount:100.20}\\
+\textvalue{Doc:1-14, Date:2017-01-25, Description:McDonall Douglas Co., Yucca stekken en zaden, DebitAccount:7000, CreditAccount:, Amount:1670.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-14, Date:2017-02-06, Description:McDonall Douglas Co., McDonall Douglas Co., DebitAccount:, CreditAccount:1610, Amount:366.30}\\
+\textvalue{Doc:2-14, Date:2017-02-06, Description:McDonall Douglas Co., Parasol Madison 3st, DebitAccount:7020, CreditAccount:, Amount:366.30}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-15, Date:2017-02-07, Description:Flyer juni 2017, Flyer juni 2017, DebitAccount:, CreditAccount:1600, Amount:247.34}\\
+\textvalue{Doc:2-15, Date:2017-02-07, Description:Flyer juni 2017, Flyer juni 2017, DebitAccount:1710, CreditAccount:, Amount:14.00}\\
+\textvalue{Doc:2-15, Date:2017-02-07, Description:Flyer juni 2017, Flyer juni 2017, DebitAccount:4330, CreditAccount:, Amount:233.34}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-16, Date:2017-02-10, Description:Factuurnummer 445453, Factuurnummer 445453, DebitAccount:, CreditAccount:1600, Amount:3598.00}\\
+\textvalue{Doc:2-16, Date:2017-02-10, Description:Factuurnummer 445453, Factuurnummer 445453, DebitAccount:1710, CreditAccount:, Amount:624.45}\\
+\textvalue{Doc:2-16, Date:2017-02-10, Description:Factuurnummer 445453, Factuurnummer 445453, DebitAccount:7090, CreditAccount:, Amount:2973.55}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-17, Date:2017-01-18, Description:Factuur 445455, Factuur 445455, DebitAccount:, CreditAccount:1600, Amount:50.00}\\
+\textvalue{Doc:1-17, Date:2017-01-18, Description:Factuur 445455, Factuur 445455, DebitAccount:1710, CreditAccount:, Amount:8.68}\\
+\textvalue{Doc:1-17, Date:2017-01-18, Description:Factuur 445455, Factuurnummer 445455, DebitAccount:3090, CreditAccount:, Amount:41.32}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Cornel's Tuinartikelen, Cornel's Tuinartikelen, DebitAccount:, CreditAccount:1600, Amount:413.40}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Cornel's Tuinartikelen, Cornel's Tuinartikelen, DebitAccount:1710, CreditAccount:, Amount:23.40}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Cornel's Tuinartikelen, Voorjaarsboeket Personeel, DebitAccount:4091, CreditAccount:, Amount:390.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Fact 006538, DebitAccount:, CreditAccount:1600, Amount:816.75}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Fact 006538, DebitAccount:1710, CreditAccount:, Amount:141.75}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Dripsysteem 5l, DebitAccount:7090, CreditAccount:, Amount:675.00}\\
+\textvalue{Doc:2-22, Date:2017-02-25, Description:Fact 006538, 22-2398509, DebitAccount:, CreditAccount:1600, Amount:5347.87}\\
+\textvalue{Doc:2-22, Date:2017-02-25, Description:Fact 006538, 22-2398509, DebitAccount:1710, CreditAccount:, Amount:1123.05}\\
+\textvalue{Doc:2-22, Date:2017-02-25, Description:Fact 006538, 22-2398509, DebitAccount:, CreditAccount:1770, Amount:1123.05}\\
+\textvalue{Doc:2-22, Date:2017-02-25, Description:Fact 006538, 22-2398509, DebitAccount:7040, CreditAccount:, Amount:5347.87}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Fact 140224-001, DebitAccount:, CreditAccount:1610, Amount:3180.00}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Fact 140224-001, DebitAccount:1710, CreditAccount:, Amount:667.80}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Fact 140224-001, DebitAccount:, CreditAccount:1770, Amount:667.80}\\
+\textvalue{Doc:2-22, Date:2017-02-24, Description:Fact 006538, Tuinmeubelen, DebitAccount:7040, CreditAccount:, Amount:3180.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-24, Date:2017-02-01, Description:Factuur project 2012-103, Factuur project 2012-103, DebitAccount:, CreditAccount:1600, Amount:3502.95}\\
+\textvalue{Doc:2-24, Date:2017-02-01, Description:Factuur project 2012-103, Factuur project 2012-103, DebitAccount:1710, CreditAccount:, Amount:607.95}\\
+\textvalue{Doc:2-24, Date:2017-02-01, Description:Factuur project 2012-103, Grondwerkzaamheden, DebitAccount:6535, CreditAccount:, Amount:2895.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-2, Date:2017-02-24, Description:, DebitAccount:1110, CreditAccount:, Amount:652.19}\\
+\textvalue{Doc:2-2, Date:2017-02-24, Description:Steenplaza F. de Vries, DebitAccount:, CreditAccount:1300, Amount:652.19}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-3, Date:2017-02-24, Description:, DebitAccount:1110, CreditAccount:, Amount:181.50}\\
+\textvalue{Doc:2-3, Date:2017-02-24, Description:Van Bekkerem B.V., DebitAccount:, CreditAccount:1300, Amount:181.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-4, Date:2017-02-24, Description:, DebitAccount:1110, CreditAccount:, Amount:2000.00}\\
+\textvalue{Doc:2-4, Date:2017-02-24, Description:Van Bekkerem B.V., DebitAccount:, CreditAccount:1300, Amount:2000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-5, Date:2017-02-28, Description:, DebitAccount:1110, CreditAccount:, Amount:2353.58}\\
+\textvalue{Doc:2-5, Date:2017-02-28, Description:Van Bekkerem B.V., DebitAccount:, CreditAccount:1300, Amount:2353.58}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-6, Date:2017-02-23, Description:, DebitAccount:1110, CreditAccount:, Amount:100.00}\\
+\textvalue{Doc:2-6, Date:2017-02-23, Description:Betalingsverschil, DebitAccount:9030, CreditAccount:, Amount:8.54}\\
+\textvalue{Doc:2-6, Date:2017-02-23, Description:Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:1300, Amount:108.54}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-01-25, Description:Uw factuur 2017-22-01-st3, Uw factuur 2017-22-01-st3, DebitAccount:, CreditAccount:1600, Amount:539.06}\\
+\textvalue{Doc:1-1, Date:2017-01-25, Description:Uw factuur 2017-22-01-st3, Uw factuur 2017-22-01-st3, DebitAccount:1710, CreditAccount:, Amount:93.56}\\
+\textvalue{Doc:1-1, Date:2017-01-25, Description:Uw factuur 2017-22-01-st3, Uw factuur 2017-22-01-st3, DebitAccount:2030, CreditAccount:, Amount:445.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-1, Date:2017-02-10, Description:, DebitAccount:, CreditAccount:1000, Amount:234.89}\\
+\textvalue{Doc:2-1, Date:2017-02-10, Description:Kantoorartikelen divers, DebitAccount:4300, CreditAccount:, Amount:194.12}\\
+\textvalue{Doc:2-1, Date:2017-02-10, Description:Kantoorartikelen divers, DebitAccount:1710, CreditAccount:, Amount:40.77}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-2, Date:2017-02-15, Description:, DebitAccount:, CreditAccount:1000, Amount:85.32}\\
+\textvalue{Doc:2-2, Date:2017-02-12, Description:Relatiegeschenk v. Bekkerem, DebitAccount:4500, CreditAccount:, Amount:70.51}\\
+\textvalue{Doc:2-2, Date:2017-02-12, Description:Relatiegeschenk v. Bekkerem, DebitAccount:1710, CreditAccount:, Amount:14.81}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-3, Date:2017-02-15, Description:, DebitAccount:, CreditAccount:1000, Amount:16.87}\\
+\textvalue{Doc:2-3, Date:2017-02-15, Description:Kantine-inkopen, DebitAccount:4790, CreditAccount:, Amount:15.92}\\
+\textvalue{Doc:2-3, Date:2017-02-15, Description:Kantine-inkopen, DebitAccount:1710, CreditAccount:, Amount:0.95}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:, DebitAccount:, CreditAccount:1000, Amount:436.58}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:4410, CreditAccount:, Amount:78.06}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:1710, CreditAccount:, Amount:16.39}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:4410, CreditAccount:, Amount:74.07}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:1710, CreditAccount:, Amount:15.56}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:4410, CreditAccount:, Amount:75.76}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:1710, CreditAccount:, Amount:15.91}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:4410, CreditAccount:, Amount:65.77}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:1710, CreditAccount:, Amount:13.81}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:4410, CreditAccount:, Amount:67.15}\\
+\textvalue{Doc:2-4, Date:2017-02-25, Description:Diesel, DebitAccount:1710, CreditAccount:, Amount:14.10}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-01-20, Description:Bruto salarissen, Bruto salarissen, DebitAccount:4000, CreditAccount:, Amount:1509.42}\\
+\textvalue{Doc:1-1, Date:2017-01-20, Description:Bruto salarissen, Sociale lasten, DebitAccount:4000, CreditAccount:, Amount:88.42}\\
+\textvalue{Doc:1-1, Date:2017-01-20, Description:Bruto salarissen, Onbelaste vergoedingen, DebitAccount:4000, CreditAccount:, Amount:18.66}\\
+\textvalue{Doc:1-1, Date:2017-01-20, Description:Bruto salarissen, Loonheffing, DebitAccount:, CreditAccount:1810, Amount:289.34}\\
+\textvalue{Doc:1-1, Date:2017-01-20, Description:Bruto salarissen, Sociale lasten, DebitAccount:, CreditAccount:1820, Amount:100.39}\\
+\textvalue{Doc:1-1, Date:2017-01-20, Description:Bruto salarissen, Netto Salarissen, DebitAccount:, CreditAccount:1820, Amount:1226.77}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Projectmutatie, DebitAccount:6520, CreditAccount:, Amount:1620.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Overleg, DebitAccount:, CreditAccount:5000, Amount:360.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Ontwerp, DebitAccount:, CreditAccount:5000, Amount:315.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Ontwerp en planning, DebitAccount:, CreditAccount:5000, Amount:225.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Overleg, DebitAccount:, CreditAccount:5000, Amount:360.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, planning en administratie, DebitAccount:, CreditAccount:5000, Amount:360.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Projectmutatie, DebitAccount:6530, CreditAccount:, Amount:5700.00}\\
+\textvalue{Doc:1-1, Date:2017-01-15, Description:Projectmutatie, Werk derden <Project>, DebitAccount:, CreditAccount:5000, Amount:5700.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Projectmutatie, DebitAccount:6510, CreditAccount:, Amount:3450.00}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Zwarte grond, DebitAccount:, CreditAccount:5000, Amount:1050.00}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Straatzand, DebitAccount:, CreditAccount:5000, Amount:2400.00}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Projectmutatie, DebitAccount:6520, CreditAccount:, Amount:800.00}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Grondwerk, DebitAccount:, CreditAccount:5000, Amount:800.00}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Projectmutatie, DebitAccount:6540, CreditAccount:, Amount:230.00}\\
+\textvalue{Doc:1-2, Date:2017-01-20, Description:Projectmutatie, Diversen materiaal t.b.v. proj, DebitAccount:, CreditAccount:5000, Amount:230.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-3, Date:2017-02-05, Description:Stoeptegels 30 x 30 grijs, Stoeptegels 30 x 30 grijs, DebitAccount:, CreditAccount:3040, Amount:4880.00}\\
+\textvalue{Doc:2-3, Date:2017-02-05, Description:Stoeptegels 30 x 30 grijs, Stoeptegels 30 x 30 grijs, DebitAccount:6515, CreditAccount:, Amount:4880.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Projectmutatie, DebitAccount:6510, CreditAccount:, Amount:1100.00}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Diverse struikbeplanting, DebitAccount:, CreditAccount:5000, Amount:1100.00}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Projectmutatie, DebitAccount:6520, CreditAccount:, Amount:560.00}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Tuinaanleg, DebitAccount:, CreditAccount:5000, Amount:240.00}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Tuinaanleg, DebitAccount:, CreditAccount:5000, Amount:320.00}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Projectmutatie, DebitAccount:6540, CreditAccount:, Amount:340.00}\\
+\textvalue{Doc:2-4, Date:2017-02-14, Description:Projectmutatie, Diversen materiaal t.b.v. proj, DebitAccount:, CreditAccount:5000, Amount:340.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Projectmutatie, DebitAccount:2090, CreditAccount:, Amount:2870.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Werk derden <Project>, DebitAccount:, CreditAccount:5000, Amount:350.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Montagewerk, DebitAccount:, CreditAccount:5000, Amount:800.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Diverse struikbeplanting, DebitAccount:, CreditAccount:5000, Amount:880.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Tuinaanleg, DebitAccount:, CreditAccount:5000, Amount:340.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Diversen materiaal t.b.v. proj, DebitAccount:, CreditAccount:5000, Amount:500.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Bouwmaterialen (diversen), DebitAccount:, CreditAccount:3040, Amount:800.00}\\
+\textvalue{Doc:2-5, Date:2017-02-27, Description:Projectmutatie, Bouwmaterialen (diversen), DebitAccount:2090, CreditAccount:, Amount:800.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-6, Date:2017-02-16, Description:Projectmutatie, Projectmutatie, DebitAccount:6525, CreditAccount:, Amount:280.00}\\
+\textvalue{Doc:2-6, Date:2017-02-16, Description:Projectmutatie, Grondwerk, DebitAccount:, CreditAccount:5000, Amount:280.00}\\
+\textvalue{Doc:2-6, Date:2017-02-16, Description:Projectmutatie, Projectmutatie, DebitAccount:6515, CreditAccount:, Amount:240.00}\\
+\textvalue{Doc:2-6, Date:2017-02-16, Description:Projectmutatie, Straatzand, DebitAccount:, CreditAccount:5000, Amount:240.00}\\
+\textvalue{Doc:2-6, Date:2017-02-16, Description:Projectmutatie, Blokhut Walter 427 x 300 cm, DebitAccount:, CreditAccount:3040, Amount:4240.00}\\
+\textvalue{Doc:2-6, Date:2017-02-16, Description:Projectmutatie, Blokhut Walter 427 x 300 cm, DebitAccount:6515, CreditAccount:, Amount:4240.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-01-10, Description:uw telefonische order, uw telefonische order, DebitAccount:1300, CreditAccount:, Amount:4781.32}\\
+\textvalue{Doc:1-1, Date:2017-01-10, Description:uw telefonische order, uw telefonische order, DebitAccount:, CreditAccount:1770, Amount:829.82}\\
+\textvalue{Doc:1-1, Date:2017-01-10, Description:uw telefonische order, Tuinaarde 40Liter 10st, DebitAccount:, CreditAccount:8090, Amount:35.50}\\
+\textvalue{Doc:1-1, Date:2017-01-10, Description:uw telefonische order, Terracotta schaal en pot 35 cm, DebitAccount:, CreditAccount:8090, Amount:116.00}\\
+\textvalue{Doc:1-1, Date:2017-01-10, Description:uw telefonische order, Blokhutten Walter 3st, DebitAccount:, CreditAccount:8090, Amount:3800.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-2, Date:2017-01-12, Description:Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr, DebitAccount:1300, CreditAccount:, Amount:2408.63}\\
+\textvalue{Doc:1-2, Date:2017-01-12, Description:Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr, DebitAccount:, CreditAccount:1770, Amount:418.03}\\
+\textvalue{Doc:1-2, Date:2017-01-12, Description:Fa. Brokma Blokhutten v/h Gebr, Volledige tuinset, DebitAccount:, CreditAccount:8090, Amount:1990.60}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V., DebitAccount:1300, CreditAccount:, Amount:524.73}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:1770, Amount:91.07}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Diverse tuingereedschappen, DebitAccount:, CreditAccount:8090, Amount:433.66}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Uw telefonische order, DebitAccount:1300, CreditAccount:, Amount:2916.10}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Uw telefonische order, DebitAccount:, CreditAccount:1770, Amount:506.10}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Diverse potten, DebitAccount:, CreditAccount:8010, Amount:150.00}\\
+\textvalue{Doc:1-3, Date:2017-01-13, Description:Tuinwereld Van Schaik B.V., Blokhutten Walter 3st, DebitAccount:, CreditAccount:8090, Amount:2260.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-4, Date:2017-01-18, Description:Telefonisch overeengekomen, Telefonisch overeengekomen, DebitAccount:1300, CreditAccount:, Amount:191.18}\\
+\textvalue{Doc:1-4, Date:2017-01-18, Description:Telefonisch overeengekomen, Telefonisch overeengekomen, DebitAccount:, CreditAccount:1770, Amount:33.18}\\
+\textvalue{Doc:1-4, Date:2017-01-18, Description:Telefonisch overeengekomen, Bank Madrid zwart 1st, DebitAccount:, CreditAccount:8090, Amount:158.00}\\
+\textvalue{Doc:1-4, Date:2017-01-18, Description:Telefonisch overeengekomen, Uw aanvraag d.d. 16-01-2017, DebitAccount:1300, CreditAccount:, Amount:1028.50}\\
+\textvalue{Doc:1-4, Date:2017-01-18, Description:Telefonisch overeengekomen, Uw aanvraag d.d. 16-01-2017, DebitAccount:, CreditAccount:1770, Amount:178.50}\\
+\textvalue{Doc:1-4, Date:2017-01-18, Description:Telefonisch overeengekomen, Diversen, DebitAccount:, CreditAccount:8090, Amount:850.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-5, Date:2017-01-23, Description:Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V., DebitAccount:1300, CreditAccount:, Amount:108.54}\\
+\textvalue{Doc:1-5, Date:2017-01-23, Description:Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:1770, Amount:18.84}\\
+\textvalue{Doc:1-5, Date:2017-01-23, Description:Tuinwereld Van Schaik B.V., Diverse tuingereedschappen, DebitAccount:, CreditAccount:8090, Amount:89.70}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Volgens offerte 18-01-14, DebitAccount:1300, CreditAccount:, Amount:404.14}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Volgens offerte 18-01-14, DebitAccount:, CreditAccount:1770, Amount:70.14}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Volgens offerte 18-01-14, DebitAccount:, CreditAccount:8090, Amount:334.00}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Van Onna Groenvoorziening B.V., DebitAccount:1300, CreditAccount:, Amount:998.70}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Van Onna Groenvoorziening B.V., DebitAccount:, CreditAccount:1760, Amount:56.53}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Dracena's 22 stuks, DebitAccount:, CreditAccount:8000, Amount:726.44}\\
+\textvalue{Doc:2-5, Date:2017-02-01, Description:Volgens offerte 18-01-14, Chameadora's 9 stuks, DebitAccount:, CreditAccount:8090, Amount:215.73}\\
+\textvalue{Doc:2-5, Date:2017-02-04, Description:Volgens offerte 18-01-14, Opdrachtnr: 140126-003, DebitAccount:1300, CreditAccount:, Amount:123.14}\\
+\textvalue{Doc:2-5, Date:2017-02-04, Description:Volgens offerte 18-01-14, Vijverplanten Lobelia SII, DebitAccount:, CreditAccount:8090, Amount:123.14}\\
+\textvalue{Doc:2-5, Date:2017-02-04, Description:Volgens offerte 18-01-14, Garden Impressions Beverly, DebitAccount:1310, CreditAccount:, Amount:1223.00}\\
+\textvalue{Doc:2-5, Date:2017-02-04, Description:Volgens offerte 18-01-14, Diverse potten en schalen, DebitAccount:, CreditAccount:8090, Amount:1223.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-7, Date:2017-01-21, Description:Uw telefonische order, Uw telefonische order, DebitAccount:1300, CreditAccount:, Amount:4353.58}\\
+\textvalue{Doc:1-7, Date:2017-01-21, Description:Uw telefonische order, Uw telefonische order, DebitAccount:, CreditAccount:1770, Amount:755.58}\\
+\textvalue{Doc:1-7, Date:2017-01-21, Description:Uw telefonische order, Blokhutten Walter 3st, DebitAccount:, CreditAccount:8090, Amount:3598.00}\\
+\textvalue{Doc:1-7, Date:2017-01-20, Description:Uw telefonische order, Van Bekkerem B.V. Bloemisterij, DebitAccount:1300, CreditAccount:, Amount:2057.00}\\
+\textvalue{Doc:1-7, Date:2017-01-20, Description:Uw telefonische order, Van Bekkerem B.V. Bloemisterij, DebitAccount:, CreditAccount:1770, Amount:357.00}\\
+\textvalue{Doc:1-7, Date:2017-01-20, Description:Uw telefonische order, Diverse potten, DebitAccount:, CreditAccount:8010, Amount:875.00}\\
+\textvalue{Doc:1-7, Date:2017-01-20, Description:Uw telefonische order, Diverse schalen, DebitAccount:, CreditAccount:8010, Amount:825.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-8, Date:2017-02-11, Description:Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V., DebitAccount:1300, CreditAccount:, Amount:108.17}\\
+\textvalue{Doc:2-8, Date:2017-02-11, Description:Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:1770, Amount:18.77}\\
+\textvalue{Doc:2-8, Date:2017-02-11, Description:Tuinwereld Van Schaik B.V., Tuinaarde 40 liter 20 st, DebitAccount:, CreditAccount:8090, Amount:89.40}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-9, Date:2017-02-05, Description:MELBICKS GARDEN \& LEISURE, MELBICKS GARDEN \& LEISURE, DebitAccount:1300, CreditAccount:, Amount:6402.37}\\
+\textvalue{Doc:2-9, Date:2017-02-05, Description:MELBICKS GARDEN \& LEISURE, Blokhut Walter 2st, DebitAccount:, CreditAccount:8090, Amount:6402.37}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-10, Date:2017-02-03, Description:MELBICKS Garden \& Leisure, MELBICKS Garden \& Leisure, DebitAccount:1300, CreditAccount:, Amount:272.19}\\
+\textvalue{Doc:2-10, Date:2017-02-03, Description:MELBICKS Garden \& Leisure, Yucca-zaden, DebitAccount:, CreditAccount:8090, Amount:272.19}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-11, Date:2017-01-15, Description:Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam', DebitAccount:1300, CreditAccount:, Amount:759.48}\\
+\textvalue{Doc:1-11, Date:2017-01-15, Description:Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam', DebitAccount:, CreditAccount:1770, Amount:131.81}\\
+\textvalue{Doc:1-11, Date:2017-01-15, Description:Tuincentrum 'Amsterdam', Diverse potten en tuinschermen, DebitAccount:, CreditAccount:8090, Amount:627.67}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-12, Date:2017-02-17, Description:Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam', DebitAccount:1300, CreditAccount:, Amount:2207.04}\\
+\textvalue{Doc:2-12, Date:2017-02-17, Description:Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam', DebitAccount:, CreditAccount:1770, Amount:383.04}\\
+\textvalue{Doc:2-12, Date:2017-02-17, Description:Tuincentrum 'Amsterdam', Diverse potten en schalen, DebitAccount:, CreditAccount:8010, Amount:1824.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-14, Date:2017-02-20, Description:Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr, DebitAccount:1300, CreditAccount:, Amount:3630.00}\\
+\textvalue{Doc:2-14, Date:2017-02-20, Description:Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr, DebitAccount:, CreditAccount:1770, Amount:630.00}\\
+\textvalue{Doc:2-14, Date:2017-02-20, Description:Fa. Brokma Blokhutten v/h Gebr, Blokhut Walter 3st, DebitAccount:, CreditAccount:8040, Amount:3000.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Offerte 20141215-1, DebitAccount:1300, CreditAccount:, Amount:60.50}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Offerte 20141215-1, DebitAccount:, CreditAccount:1770, Amount:10.50}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Offerte 20141215-1, DebitAccount:, CreditAccount:8090, Amount:50.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Fa. Brokma Blokhutten v/h Gebr, DebitAccount:, CreditAccount:3010, Amount:33.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Fa. Brokma Blokhutten v/h Gebr, DebitAccount:7010, CreditAccount:, Amount:33.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:1300, CreditAccount:, Amount:1881.07}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:1770, Amount:326.47}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:8000, Amount:949.11}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:8010, Amount:729.03}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:8040, Amount:49.20}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:8000, CreditAccount:, Amount:94.91}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:8010, CreditAccount:, Amount:72.91}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:8040, CreditAccount:, Amount:4.92}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:3000, Amount:869.10}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:7000, CreditAccount:, Amount:869.10}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:3010, Amount:304.80}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:7010, CreditAccount:, Amount:304.80}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:, CreditAccount:3040, Amount:35.50}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Tuinwereld Van Schaik B.V., DebitAccount:7040, CreditAccount:, Amount:35.50}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:1300, CreditAccount:, Amount:2840.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:, CreditAccount:8020, Amount:950.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:, CreditAccount:8040, Amount:1890.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:, CreditAccount:3020, Amount:594.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:7020, CreditAccount:, Amount:594.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:, CreditAccount:3040, Amount:1080.00}\\
+\textvalue{Doc:1-15, Date:2017-01-31, Description:Offerte 20141215-1, Vijver- en Tuincentrum Pelckma, DebitAccount:7040, CreditAccount:, Amount:1080.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-16, Date:2017-02-08, Description:Steenplaza F. de Vries, Steenplaza F. de Vries, DebitAccount:1300, CreditAccount:, Amount:652.19}\\
+\textvalue{Doc:2-16, Date:2017-02-08, Description:Steenplaza F. de Vries, Steenplaza F. de Vries, DebitAccount:, CreditAccount:1770, Amount:113.19}\\
+\textvalue{Doc:2-16, Date:2017-02-08, Description:Steenplaza F. de Vries, Siertegels, DebitAccount:, CreditAccount:8070, Amount:539.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-17, Date:2017-01-29, Description:Van Bekkerem B.V., Van Bekkerem B.V., DebitAccount:1300, CreditAccount:, Amount:268.33}\\
+\textvalue{Doc:1-17, Date:2017-01-29, Description:Van Bekkerem B.V., Van Bekkerem B.V., DebitAccount:, CreditAccount:1770, Amount:46.57}\\
+\textvalue{Doc:1-17, Date:2017-01-29, Description:Van Bekkerem B.V., Diverse schalen, DebitAccount:, CreditAccount:8010, Amount:221.76}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin, DebitAccount:1300, CreditAccount:, Amount:76.20}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin, DebitAccount:, CreditAccount:1770, Amount:13.22}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin, DebitAccount:, CreditAccount:8060, Amount:62.98}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Installatieondhoud jaarlijks, DebitAccount:1300, CreditAccount:, Amount:287.88}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Installatieondhoud jaarlijks, DebitAccount:, CreditAccount:1770, Amount:49.96}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Installatieondhoud jaarlijks, DebitAccount:, CreditAccount:8060, Amount:237.92}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Halfjaar OH tuin, DebitAccount:1300, CreditAccount:, Amount:181.70}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Halfjaar OH tuin, DebitAccount:, CreditAccount:1770, Amount:31.53}\\
+\textvalue{Doc:2-18, Date:2017-02-01, Description:Incasso Kwartaal OH Tuin, Halfjaar OH tuin, DebitAccount:, CreditAccount:8060, Amount:150.17}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-19, Date:2017-02-02, Description:Van Bekkerem B.V., Van Bekkerem B.V., DebitAccount:1300, CreditAccount:, Amount:1355.20}\\
+\textvalue{Doc:2-19, Date:2017-02-02, Description:Van Bekkerem B.V., Van Bekkerem B.V., DebitAccount:, CreditAccount:1770, Amount:235.20}\\
+\textvalue{Doc:2-19, Date:2017-02-02, Description:Van Bekkerem B.V., Van Bekkerem B.V., DebitAccount:, CreditAccount:2016, Amount:1120.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-20, Date:2017-02-09, Description:Inkoopcombinatie CO-OP, Inkoopcombinatie CO-OP, DebitAccount:1300, CreditAccount:, Amount:5445.00}\\
+\textvalue{Doc:2-20, Date:2017-02-09, Description:Inkoopcombinatie CO-OP, Inkoopcombinatie CO-OP, DebitAccount:, CreditAccount:1770, Amount:945.00}\\
+\textvalue{Doc:2-20, Date:2017-02-09, Description:Inkoopcombinatie CO-OP, Inkoopcombinatie CO-OP, DebitAccount:, CreditAccount:2016, Amount:4500.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Van Haaften International B.V., DebitAccount:1300, CreditAccount:, Amount:125.84}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Van Haaften International B.V., DebitAccount:, CreditAccount:1770, Amount:21.84}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Van Haaften International B.V., DebitAccount:, CreditAccount:8010, Amount:104.00}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Van Haaften International B.V., DebitAccount:, CreditAccount:3010, Amount:69.00}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Van Haaften International B.V., DebitAccount:7010, CreditAccount:, Amount:69.00}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Garden Impressions Beverly, DebitAccount:1310, CreditAccount:, Amount:2973.56}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Garden Impressions Beverly, DebitAccount:, CreditAccount:8040, Amount:2973.56}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Garden Impressions Beverly, DebitAccount:, CreditAccount:3040, Amount:2120.00}\\
+\textvalue{Doc:2-21, Date:2017-02-28, Description:Van Haaften International B.V., Garden Impressions Beverly, DebitAccount:7040, CreditAccount:, Amount:2120.00}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-22, Date:2017-02-15, Description:Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin, DebitAccount:1300, CreditAccount:, Amount:97.07}\\
+\textvalue{Doc:2-22, Date:2017-02-15, Description:Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin, DebitAccount:, CreditAccount:1770, Amount:16.85}\\
+\textvalue{Doc:2-22, Date:2017-02-15, Description:Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin, DebitAccount:, CreditAccount:8060, Amount:80.22}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3020, CreditAccount:, Amount:338.82}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:134.34}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:204.48}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3030, CreditAccount:, Amount:285.30}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:285.30}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3040, CreditAccount:, Amount:1320.00}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:100.75}\\
+\textvalue{Doc:1-1, Date:2017-03-31, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:1219.25}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-2, Date:2017-01-07, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3030, CreditAccount:, Amount:231.75}\\
+\textvalue{Doc:1-2, Date:2017-01-07, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:19.30}\\
+\textvalue{Doc:1-2, Date:2017-01-07, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:212.45}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-3, Date:2017-01-18, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3000, CreditAccount:, Amount:70.50}\\
+\textvalue{Doc:1-3, Date:2017-01-18, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:11.73}\\
+\textvalue{Doc:1-3, Date:2017-01-18, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:58.77}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-4, Date:2017-01-22, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3010, CreditAccount:, Amount:480.00}\\
+\textvalue{Doc:1-4, Date:2017-01-22, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:34.50}\\
+\textvalue{Doc:1-4, Date:2017-01-22, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:445.50}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-5, Date:2017-02-02, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3020, CreditAccount:, Amount:1857.60}\\
+\textvalue{Doc:2-5, Date:2017-02-02, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:161.22}\\
+\textvalue{Doc:2-5, Date:2017-02-02, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:1696.38}\\
+\textvalue{**********}\\
+\textvalue{Doc:2-6, Date:2017-02-02, Description:Goederenontvangst, Goederenontvangst, DebitAccount:3050, CreditAccount:, Amount:333.70}\\
+\textvalue{Doc:2-6, Date:2017-02-02, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2090, Amount:114.82}\\
+\textvalue{Doc:2-6, Date:2017-02-02, Description:Goederenontvangst, Goederenontvangst, DebitAccount:, CreditAccount:2035, Amount:218.88}\\
+\textvalue{**********}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:29.40}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:29.40}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:58.20}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:71.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:35.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:58.20}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:71.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:35.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3050, CreditAccount:, Amount:159.90}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:159.90}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3050, CreditAccount:, Amount:44.90}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3050, CreditAccount:, Amount:23.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:44.90}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:23.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3000, CreditAccount:, Amount:117.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3000, CreditAccount:, Amount:171.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3000, CreditAccount:, Amount:206.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:117.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:171.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:206.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3010, CreditAccount:, Amount:412.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3010, CreditAccount:, Amount:320.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3010, CreditAccount:, Amount:146.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3010, CreditAccount:, Amount:249.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3020, CreditAccount:, Amount:326.41}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3020, CreditAccount:, Amount:375.44}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3020, CreditAccount:, Amount:58.44}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:412.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:320.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:146.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:249.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:326.41}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:375.44}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:58.44}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:1145.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:525.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:408.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3040, CreditAccount:, Amount:228.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3030, CreditAccount:, Amount:63.90}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3030, CreditAccount:, Amount:71.40}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3030, CreditAccount:, Amount:150.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:3030, CreditAccount:, Amount:154.50}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:1145.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:525.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:408.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:228.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:63.90}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:71.40}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:150.00}\\
+\textvalue{Doc:1-1, Date:2017-01-02, Description:Beginvoorraad, Beginvoorraad, DebitAccount:, CreditAccount:2020, Amount:154.50}\\
+\textvalue{ }\\
+\textvalue{IMPORT FILE}\\
+\textvalue{Date \textbackslash{t} Doc \textbackslash{t} DocType \textbackslash{t} Description \textbackslash{t} Account \textbackslash{t} ContraAccount \textbackslash{t} Income
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 020 Bedrijfsgebouwen \textbackslash{t} 4820 \textbackslash{t}  \textbackslash{t} 876.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 1 \textbackslash{t}  \textbackslash{t} 0120 \textbackslash{t} 876.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 030 Computers en software \textbackslash{t} 4830 \textbackslash{t}  \textbackslash{t} 113.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 1 \textbackslash{t}  \textbackslash{t} 0130 \textbackslash{t} 113.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 035 Machines en installaties \textbackslash{t} 4835 \textbackslash{t}  \textbackslash{t} 1491.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 1 \textbackslash{t}  \textbackslash{t} 0135 \textbackslash{t} 1491.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 040 Transportmiddelen \textbackslash{t} 4840 \textbackslash{t}  \textbackslash{t} 1444.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 1 \textbackslash{t}  \textbackslash{t} 0140 \textbackslash{t} 1444.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 050 Inventaris \textbackslash{t} 4850 \textbackslash{t}  \textbackslash{t} 275.00
+ewline 2017-01-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 1 \textbackslash{t}  \textbackslash{t} 0150 \textbackslash{t} 275.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 020 Bedrijfsgebouwen \textbackslash{t} 4820 \textbackslash{t}  \textbackslash{t} 790.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 2 \textbackslash{t}  \textbackslash{t} 0120 \textbackslash{t} 790.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 030 Computers en software \textbackslash{t} 4830 \textbackslash{t}  \textbackslash{t} 99.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 2 \textbackslash{t}  \textbackslash{t} 0130 \textbackslash{t} 99.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 035 Machines en installaties \textbackslash{t} 4835 \textbackslash{t}  \textbackslash{t} 1347.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 2 \textbackslash{t}  \textbackslash{t} 0135 \textbackslash{t} 1347.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 040 Transportmiddelen \textbackslash{t} 4840 \textbackslash{t}  \textbackslash{t} 1303.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 2 \textbackslash{t}  \textbackslash{t} 0140 \textbackslash{t} 1303.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, 050 Inventaris \textbackslash{t} 4850 \textbackslash{t}  \textbackslash{t} 248.00
+ewline 2017-02-28 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} 020 Bedrijfsgebouwen, Automat. afschrijving per. 2 \textbackslash{t}  \textbackslash{t} 0150 \textbackslash{t} 248.00
+ewline 2017-02-15 \textbackslash{t} 2-1 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1200 \textbackslash{t}  \textbackslash{t} 76.20
+ewline 2017-02-15 \textbackslash{t} 2-1 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V. \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 76.20
+ewline 2017-01-04 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"" \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 132.77
+ewline 2017-01-04 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Diverse premies \textbackslash{t} 4750 \textbackslash{t}  \textbackslash{t} 132.77
+ewline 2017-01-06 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Cadeau-actie, Cadeau-actie \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 176.66
+ewline 2017-01-06 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Cadeau-actie, Cadeau-actie \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 30.66
+ewline 2017-01-06 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Cadeau-actie, Cadeau-actie 10 potten 15cm \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 146.00
+ewline 2017-01-06 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuingereedschap, Tuingereedschap \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 644.33
+ewline 2017-01-06 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuingereedschap, Tuingereedschap \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 111.83
+ewline 2017-01-06 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuingereedschap, Bladhark 'Autumn' 50st \textbackslash{t} 7030 \textbackslash{t}  \textbackslash{t} 532.50
+ewline 2017-01-07 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Flyer voorjaar 2017, Flyer voorjaar 2017 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 453.97
+ewline 2017-01-07 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Flyer voorjaar 2017, Flyer voorjaar 2017 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 78.79
+ewline 2017-01-07 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Flyer voorjaar 2017, Flyer voorjaar 2017 \textbackslash{t} 3090 \textbackslash{t}  \textbackslash{t} 375.18
+ewline 2017-01-07 \textbackslash{t} 1-5 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"" \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 157.12
+ewline 2017-01-07 \textbackslash{t} 1-5 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Diverse kwartaalpremies \textbackslash{t} 4750 \textbackslash{t}  \textbackslash{t} 157.12
+ewline 2017-01-08 \textbackslash{t} 1-6 \textbackslash{t}  \textbackslash{t} Grondhark 'Wolf', Grondhark 'Wolf' \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 143.99
+ewline 2017-01-08 \textbackslash{t} 1-6 \textbackslash{t}  \textbackslash{t} Grondhark 'Wolf', Grondhark 'Wolf' \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 24.99
+ewline 2017-01-08 \textbackslash{t} 1-6 \textbackslash{t}  \textbackslash{t} Grondhark 'Wolf', Grondhark 'Wolf' 10 st \textbackslash{t} 7030 \textbackslash{t}  \textbackslash{t} 119.00
+ewline 2017-01-09 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"" \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 121.00
+ewline 2017-01-09 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Ass.kantoor ""OP GOED GELUK"" \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 21.00
+ewline 2017-01-09 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Ass.kantoor ""OP GOED GELUK"", Verleende diensten \textbackslash{t} 4750 \textbackslash{t}  \textbackslash{t} 100.00
+ewline 2017-01-10 \textbackslash{t} 1-8 \textbackslash{t}  \textbackslash{t} Maandnota energie, Maandnota energie \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 234.86
+ewline 2017-01-10 \textbackslash{t} 1-8 \textbackslash{t}  \textbackslash{t} Maandnota energie, Maandnota energie \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 40.76
+ewline 2017-01-10 \textbackslash{t} 1-8 \textbackslash{t}  \textbackslash{t} Maandnota energie, Maandkosten januari elektra \textbackslash{t} 4170 \textbackslash{t}  \textbackslash{t} 115.30
+ewline 2017-01-10 \textbackslash{t} 1-8 \textbackslash{t}  \textbackslash{t} Maandnota energie, Maandkosten januari gas \textbackslash{t} 4170 \textbackslash{t}  \textbackslash{t} 78.80
+ewline 2017-01-12 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, Firma Muller's Kantoorbenodigd \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 473.11
+ewline 2017-01-12 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, Firma Muller's Kantoorbenodigd \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 82.11
+ewline 2017-01-12 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, Bureaulampen \textbackslash{t} 4300 \textbackslash{t}  \textbackslash{t} 256.25
+ewline 2017-01-12 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, Whiteboard \textbackslash{t} 4300 \textbackslash{t}  \textbackslash{t} 134.75
+ewline 2017-01-18 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, De Terrafirm B.V. \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 127.66
+ewline 2017-01-18 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, De Terrafirm B.V. \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 22.16
+ewline 2017-01-18 \textbackslash{t} 1-9 \textbackslash{t}  \textbackslash{t} Firma Muller's Kantoorbenodigd, Tuinscherm 'Classic' 2 st \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 105.50
+ewline 2017-01-20 \textbackslash{t} 1-10 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., De Terrafirm B.V. \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 383.57
+ewline 2017-01-20 \textbackslash{t} 1-10 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., De Terrafirm B.V. \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 66.57
+ewline 2017-01-20 \textbackslash{t} 1-10 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., Terracottapot 15cm 10 st \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 165.00
+ewline 2017-01-20 \textbackslash{t} 1-10 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., Terracottaschaal 15cm 10 st \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 152.00
+ewline 2017-02-05 \textbackslash{t} 2-11 \textbackslash{t}  \textbackslash{t} L. de Lange Aardewerk, L. de Lange Aardewerk \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 266.20
+ewline 2017-02-05 \textbackslash{t} 2-11 \textbackslash{t}  \textbackslash{t} L. de Lange Aardewerk, L. de Lange Aardewerk \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 46.20
+ewline 2017-02-05 \textbackslash{t} 2-11 \textbackslash{t}  \textbackslash{t} L. de Lange Aardewerk, Terrapotten 15cm 10st \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 220.00
+ewline 2017-02-17 \textbackslash{t} 2-11 \textbackslash{t}  \textbackslash{t} L. de Lange Aardewerk, De Terrafirm B.V. \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 181.50
+ewline 2017-02-17 \textbackslash{t} 2-11 \textbackslash{t}  \textbackslash{t} L. de Lange Aardewerk, De Terrafirm B.V. \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 31.50
+ewline 2017-02-17 \textbackslash{t} 2-11 \textbackslash{t}  \textbackslash{t} L. de Lange Aardewerk, Tuinscherm 'Rondo' 2 st \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 150.00
+ewline 2017-02-16 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., De Terrafirm B.V. \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 488.84
+ewline 2017-02-16 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., De Terrafirm B.V. \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 84.84
+ewline 2017-02-16 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., Parasol Hawa� grijs 1st \textbackslash{t} 7020 \textbackslash{t}  \textbackslash{t} 229.00
+ewline 2017-02-16 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} De Terrafirm B.V., Madison Parasol 350 cm 1st \textbackslash{t} 7020 \textbackslash{t}  \textbackslash{t} 175.00
+ewline 2017-01-27 \textbackslash{t} 1-13 \textbackslash{t}  \textbackslash{t} Merit Garden Products Ltd, Merit Garden Products Ltd \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 140.19
+ewline 2017-01-27 \textbackslash{t} 1-13 \textbackslash{t}  \textbackslash{t} Merit Garden Products Ltd, Merit Garden Products Ltd \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 8.41
+ewline 2017-01-27 \textbackslash{t} 1-13 \textbackslash{t}  \textbackslash{t} Merit Garden Products Ltd, Merit Garden Products Ltd \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 8.41
+ewline 2017-01-27 \textbackslash{t} 1-13 \textbackslash{t}  \textbackslash{t} Merit Garden Products Ltd, Yucca-stekken 10 kg \textbackslash{t} 7000 \textbackslash{t}  \textbackslash{t} 140.19
+ewline 2017-01-11 \textbackslash{t} 1-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., McDonall Douglas Co. \textbackslash{t}  \textbackslash{t} 1610 \textbackslash{t} 732.60
+ewline 2017-01-11 \textbackslash{t} 1-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., Vijver Lobelia SII 9 st \textbackslash{t} 7050 \textbackslash{t}  \textbackslash{t} 732.60
+ewline 2017-01-25 \textbackslash{t} 1-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., Janssens \& Zn B.V. Plantenkwek \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 1770.20
+ewline 2017-01-25 \textbackslash{t} 1-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., Janssens \& Zn B.V. Plantenkwek \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 100.20
+ewline 2017-01-25 \textbackslash{t} 1-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., Yucca stekken en zaden \textbackslash{t} 7000 \textbackslash{t}  \textbackslash{t} 1670.00
+ewline 2017-02-06 \textbackslash{t} 2-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., McDonall Douglas Co. \textbackslash{t}  \textbackslash{t} 1610 \textbackslash{t} 366.30
+ewline 2017-02-06 \textbackslash{t} 2-14 \textbackslash{t}  \textbackslash{t} McDonall Douglas Co., Parasol Madison 3st \textbackslash{t} 7020 \textbackslash{t}  \textbackslash{t} 366.30
+ewline 2017-02-07 \textbackslash{t} 2-15 \textbackslash{t}  \textbackslash{t} Flyer juni 2017, Flyer juni 2017 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 247.34
+ewline 2017-02-07 \textbackslash{t} 2-15 \textbackslash{t}  \textbackslash{t} Flyer juni 2017, Flyer juni 2017 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 14.00
+ewline 2017-02-07 \textbackslash{t} 2-15 \textbackslash{t}  \textbackslash{t} Flyer juni 2017, Flyer juni 2017 \textbackslash{t} 4330 \textbackslash{t}  \textbackslash{t} 233.34
+ewline 2017-02-10 \textbackslash{t} 2-16 \textbackslash{t}  \textbackslash{t} Factuurnummer 445453, Factuurnummer 445453 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 3598.00
+ewline 2017-02-10 \textbackslash{t} 2-16 \textbackslash{t}  \textbackslash{t} Factuurnummer 445453, Factuurnummer 445453 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 624.45
+ewline 2017-02-10 \textbackslash{t} 2-16 \textbackslash{t}  \textbackslash{t} Factuurnummer 445453, Factuurnummer 445453 \textbackslash{t} 7090 \textbackslash{t}  \textbackslash{t} 2973.55
+ewline 2017-01-18 \textbackslash{t} 1-17 \textbackslash{t}  \textbackslash{t} Factuur 445455, Factuur 445455 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 50.00
+ewline 2017-01-18 \textbackslash{t} 1-17 \textbackslash{t}  \textbackslash{t} Factuur 445455, Factuur 445455 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 8.68
+ewline 2017-01-18 \textbackslash{t} 1-17 \textbackslash{t}  \textbackslash{t} Factuur 445455, Factuurnummer 445455 \textbackslash{t} 3090 \textbackslash{t}  \textbackslash{t} 41.32
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Cornel's Tuinartikelen, Cornel's Tuinartikelen \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 413.40
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Cornel's Tuinartikelen, Cornel's Tuinartikelen \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 23.40
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Cornel's Tuinartikelen, Voorjaarsboeket Personeel \textbackslash{t} 4091 \textbackslash{t}  \textbackslash{t} 390.00
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Fact 006538 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 816.75
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Fact 006538 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 141.75
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Dripsysteem 5l \textbackslash{t} 7090 \textbackslash{t}  \textbackslash{t} 675.00
+ewline 2017-02-25 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, 22-2398509 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 5347.87
+ewline 2017-02-25 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, 22-2398509 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 1123.05
+ewline 2017-02-25 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, 22-2398509 \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 1123.05
+ewline 2017-02-25 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, 22-2398509 \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 5347.87
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Fact 140224-001 \textbackslash{t}  \textbackslash{t} 1610 \textbackslash{t} 3180.00
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Fact 140224-001 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 667.80
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Fact 140224-001 \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 667.80
+ewline 2017-02-24 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Fact 006538, Tuinmeubelen \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 3180.00
+ewline 2017-02-01 \textbackslash{t} 2-24 \textbackslash{t}  \textbackslash{t} Factuur project 2012-103, Factuur project 2012-103 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 3502.95
+ewline 2017-02-01 \textbackslash{t} 2-24 \textbackslash{t}  \textbackslash{t} Factuur project 2012-103, Factuur project 2012-103 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 607.95
+ewline 2017-02-01 \textbackslash{t} 2-24 \textbackslash{t}  \textbackslash{t} Factuur project 2012-103, Grondwerkzaamheden \textbackslash{t} 6535 \textbackslash{t}  \textbackslash{t} 2895.00
+ewline 2017-02-24 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t}  \textbackslash{t} 652.19
+ewline 2017-02-24 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} Steenplaza F. de Vries \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 652.19
+ewline 2017-02-24 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t}  \textbackslash{t} 181.50
+ewline 2017-02-24 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V. \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 181.50
+ewline 2017-02-24 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t}  \textbackslash{t} 2000.00
+ewline 2017-02-24 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V. \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 2000.00
+ewline 2017-02-28 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t}  \textbackslash{t} 2353.58
+ewline 2017-02-28 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V. \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 2353.58
+ewline 2017-02-23 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1110 \textbackslash{t}  \textbackslash{t} 100.00
+ewline 2017-02-23 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Betalingsverschil \textbackslash{t} 9030 \textbackslash{t}  \textbackslash{t} 8.54
+ewline 2017-02-23 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 1300 \textbackslash{t} 108.54
+ewline 2017-01-25 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Uw factuur 2017-22-01-st3, Uw factuur 2017-22-01-st3 \textbackslash{t}  \textbackslash{t} 1600 \textbackslash{t} 539.06
+ewline 2017-01-25 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Uw factuur 2017-22-01-st3, Uw factuur 2017-22-01-st3 \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 93.56
+ewline 2017-01-25 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Uw factuur 2017-22-01-st3, Uw factuur 2017-22-01-st3 \textbackslash{t} 2030 \textbackslash{t}  \textbackslash{t} 445.50
+ewline 2017-02-10 \textbackslash{t} 2-1 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 234.89
+ewline 2017-02-10 \textbackslash{t} 2-1 \textbackslash{t}  \textbackslash{t} Kantoorartikelen divers \textbackslash{t} 4300 \textbackslash{t}  \textbackslash{t} 194.12
+ewline 2017-02-10 \textbackslash{t} 2-1 \textbackslash{t}  \textbackslash{t} Kantoorartikelen divers \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 40.77
+ewline 2017-02-15 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 85.32
+ewline 2017-02-12 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} Relatiegeschenk v. Bekkerem \textbackslash{t} 4500 \textbackslash{t}  \textbackslash{t} 70.51
+ewline 2017-02-12 \textbackslash{t} 2-2 \textbackslash{t}  \textbackslash{t} Relatiegeschenk v. Bekkerem \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 14.81
+ewline 2017-02-15 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 16.87
+ewline 2017-02-15 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t} Kantine-inkopen \textbackslash{t} 4790 \textbackslash{t}  \textbackslash{t} 15.92
+ewline 2017-02-15 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t} Kantine-inkopen \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 0.95
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t}  \textbackslash{t}  \textbackslash{t} 1000 \textbackslash{t} 436.58
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 4410 \textbackslash{t}  \textbackslash{t} 78.06
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 16.39
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 4410 \textbackslash{t}  \textbackslash{t} 74.07
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 15.56
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 4410 \textbackslash{t}  \textbackslash{t} 75.76
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 15.91
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 4410 \textbackslash{t}  \textbackslash{t} 65.77
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 13.81
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 4410 \textbackslash{t}  \textbackslash{t} 67.15
+ewline 2017-02-25 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Diesel \textbackslash{t} 1710 \textbackslash{t}  \textbackslash{t} 14.10
+ewline 2017-01-20 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Bruto salarissen, Bruto salarissen \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 1509.42
+ewline 2017-01-20 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Bruto salarissen, Sociale lasten \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 88.42
+ewline 2017-01-20 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Bruto salarissen, Onbelaste vergoedingen \textbackslash{t} 4000 \textbackslash{t}  \textbackslash{t} 18.66
+ewline 2017-01-20 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Bruto salarissen, Loonheffing \textbackslash{t}  \textbackslash{t} 1810 \textbackslash{t} 289.34
+ewline 2017-01-20 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Bruto salarissen, Sociale lasten \textbackslash{t}  \textbackslash{t} 1820 \textbackslash{t} 100.39
+ewline 2017-01-20 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Bruto salarissen, Netto Salarissen \textbackslash{t}  \textbackslash{t} 1820 \textbackslash{t} 1226.77
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6520 \textbackslash{t}  \textbackslash{t} 1620.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Overleg \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 360.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Ontwerp \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 315.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Ontwerp en planning \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 225.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Overleg \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 360.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, planning en administratie \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 360.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6530 \textbackslash{t}  \textbackslash{t} 5700.00
+ewline 2017-01-15 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Projectmutatie, Werk derden <Project> \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 5700.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6510 \textbackslash{t}  \textbackslash{t} 3450.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Zwarte grond \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 1050.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Straatzand \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 2400.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6520 \textbackslash{t}  \textbackslash{t} 800.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Grondwerk \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 800.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6540 \textbackslash{t}  \textbackslash{t} 230.00
+ewline 2017-01-20 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Projectmutatie, Diversen materiaal t.b.v. proj \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 230.00
+ewline 2017-02-05 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t} Stoeptegels 30 x 30 grijs, Stoeptegels 30 x 30 grijs \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} 4880.00
+ewline 2017-02-05 \textbackslash{t} 2-3 \textbackslash{t}  \textbackslash{t} Stoeptegels 30 x 30 grijs, Stoeptegels 30 x 30 grijs \textbackslash{t} 6515 \textbackslash{t}  \textbackslash{t} 4880.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6510 \textbackslash{t}  \textbackslash{t} 1100.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Diverse struikbeplanting \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 1100.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6520 \textbackslash{t}  \textbackslash{t} 560.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Tuinaanleg \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 240.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Tuinaanleg \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 320.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6540 \textbackslash{t}  \textbackslash{t} 340.00
+ewline 2017-02-14 \textbackslash{t} 2-4 \textbackslash{t}  \textbackslash{t} Projectmutatie, Diversen materiaal t.b.v. proj \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 340.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 2090 \textbackslash{t}  \textbackslash{t} 2870.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Werk derden <Project> \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 350.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Montagewerk \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 800.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Diverse struikbeplanting \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 880.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Tuinaanleg \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 340.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Diversen materiaal t.b.v. proj \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 500.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Bouwmaterialen (diversen) \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} 800.00
+ewline 2017-02-27 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Projectmutatie, Bouwmaterialen (diversen) \textbackslash{t} 2090 \textbackslash{t}  \textbackslash{t} 800.00
+ewline 2017-02-16 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6525 \textbackslash{t}  \textbackslash{t} 280.00
+ewline 2017-02-16 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Projectmutatie, Grondwerk \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 280.00
+ewline 2017-02-16 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Projectmutatie, Projectmutatie \textbackslash{t} 6515 \textbackslash{t}  \textbackslash{t} 240.00
+ewline 2017-02-16 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Projectmutatie, Straatzand \textbackslash{t}  \textbackslash{t} 5000 \textbackslash{t} 240.00
+ewline 2017-02-16 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Projectmutatie, Blokhut Walter 427 x 300 cm \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} 4240.00
+ewline 2017-02-16 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Projectmutatie, Blokhut Walter 427 x 300 cm \textbackslash{t} 6515 \textbackslash{t}  \textbackslash{t} 4240.00
+ewline 2017-01-10 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} uw telefonische order, uw telefonische order \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 4781.32
+ewline 2017-01-10 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} uw telefonische order, uw telefonische order \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 829.82
+ewline 2017-01-10 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} uw telefonische order, Tuinaarde 40Liter 10st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 35.50
+ewline 2017-01-10 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} uw telefonische order, Terracotta schaal en pot 35 cm \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 116.00
+ewline 2017-01-10 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} uw telefonische order, Blokhutten Walter 3st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 3800.00
+ewline 2017-01-12 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 2408.63
+ewline 2017-01-12 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 418.03
+ewline 2017-01-12 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Fa. Brokma Blokhutten v/h Gebr, Volledige tuinset \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 1990.60
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 524.73
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 91.07
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Diverse tuingereedschappen \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 433.66
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Uw telefonische order \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 2916.10
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Uw telefonische order \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 506.10
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Diverse potten \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 150.00
+ewline 2017-01-13 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Blokhutten Walter 3st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 2260.00
+ewline 2017-01-18 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Telefonisch overeengekomen, Telefonisch overeengekomen \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 191.18
+ewline 2017-01-18 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Telefonisch overeengekomen, Telefonisch overeengekomen \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 33.18
+ewline 2017-01-18 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Telefonisch overeengekomen, Bank Madrid zwart 1st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 158.00
+ewline 2017-01-18 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Telefonisch overeengekomen, Uw aanvraag d.d. 16-01-2017 \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 1028.50
+ewline 2017-01-18 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Telefonisch overeengekomen, Uw aanvraag d.d. 16-01-2017 \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 178.50
+ewline 2017-01-18 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Telefonisch overeengekomen, Diversen \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 850.00
+ewline 2017-01-23 \textbackslash{t} 1-5 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 108.54
+ewline 2017-01-23 \textbackslash{t} 1-5 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 18.84
+ewline 2017-01-23 \textbackslash{t} 1-5 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Diverse tuingereedschappen \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 89.70
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Volgens offerte 18-01-14 \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 404.14
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Volgens offerte 18-01-14 \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 70.14
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Volgens offerte 18-01-14 \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 334.00
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Van Onna Groenvoorziening B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 998.70
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Van Onna Groenvoorziening B.V. \textbackslash{t}  \textbackslash{t} 1760 \textbackslash{t} 56.53
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Dracena's 22 stuks \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} 726.44
+ewline 2017-02-01 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Chameadora's 9 stuks \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 215.73
+ewline 2017-02-04 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Opdrachtnr: 140126-003 \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 123.14
+ewline 2017-02-04 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Vijverplanten Lobelia SII \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 123.14
+ewline 2017-02-04 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Garden Impressions Beverly \textbackslash{t} 1310 \textbackslash{t}  \textbackslash{t} 1223.00
+ewline 2017-02-04 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Volgens offerte 18-01-14, Diverse potten en schalen \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 1223.00
+ewline 2017-01-21 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Uw telefonische order \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 4353.58
+ewline 2017-01-21 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Uw telefonische order \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 755.58
+ewline 2017-01-21 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Blokhutten Walter 3st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 3598.00
+ewline 2017-01-20 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Van Bekkerem B.V. Bloemisterij \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 2057.00
+ewline 2017-01-20 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Van Bekkerem B.V. Bloemisterij \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 357.00
+ewline 2017-01-20 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Diverse potten \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 875.00
+ewline 2017-01-20 \textbackslash{t} 1-7 \textbackslash{t}  \textbackslash{t} Uw telefonische order, Diverse schalen \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 825.00
+ewline 2017-02-11 \textbackslash{t} 2-8 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 108.17
+ewline 2017-02-11 \textbackslash{t} 2-8 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 18.77
+ewline 2017-02-11 \textbackslash{t} 2-8 \textbackslash{t}  \textbackslash{t} Tuinwereld Van Schaik B.V., Tuinaarde 40 liter 20 st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 89.40
+ewline 2017-02-05 \textbackslash{t} 2-9 \textbackslash{t}  \textbackslash{t} MELBICKS GARDEN \& LEISURE, MELBICKS GARDEN \& LEISURE \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 6402.37
+ewline 2017-02-05 \textbackslash{t} 2-9 \textbackslash{t}  \textbackslash{t} MELBICKS GARDEN \& LEISURE, Blokhut Walter 2st \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 6402.37
+ewline 2017-02-03 \textbackslash{t} 2-10 \textbackslash{t}  \textbackslash{t} MELBICKS Garden \& Leisure, MELBICKS Garden \& Leisure \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 272.19
+ewline 2017-02-03 \textbackslash{t} 2-10 \textbackslash{t}  \textbackslash{t} MELBICKS Garden \& Leisure, Yucca-zaden \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 272.19
+ewline 2017-01-15 \textbackslash{t} 1-11 \textbackslash{t}  \textbackslash{t} Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam' \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 759.48
+ewline 2017-01-15 \textbackslash{t} 1-11 \textbackslash{t}  \textbackslash{t} Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam' \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 131.81
+ewline 2017-01-15 \textbackslash{t} 1-11 \textbackslash{t}  \textbackslash{t} Tuincentrum 'Amsterdam', Diverse potten en tuinschermen \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 627.67
+ewline 2017-02-17 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam' \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 2207.04
+ewline 2017-02-17 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} Tuincentrum 'Amsterdam', Tuincentrum 'Amsterdam' \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 383.04
+ewline 2017-02-17 \textbackslash{t} 2-12 \textbackslash{t}  \textbackslash{t} Tuincentrum 'Amsterdam', Diverse potten en schalen \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 1824.00
+ewline 2017-02-20 \textbackslash{t} 2-14 \textbackslash{t}  \textbackslash{t} Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 3630.00
+ewline 2017-02-20 \textbackslash{t} 2-14 \textbackslash{t}  \textbackslash{t} Fa. Brokma Blokhutten v/h Gebr, Fa. Brokma Blokhutten v/h Gebr \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 630.00
+ewline 2017-02-20 \textbackslash{t} 2-14 \textbackslash{t}  \textbackslash{t} Fa. Brokma Blokhutten v/h Gebr, Blokhut Walter 3st \textbackslash{t}  \textbackslash{t} 8040 \textbackslash{t} 3000.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Offerte 20141215-1 \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 60.50
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Offerte 20141215-1 \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 10.50
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Offerte 20141215-1 \textbackslash{t}  \textbackslash{t} 8090 \textbackslash{t} 50.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Fa. Brokma Blokhutten v/h Gebr \textbackslash{t}  \textbackslash{t} 3010 \textbackslash{t} 33.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Fa. Brokma Blokhutten v/h Gebr \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 33.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 1881.07
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 326.47
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 8000 \textbackslash{t} 949.11
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 729.03
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 8040 \textbackslash{t} 49.20
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 8000 \textbackslash{t}  \textbackslash{t} 94.91
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 8010 \textbackslash{t}  \textbackslash{t} 72.91
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 8040 \textbackslash{t}  \textbackslash{t} 4.92
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 3000 \textbackslash{t} 869.10
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 7000 \textbackslash{t}  \textbackslash{t} 869.10
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 3010 \textbackslash{t} 304.80
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 304.80
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} 35.50
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Tuinwereld Van Schaik B.V. \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 35.50
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 2840.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t}  \textbackslash{t} 8020 \textbackslash{t} 950.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t}  \textbackslash{t} 8040 \textbackslash{t} 1890.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t}  \textbackslash{t} 3020 \textbackslash{t} 594.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t} 7020 \textbackslash{t}  \textbackslash{t} 594.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} 1080.00
+ewline 2017-01-31 \textbackslash{t} 1-15 \textbackslash{t}  \textbackslash{t} Offerte 20141215-1, Vijver- en Tuincentrum Pelckma \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 1080.00
+ewline 2017-02-08 \textbackslash{t} 2-16 \textbackslash{t}  \textbackslash{t} Steenplaza F. de Vries, Steenplaza F. de Vries \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 652.19
+ewline 2017-02-08 \textbackslash{t} 2-16 \textbackslash{t}  \textbackslash{t} Steenplaza F. de Vries, Steenplaza F. de Vries \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 113.19
+ewline 2017-02-08 \textbackslash{t} 2-16 \textbackslash{t}  \textbackslash{t} Steenplaza F. de Vries, Siertegels \textbackslash{t}  \textbackslash{t} 8070 \textbackslash{t} 539.00
+ewline 2017-01-29 \textbackslash{t} 1-17 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V., Van Bekkerem B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 268.33
+ewline 2017-01-29 \textbackslash{t} 1-17 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V., Van Bekkerem B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 46.57
+ewline 2017-01-29 \textbackslash{t} 1-17 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V., Diverse schalen \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 221.76
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 76.20
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 13.22
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin \textbackslash{t}  \textbackslash{t} 8060 \textbackslash{t} 62.98
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Installatieondhoud jaarlijks \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 287.88
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Installatieondhoud jaarlijks \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 49.96
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Installatieondhoud jaarlijks \textbackslash{t}  \textbackslash{t} 8060 \textbackslash{t} 237.92
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Halfjaar OH tuin \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 181.70
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Halfjaar OH tuin \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 31.53
+ewline 2017-02-01 \textbackslash{t} 2-18 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Halfjaar OH tuin \textbackslash{t}  \textbackslash{t} 8060 \textbackslash{t} 150.17
+ewline 2017-02-02 \textbackslash{t} 2-19 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V., Van Bekkerem B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 1355.20
+ewline 2017-02-02 \textbackslash{t} 2-19 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V., Van Bekkerem B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 235.20
+ewline 2017-02-02 \textbackslash{t} 2-19 \textbackslash{t}  \textbackslash{t} Van Bekkerem B.V., Van Bekkerem B.V. \textbackslash{t}  \textbackslash{t} 2016 \textbackslash{t} 1120.00
+ewline 2017-02-09 \textbackslash{t} 2-20 \textbackslash{t}  \textbackslash{t} Inkoopcombinatie CO-OP, Inkoopcombinatie CO-OP \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 5445.00
+ewline 2017-02-09 \textbackslash{t} 2-20 \textbackslash{t}  \textbackslash{t} Inkoopcombinatie CO-OP, Inkoopcombinatie CO-OP \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 945.00
+ewline 2017-02-09 \textbackslash{t} 2-20 \textbackslash{t}  \textbackslash{t} Inkoopcombinatie CO-OP, Inkoopcombinatie CO-OP \textbackslash{t}  \textbackslash{t} 2016 \textbackslash{t} 4500.00
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Van Haaften International B.V. \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 125.84
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Van Haaften International B.V. \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 21.84
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Van Haaften International B.V. \textbackslash{t}  \textbackslash{t} 8010 \textbackslash{t} 104.00
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Van Haaften International B.V. \textbackslash{t}  \textbackslash{t} 3010 \textbackslash{t} 69.00
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Van Haaften International B.V. \textbackslash{t} 7010 \textbackslash{t}  \textbackslash{t} 69.00
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Garden Impressions Beverly \textbackslash{t} 1310 \textbackslash{t}  \textbackslash{t} 2973.56
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Garden Impressions Beverly \textbackslash{t}  \textbackslash{t} 8040 \textbackslash{t} 2973.56
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Garden Impressions Beverly \textbackslash{t}  \textbackslash{t} 3040 \textbackslash{t} 2120.00
+ewline 2017-02-28 \textbackslash{t} 2-21 \textbackslash{t}  \textbackslash{t} Van Haaften International B.V., Garden Impressions Beverly \textbackslash{t} 7040 \textbackslash{t}  \textbackslash{t} 2120.00
+ewline 2017-02-15 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin \textbackslash{t} 1300 \textbackslash{t}  \textbackslash{t} 97.07
+ewline 2017-02-15 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin \textbackslash{t}  \textbackslash{t} 1770 \textbackslash{t} 16.85
+ewline 2017-02-15 \textbackslash{t} 2-22 \textbackslash{t}  \textbackslash{t} Incasso Kwartaal OH Tuin, Incasso Kwartaal OH Tuin \textbackslash{t}  \textbackslash{t} 8060 \textbackslash{t} 80.22
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3020 \textbackslash{t}  \textbackslash{t} 338.82
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 134.34
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 204.48
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3030 \textbackslash{t}  \textbackslash{t} 285.30
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 285.30
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 1320.00
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 100.75
+ewline 2017-03-31 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 1219.25
+ewline 2017-01-07 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3030 \textbackslash{t}  \textbackslash{t} 231.75
+ewline 2017-01-07 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 19.30
+ewline 2017-01-07 \textbackslash{t} 1-2 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 212.45
+ewline 2017-01-18 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3000 \textbackslash{t}  \textbackslash{t} 70.50
+ewline 2017-01-18 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 11.73
+ewline 2017-01-18 \textbackslash{t} 1-3 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 58.77
+ewline 2017-01-22 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3010 \textbackslash{t}  \textbackslash{t} 480.00
+ewline 2017-01-22 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 34.50
+ewline 2017-01-22 \textbackslash{t} 1-4 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 445.50
+ewline 2017-02-02 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3020 \textbackslash{t}  \textbackslash{t} 1857.60
+ewline 2017-02-02 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 161.22
+ewline 2017-02-02 \textbackslash{t} 2-5 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 1696.38
+ewline 2017-02-02 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t} 3050 \textbackslash{t}  \textbackslash{t} 333.70
+ewline 2017-02-02 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2090 \textbackslash{t} 114.82
+ewline 2017-02-02 \textbackslash{t} 2-6 \textbackslash{t}  \textbackslash{t} Goederenontvangst, Goederenontvangst \textbackslash{t}  \textbackslash{t} 2035 \textbackslash{t} 218.88
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 29.40
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 29.40
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 58.20
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 71.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 35.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 58.20
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 71.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 35.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3050 \textbackslash{t}  \textbackslash{t} 159.90
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 159.90
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3050 \textbackslash{t}  \textbackslash{t} 44.90
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3050 \textbackslash{t}  \textbackslash{t} 23.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 44.90
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 23.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3000 \textbackslash{t}  \textbackslash{t} 117.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3000 \textbackslash{t}  \textbackslash{t} 171.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3000 \textbackslash{t}  \textbackslash{t} 206.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 117.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 171.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 206.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3010 \textbackslash{t}  \textbackslash{t} 412.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3010 \textbackslash{t}  \textbackslash{t} 320.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3010 \textbackslash{t}  \textbackslash{t} 146.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3010 \textbackslash{t}  \textbackslash{t} 249.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3020 \textbackslash{t}  \textbackslash{t} 326.41
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3020 \textbackslash{t}  \textbackslash{t} 375.44
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3020 \textbackslash{t}  \textbackslash{t} 58.44
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 412.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 320.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 146.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 249.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 326.41
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 375.44
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 58.44
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 1145.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 525.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 408.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3040 \textbackslash{t}  \textbackslash{t} 228.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3030 \textbackslash{t}  \textbackslash{t} 63.90
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3030 \textbackslash{t}  \textbackslash{t} 71.40
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3030 \textbackslash{t}  \textbackslash{t} 150.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t} 3030 \textbackslash{t}  \textbackslash{t} 154.50
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 1145.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 525.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 408.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 228.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 63.90
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 71.40
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 150.00
+ewline 2017-01-02 \textbackslash{t} 1-1 \textbackslash{t}  \textbackslash{t} Beginvoorraad, Beginvoorraad \textbackslash{t}  \textbackslash{t} 2020 \textbackslash{t} 154.50
+ewline }\\
 \keyvalue{Result}{Passed}
 \end{test}
 \end{testcase}

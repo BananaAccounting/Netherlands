@@ -16,7 +16,7 @@
 
 // @id = ch.banana.nl.app.auditfileimportaccounts.test
 // @api = 1.0
-// @pubdate = 2019-01-22
+// @pubdate = 2019-01-23
 // @publisher = Banana.ch SA
 // @description = <TEST ch.banana.nl.app.auditfileimportaccounts.js>
 // @task = app.command
@@ -58,7 +58,22 @@ ImportAccountsTest.prototype.cleanup = function() {
 
 ImportAccountsTest.prototype.testBananaApps = function() {
 
-    var file = Banana.IO.getLocalFile("file:script/../test/testcases/auditfile_v3.2_nl_20180101_20181231.xml");
+    var filePath = "";
+
+    filePath = "file:script/../test/testcases/auditfile_v3.2_nl_20180101_20181231.xml";
+    this.displayData(filePath);
+
+    filePath = "file:script/../test/testcases/ExactOnline_V32_2016.xml";
+    this.displayData(filePath);
+
+    filePath = "file:script/../test/testcases/Multivers_V32_2017.xml";
+    this.displayData(filePath);
+
+}
+
+ImportAccountsTest.prototype.displayData = function(filePath) {
+
+    var file = Banana.IO.getLocalFile(filePath);
     var parsedfile = JSON.stringify(file.read(), "", "");
     var xmlfile = JSON.parse(parsedfile);
 
@@ -73,4 +88,6 @@ ImportAccountsTest.prototype.testBananaApps = function() {
     Test.logger.addText(importAccountsFile);
 
 }
+
+
 
