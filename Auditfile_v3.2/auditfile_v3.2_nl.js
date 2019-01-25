@@ -1332,6 +1332,10 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	var desc = tRow.value('JAccountDescription'); //string
 	var amnt = ''; //amount
 	var amntTp = ''; //string
+	var vatID = '';
+	var vatPerc = '';
+	var vatAmnt = '';
+	var vatAmntTp = '';
 
 	amnt = tRow.value('JAmount');
     if (Banana.SDecimal.sign(amnt) >= 0) {
@@ -1393,7 +1397,7 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 		var amntTpNode = trLineNode.addElement('amntTp').addTextNode(amntTp);
 
 		//vat element only if there is a vat code (vatID) on the transaction
-		if (tRow.value('VatCode')) {
+		if (vatID) {
 			var vatNode = trLineNode.addElement('vat');
 			var vatIDNode = vatNode.addElement('vatID').addTextNode(vatID);
 			var vatPercNode = vatNode.addElement('vatPerc').addTextNode(vatPerc);
