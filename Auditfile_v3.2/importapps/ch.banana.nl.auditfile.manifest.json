@@ -1,0 +1,15 @@
+{
+    "category": "productivity",
+    "country": "netherlands",
+    "countryCode": "nl",
+    "description": "Import Auditfile NL (BETA)",
+    "description.en": "Import Auditfile NL (BETA)",
+    "description.nl": "Auditfile NL importeren (BETA)",
+    "id": "ch.banana.africa.reportsohadardc",
+    "language": "nl",
+    "publisher": "Banana.ch",
+    "title": "Import Auditfile NL (BETA)",
+    "title.en": "Import Auditfile NL (BETA)",
+    "title.nl": "Auditfile NL importeren (BETA)",
+    "version": "1.0"
+}
