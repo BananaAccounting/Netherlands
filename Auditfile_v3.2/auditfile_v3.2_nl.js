@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2019-01-23
+// @pubdate = 2019-03-08
 // @publisher = Banana.ch SA
 // @description = XML Financial Auditfile
 // @description.nl = XML Auditfile Financieel
@@ -1328,6 +1328,9 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	var nr = tRow.value('JRowOrigin'); //string
 	var accID = tRow.value('JAccount'); //string
 	var docRef = tRow.value('Doc'); //string
+	if (!docRef) {
+		docRef = "docRef";
+	}
 	var effDate = tRow.value('JDate'); //We use the date of the transaction
 	var desc = tRow.value('JAccountDescription'); //string
 	var amnt = ''; //amount

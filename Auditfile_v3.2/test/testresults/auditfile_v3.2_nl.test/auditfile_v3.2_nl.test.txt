@@ -31,9 +31,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-01-25</dateCreated>
+  <dateCreated>2019-03-08</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.181221</softwareVersion>
+  <softwareVersion>9.0.3.190221</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -1570,7 +1570,7 @@
    </obLine>
   </openingBalance>
   <transactions>
-   <linesCount>46</linesCount>
+   <linesCount>44</linesCount>
    <totalDebit>91275.49</totalDebit>
    <totalCredit>91275.49</totalCredit>
    <journal>
@@ -3210,12 +3210,6 @@
        <vatAmntTp>C</vatAmntTp>
       </vat>
      </trLine>
-    </transaction>
-    <transaction>
-     <nr>79</nr>
-     <desc>Artikel B</desc>
-     <periodNumber>11</periodNumber>
-     <trDt>2018-11-04</trDt>
      <trLine>
       <nr>79</nr>
       <accID>11000</accID>
@@ -3312,12 +3306,6 @@
        <vatAmntTp>C</vatAmntTp>
       </vat>
      </trLine>
-    </transaction>
-    <transaction>
-     <nr>83</nr>
-     <desc>10 % korting</desc>
-     <periodNumber>11</periodNumber>
-     <trDt>2018-11-05</trDt>
      <trLine>
       <nr>83</nr>
       <accID>8105</accID>
@@ -3379,9 +3367,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-01-25</dateCreated>
+  <dateCreated>2019-03-08</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.181221</softwareVersion>
+  <softwareVersion>9.0.3.190221</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -5515,9 +5503,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-01-25</dateCreated>
+  <dateCreated>2019-03-08</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.181221</softwareVersion>
+  <softwareVersion>9.0.3.190221</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -6889,7 +6877,7 @@
    </obLine>
   </openingBalance>
   <transactions>
-   <linesCount>34</linesCount>
+   <linesCount>32</linesCount>
    <totalDebit>77506.79</totalDebit>
    <totalCredit>77506.79</totalCredit>
    <journal>
@@ -7977,12 +7965,6 @@
        <vatAmntTp>C</vatAmntTp>
       </vat>
      </trLine>
-    </transaction>
-    <transaction>
-     <nr>58</nr>
-     <desc>Artikel B</desc>
-     <periodNumber>11</periodNumber>
-     <trDt>2018-11-04</trDt>
      <trLine>
       <nr>58</nr>
       <accID>11000</accID>
@@ -8079,12 +8061,6 @@
        <vatAmntTp>C</vatAmntTp>
       </vat>
      </trLine>
-    </transaction>
-    <transaction>
-     <nr>62</nr>
-     <desc>10 % korting</desc>
-     <periodNumber>11</periodNumber>
-     <trDt>2018-11-05</trDt>
      <trLine>
       <nr>62</nr>
       <accID>8105</accID>
@@ -8146,9 +8122,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-01-25</dateCreated>
+  <dateCreated>2019-03-08</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.181221</softwareVersion>
+  <softwareVersion>9.0.3.190221</softwareVersion>
  </header>
  <company>
   <companyIdent/>
