@@ -1,8 +1,8 @@
 Test Banana Apps
 ----------------
 
-Date:        2019-03-08 13:02:34.221
-Duration:    00:00:39.268
+Date:        2019-03-12 13:57:53.508
+Duration:    00:00:40.063
 Application: BananaExpm90 9.0.3.190221
 OS:          macOS Mojave (10.14)
 Qt:          5.12.1

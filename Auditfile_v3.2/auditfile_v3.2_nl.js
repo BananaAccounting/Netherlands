@@ -14,10 +14,10 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2019-03-08
+// @pubdate = 2019-03-12
 // @publisher = Banana.ch SA
-// @description = XML Financial Auditfile
-// @description.nl = XML Auditfile Financieel
+// @description = Export to Netherlands Financial Auditfile (BETA)
+// @description.nl = Export naar Nederland Auditfile Financiëel (BETA)
 // @task = app.command
 // @doctype = 100.*;110.*
 // @encoding = utf-8
@@ -42,27 +42,13 @@ var ERROR_STRING_MIN_LENGTH = false;
 var ERROR_STRING_MAX_LENGTH = false;
 var ERROR_VALUE_NOT_ALLOWED = false;
 
-var param = {};
-
-
-/* Function that loads some parameters */
-function loadParam(startDate, endDate) {
-    param = {
-        "startDate" : startDate,
-        "endDate" : endDate,
-    };
-}
 
 /* Main function */
 function exec() {
 
-	Banana.document.clearMessages();
-
     //Check the version of Banana. If < than 9.0.3 the script does not start
     var requiredVersion = '9.0.3';
     if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, requiredVersion) >= 0) {
-
-    	var isTest = false;
 
 		// Opend a dialog. User must choose a period
         var dateform = null;
@@ -75,12 +61,12 @@ function exec() {
             return;
         }
 
-        /* 1) Load parameters */
-        loadParam(dateform.selectionStartDate, dateform.selectionEndDate);
+        var startDate = dateform.selectionStartDate;
+        var endDate = dateform.selectionEndDate;
 
         /* 2) Create the xml document */
-        var isTest = false;
-        createXml(Banana.document, dateform.selectionStartDate, dateform.selectionEndDate, isTest);
+        var output = createXml(Banana.document, startDate, endDate);
+        saveData(output, startDate, endDate);
     }
     else {
 		Banana.document.addMessage('Banana Accounting ' + requiredVersion + ' is required.');	
@@ -88,10 +74,10 @@ function exec() {
 }
 
 /* Creates the XML document */
-function createXml(banDoc, startDate, endDate, isTest) {
+function createXml(banDoc, startDate, endDate) {
 
     var xmlDocument = Banana.Xml.newDocument("auditfile");
-
+    
     var auditfile = addSchemaAndNamespaces(xmlDocument);
     var header = addHeader(auditfile, banDoc, startDate, endDate);
     var company = addCompany(auditfile, banDoc, startDate, endDate);
@@ -104,22 +90,18 @@ function createXml(banDoc, startDate, endDate, isTest) {
 
     var output = Banana.Xml.save(xmlDocument);
 
-    if (!isTest) {
-	    saveData(output);
-	}
-
 	return output;
 }
 
 /* Initialize the xml schema */
-function initSchemarefs() {
+function initSchemarefs(param) {
     param.schemaRefs = [
         'http://www.auditfiles.nl/XAF/3.2'
     ];
 }
 
 /* Initialize the xml namespaces */
-function initNamespaces() {
+function initNamespaces(param) {
     param.namespaces = [
         {
           'namespace' : 'http://www.auditfiles.nl/XAF/3.2',
@@ -138,13 +120,12 @@ function initNamespaces() {
 *	XML document creation
 *
 ********************************/
-
 /* Function that adds xml schema and namespaces */
 function addSchemaAndNamespaces(xml) {
-
+	var param = {};
     var auditfile = xml.addElement("auditfile");
-    //initSchemarefs();
-    initNamespaces();
+    //initSchemarefs(param);
+    initNamespaces(param);
 
     var attrsSchemaLocation = '';
     for (var i in param.schemaRefs) {
@@ -200,13 +181,13 @@ function addHeader(xml, banDoc, startDate, endDate) {
     }
 	dateCreated = year + '-' + month + '-' + day; // YYYY-MM-DD
 
-	checkStringLength(fiscalYear, 4, 9, false);
-	checkStringLength(startDate, 10, 16, false);
-	checkStringLength(endDate, 10, 16, false);
-	checkStringLength(curCode, 3, 3, false);
-	checkStringLength(dateCreated, 10, 16, false);
-	checkStringLength(softwareDesc, 0, 50, false);
-	checkStringLength(softwareVersion, 0, 20, false);
+	checkStringLength(fiscalYear, 4, 9);
+	checkStringLength(startDate, 10, 16);
+	checkStringLength(endDate, 10, 16);
+	checkStringLength(curCode, 3, 3);
+	checkStringLength(dateCreated, 10, 16);
+	checkStringLength(softwareDesc, 0, 50);
+	checkStringLength(softwareVersion, 0, 20);
 
 	var headerNode = xml.addElement('header');
 	var fiscalYearNode = headerNode.addElement('fiscalYear').addTextNode(fiscalYear);
@@ -254,7 +235,7 @@ function addCompany(xml, banDoc, startDate, endDate) {
 		<company>
 	*/
 
-	var companyIdent = ''; // take from dialog?
+	var companyIdent = '';
 	var companyName = '';
 	var taxRegistrationCountry = 'NL'; // take from dialog?
 	var taxRegIdent = '';
@@ -267,24 +248,44 @@ function addCompany(xml, banDoc, startDate, endDate) {
 	var region = '';
 	var country = '';
 
-	companyName = banDoc.info("AccountingDataBase", "Company");
-	taxRegIdent = banDoc.info("AccountingDataBase","VatNumber");
-    streetname = banDoc.info("AccountingDataBase", "Address1");
-    city = banDoc.info("AccountingDataBase", "City");
-    postalCode = banDoc.info("AccountingDataBase", "Zip");
-    region = banDoc.info("AccountingDataBase", "State");
-    country = banDoc.info("AccountingDataBase", "Country");
+	if (banDoc.info("AccountingDataBase", "Company")) {
+		companyName = banDoc.info("AccountingDataBase", "Company");
+	}
 
-    checkStringLength(companyIdent, 0, 35, false);
-    checkStringLength(companyName, 0, 255, false);
-    checkStringLength(taxRegistrationCountry, 2, 2, false);
-    checkStringLength(taxRegIdent, 0, 30, false);
-    checkStringLength(streetname, 0, 100, false);
-    checkStringLength(property, 0, 50, false);
-    checkStringLength(city, 0, 50, false);
-    checkStringLength(postalCode, 0, 10, false);
-    checkStringLength(region, 0, 50, false);
-    checkStringLength(country, 0, 2, false);
+	if (banDoc.info("AccountingDataBase","VatNumber")) {
+		taxRegIdent = banDoc.info("AccountingDataBase","VatNumber");
+	}
+
+    if (banDoc.info("AccountingDataBase", "Address1")) {
+    	streetname = banDoc.info("AccountingDataBase", "Address1");
+    }
+
+    if (banDoc.info("AccountingDataBase", "City")) {
+    	city = banDoc.info("AccountingDataBase", "City");
+    }
+
+    if (banDoc.info("AccountingDataBase", "Zip")) {
+    	postalCode = banDoc.info("AccountingDataBase", "Zip");
+    }
+
+    if (banDoc.info("AccountingDataBase", "State")) {
+    	region = banDoc.info("AccountingDataBase", "State");
+    }
+
+    if (banDoc.info("AccountingDataBase", "Country")) {
+    	country = banDoc.info("AccountingDataBase", "Country");
+    }
+
+    checkStringLength(companyIdent, 0, 35);
+    checkStringLength(companyName, 0, 255);
+    checkStringLength(taxRegistrationCountry, 2, 2);
+    checkStringLength(taxRegIdent, 0, 30);
+    checkStringLength(streetname, 0, 100);
+    checkStringLength(property, 0, 50);
+    checkStringLength(city, 0, 50);
+    checkStringLength(postalCode, 0, 10);
+    checkStringLength(region, 0, 50);
+    checkStringLength(country, 0, 2);
 
     var companyNode = xml.addElement('company');
     
@@ -392,10 +393,19 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 
 	        accID = tRow.value('Account');
 	    	accDesc = tRow.value('Description');
-	    	leadCode = tRow.value('Gr');
-	    	leadDescription = banDoc.table('Accounts').findRowByValue('Group',leadCode).value("Description");
+	    	
+	    	if (tRow.value('Gr')) {
+	    		leadCode = tRow.value('Gr');
+				
+				try {
+		    		leadDescription = banDoc.table('Accounts').findRowByValue('Group',leadCode).value("Description");
+		    	} catch(e) {}
+			}
+	    	
 	    	if (!banDoc.table('Categories')) {
-	    		leadReference = tRow.value('BClass');
+	    		if (tRow.value('BClass')) {
+	    			leadReference = tRow.value('BClass');
+	    		}
 	    	}
 	    	
 	    	//accTp
@@ -407,12 +417,12 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 	    		accTp = 'M'; //?
 	    	}
 
-			checkStringLength(accID, 1, 35, false);
-			checkStringLength(accDesc, 1, 255, false);
-			checkStringLength(accTp, 1, 2, false);
-			checkStringLength(leadCode, 0, 999, false);
-			checkStringLength(leadDescription, 0, 999, false);
-			checkStringLength(leadReference, 0, 999, false);
+			checkStringLength(accID, 1, 35);
+			checkStringLength(accDesc, 1, 255);
+			checkStringLength(accTp, 1, 2);
+			checkStringLength(leadCode, 0, 999);
+			checkStringLength(leadDescription, 0, 999);
+			checkStringLength(leadReference, 0, 999);
 
 			var ledgerAccountNode = generalLedgerNode.addElement('ledgerAccount');
 			var accIDNode = ledgerAccountNode.addElement('accID').addTextNode(accID);
@@ -442,15 +452,20 @@ function addGeneralLedger(xml, banDoc, startDate, endDate) {
 				accID = tRow.value('Category');
 		    	accDesc = tRow.value('Description');
 		    	accTp = 'P';
-		    	leadCode = tRow.value('Gr');
-		    	leadDescription = banDoc.table('Categories').findRowByValue('Group',leadCode).value("Description");
+		    	if (tRow.value('Gr')) {
+		    		leadCode = tRow.value('Gr');
+		    	
+		    		try {
+						leadDescription = banDoc.table('Categories').findRowByValue('Group',leadCode).value("Description");
+		    		} catch(e) {}
+		    	}
 
-				checkStringLength(accID, 1, 35, false);
-				checkStringLength(accDesc, 1, 255, false);
-				checkStringLength(accTp, 1, 2, false);
-				checkStringLength(leadCode, 0, 999, false);
-				checkStringLength(leadDescription, 0, 999, false);
-				checkStringLength(leadReference, 0, 999, false);
+				checkStringLength(accID, 1, 35);
+				checkStringLength(accDesc, 1, 255);
+				checkStringLength(accTp, 1, 2);
+				checkStringLength(leadCode, 0, 999);
+				checkStringLength(leadDescription, 0, 999);
+				checkStringLength(leadReference, 0, 999);
 
 				var ledgerAccountNode = generalLedgerNode.addElement('ledgerAccount');
 				var accIDNode = ledgerAccountNode.addElement('accID').addTextNode(accID);
@@ -498,13 +513,18 @@ function addVatCodes(xml, banDoc, startDate, endDate) {
 	        if (tRow.value("VatCode")) {
 		        vatID = tRow.value("VatCode");
 		        vatDesc = tRow.value("Description");
-		        vatToPayAccID = tRow.value("VatAccount"); //??
-		        vatToClaimAccID = tRow.value("VatAccount"); //??
+		        
+		        if (tRow.value("VatAccount")) {
+		        	vatToPayAccID = tRow.value("VatAccount"); //??
+		        }
+		        if (tRow.value("VatAccount")) {
+		        	vatToClaimAccID = tRow.value("VatAccount"); //??
+		        }
 
-				checkStringLength(vatID, 1, 35, false);
-				checkStringLength(vatDesc, 1, 100, false);
-				checkStringLength(vatToPayAccID, 0, 35, false);
-				checkStringLength(vatToClaimAccID, 0, 35, false);
+				checkStringLength(vatID, 1, 35);
+				checkStringLength(vatDesc, 1, 100);
+				checkStringLength(vatToPayAccID, 0, 35);
+				checkStringLength(vatToClaimAccID, 0, 35);
 
 				var vatCodeNode = vatCodesNode.addElement('vatCode');
 				var vatIDNode = vatCodeNode.addElement('vatID').addTextNode(vatID);
@@ -717,7 +737,7 @@ function addTransactions(xml, banDoc, startDate, endDate) {
 	totalDebit = getTotalDebitTransactions(banDoc, startDate, endDate);
 	totalCredit = getTotalCreditTransactions(banDoc, startDate, endDate);
 
-	checkStringLength(linesCount, 1, 10, false);
+	checkStringLength(linesCount, 1, 10);
 
 	var transactionsNode = xml.addElement('transactions');
 	var linesCountNode = transactionsNode.addElement('linesCount').addTextNode(linesCount);
@@ -973,25 +993,25 @@ function createCustomersSuppliers(xml, customersSuppliersList) {
 
 		// Banana.document.addMessage(JSON.stringify(customersSuppliersList[i], "", ""));
 
-		checkStringLength(customersSuppliersList[i].custSupID, 1, 35, false);
-		checkStringLength(customersSuppliersList[i].custSupName, 0, 50, false);
-		checkStringLength(customersSuppliersList[i].contactPerson, 0, 50, false);
-		checkStringLength(customersSuppliersList[i].telephone, 0, 30 ,false);
-		checkStringLength(customersSuppliersList[i].fax, 0, 30, false);
-		checkStringLength(customersSuppliersList[i].eMail, 0, 255, false);
-		checkStringLength(customersSuppliersList[i].website, 0, 255, false);
-		checkStringLength(customersSuppliersList[i].commerceNr, 0, 100, false);
-		checkStringLength(customersSuppliersList[i].taxRegistrationCountry, 0, 2, false);
-		checkStringLength(customersSuppliersList[i].taxRegIdent, 0, 30, false);
-		checkStringLength(customersSuppliersList[i].relationshipID, 0, 35, false);
-		checkStringLength(customersSuppliersList[i].custSupTp, 0, 1, false);
-		checkStringLength(customersSuppliersList[i].custSupGrpID, 0, 35, false);
-		checkStringLength(customersSuppliersList[i].streetname, 0, 100, false);
-		checkStringLength(customersSuppliersList[i].property, 0, 50, false);
-		checkStringLength(customersSuppliersList[i].city, 0, 50, false);
-		checkStringLength(customersSuppliersList[i].postalCode, 0, 10, false);
-		checkStringLength(customersSuppliersList[i].region, 0, 50, false);
-		checkStringLength(customersSuppliersList[i].country, 0, 2, false);
+		checkStringLength(customersSuppliersList[i].custSupID, 1, 35);
+		checkStringLength(customersSuppliersList[i].custSupName, 0, 50);
+		checkStringLength(customersSuppliersList[i].contactPerson, 0, 50);
+		checkStringLength(customersSuppliersList[i].telephone, 0, 30);
+		checkStringLength(customersSuppliersList[i].fax, 0, 30);
+		checkStringLength(customersSuppliersList[i].eMail, 0, 255);
+		checkStringLength(customersSuppliersList[i].website, 0, 255);
+		checkStringLength(customersSuppliersList[i].commerceNr, 0, 100);
+		checkStringLength(customersSuppliersList[i].taxRegistrationCountry, 0, 2);
+		checkStringLength(customersSuppliersList[i].taxRegIdent, 0, 30);
+		checkStringLength(customersSuppliersList[i].relationshipID, 0, 35);
+		checkStringLength(customersSuppliersList[i].custSupTp, 0, 1);
+		checkStringLength(customersSuppliersList[i].custSupGrpID, 0, 35);
+		checkStringLength(customersSuppliersList[i].streetname, 0, 100);
+		checkStringLength(customersSuppliersList[i].property, 0, 50);
+		checkStringLength(customersSuppliersList[i].city, 0, 50);
+		checkStringLength(customersSuppliersList[i].postalCode, 0, 10);
+		checkStringLength(customersSuppliersList[i].region, 0, 50);
+		checkStringLength(customersSuppliersList[i].country, 0, 2);
 
         customerSupplierNode = xml.addElement('customerSupplier');
 		
@@ -1010,12 +1030,12 @@ function createCustomersSuppliers(xml, customersSuppliersList) {
 		var custSupGrpIDNode = customerSupplierNode.addElement('custSupGrpID').addTextNode(customersSuppliersList[i].custSupGrpID);
 		
 		if (customersSuppliersList[i].custCreditLimit) {
-        	checkStringLength(customersSuppliersList[i].custCreditLimit, 0, 20, false);
+        	checkStringLength(customersSuppliersList[i].custCreditLimit, 0, 20);
 			var custCreditLimitNode = customerSupplierNode.addElement('custCreditLimit').addTextNode(customersSuppliersList[i].custCreditLimit);
 		}
 
 		// //supplierLimit element
-		// checkStringLength(customersSuppliersList[i].supplierLimit, 0, 20, false);
+		// checkStringLength(customersSuppliersList[i].supplierLimit, 0, 20);
 		// var supplierLimitNode = customerSupplierNode.addElement('supplierLimit').addTextNode(customersSuppliersList[i].supplierLimit);
 
 		var streedAddressNode = customerSupplierNode.addElement('streetAddress');
@@ -1039,9 +1059,9 @@ function createCustomersSuppliers(xml, customersSuppliersList) {
 		// var countryNode = postalAddressNode.addElement('country').addTextNode(customersSuppliersList[i].country);
 
 		if (customersSuppliersList[i].bankAccNr) {
-			checkStringLength(customersSuppliersList[i].bankAccNr, 1, 35, false);
-	    	checkStringLength(customersSuppliersList[i].bankIdCd, 0, 35, false);
-	    	checkStringLength(customersSuppliersList[i].bankIdCd, 0, 999, false);
+			checkStringLength(customersSuppliersList[i].bankAccNr, 1, 35);
+	    	checkStringLength(customersSuppliersList[i].bankIdCd, 0, 35);
+	    	checkStringLength(customersSuppliersList[i].bankIdCd, 0, 999);
 			var bankAccountNode = customerSupplierNode.addElement('bankAccount');
 			var bankAccNrNode = bankAccountNode.addElement('bankAccNr').addTextNode(customersSuppliersList[i].bankAccNr);
 			var bankIdCdNode = bankAccountNode.addElement('bankIdCd').addTextNode(customersSuppliersList[i].bankIdCd);
@@ -1183,16 +1203,16 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 
 	var jrnID = '1';
 	var desc = 'Journal 1';
-	var jrnTp = 'Z';  //????
+	var jrnTp = 'Z';
 	//jrnTp: B=Bank; C=Cash; G=Goods (received/sent); M=Memo/Daybook; O=Opening Balance; P=Purchases; S=Sales; T=Production; Y=Payroll; Z=Other
 	var offsetAccID = ''; //String
 	var bankAccNr = ''; //String
 
-	checkStringLength(jrnID, 1, 35, false);
-	checkStringLength(desc, 1, 9999, false);
-	checkStringLength(jrnTp, 0, 2, false);
-	checkStringLength(offsetAccID, 0, 35, false);
-	checkStringLength(bankAccNr, 0, 35, false);
+	checkStringLength(jrnID, 1, 35);
+	checkStringLength(desc, 1, 9999);
+	checkStringLength(jrnTp, 0, 2);
+	checkStringLength(offsetAccID, 0, 35);
+	checkStringLength(bankAccNr, 0, 35);
 
 
 	/* Create journal element */
@@ -1261,10 +1281,10 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 						periodNumber = '12';
 					}
 
-					checkStringLength(nr, 1, 35, false);
-					checkStringLength(desc, 0, 9999, false);
-					checkStringLength(periodNumber, 1, 3, false);
-					checkStringLength(trDt, 1, 16, false);
+					checkStringLength(nr, 1, 35);
+					checkStringLength(desc, 0, 9999);
+					checkStringLength(periodNumber, 1, 3);
+					checkStringLength(trDt, 1, 16);
 
 					transactionNode = journalNode.addElement('transaction');
 					var nrNode = transactionNode.addElement('nr').addTextNode(nr);
@@ -1381,13 +1401,13 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	if (amnt) {
 		amnt = Banana.SDecimal.abs(amnt); //amounts must always be positive (D,C for the sign)
 
-		checkStringLength(nr, 1, 35, false);
-		checkStringLength(accID, 1, 35, false);
-		checkStringLength(docRef, 1, 255, false);
-		checkStringLength(effDate, 10, 16, false);
-		checkStringLength(desc, 0, 9999, false);
-		checkStringLength(amnt, 0, 20, false);
-		checkStringLength(amntTp, 0, 1, false);
+		checkStringLength(nr, 1, 35);
+		checkStringLength(accID, 1, 35);
+		checkStringLength(docRef, 1, 255);
+		checkStringLength(effDate, 10, 16);
+		checkStringLength(desc, 0, 9999);
+		checkStringLength(amnt, 0, 20);
+		checkStringLength(amntTp, 0, 1);
 
 		var trLineNode = transactionNode.addElement('trLine');
 		
@@ -1580,55 +1600,51 @@ function createSubledgerLine(tRow, transactionNode, banDoc, startDate, endDate) 
 *************************/
 /* This function allows to check the length of an xml elment value.
    If the value is too long or too short, the script execution is stopped and the xml document is not created. */
-function checkStringLength(value, minLength, maxLength, isTest) {
+function checkStringLength(value, minLength, maxLength) {
    	if (value.length > maxLength) {
 	    ERROR_STRING_MAX_LENGTH = true;
-	    if (!isTest) {
-	    	Banana.document.addMessage('<' + value + '> is too long: maximum allowed characters ' + maxLength);
-	    }
+	    Banana.document.addMessage('<' + value + '> is too long: maximum allowed characters ' + maxLength);
 	}
 	if (value.length < minLength) {
 		ERROR_STRING_MIN_LENGTH = true;
-	    if (!isTest) {
-	    	Banana.document.addMessage('<' + value + '> is too short: minimum allowed characters ' + minLength);
-	    }
+	    Banana.document.addMessage('<' + value + '> is too short: minimum allowed characters ' + minLength);
 	}
 }
 
 /* Create the name of the xml file using startDate and endDate (ex. "auditfile_nl_20180101_20180131.xml") */
-function createFileName() {
+function createFileName(startDate, endDate) {
     
     var fileName = "auditfile_nl_";
     var currentDateString = "";
-    var startDate = "";
+    var sDate = "";
     var yearStartDate = "";
     var monthStartDate = "";
     var dayStartDate = "";
-    var endDate = "";
+    var eDate = "";
     var yearEndDate = "";
     var monthEndDate = "";
     var dayEndDate = "";
 
     //Start date string
-    startDate = Banana.Converter.toDate(param.startDate.match(/\d/g).join(""));
-    yearStartDate = startDate.getFullYear().toString();
-    monthStartDate = (startDate.getMonth()+1).toString();
+    sDate = Banana.Converter.toDate(startDate.match(/\d/g).join(""));
+    yearStartDate = sDate.getFullYear().toString();
+    monthStartDate = (sDate.getMonth()+1).toString();
     if (monthStartDate.length < 2) {
         monthStartDate = "0"+monthStartDate;
     }
-    dayStartDate = startDate.getDate().toString();
+    dayStartDate = sDate.getDate().toString();
     if (dayStartDate.length < 2) {
         dayStartDate = "0"+dayStartDate;
     }
 
     //End date string
-    endDate = Banana.Converter.toDate(param.endDate.match(/\d/g).join(""));
-    yearEndDate = endDate.getFullYear().toString();
-    monthEndDate = (endDate.getMonth()+1).toString();
+    eDate = Banana.Converter.toDate(endDate.match(/\d/g).join(""));
+    yearEndDate = eDate.getFullYear().toString();
+    monthEndDate = (eDate.getMonth()+1).toString();
     if (monthEndDate.length < 2) {
         monthEndDate = "0"+monthEndDate;
     }
-    dayEndDate = endDate.getDate().toString();
+    dayEndDate = eDate.getDate().toString();
     if (dayEndDate.length < 2) {
         dayEndDate = "0"+dayEndDate;
     }
@@ -1642,9 +1658,9 @@ function createFileName() {
 }
 
 /* Save the xml file */
-function saveData(output) {
+function saveData(output, startDate, endDate) {
 
-    var fileName = createFileName();
+    var fileName = createFileName(startDate, endDate);
     fileName = Banana.IO.getSaveFileName("Save as", fileName, "XML file (*.xml);;All files (*)");
 
     if (fileName.length) {
@@ -1697,7 +1713,7 @@ function settingsDialog() {
     var docEndDate = Banana.document.endPeriod();   
     
     //A dialog window is opened asking the user to insert the desired period. By default is the accounting period
-    var selectedDates = Banana.Ui.getPeriod(param.reportName, docStartDate, docEndDate, 
+    var selectedDates = Banana.Ui.getPeriod("Periode voor de Auditfile", docStartDate, docEndDate, 
         scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
         
     //We take the values entered by the user and save them as "new default" values.

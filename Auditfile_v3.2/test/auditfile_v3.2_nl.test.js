@@ -16,7 +16,7 @@
 
 // @id = ch.banana.nl.app.auditfile.xml.test
 // @api = 1.0
-// @pubdate = 2018-09-24
+// @pubdate = 2019-03-12
 // @publisher = Banana.ch SA
 // @description = <TEST ch.banana.nl.app.auditfile.js>
 // @task = app.command
@@ -86,9 +86,7 @@ AUDITFILE_NL.prototype.testBananaApp = function() {
 
 AUDITFILE_NL.prototype.xml_test = function(banDoc, startDate, endDate) {
   
-  loadParam(startDate, endDate);
-  var isTest = true;
-  var xml = createXml(banDoc, startDate, endDate, isTest);
+  var xml = createXml(banDoc, startDate, endDate);
   Test.logger.addXml("This is a xml value", xml);
 
   this.xml_validate_test(xml, '../XmlAuditfileFinancieel3.2.xsd');
