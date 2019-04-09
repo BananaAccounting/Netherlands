@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2019-03-12
+// @pubdate = 2019-04-09
 // @publisher = Banana.ch SA
 // @description = Export to Netherlands Financial Auditfile (BETA)
 // @description.nl = Export naar Nederland Auditfile Financiëel (BETA)
@@ -1081,7 +1081,6 @@ function getTotalRowsTransactions(banDoc, startDate, endDate) {
 	var len = journal.rowCount;
 	var rows = 0;
 	var tmpGroup;
-	var newTransaction = 'unknown';
 
 	for (var i = 0; i < len; i++) {
 		var tRow = journal.row(i);
@@ -1092,25 +1091,14 @@ function getTotalRowsTransactions(banDoc, startDate, endDate) {
 			//The row doesn't belongs to any previous transaction
 			//In this case we have to create a new transaction with all the lines belonging to it
 			if (tmpGroup != tRow.value('JContraAccountGroup')) {
-
-				
-				//If the current JContraAccountGroup is different from the previous, then begins a new transaction
-				newTransaction = 'true';
 							
-				//Increase the transaction's counter every time a there is a new <transaction> element
+				//Increase the transaction's counter
 				rows++;
 
-				//Everytime there is a new transaction, we save the new JContraAccountGroup value.
-				//We will use it to determine if the next row belongs to the same transaction or not.
+				//Save the new JContraAccountGroup value, and use it to determine if the next row belongs to the same transaction or not
 				tmpGroup = tRow.value('JContraAccountGroup');
 			}
-
-			//The row belongs to the same (previous) transaction
-			else if (tmpGroup == tRow.value('JContraAccountGroup')) {
-				//We set the value of the variable to false, to indicate that the transaction <element> could be created:
-				//this only if the JContraAccountGroup value of the next row is different from the current one
-				newTransaction = 'false';
-			}
+			//else, the row belongs to the same (previous) transaction
 		}
 	}
 	return rows;
@@ -1439,161 +1427,6 @@ function createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate
 	return trLineNode;
 }
 
-// NOT USED
-function addSubledgers(transactionsNode, banDoc, startDate, endDate) {
-
-	/*
-	<subledgers>
-		<subledger>
-			<sbType>CS</sbType>
-			<sbDesc>String</sbDesc>
-			<linesCount>1</linesCount>
-			<totalDebit>3.14</totalDebit>
-			<totalCredit>3.14</totalCredit>
-			<sbLine>
-				...
-			</sbLine>
-		</subledger>
-	</subledgers>
-	*/
-
-	var sbType = '';
-	var sbDesc = '';
-	var linesCount = '';
-	var totalDebit = '';
-	var totalCredit = '';
-
-	//Check functions here...
-
-
-	var subledgersNode = transactionsNode.addElement('subledgers');
-	var subledgerNode = subledgersNode.addElement('subledger');
-
-	var sbTypeNode = subledgerNode.addElement('sbType').addTextNode(sbType);
-	var sbDescNode = subledgerNode.addElement('sbDesc').addTextNode(sbDesc);
-	var linesCountNode = subledgerNode.addElement('linesCount').addTextNode(linesCount);
-	var totalDebitNode = subledgerNode.addElement('totalDebit').addTextNode(totalDebit);
-	var totalCreditNode = subledgerNode.addElement('totalCredit').addTextNode(totalCredit);
-
-
-	//Add <sbLine> elements here....
-	//createSubledgerLine(tRow, transactionNode, banDoc, startDate, endDate);
-
-
-	//return subledgers element
-	return subledgersNode;
-}
-
-// NOT USED
-function createSubledgerLine(tRow, transactionNode, banDoc, startDate, endDate) {
-
-	/*
-	<sbLine>
-		<nr>String</nr>
-		<jrnID>String</jrnID>
-		<trNr>String</trNr>
-		<trLineNr>String</trLineNr>
-		<desc>String</desc>
-		<amnt>3.14</amnt>
-		<amntTp>C</amntTp>
-		<docRef>String</docRef>
-		<recRef>String</recRef>
-		<matchKeyID>String</matchKeyID>
-		<custSupID>String</custSupID>
-		<invRef>String</invRef>
-		<invPurSalTp>P</invPurSalTp>
-		<invTp>C</invTp>
-		<invDt>1967-08-13</invDt>
-		<invDueDt>1967-08-13</invDueDt>
-		<mutTp>I</mutTp>
-		<costID>String</costID>
-		<prodID>String</prodID>
-		<projID>String</projID>
-		<artGrpID>String</artGrpID>
-		<qntityID>String</qntityID>
-		<qntity>1</qntity>
-		<vat>
-			<vatID>String</vatID>
-			<vatPerc>0</vatPerc>
-			<vatAmnt>3.14</vatAmnt>
-			<vatAmntTp>C</vatAmntTp>
-		</vat>
-		<currency>
-			<curCode>AED</curCode>
-			<curAmnt>3.14</curAmnt>
-		</currency>
-	</sbLine>
-	*/
-
-
-	var nr = '';
-	var jrnID = '';
-	var trNr = '';
-	var trLineNr = '';
-	var desc = '';
-	var amnt = '';
-	var amntTp = '';
-	var docRef = '';
-	var recRef = '';
-	var matchKeyID = '';
-	var custSupID = '';
-	var invRef = '';
-	var invPurSalTp = '';
-	var invTp = '';
-	var invDt = '';
-	var invDueDt = '';
-	var mutTp = '';
-	var costID = '';
-	var prodID = '';
-	var projID = '';
-	var artGrpID = '';
-	var qntityID = '';
-	var qntity = '';
-	var vatID = '';
-	var vatPerc = '';
-	var vatAmnt = '';
-	var vatAmntTp = '';
-	var curCode = '';
-	var curAmnt = '';
-
-	var sbLineNode = transactionNode.addElement('sbLine');
-	var nrNode = sbLineNode.addElement('nr').addTextNode(nr);
-	var jrnIDNode = sbLineNode.addElement('jrnID').addTextNode(jrnID);
-	var trNrNode = sbLineNode.addElement('trNr').addTextNode(trNr);
-	var trLineNrNode = sbLineNode.addElement('trLineNr').addTextNode(trLineNr);
-	var descNode = sbLineNode.addElement('desc').addTextNode(desc);
-	var amntNode = sbLineNode.addElement('amnt').addTextNode(amnt);
-	var amntTpNode = sbLineNode.addElement('amntTp').addTextNode(amntTp);
-	var docRefNode = sbLineNode.addElement('docRef').addTextNode(docRef);
-	var recRefNode = sbLineNode.addElement('recRef').addTextNode(recRef);
-	var matchKeyIDNode = sbLineNode.addElement('matchKeyID').addTextNode(matchKeyID);
-	var custSupIDNode = sbLineNode.addElement('custSupID').addTextNode(custSupID);
-	var invRefNode = sbLineNode.addElement('invRef').addTextNode(invRef);
-	var invPurSalTpNode = sbLineNode.addElement('invPurSalTp').addTextNode(invPurSalTp);
-	var invTpNode = sbLineNode.addElement('invTp').addTextNode(invTp);
-	var invDtNode = sbLineNode.addElement('invDt').addTextNode(invDt);
-	var invDueDt = sbLineNode.addElement('invDueDt').addTextNode(invDueDt);
-	var mutTpNode = sbLineNode.addElement('mutTp').addTextNode(mutTp);
-	var costIDNode = sbLineNode.addElement('costID').addTextNode(costID);
-	var prodIDNode = sbLineNode.addElement('prodID').addTextNode(prodID);
-	var projIDNode = sbLineNode.addElement('projID').addTextNode(projID);
-	var artGrpIDNode = sbLineNode.addElement('artGrpID').addTextNode(artGrpID);
-	var qntityIDNode = sbLineNode.addElement('qntityID').addTextNode(qntityID);
-	var qntityNode = sbLineNode.addElement('qntity').addTextNode(qntity);
-
-	var vatNode = sbLineNode.addElement('vat');
-	var vatIDNode = vatNode.addElement('vatID').addTextNode(vatID);
-	var vatPercNode = vatNode.addElement('vatPerc').addTextNode(vatPerc);
-	var vatAmntNode = vatNode.addElement('vatAmnt').addTextNode(vatAmnt);
-	var vatAmntTpNode = vatNode.addElement('vatAmntTp').addTextNode(vatAmntTp);
-
-	var currencyNode = sbLineNode.addElement('currency');
-	var curCodeNode = currencyNode.addElement('curCode').addTextNode(curCode);
-	var curAmntNode = currencyNode.addElement('curAmnt').addTextNode(curAmnt);
-
-	// . . . minOccurs=0 => potrei lasciare via tutto
-}
-
 
 /************************* 
 	OTHER functions
@@ -1657,11 +1490,11 @@ function createFileName(startDate, endDate) {
     return fileName;
 }
 
-/* Save the xml file */
+/* Save the xml file as .xaf */
 function saveData(output, startDate, endDate) {
 
     var fileName = createFileName(startDate, endDate);
-    fileName = Banana.IO.getSaveFileName("Save as", fileName, "XML file (*.xml);;All files (*)");
+    fileName = Banana.IO.getSaveFileName("Save as", fileName, "XAF file (*.xaf);;All files (*)");
 
     if (fileName.length) {
         var file = Banana.IO.getLocalFile(fileName);
@@ -1671,7 +1504,7 @@ function saveData(output, startDate, endDate) {
             Banana.Ui.showInformation("Write error", file.errorString);
         }
         else {
-        	var answer = Banana.Ui.showQuestion("XML Auditfile NL", "Het gegenereerde xml bestand bekijken?");
+        	var answer = Banana.Ui.showQuestion("XAF Auditfile NL", "Het gegenereerde xaf bestand bekijken?");
         	if (answer) {
         		Banana.IO.openUrl(fileName);
         	}

@@ -31,9 +31,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-03-12</dateCreated>
+  <dateCreated>2019-04-09</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.190221</softwareVersion>
+  <softwareVersion>9.0.4</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -3367,9 +3367,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-03-12</dateCreated>
+  <dateCreated>2019-04-09</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.190221</softwareVersion>
+  <softwareVersion>9.0.4</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -5503,9 +5503,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-03-12</dateCreated>
+  <dateCreated>2019-04-09</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.190221</softwareVersion>
+  <softwareVersion>9.0.4</softwareVersion>
  </header>
  <company>
   <companyIdent/>
@@ -8122,9 +8122,9 @@
   <startDate>2018-01-01</startDate>
   <endDate>2018-12-31</endDate>
   <curCode>EUR</curCode>
-  <dateCreated>2019-03-12</dateCreated>
+  <dateCreated>2019-04-09</dateCreated>
   <softwareDesc>Banana Accounting</softwareDesc>
-  <softwareVersion>9.0.3.190221</softwareVersion>
+  <softwareVersion>9.0.4</softwareVersion>
  </header>
  <company>
   <companyIdent/>
