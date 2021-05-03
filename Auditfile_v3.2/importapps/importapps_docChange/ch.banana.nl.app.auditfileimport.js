@@ -18,11 +18,13 @@
 // @pubdate = 2021-04-30
 // @publisher = Banana.ch SA
 // @description = Import audit file Netherlands
-// @task = import.file
 // @doctype = *
-// @docproperties =
-// @inputdatasource = opendirdialog
-// @inputfilefilter = *.xml
+// @encoding = utf-8
+// @task = import.rows
+// @outputformat = tablewithheaders
+// @inputdatasource = openfiledialog
+// @inputencoding = utf-8
+// @inputfilefilter = XML files (*.xml);;All files (*.*)
 
 /*
  *   SUMMARY
@@ -80,40 +82,44 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             var xmlFile = Banana.Xml.parse(inData[srcFileName]);
             if (!xmlFile)
                 continue;
+
             var xmlRoot = xmlFile.firstChildElement('auditfile');
             if (!xmlRoot)
                 continue;
+
             var companyNode = xmlRoot.firstChildElement('company');
 
-            var openingBalanceList = loadOpeningBalances(companyNode);
+            var openingBalanceList = this.loadOpeningBalances(companyNode);
 
             //add the accounts
-            var accountId = this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, openingBalanceList);
-            if (accountId.length <= 0)
-                continue;
+            this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList);
 
             //add the transactions
-            //this.createJsonDocument_AddTransactions(jsonDoc, xmlRoot, srcFileName, accountId);
+            this.createJsonDocument_AddTransactions(jsonDoc, xmlRoot, companyNode, srcFileName);
 
-            //Banana.console.debug(JSON.stringify(jsonDoc, null, 3));
         }
+
+        Banana.console.debug(JSON.stringify(jsonDoc));
 
         this.jsonDocArray.push(jsonDoc);
 
     }
 
-    createJsonDocument_AddAccounts(jsonDoc, srcFileName, openingBalanceList) {
+    createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList) {
 
 
         var generalLedgerNode = companyNode.firstChildElement('generalLedger');
         var ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount'); // First ledgerAccount
 
+
         while (ledgerAccountNode) {
             var accountNumber = ledgerAccountNode.firstChildElement('accID').text;
+
+
             var accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
             var accType = ledgerAccountNode.firstChildElement('accTp').text;
-            var gr = setGrByAccount(accountNumber);
-            var bclass = setBclassByAccount(accountNumber, accType);
+            var gr = this.setGrByAccount(accountNumber);
+            var bclass = this.setBclassByAccount(accountNumber, accType);
             var opening = "";
 
 
@@ -143,7 +149,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             row.fields["Opening"] = opening;
 
 
-            var rowLists = jsonDoc.document.dataUnits["1"].data.rowLists[0];
+            var rowLists = jsonDoc.document.dataUnits["0"].data.rowLists[0];
             var index = parseInt(rowLists.rows.length);
             rowLists.rows[index.toString()] = row;
 
@@ -151,9 +157,112 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         }
     }
 
-    loadOpeningBalances(companyNode) {
+    createJsonDocument_AddTransactions(jsonDoc, srcFileName, companyNode) {
 
-        Banana.console.debug("xmlFile");
+
+        var transactionsNode = companyNode.firstChildElement('transactions');
+        var journalNode = transactionsNode.firstChildElement('journal');
+
+
+        while (journalNode) {
+
+            var transactionNode = journalNode.firstChildElement('transaction'); // First transaction
+            while (transactionNode) {
+                var nr = "";
+                var desc = "";
+                var trDt = "";
+
+                if (transactionNode.hasChildElements('nr')) {
+                    nr = transactionNode.firstChildElement('nr').text;
+                }
+                if (transactionNode.hasChildElements('desc')) {
+                    desc = transactionNode.firstChildElement('desc').text;
+                }
+                if (transactionNode.hasChildElements('trDt')) {
+                    trDt = transactionNode.firstChildElement('trDt').text;
+                }
+                //Banana.console.log("NEW TRANSACTION: " + nr + "; " + desc + "; " + trDt);
+
+                var trLineNode = transactionNode.firstChildElement('trLine');
+                while (trLineNode) {
+
+                    var trLineNr = "";
+                    var trLineAccID = "";
+                    var trLineDocRef = "";
+                    var trLineEffDate = "";
+                    var trLineDesc = "";
+                    var trLineAmnt = "";
+                    var trLineAmntTp = "";
+
+                    if (trLineNode.hasChildElements('nr')) {
+                        trLineNr = trLineNode.firstChildElement('nr').text;
+                    }
+                    if (trLineNode.hasChildElements('accID')) {
+                        trLineAccID = trLineNode.firstChildElement('accID').text;
+                    }
+                    if (trLineNode.hasChildElements('docRef')) {
+                        trLineDocRef = trLineNode.firstChildElement('docRef').text;
+                    }
+                    if (trLineNode.hasChildElements('effDate')) {
+                        trLineEffDate = trLineNode.firstChildElement('effDate').text;
+                    }
+                    if (trLineNode.hasChildElements('desc')) {
+                        trLineDesc = trLineNode.firstChildElement('desc').text;
+                    }
+                    if (trLineNode.hasChildElements('amnt')) {
+                        trLineAmnt = trLineNode.firstChildElement('amnt').text;
+                    }
+                    if (trLineNode.hasChildElements('amntTp')) {
+                        trLineAmntTp = trLineNode.firstChildElement('amntTp').text;
+                    }
+
+                    // Description of the transaction
+                    var transactionDescription = "";
+                    if (desc) {
+                        transactionDescription = desc + ", " + trLineDesc;
+                    } else {
+                        transactionDescription = trLineDesc;
+                    }
+
+                    // Account and ContraAccount of the transaction
+                    if (trLineAmntTp === "D") {
+                        var transactionDebitAccount = trLineAccID;
+                        var transactionCreditAccount = "";
+                    } else if (trLineAmntTp === "C") {
+                        var transactionDebitAccount = "";
+                        var transactionCreditAccount = trLineAccID;
+                    }
+
+                    var row = {};
+                    row.operation = {};
+                    row.operation.name = "add";
+                    row.operation.srcFileName = srcFileName;
+                    row.fields = {};
+                    row.fields["Date"] = trLineEffDate;
+                    row.fields["Doc"] = nr;
+                    row.fields["Doctype"] = "";
+                    row.fields["Description"] = transactionDescription;
+                    row.fields["AccountDebit"] = transactionDebitAccount;
+                    row.fields["AccountCredit"] = transactionCreditAccount;
+                    row.fields["Amount"] = Banana.SDecimal.abs(trLineAmnt);
+
+                    var rowLists = jsonDoc.document.dataUnits["1"].data.rowLists[0];
+                    var index = parseInt(rowLists.rows.length);
+                    rowLists.rows[index.toString()] = row;
+
+
+                    trLineNode = trLineNode.nextSiblingElement('trLine'); // Next trLine
+                } //trLineNode
+
+
+                transactionNode = transactionNode.nextSiblingElement('transaction'); // Next transaction
+            } // transactionNode
+
+            journalNode = journalNode.nextSiblingElement('journal'); // Next journal
+        } //journalNode
+    }
+
+    loadOpeningBalances(companyNode) {
 
         var openingBalanceList = [];
 
@@ -205,7 +314,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         var bclass = "";
         if (accType === "B") {
-            bclass = ""; // 1 or 2
+            bclass = "1"; // 1 or 2
         } else if (accType === "P") {
             bclass = ""; // 3 or 4
         } else if (accType === "C") {
