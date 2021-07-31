@@ -48,22 +48,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         this.banDocument = banDocument;
         // this.initParam();
 
-
         //array dei patches
         this.jsonDocArray = [];
 
         //errors
         this.ID_ERR_ = "ID_ERR_";
 
-    }
-
-    convertParam(param) {
-        var convertedParam = {};
-        convertedParam.version = '1.0';
-        /*array dei parametri dello script*/
-        convertedParam.data = [];
-
-        return convertedParam;
     }
 
     /**
@@ -91,6 +81,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
             var openingBalanceList = this.loadOpeningBalances(companyNode);
 
+            // add the changes on the file properties
+            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName, companyNode, openingBalanceList);
             //add the accounts
             this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList);
 
@@ -99,9 +91,32 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         }
 
-        Banana.console.debug(JSON.stringify(jsonDoc));
-
         this.jsonDocArray.push(jsonDoc);
+
+    }
+
+    createJsonDocument_AddFileProperties(jsonDoc, srcFileName, companyNode, openingBalanceList){
+        var companyName=companyNode.firstChildElement('companyName').text;
+        var streetAddress = companyNode.firstChildElement('streetAddress');
+
+        var streetName = streetAddress.firstChildElement('streetname').text;
+        var number= streetAddress.firstChildElement('number').text;
+        var city= streetAddress.firstChildElement('city').text;
+
+        var row = {};
+        row.operation = {};
+        row.operation.name = "modify";
+        row.operation.srcFileName = srcFileName;
+        row.fields = {};
+        row.fields["SectionXml"] = "Base";
+        row.fields["IdXml"] = "HeaderLeft";
+        row.fields["ValueXml"] = companyName;
+
+        var rowLists = jsonDoc.document.dataUnits["0"].data.rowLists[0];
+        var index = parseInt(rowLists.rows.length);
+        rowLists.rows[index.toString()] = row;
+
+
 
     }
 
@@ -148,8 +163,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             row.fields["Gr"] = gr;
             row.fields["Opening"] = opening;
 
-
-            var rowLists = jsonDoc.document.dataUnits["0"].data.rowLists[0];
+            var rowLists = jsonDoc.document.dataUnits["1"].data.rowLists[0];
             var index = parseInt(rowLists.rows.length);
             rowLists.rows[index.toString()] = row;
 
@@ -158,7 +172,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     createJsonDocument_AddTransactions(jsonDoc, srcFileName, companyNode) {
-
 
         var transactionsNode = companyNode.firstChildElement('transactions');
         var journalNode = transactionsNode.firstChildElement('journal');
@@ -326,30 +339,42 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     createJsonDocument_Init() {
+        // viene definito cosa contiene il documento "document", e per ogni modifica crea le dataUnits
         var jsonDoc = {};
         jsonDoc.document = {};
         jsonDoc.fileVersion = "1.0.0";
 
+        var dataUnitFilePorperties = {};
+        jsonDoc.document.dataUnits=[];
+        jsonDoc.document.dataUnits["0"] = dataUnitFilePorperties;
+        dataUnitFilePorperties.data = {};
+        dataUnitFilePorperties.data.rowLists = [];
+        dataUnitFilePorperties.data.rowLists[0] = {};
+        dataUnitFilePorperties.data.rowLists[0].rows = [];
+        dataUnitFilePorperties.id = "FileInfo";//controllare se questo campo serve
+        dataUnitFilePorperties.nameXml = "FileInfo";
+        dataUnitFilePorperties.nid = 100;
+
         var dataUnitAccounts = {};
         jsonDoc.document.dataUnits = [];
-        jsonDoc.document.dataUnits["0"] = dataUnitAccounts;
+        jsonDoc.document.dataUnits["1"] = dataUnitAccounts;
         dataUnitAccounts.data = {};
         dataUnitAccounts.data.rowLists = [];
         dataUnitAccounts.data.rowLists[0] = {};
         dataUnitAccounts.data.rowLists[0].rows = [];
         dataUnitAccounts.id = "Accounts";
         dataUnitAccounts.nameXml = "Accounts";
-        dataUnitAccounts.nid = 100;
+        dataUnitAccounts.nid = 101;
 
         var dataUnitTransactions = {};
-        jsonDoc.document.dataUnits["1"] = dataUnitTransactions;
+        jsonDoc.document.dataUnits["2"] = dataUnitTransactions;
         dataUnitTransactions.data = {};
         dataUnitTransactions.data.rowLists = [];
         dataUnitTransactions.data.rowLists[0] = {};
         dataUnitTransactions.data.rowLists[0].rows = [];
         dataUnitTransactions.id = "Transactions";
         dataUnitTransactions.nameXml = "Transactions";
-        dataUnitTransactions.nid = 103;
+        dataUnitTransactions.nid = 102;
 
         jsonDoc.creator = {};
         var d = new Date();
