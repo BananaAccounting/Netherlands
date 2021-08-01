@@ -81,8 +81,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
             var openingBalanceList = this.loadOpeningBalances(companyNode);
 
-            // add the changes on the file properties
-            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName, companyNode, openingBalanceList);
+            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName,companyNode);
             //add the accounts
             this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList);
 
@@ -95,33 +94,74 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
-    createJsonDocument_AddFileProperties(jsonDoc, srcFileName, companyNode, openingBalanceList){
+    /**
+     * 
+     * @returns the list of the file properties fields i want to modify/add
+     */
+    getFileInfoFields(){
+        var propertyFields=[];
+
+        propertyFields[0]="Company";
+        propertyFields[1]="Address1";
+        propertyFields[2]="City";
+
+        return propertyFields;
+
+    }
+    /**
+     * 
+     * @param {*} companyNode the xml company node
+     * @returns the values i want to put in the file properties fields
+     */
+    getCompanyInfo(companyNode){
+
+        var companyInfos=[];
+
         var companyName=companyNode.firstChildElement('companyName').text;
         var streetAddress = companyNode.firstChildElement('streetAddress');
 
-        var streetName = streetAddress.firstChildElement('streetname').text;
-        var number= streetAddress.firstChildElement('number').text;
-        var city= streetAddress.firstChildElement('city').text;
+        companyInfos[0]=companyName;
+        companyInfos[1] = streetAddress.firstChildElement('streetname').text+" "+streetAddress.firstChildElement('number').text;
+        companyInfos[2]= streetAddress.firstChildElement('city').text;
 
-        var row = {};
-        row.operation = {};
-        row.operation.name = "modify";
-        row.operation.srcFileName = srcFileName;
-        row.fields = {};
-        row.fields["SectionXml"] = "Base";
-        row.fields["IdXml"] = "HeaderLeft";
-        row.fields["ValueXml"] = companyName;
+        return companyInfos;
+    }
 
-        var rowLists = jsonDoc.document.dataUnits["0"].data.rowLists[0];
-        var index = parseInt(rowLists.rows.length);
-        rowLists.rows[index.toString()] = row;
+    createJsonDocument_AddFileProperties(jsonDoc, srcFileName,companyNode){
 
+        var rows = [];
 
+        var fileInfoFields=this.getFileInfoFields();
+        var companyInfos=this.getCompanyInfo(companyNode);
+
+        for (var i=0;i<fileInfoFields.length;i++){
+            var row = {};
+            row.operation = {};
+            row.operation.name = "add";
+            row.operation.srcFileName = srcFileName;
+            row.fields = {};
+            row.fields["SectionXml"] = "AccountingDataBase";
+            row.fields["IdXml"] = fileInfoFields[i];
+            row.fields["ValueXml"] = companyInfos[i];
+
+            rows.push(row);
+        }
+
+        Banana.console.debug(JSON.stringify(rows));
+
+        var dataUnitFilePorperties = {}; 
+        dataUnitFilePorperties.nameXml="FileInfo";
+        dataUnitFilePorperties.data={};
+        dataUnitFilePorperties.data.rowLists=[];
+        dataUnitFilePorperties.data.rowLists.push({"rows":rows});
+
+        jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
 
     }
 
     createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList) {
 
+        var rows = [];
 
         var generalLedgerNode = companyNode.firstChildElement('generalLedger');
         var ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount'); // First ledgerAccount
@@ -163,15 +203,26 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             row.fields["Gr"] = gr;
             row.fields["Opening"] = opening;
 
-            var rowLists = jsonDoc.document.dataUnits["1"].data.rowLists[0];
-            var index = parseInt(rowLists.rows.length);
-            rowLists.rows[index.toString()] = row;
+
+            rows.push(row);
 
             ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount');
         }
+    
+        var dataUnitFilePorperties = {}; 
+        dataUnitFilePorperties.nameXml="Accounts";
+        dataUnitFilePorperties.data={};
+        dataUnitFilePorperties.data.rowLists=[];
+        dataUnitFilePorperties.data.rowLists.push({"rows":rows});
+
+        jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
+    
+
     }
 
     createJsonDocument_AddTransactions(jsonDoc, srcFileName, companyNode) {
+
+        var rows = [];
 
         var transactionsNode = companyNode.firstChildElement('transactions');
         var journalNode = transactionsNode.firstChildElement('journal');
@@ -259,10 +310,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     row.fields["AccountCredit"] = transactionCreditAccount;
                     row.fields["Amount"] = Banana.SDecimal.abs(trLineAmnt);
 
-                    var rowLists = jsonDoc.document.dataUnits["1"].data.rowLists[0];
-                    var index = parseInt(rowLists.rows.length);
-                    rowLists.rows[index.toString()] = row;
-
+                    rows.push(row);
 
                     trLineNode = trLineNode.nextSiblingElement('trLine'); // Next trLine
                 } //trLineNode
@@ -273,6 +321,14 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
             journalNode = journalNode.nextSiblingElement('journal'); // Next journal
         } //journalNode
+
+        var dataUnitFilePorperties = {}; 
+        dataUnitFilePorperties.nameXml="Transactions";
+        dataUnitFilePorperties.data={};
+        dataUnitFilePorperties.data.rowLists=[];
+        dataUnitFilePorperties.data.rowLists.push({"rows":rows});
+
+        jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
     }
 
     loadOpeningBalances(companyNode) {
@@ -339,42 +395,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     createJsonDocument_Init() {
-        // viene definito cosa contiene il documento "document", e per ogni modifica crea le dataUnits
+
         var jsonDoc = {};
         jsonDoc.document = {};
-        jsonDoc.fileVersion = "1.0.0";
-
-        var dataUnitFilePorperties = {};
+        jsonDoc.document.dataUnitsfileVersion = "1.0.0";
         jsonDoc.document.dataUnits=[];
-        jsonDoc.document.dataUnits["0"] = dataUnitFilePorperties;
-        dataUnitFilePorperties.data = {};
-        dataUnitFilePorperties.data.rowLists = [];
-        dataUnitFilePorperties.data.rowLists[0] = {};
-        dataUnitFilePorperties.data.rowLists[0].rows = [];
-        dataUnitFilePorperties.id = "FileInfo";//controllare se questo campo serve
-        dataUnitFilePorperties.nameXml = "FileInfo";
-        dataUnitFilePorperties.nid = 100;
-
-        var dataUnitAccounts = {};
-        jsonDoc.document.dataUnits = [];
-        jsonDoc.document.dataUnits["1"] = dataUnitAccounts;
-        dataUnitAccounts.data = {};
-        dataUnitAccounts.data.rowLists = [];
-        dataUnitAccounts.data.rowLists[0] = {};
-        dataUnitAccounts.data.rowLists[0].rows = [];
-        dataUnitAccounts.id = "Accounts";
-        dataUnitAccounts.nameXml = "Accounts";
-        dataUnitAccounts.nid = 101;
-
-        var dataUnitTransactions = {};
-        jsonDoc.document.dataUnits["2"] = dataUnitTransactions;
-        dataUnitTransactions.data = {};
-        dataUnitTransactions.data.rowLists = [];
-        dataUnitTransactions.data.rowLists[0] = {};
-        dataUnitTransactions.data.rowLists[0].rows = [];
-        dataUnitTransactions.id = "Transactions";
-        dataUnitTransactions.nameXml = "Transactions";
-        dataUnitTransactions.nid = 102;
 
         jsonDoc.creator = {};
         var d = new Date();

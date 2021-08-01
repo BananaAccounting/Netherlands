@@ -1,0 +1,31 @@
+        var dataUnitFilePorperties = {};
+        jsonDoc.document.dataUnits=[];
+        jsonDoc.document.dataUnits["0"] = dataUnitFilePorperties;
+        dataUnitFilePorperties.data = {};
+        dataUnitFilePorperties.data.rowLists = [];
+        dataUnitFilePorperties.data.rowLists[0] = {};
+        dataUnitFilePorperties.data.rowLists[0].rows = [];
+        dataUnitFilePorperties.id = "FileInfo";//controllare se questo campo serve
+        dataUnitFilePorperties.nameXml = "FileInfo";
+        dataUnitFilePorperties.nid = 100;
+
+        var dataUnitAccounts = {};
+        jsonDoc.document.dataUnits = [];
+        jsonDoc.document.dataUnits["1"] = dataUnitAccounts;
+        dataUnitAccounts.data = {};
+        dataUnitAccounts.data.rowLists = [];
+        dataUnitAccounts.data.rowLists[0] = {};
+        dataUnitAccounts.data.rowLists[0].rows = [];
+        dataUnitAccounts.id = "Accounts";
+        dataUnitAccounts.nameXml = "Accounts";
+        dataUnitAccounts.nid = 101;
+
+        var dataUnitTransactions = {};
+        jsonDoc.document.dataUnits["2"] = dataUnitTransactions;
+        dataUnitTransactions.data = {};
+        dataUnitTransactions.data.rowLists = [];
+        dataUnitTransactions.data.rowLists[0] = {};
+        dataUnitTransactions.data.rowLists[0].rows = [];
+        dataUnitTransactions.id = "Transactions";
+        dataUnitTransactions.nameXml = "Transactions";
+        dataUnitTransactions.nid = 102;
