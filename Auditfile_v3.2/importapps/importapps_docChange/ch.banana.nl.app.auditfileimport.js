@@ -47,6 +47,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         this.version = '1.0';
         this.banDocument = banDocument;
         // this.initParam();
+        this.ledgerGr="";
 
         //array dei patches
         this.jsonDocArray = [];
@@ -62,7 +63,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
      * @param {*} inData 
      */
     createJsonDocument(inData) {
-
 
         var jsonDoc = this.createJsonDocument_Init();
 
@@ -80,12 +80,31 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             var companyNode = xmlRoot.firstChildElement('company');
 
             var openingBalanceList = this.loadOpeningBalances(companyNode);
-
+            /*********************************************************************
+             * ADD THE FILE PROPERTIES
+             *********************************************************************/
             this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName,companyNode);
-            //add the accounts
+            /*********************************************************************
+             * ADD THE ACCOUNTS
+             *********************************************************************/
             this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList);
 
-            //add the transactions
+            /*********************************************************************
+             * ADD THE COSTUMERS/SUPPLIERS
+             *********************************************************************/
+            var customersSuppliersList = [];
+            if (companyNode.hasChildElements('customersSuppliers')) {
+                var customersSuppliersNode = companyNode.firstChildElement('customersSuppliers');
+                if (customersSuppliersNode.hasChildElements('customerSupplier')) {
+                    var customerSupplierNode = customersSuppliersNode.firstChildElement('customerSupplier'); // First customerSupplier
+                    customersSuppliersList = this.getCustomerSuppliers(customerSupplierNode);
+                }
+            }
+            this.createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList);
+
+            /*********************************************************************
+            * ADD THE TRANSACTIONS
+            *********************************************************************/
             this.createJsonDocument_AddTransactions(jsonDoc, xmlRoot, companyNode, srcFileName);
 
         }
@@ -147,8 +166,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             rows.push(row);
         }
 
-        Banana.console.debug(JSON.stringify(rows));
-
         var dataUnitFilePorperties = {}; 
         dataUnitFilePorperties.nameXml="FileInfo";
         dataUnitFilePorperties.data={};
@@ -164,17 +181,18 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         var rows = [];
 
         var generalLedgerNode = companyNode.firstChildElement('generalLedger');
-        var ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount'); // First ledgerAccount
+        var ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount');
 
 
         while (ledgerAccountNode) {
+
             var accountNumber = ledgerAccountNode.firstChildElement('accID').text;
 
 
             var accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
             var accType = ledgerAccountNode.firstChildElement('accTp').text;
-            var gr = this.setGrByAccount(accountNumber);
-            var bclass = this.setBclassByAccount(accountNumber, accType);
+            var gr = ledgerAccountNode.firstChildElement('leadCode').text; //this.setGrByAccount(accountNumber);
+            var bclass = ledgerAccountNode.firstChildElement('leadReference').text; //this.setBclassByAccount(accountNumber, accType);
             var opening = "";
 
 
@@ -196,7 +214,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             row.operation.name = "add";
             row.operation.srcFileName = srcFileName;
             row.fields = {};
-            row.fields["Date"] = "Data ultima modifica conto";
             row.fields["Account"] = accountNumber;
             row.fields["Description"] = accountDescription;
             row.fields["BClass"] = bclass;
@@ -204,7 +221,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             row.fields["Opening"] = opening;
 
 
+            //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
+            //row=createJsonDocument_AddGrLine(gr)
+
+
             rows.push(row);
+
+            this.ledgerGr=gr;
 
             ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount');
         }
@@ -219,6 +242,162 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     
 
     }
+
+    createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList) {
+
+        //creates the row that indicates
+        //fare in modo che vengano divisi i clienti con i fornitori nel piano dei conti
+
+        var rows = [];
+
+        while (customerSupplierNode) { // For each customerSupplierNode
+
+            var accountNumber = "";
+            var accountDescription = "";
+            var gr = "";
+            var bclass = ""; //C (customer), S (supplier), B (both customer and supplier), O (Other, no customer or supplier)
+            var accountOpening = "";
+            var nameprefix = "";
+            var firstname = "";
+            var familyname = "";
+            var street = "";
+            var zip = "";
+            var locality = "";
+            var countryCode = "";
+            var phoneMain = "";
+            var fax = "";
+            var email = "";
+            var website = "";
+            var bankiban = "";   
+    
+            var accountNumber = customerSupplierNode.firstChildElement('custSupID').text;
+            var accountDescription = customerSupplierNode.firstChildElement('custSupName').text;
+    
+            //Take the "account___description" of each customer/supplier
+            for (var i = 0; i < customersSuppliersList.length; i++) {
+                if (customersSuppliersList[i].split("_____")[0] === accountNumber) {
+                    if (customersSuppliersList[i].split("_____")[1]) {
+                        accountDescription = customersSuppliersList[i].split("_____")[1];
+                    }
+                }
+            }
+    
+            if (customerSupplierNode.hasChildElements('custSupTp')) {
+                var customerSupplierType = customerSupplierNode.firstChildElement('custSupTp').text;
+               // bclass = setBclassByAccount(accountNumber,customerSupplierType);
+            }
+            
+            if (customerSupplierNode.hasChildElements('contact')) {
+                var str = customerSupplierNode.firstChildElement('contact').text;
+                var res = str.split(" ");
+                firstname = res[0];
+                for (var i = 1; i < res.length; i++) {
+                    familyname += res[i] + " ";
+                }
+            }
+    
+            if (customerSupplierNode.hasChildElements('telephone')) {
+                phoneMain = customerSupplierNode.firstChildElement('telephone').text;
+            }
+            if (customerSupplierNode.hasChildElements('fax')) {
+                fax = customerSupplierNode.firstChildElement('fax').text;
+            }
+            if (customerSupplierNode.hasChildElements('eMail')) {
+                email = customerSupplierNode.firstChildElement('eMail').text;
+            }
+            if (customerSupplierNode.hasChildElements('website')) {
+                website = customerSupplierNode.firstChildElement('website').text;
+            }
+    
+            if (customerSupplierNode.hasChildElements('streetAddress')) {
+                var streetAddressNode = customerSupplierNode.firstChildElement('streetAddress');
+                if (streetAddressNode.hasChildElements('streetname')) {
+                    street = streetAddressNode.firstChildElement('streetname').text;
+                }
+                if (streetAddressNode.hasChildElements('postalCode')) {
+                    zip = streetAddressNode.firstChildElement('postalCode').text;
+                }
+                if (streetAddressNode.hasChildElements('city')) {
+                    locality = streetAddressNode.firstChildElement('city').text;
+                }
+                if (streetAddressNode.hasChildElements('country')) {
+                    countryCode = streetAddressNode.firstChildElement('country').text;
+                }
+            }
+    
+            if (customerSupplierNode.hasChildElements('bankAccount')) {
+                var bankAccountNode = customerSupplierNode.firstChildElement('bankAccount');
+                if (bankAccountNode.hasChildElements('bankAccNr')) {
+                    bankiban = bankAccountNode.firstChildElement('bankAccNr').text;
+                }
+            }
+    
+            var row = {};
+            row.operation = {};
+            row.operation.name = "add";
+            row.operation.srcFileName = srcFileName;
+            row.fields = {};
+            row.fields["Account"] = accountNumber;
+            row.fields["Description"] = accountDescription;
+            row.fields["BClass"] = bclass;
+            row.fields["Gr"] = gr;
+            row.fields["Opening"] = accountOpening;
+            row.fields["NamePrefix"] = nameprefix;
+            row.fields["FirstName"] = firstname;
+            row.fields["FamilyName"] = familyname;
+            row.fields["Street"] = street;
+            row.fields["PostalCode"] = zip;
+            row.fields["Locality"] = locality;
+            row.fields["CountryCode"] = countryCode;
+            row.fields["PhoneMain"] = phoneMain;
+            row.fields["Fax"] = fax;
+            row.fields["EmailWork"] = email;
+            row.fields["Website"] = website;
+            row.fields["BankIban"] = bankiban;
+
+
+            //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
+            //row=createJsonDocument_AddGrLine(gr)
+
+
+            rows.push(row);
+
+            this.ledgerGr=gr;
+    
+            customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
+        }
+
+        var dataUnitFilePorperties = {}; 
+        dataUnitFilePorperties.nameXml="Accounts";
+        dataUnitFilePorperties.data={};
+        dataUnitFilePorperties.data.rowLists=[];
+        dataUnitFilePorperties.data.rowLists.push({"rows":rows});
+
+        jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
+
+
+    }
+
+    // Get a list of all the customers and suppliers accounts
+     getCustomerSuppliers(customerSupplierNode) {
+    var customersSuppliersList = [];
+    while (customerSupplierNode) { // For each customerSupplierNode
+        var accountNumber = customerSupplierNode.firstChildElement('custSupID').text;
+        customersSuppliersList.push(accountNumber); //Add the account to the list
+        customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
+    }
+    //Removing duplicates
+    for (var i = 0; i < customersSuppliersList.length; i++) {
+        for (var x = i+1; x < customersSuppliersList.length; x++) {
+            if (customersSuppliersList[x] === customersSuppliersList[i]) {
+                customersSuppliersList.splice(x,1);
+                --x;
+            }
+        }
+    }
+    return customersSuppliersList;
+}
+
 
     createJsonDocument_AddTransactions(jsonDoc, srcFileName, companyNode) {
 
