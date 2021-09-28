@@ -47,7 +47,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         this.version = '1.0';
         this.banDocument = banDocument;
         // this.initParam();
-        this.ledgerGr="";
+        this.lead={};
+        this.bClass="";
 
         //array dei patches
         this.jsonDocArray = [];
@@ -80,18 +81,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             var companyNode = xmlRoot.firstChildElement('company');
 
             var openingBalanceList = this.loadOpeningBalances(companyNode);
-            /*********************************************************************
-             * ADD THE FILE PROPERTIES
-             *********************************************************************/
-            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName,companyNode);
-            /*********************************************************************
-             * ADD THE ACCOUNTS
-             *********************************************************************/
-            this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList);
 
-            /*********************************************************************
-             * ADD THE COSTUMERS/SUPPLIERS
-             *********************************************************************/
             var customersSuppliersList = [];
             if (companyNode.hasChildElements('customersSuppliers')) {
                 var customersSuppliersNode = companyNode.firstChildElement('customersSuppliers');
@@ -100,7 +90,20 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     customersSuppliersList = this.getCustomerSuppliers(customerSupplierNode);
                 }
             }
-            this.createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList);
+            /*********************************************************************
+             * ADD THE FILE PROPERTIES
+             *********************************************************************/
+            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName,companyNode);
+            /*********************************************************************
+             * ADD THE ACCOUNTS
+             *********************************************************************/
+            this.createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode,customersSuppliersList, openingBalanceList);
+
+            /*********************************************************************
+             * ADD THE COSTUMERS/SUPPLIERS
+             *********************************************************************/
+            if(customersSuppliersList.length>0)
+               // this.createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList);
 
             /*********************************************************************
             * ADD THE TRANSACTIONS
@@ -135,13 +138,19 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     getCompanyInfo(companyNode){
 
         var companyInfos=[];
+        var companyName="";
+        var companyStreetAddress="";
+        var companyStreetAddressNumber="";
 
-        var companyName=companyNode.firstChildElement('companyName').text;
-        var streetAddress = companyNode.firstChildElement('streetAddress');
+        companyName=companyNode.firstChildElement('companyName').text;
+        companyStreetAddress = companyNode.firstChildElement('streetAddress');
+        if(companyStreetAddress.hasChildElements('number'))
+            companyStreetAddressNumber=companyStreetAddress.firstChildElement('number').text;
+
 
         companyInfos[0]=companyName;
-        companyInfos[1] = streetAddress.firstChildElement('streetname').text+" "+streetAddress.firstChildElement('number').text;
-        companyInfos[2]= streetAddress.firstChildElement('city').text;
+        companyInfos[1] = companyStreetAddress;
+        companyInfos[2]= companyStreetAddressNumber;
 
         return companyInfos;
     }
@@ -176,58 +185,114 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
-    createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, openingBalanceList) {
+    createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, customersSuppliersList,openingBalanceList) {
 
         var rows = [];
+        var generalLedgerNode="";
+        var ledgerAccountNode="";
 
-        var generalLedgerNode = companyNode.firstChildElement('generalLedger');
-        var ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount');
-
+        generalLedgerNode = companyNode.firstChildElement('generalLedger');
+        ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount');
 
         while (ledgerAccountNode) {
 
-            var accountNumber = ledgerAccountNode.firstChildElement('accID').text;
-
-
-            var accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
-            var accType = ledgerAccountNode.firstChildElement('accTp').text;
-            var gr = ledgerAccountNode.firstChildElement('leadCode').text; //this.setGrByAccount(accountNumber);
-            var bclass = ledgerAccountNode.firstChildElement('leadReference').text; //this.setBclassByAccount(accountNumber, accType);
+            var accountNumber="";
+            var accountDescription="";
+            var accType="";
+            var gr="";
+            var bclass="";
+            var totalGr="";
             var opening = "";
+            var grDescription="";
 
 
-            //Take the "account___amount___amounttype" of each opening balance
-            for (var i = 0; i < openingBalanceList.length; i++) {
-                if (openingBalanceList[i].split("_____")[0] === accountNumber) {
-                    var amnt = openingBalanceList[i].split("_____")[1];
-                    var amntTp = openingBalanceList[i].split("_____")[2];
-                    if (amntTp === "D") {
-                        opening = amnt;
-                    } else if (amntTp === "C") {
-                        opening = Banana.SDecimal.invert(amnt);
+            accountNumber = ledgerAccountNode.firstChildElement('accID').text;
+            grDescription=ledgerAccountNode.firstChildElement('leadDescription').text;
+            accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
+            accType = ledgerAccountNode.firstChildElement('accTp').text;
+
+            if(ledgerAccountNode.hasChildElements('leadCode'))
+                gr = ledgerAccountNode.firstChildElement('leadCode').text;
+            else
+                gr=this.setGrByAccount(accountNumber);
+
+            if(ledgerAccountNode.hasChildElements('leadReference'))
+                bclass = ledgerAccountNode.firstChildElement('leadReference').text; 
+            else
+                bclass=this.setBclassByAccount(gr, accType);
+
+            if(ledgerAccountNode.hasChildElements('leadCrossRef'))
+                totalGr=ledgerAccountNode.firstChildElement('leadCrossRef').text;
+
+        //We take all the accounts that are not customers or suppliers
+        //because we want all the normal accounts at the beginning,
+        //and customers/suppliers at the end.
+        if (customersSuppliersList.indexOf(accountNumber) < 0) {
+                //if the next element has the same leadcode(gr) than the previous, i create a normal row
+                //otherwise, i create a grouping row.Same for the section(Bclass).
+                if(this.lead.code!=gr){
+                    //create a row for the gr total
+                    var row = {};
+                    row.operation = {};
+                    row.operation.name = "add";
+                    row.operation.srcFileName = srcFileName;
+                    row.fields = {};
+                    row.fields["Group"] = this.lead.code;
+                    row.fields["Description"] = this.lead.description;
+                    row.fields["Gr"] = this.getGroupTotal(this.bClass,accType);
+                    //create an empty row to append after the total row
+                    var emptyRow=this.getEmptyRows();
+
+                    rows.push(row);
+                    rows.push(emptyRow);
+                }
+                if(this.bClass!=bclass){
+                    var row = {};
+                    row.operation = {};
+                    row.operation.name = "add";
+                    row.fields = {};
+                    row.fields["Group"] = this.getGroupTotal(this.bClass,accType);
+                    row.fields["Description"] = "Nuova Sezione";
+                    //create an empty row to append after the total row
+                    var emptyRow=this.getEmptyRows();
+
+                    rows.push(row);
+                    rows.push(emptyRow);
+                }
+                //Take the "account___amount___amounttype" of each opening balance
+                for (var i = 0; i < openingBalanceList.length; i++) {
+                    if (openingBalanceList[i].split("_____")[0] === accountNumber) {
+                        var amnt = openingBalanceList[i].split("_____")[1];
+                        var amntTp = openingBalanceList[i].split("_____")[2];
+                        if (amntTp === "D") {
+                            opening = amnt;
+                        } else if (amntTp === "C") {
+                            opening = Banana.SDecimal.invert(amnt);
+                        }
                     }
                 }
-            }
 
-            var row = {};
-            row.operation = {};
-            row.operation.name = "add";
-            row.operation.srcFileName = srcFileName;
-            row.fields = {};
-            row.fields["Account"] = accountNumber;
-            row.fields["Description"] = accountDescription;
-            row.fields["BClass"] = bclass;
-            row.fields["Gr"] = gr;
-            row.fields["Opening"] = opening;
+                var row = {};
+                row.operation = {};
+                row.operation.name = "add";
+                row.operation.srcFileName = srcFileName;
+                row.fields = {};
+                row.fields["Account"] = accountNumber;
+                Banana.console.debug(accountNumber);
+                row.fields["Description"] = accountDescription;
+                row.fields["BClass"] = bclass;
+                row.fields["Gr"] = gr;
+                row.fields["Opening"] = opening;
 
+                rows.push(row);
 
-            //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
-            //row=createJsonDocument_AddGrLine(gr)
+                //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
+                //row=createJsonDocument_AddGrLine(gr)
 
-
-            rows.push(row);
-
-            this.ledgerGr=gr;
+                this.lead.code=gr;
+                this.lead.description=grDescription;
+                this.bClass=bclass;
+            }   
 
             ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount');
         }
@@ -238,9 +303,52 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         dataUnitFilePorperties.data.rowLists=[];
         dataUnitFilePorperties.data.rowLists.push({"rows":rows});
 
+       // Banana.Ui.showText(JSON.stringify(dataUnitFilePorperties));
+
         jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
     
 
+    }
+
+    getGroupTotal(bclass,accType){
+        var groupTotal = "";
+        if(accType=="B" ||accType=="P" ){
+            switch(bclass){
+                case "1":
+                    groupTotal="1I"
+                    return groupTotal;
+                case "2":
+                    groupTotal="2E"
+                    return groupTotal;
+                case "3":
+                    groupTotal="3G"
+                    return groupTotal;
+                case "4":
+                    groupTotal="4D"
+                    return groupTotal;
+                default:
+                    return groupTotal;
+            }
+        }else{
+            switch(bclass){
+                case "1":
+                    groupTotal="DEB"
+                    return groupTotal;
+                case "2":
+                    groupTotal="CRE"
+                    return groupTotal;
+                default:
+                    return groupTotal;
+            }
+        }
+    }
+    getEmptyRows(){
+        var emptyRow = {};
+        emptyRow.operation = {};
+        emptyRow.operation.name = "add";
+        emptyRow.fields = {};
+
+        return emptyRow;
     }
 
     createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList) {
@@ -361,8 +469,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
 
             rows.push(row);
-
-            this.ledgerGr=gr;
     
             customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
         }
@@ -483,7 +589,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     row.fields = {};
                     row.fields["Date"] = trLineEffDate;
                     row.fields["Doc"] = nr;
-                    row.fields["Doctype"] = "";
                     row.fields["Description"] = transactionDescription;
                     row.fields["AccountDebit"] = transactionDebitAccount;
                     row.fields["AccountCredit"] = transactionCreditAccount;
@@ -542,11 +647,14 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     setGrByAccount(account) {
         var gr = "";
-        //....
-        return gr;
+        switch(account){
+            case "lol":
+            return gr;
+        }
+        //...
     }
 
-    setBclassByAccount(account, accType) {
+    setBclassByAccount(gr, accType) {
         /* from xml file:
         
         Accounts:
@@ -562,9 +670,15 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         var bclass = "";
         if (accType === "B") {
-            bclass = "1"; // 1 or 2
+            if(gr.substr(0,1)=="1")
+                bclass = "1";
+            else 
+                bclass = "2";
         } else if (accType === "P") {
-            bclass = ""; // 3 or 4
+            if(gr.substr(0,1)=="3")
+                bclass = "3";
+            else 
+                bclass = "4";
         } else if (accType === "C") {
             bclass = "1";
         } else if (accType === "S") {
