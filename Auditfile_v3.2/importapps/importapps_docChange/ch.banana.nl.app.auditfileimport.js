@@ -50,6 +50,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         this.lead = {};
         this.bClass = "";
         this.transNr = "";
+        this.vatTransactionsList=[];
 
         //array dei patches
         this.jsonDocArray = [];
@@ -104,16 +105,82 @@ var NlAuditFilesImport = class NlAuditFilesImport {
              * ADD THE COSTUMERS/SUPPLIERS
              *********************************************************************/
             if (customersSuppliersList.length > 0)
-            // this.createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList);
+                this.createJsonDocument_AddCostumersSuppliers(jsonDoc,srcFileName,customerSupplierNode, customersSuppliersList);
 
             /*********************************************************************
              * ADD THE TRANSACTIONS
              *********************************************************************/
                 this.createJsonDocument_AddTransactions(jsonDoc, xmlRoot, companyNode, srcFileName);
+            /*********************************************************************
+             * ADD THE SUBLEDGERS ELEMENTS
+             *********************************************************************/
+                //add the vat codes, solo se è presente la tabella vat
+                var table=this.banDocument.table("VatCodes");
+                if(table)
+                 this.createJsonDocument_AddVatCodes(jsonDoc, srcFileName, companyNode);
 
         }
 
         this.jsonDocArray.push(jsonDoc);
+
+    }
+
+    createJsonDocument_AddVatCodes(jsonDoc, srcFileName, companyNode){
+        var rows = [];
+        var vatCodesNode = "";
+        var vatNode = "";
+        var vatToPayAccId="";
+        var vatToClaimAccId="";
+        var vatPerc="";
+        var vatAmtType="";
+        var vatTransList=this.vatTransactionsList;
+
+        vatCodesNode = companyNode.firstChildElement('vatCodes');
+        vatNode = vatCodesNode.firstChildElement('vatCode');
+
+        while (vatNode) {
+
+            var vatId = "";
+            var vatCodeDescription = "";
+
+
+            vatId = vatNode.firstChildElement('vatID').text;
+            vatCodeDescription = vatNode.firstChildElement('vatDesc').text;
+            vatToPayAccId=vatNode.firstChildElement('vatToPayAccID').text;
+            vatToClaimAccId=vatNode.firstChildElement('vatToClaimAccID').text;
+
+            for(var i=0;i<vatTransList.length;i++){
+                if (vatTransList[i].split("_____")[0] === vatId) {
+                    vatPerc = vatTransList[i].split("_____")[1];
+                    vatAmtType = vatTransList[i].split("_____")[2];
+                }
+            }
+
+
+            var row = {};
+            row.operation = {};
+            row.operation.name = "add";
+            row.operation.srcFileName = srcFileName;
+            row.fields = {};
+            row.fields["VatCode"] = vatId;
+            row.fields["Description"] = vatCodeDescription;
+            row.fields["VatRate"] = vatPerc;
+            row.fields["AmountType"] = vatAmtType;
+
+            rows.push(row);
+
+            vatNode = vatNode.nextSiblingElement('vatCode');
+        }
+
+        var dataUnitFilePorperties = {};
+        dataUnitFilePorperties.nameXml = "VatCodes";
+        dataUnitFilePorperties.data = {};
+        dataUnitFilePorperties.data.rowLists = [];
+        dataUnitFilePorperties.data.rowLists.push({ "rows": rows });
+
+        // Banana.Ui.showText(JSON.stringify(dataUnitFilePorperties));
+
+        jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
 
     }
 
@@ -294,12 +361,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     getGroupRow(leadCode, accType) {
         var grRows = {};
         grRows.row = {};
-        row.operation = {};
-        row.operation.name = "add";
-        row.fields = {};
-        row.fields["Group"] = leadCode;
-        row.fields["Description"] = this.lead.description
-        row.fields["Gr"] = this.getGroupTotal(this.bClass, accType);
+        grRows.row.operation = {};
+        grRows.row.operation.name = "add";
+        grRows.row.fields = {};
+        grRows.row.fields["Group"] = leadCode;
+        grRows.row.fields["Description"] = this.lead.description
+        grRows.row.fields["Gr"] = this.getGroupTotal(this.bClass, accType);
         grRows.emptyRow = this.getEmptyRow();
 
         return grRows;
@@ -308,11 +375,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     getSectionRow(accType) {
         var secRows = {};
         secRows.row = {};
-        row.operation = {};
-        row.operation.name = "add";
-        row.fields = {};
-        row.fields["Group"] = this.getGroupTotal(this.bClass, accType);
-        row.fields["Description"] = this.getSectionDescription(this.bClass);
+        secRows.row.operation = {};
+        secRows.row.operation.name = "add";
+        secRows.row.fields = {};
+        secRows.row.fields["Group"] = this.getGroupTotal(this.bClass, accType);
+        secRows.row.fields["Description"] = this.getSectionDescription(this.bClass);
         //create an empty row to append after the total row
         secRows.emptyRow = this.getEmptyRow();
         return secRows;
@@ -352,25 +419,38 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             }
         }
     }
-    getSectionDescription(bclass) {
+    getSectionDescription(bclass,accType) {
         var descr = "";
-        switch (bclass) {
-            case "1":
-                descr = "TOTALE ACTIVA"
-                return descr;
-            case "2":
-                descr = "TOTALE PASSIVA"
-                return descr;
-            case "3":
-                descr = "TOTALE LASTEN"
-                return descr;
-            case "4":
-                descr = "TOTALE BATEN"
-                return descr;
-            default:
-                return descr;
+        if (accType == "B" || accType == "P") {
+            switch (bclass) {
+                case "1":
+                    descr = "TOTALE ACTIVA"
+                    return descr;
+                case "2":
+                    descr = "TOTALE PASSIVA"
+                    return descr;
+                case "3":
+                    descr = "TOTALE LASTEN"
+                    return descr;
+                case "4":
+                    descr = "TOTALE BATEN"
+                    return descr;
+                default:
+                    return descr;
+            }
+        }else{
+            switch (bclass) {
+                case "1":
+                    descr = "Total Klanten"
+                    return descr;
+                case "2":
+                    descr = "Total Leveranciers"
+                    return descr;
+                default:
+                    return descr;
+            }
+            
         }
-
 
     }
     getEmptyRow() {
@@ -388,6 +468,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         //fare in modo che vengano divisi i clienti con i fornitori nel piano dei conti
 
         var rows = [];
+        //svuoto la variabile.
+        this.bClass="";
 
         while (customerSupplierNode) { // For each customerSupplierNode
 
@@ -423,7 +505,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
             if (customerSupplierNode.hasChildElements('custSupTp')) {
                 var customerSupplierType = customerSupplierNode.firstChildElement('custSupTp').text;
-                // bclass = setBclassByAccount(accountNumber,customerSupplierType);
+                bclass = this.setBclassByAccount(accountNumber,customerSupplierType);
+                gr=this.setCSGrByBclass(bclass);
             }
 
             if (customerSupplierNode.hasChildElements('contact')) {
@@ -471,6 +554,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 }
             }
 
+            if (this.bClass != bclass) {
+                var secRows = this.getSectionRow(customerSupplierType);
+                rows.push(secRows.row);
+                rows.push(secRows.emptyRow);
+            }
+
             var row = {};
             row.operation = {};
             row.operation.name = "add";
@@ -494,12 +583,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             row.fields["Website"] = website;
             row.fields["BankIban"] = bankiban;
 
-
-            //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
-            //row=createJsonDocument_AddGrLine(gr)
-
-
             rows.push(row);
+
+            this.bClass=bclass;
+
             customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
         }
 
@@ -534,6 +621,20 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return customersSuppliersList;
     }
 
+    setCSGrByBclass(bClass){
+        var gr="";
+        switch(bClass){
+            case "1":
+                gr="DEB"
+                return gr;
+            case "2":
+                gr="CRE"
+                return gr;
+            default:
+                return gr;
+        }
+    }
+
 
     createJsonDocument_AddTransactions(jsonDoc, srcFileName, companyNode) {
 
@@ -566,12 +667,18 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 while (trLineNode) {
 
                     var trLineNr = "";
+                    var transactionDescription = "";
                     var trLineAccID = "";
                     var trLineDocRef = "";
                     var trLineEffDate = "";
                     var trLineDesc = "";
                     var trLineAmnt = "";
                     var trLineAmntTp = "";
+                    var trLineVatId="";
+                    var trLineVatPerc="";
+                    var trLineVatPerc="";
+                    var trLineVatAmt="";
+                    var trLineVatAmtTp="";
 
                     if (trLineNode.hasChildElements('nr')) {
                         trLineNr = trLineNode.firstChildElement('nr').text;
@@ -595,8 +702,18 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                         trLineAmntTp = trLineNode.firstChildElement('amntTp').text;
                     }
 
+                    //row VAT 
+                    if (trLineNode.hasChildElements('vat')) {
+                        var trLineVat= trLineNode.firstChildElement('vat');
+                        trLineVatId=trLineVat.firstChildElement('vatID').text;
+                        trLineVatPerc=trLineVat.firstChildElement('vatPerc').text;
+                        trLineVatAmt=trLineVat.firstChildElement('vatAmnt').text;
+                        trLineVatAmtTp=trLineVat.firstChildElement('vatAmntTp').text;
+                        //save the values i will put in the Vat Codes table.
+                        this.vatTransactionsList.push(trLineVatId+"_____"+trLineVatPerc+"_____"+trLineVatAmtTp);
+                    }
+
                     // Description of the transaction
-                    var transactionDescription = "";
                     if (desc) {
                         transactionDescription = desc + ", " + trLineDesc;
                     } else {
@@ -629,6 +746,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     row.fields["AccountDebit"] = transactionDebitAccount;
                     row.fields["AccountCredit"] = transactionCreditAccount;
                     row.fields["Amount"] = Banana.SDecimal.abs(trLineAmnt);
+                    row.fields["VatCode"] = trLineVatId;
+                    row.fields["VatRate"] = trLineVatPerc;
 
                     rows.push(row);
 
