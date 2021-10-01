@@ -146,8 +146,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
             vatId = vatNode.firstChildElement('vatID').text;
             vatCodeDescription = vatNode.firstChildElement('vatDesc').text;
-            vatToPayAccId=vatNode.firstChildElement('vatToPayAccID').text;
-            vatToClaimAccId=vatNode.firstChildElement('vatToClaimAccID').text;
+            if(vatNode.hasChildElements('vatToPayAccID'))
+                vatToPayAccId=vatNode.firstChildElement('vatToPayAccID').text;
+            if(vatNode.hasChildElements('vatToClaimAccID'))
+                vatToClaimAccId=vatNode.firstChildElement('vatToClaimAccID').text;
 
             for(var i=0;i<vatTransList.length;i++){
                 if (vatTransList[i].split("_____")[0] === vatId) {
@@ -273,11 +275,15 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             var opening = "";
             var grDescription = "";
 
-
             accountNumber = ledgerAccountNode.firstChildElement('accID').text;
-            grDescription = ledgerAccountNode.firstChildElement('leadDescription').text;
-            accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
-            accType = ledgerAccountNode.firstChildElement('accTp').text;
+            if(ledgerAccountNode.hasChildElements('leadDescription'))
+
+                grDescription = ledgerAccountNode.firstChildElement('leadDescription').text;
+            if(accountDescription = ledgerAccountNode.hasChildElements('accDesc'))    
+                accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
+
+            if(ledgerAccountNode.hasChildElements('accTp'))    
+                accType = ledgerAccountNode.firstChildElement('accTp').text;
 
             if (ledgerAccountNode.hasChildElements('leadCode'))
                 gr = ledgerAccountNode.firstChildElement('leadCode').text;
@@ -345,6 +351,16 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount');
         }
 
+        //alla fine aggiungo ancora il raggruppamento e la sezione finale riprendendo gli ultimi elementi salvati
+        //last group
+        var grRows = this.getGroupRow(this.lead.code, accType);
+        rows.push(grRows.row);
+        rows.push(grRows.emptyRow);
+        //last section
+        var secRows = this.getSectionRow(accType)
+        rows.push(secRows.row);
+        rows.push(secRows.emptyRow);
+
         var dataUnitFilePorperties = {};
         dataUnitFilePorperties.nameXml = "Accounts";
         dataUnitFilePorperties.data = {};
@@ -379,7 +395,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         secRows.row.operation.name = "add";
         secRows.row.fields = {};
         secRows.row.fields["Group"] = this.getGroupTotal(this.bClass, accType);
-        secRows.row.fields["Description"] = this.getSectionDescription(this.bClass);
+        secRows.row.fields["Description"] = this.getSectionDescription(this.bClass,accType);
         //create an empty row to append after the total row
         secRows.emptyRow = this.getEmptyRow();
         return secRows;
@@ -421,6 +437,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
     getSectionDescription(bclass,accType) {
         var descr = "";
+        //Banana.console.debug(accType);
         if (accType == "B" || accType == "P") {
             switch (bclass) {
                 case "1":
@@ -491,8 +508,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             var website = "";
             var bankiban = "";
 
-            var accountNumber = customerSupplierNode.firstChildElement('custSupID').text;
-            var accountDescription = customerSupplierNode.firstChildElement('custSupName').text;
+            if(customerSupplierNode.firstChildElement('custSupID'))
+                var accountNumber = customerSupplierNode.firstChildElement('custSupID').text;
+            if(customerSupplierNode.firstChildElement('custSupName'))
+                var accountDescription = customerSupplierNode.firstChildElement('custSupName').text;
 
             //Take the "account___description" of each customer/supplier
             for (var i = 0; i < customersSuppliersList.length; i++) {
@@ -589,6 +608,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
             customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
         }
+
+        //add the last section
+        var secRows = this.getSectionRow(customerSupplierType);
+        rows.push(secRows.row);
+        rows.push(secRows.emptyRow);
 
         var dataUnitFilePorperties = {};
         dataUnitFilePorperties.nameXml = "Accounts";
@@ -746,7 +770,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     row.fields["AccountDebit"] = transactionDebitAccount;
                     row.fields["AccountCredit"] = transactionCreditAccount;
                     row.fields["Amount"] = Banana.SDecimal.abs(trLineAmnt);
-                    row.fields["VatCode"] = trLineVatId;
+                    row.fields["VatCode"] = "["+trLineVatId+"]";
                     row.fields["VatRate"] = trLineVatPerc;
 
                     rows.push(row);

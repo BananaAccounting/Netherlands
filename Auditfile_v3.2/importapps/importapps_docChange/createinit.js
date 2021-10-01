@@ -1,4 +1,4 @@
-// Copyright [2019] [Banana.ch SA - Lugano Switzerland]
+// Copyright [2021] [Banana.ch SA - Lugano Switzerland]
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = creator
+// @id = createinit
 // @api = 1.0
-// @pubdate = 2019-06-13
+// @pubdate = 2021-10-01
 // @publisher = Banana.ch SA
-// @description = Converter script
-// @task = none
+// @description = Create Init for importing Netherland XML Audit Files
+// @task = create.init
 // @doctype = *
 
 function exec(inData) {
@@ -34,11 +34,11 @@ function exec(inData) {
         },
         "scriptImport": {
             "function": "exec",
-            "uri": "ch.banana.nl.app.auditfileimport"
+            "uri": "ch.banana.nl.app.auditfileimport.sbaa/ch.banana.nl.app.auditfileimport"
         },
         "scriptSetup": {
             "function": "setup",
-            "uri": "ch.banana.nl.app.auditfileimport"
+            "uri": "ch.banana.nl.app.auditfileimport.sbaa/ch.banana.nl.app.auditfileimport"
         },
     };
 

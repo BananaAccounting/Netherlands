@@ -1,0 +1,11 @@
+{
+    "category": "productivity",
+    "country":"Netherland",
+    "countryCode":"nl",
+    "description": "[BETA] Import Audit File Netherland (XML)",
+    "id": "ch.banana.nl.app.auditfileimport",
+    "language":"nl",
+    "publisher": "Banana.ch",
+    "title": "[BETA] Import Audit File Netherland (XML)",
+    "version": "1.0"
+}
