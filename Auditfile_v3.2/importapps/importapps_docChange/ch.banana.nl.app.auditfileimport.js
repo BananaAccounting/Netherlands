@@ -80,6 +80,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             if (!xmlRoot)
                 continue;
 
+            var headerNode=xmlRoot.firstChildElement('header');
             var companyNode = xmlRoot.firstChildElement('company');
 
             var openingBalanceList = this.loadOpeningBalances(companyNode);
@@ -95,7 +96,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             /*********************************************************************
              * ADD THE FILE PROPERTIES
              *********************************************************************/
-            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName, companyNode);
+            this.createJsonDocument_AddFileProperties(jsonDoc, srcFileName,headerNode,companyNode);
             /*********************************************************************
              * ADD THE ACCOUNTS
              *********************************************************************/
@@ -193,9 +194,16 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     getFileInfoFields() {
             var propertyFields = [];
 
-            propertyFields[0] = "Company";
-            propertyFields[1] = "Address1";
-            propertyFields[2] = "City";
+            propertyFields[0] = "OpeningDate";
+            propertyFields[1] = "ClosureDate";
+            propertyFields[2] = "BasicCurrency";
+            propertyFields[3] = "Company";
+            propertyFields[4] = "Address1";
+            propertyFields[5] = "City";
+            propertyFields[6] = "State";
+            propertyFields[7] = "CountryCode";
+            propertyFields[8] = "FiscalNumber";
+
 
             return propertyFields;
 
@@ -205,37 +213,71 @@ var NlAuditFilesImport = class NlAuditFilesImport {
          * @param {*} companyNode the xml company node
          * @returns the values i want to put in the file properties fields
          */
-    getCompanyInfo(companyNode) {
+    getCompanyInfo(headerNode,companyNode) {
 
         var companyInfos = [];
+        var startDate="";
+        var endDate="";
+        var basicCurrency="";
+
+        var streetAddressNode
         var companyName = "";
-        var companyStreetAddress = "";
-        var companyStreetAddressNumber = "";
+        var companyStreetName = "";
+        var companyStreetAddressCity = "";
+        var companyStreetAddressRegion = "";
+        var companyStreetAddressCountry = "";
+        var companyStreetAddressTaxReg="";
 
+
+        //take the information from the node: header
+        startDate=headerNode.firstChildElement('startDate').text;
+        startDate=startDate.replace(/-/g, "");
+        endDate=headerNode.firstChildElement('endDate').text;
+        endDate=endDate.replace(/-/g, "");
+        basicCurrency=headerNode.firstChildElement('curCode').text;
+
+
+        //take the information from node: company
         companyName = companyNode.firstChildElement('companyName').text;
-        companyStreetAddress = companyNode.firstChildElement('streetAddress');
-        if (companyStreetAddress.hasChildElements('number'))
-            companyStreetAddressNumber = companyStreetAddress.firstChildElement('number').text;
+        if(companyNode.hasChildElements('streetAddress'))
+            streetAddressNode=companyNode.firstChildElement('streetAddress')
+            companyStreetName = streetAddressNode.firstChildElement('streetname').text;
+        if (streetAddressNode.hasChildElements('city'))
+            companyStreetAddressCity = streetAddressNode.firstChildElement('city').text;
+        if (streetAddressNode.hasChildElements('region'))
+            companyStreetAddressRegion = streetAddressNode.firstChildElement('region').text;
+        if (streetAddressNode.hasChildElements('country'))
+        companyStreetAddressCountry = streetAddressNode.firstChildElement('country').text;
+        if (companyNode.hasChildElements('taxRegIdent'))
+        companyStreetAddressTaxReg = companyNode.firstChildElement('taxRegIdent').text;
+        
 
 
-        companyInfos[0] = companyName;
-        companyInfos[1] = companyStreetAddress;
-        companyInfos[2] = companyStreetAddressNumber;
+        companyInfos[0] = startDate;
+        companyInfos[1] = endDate;
+        companyInfos[2] = basicCurrency;
+        companyInfos[3] = companyName;
+        companyInfos[4] = companyStreetName;
+        companyInfos[5] = companyStreetAddressCity;
+        companyInfos[6] = companyStreetAddressRegion;
+        companyInfos[7] = companyStreetAddressCountry;
+        companyInfos[8] = companyStreetAddressTaxReg;
+        
 
         return companyInfos;
     }
 
-    createJsonDocument_AddFileProperties(jsonDoc, srcFileName, companyNode) {
+    createJsonDocument_AddFileProperties(jsonDoc, srcFileName,headerNode, companyNode) {
 
         var rows = [];
 
         var fileInfoFields = this.getFileInfoFields();
-        var companyInfos = this.getCompanyInfo(companyNode);
+        var companyInfos = this.getCompanyInfo(headerNode,companyNode);
 
         for (var i = 0; i < fileInfoFields.length; i++) {
             var row = {};
             row.operation = {};
-            row.operation.name = "add";
+            row.operation.name = "modify";
             row.operation.srcFileName = srcFileName;
             row.fields = {};
             row.fields["SectionXml"] = "AccountingDataBase";
@@ -252,6 +294,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         dataUnitFilePorperties.data.rowLists.push({ "rows": rows });
 
         jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
+
 
     }
 
@@ -310,7 +353,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     rows.push(grRows.emptyRow);
                 }
                 if (this.bClass != bclass) {
-                    var secRows = this.getSectionRow(accType)
+                    var secRows = this.getSectionRow(accType);
                     rows.push(secRows.row);
                     rows.push(secRows.emptyRow);
                 }
@@ -337,6 +380,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 row.fields["BClass"] = bclass;
                 row.fields["Gr"] = gr;
                 row.fields["Opening"] = opening;
+
 
                 rows.push(row);
 
