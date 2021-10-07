@@ -15,7 +15,7 @@
 //
 // @id = ch.banana.nl.app.auditfileimporttransactions.js
 // @api = 1.0
-// @pubdate = 2021-04-30
+// @pubdate = 2021-10-07
 // @publisher = Banana.ch SA
 // @description = Import audit file Netherlands
 // @doctype = *
@@ -45,18 +45,20 @@ function setup() {}
 var NlAuditFilesImport = class NlAuditFilesImport {
     constructor(banDocument) {
         this.version = '1.0';
+        this.isAdvanced=isBananaAdvanced();
         this.banDocument = banDocument;
-        // this.initParam();
         this.lead = {};
         this.bClass = "";
         this.transNr = "";
+        this.accountType="";
         this.vatTransactionsList=[];
 
         //array dei patches
         this.jsonDocArray = [];
 
         //errors
-        this.ID_ERR_ = "ID_ERR_";
+        this.ID_ERR_LICENSE_NOTVALID = "ID_ERR_LICENSE_NOTVALID";
+        this.ID_ERR_VERSION_NOTSUPPORTED="ID_ERR_VERSION_NOTSUPPORTED";
 
     }
 
@@ -112,6 +114,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
              * ADD THE TRANSACTIONS
              *********************************************************************/
                 this.createJsonDocument_AddTransactions(jsonDoc, xmlRoot, companyNode, srcFileName);
+                // se non è la versione, avverto che l'importazione delle registrazioni è limitata a 100 righe
+                if(!this.isAdvanced){
+                    var msg = getErrorMessage(this.ID_ERR_LICENSE_NOTVALID, lang);
+                    this.banDocument.addMessage(msg, this.ID_ERR_LICENSE_NOTVALID);
+                }
+
             /*********************************************************************
              * ADD THE SUBLEDGERS ELEMENTS
              *********************************************************************/
@@ -194,15 +202,17 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     getFileInfoFields() {
             var propertyFields = [];
 
-            propertyFields[0] = "OpeningDate";
-            propertyFields[1] = "ClosureDate";
-            propertyFields[2] = "BasicCurrency";
-            propertyFields[3] = "Company";
-            propertyFields[4] = "Address1";
-            propertyFields[5] = "City";
-            propertyFields[6] = "State";
-            propertyFields[7] = "CountryCode";
-            propertyFields[8] = "FiscalNumber";
+            propertyFields[0] = "HeaderLeft";
+            propertyFields[1] = "HeaderRight";
+            propertyFields[2] = "OpeningDate";
+            propertyFields[3] = "ClosureDate";
+            propertyFields[4] = "BasicCurrency";
+            propertyFields[5] = "Company";
+            propertyFields[6] = "Address1";
+            propertyFields[7] = "City";
+            propertyFields[8] = "State";
+            propertyFields[9] = "CountryCode";
+            propertyFields[10] = "FiscalNumber";
 
 
             return propertyFields;
@@ -222,6 +232,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         var streetAddressNode
         var companyName = "";
+        var companyIdentification="";
         var companyStreetName = "";
         var companyStreetAddressCity = "";
         var companyStreetAddressRegion = "";
@@ -239,6 +250,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         //take the information from node: company
         companyName = companyNode.firstChildElement('companyName').text;
+        if (companyNode.hasChildElements('companyIdent'))
+            companyIdentification = companyNode.firstChildElement('companyIdent').text;
         if(companyNode.hasChildElements('streetAddress'))
             streetAddressNode=companyNode.firstChildElement('streetAddress')
             companyStreetName = streetAddressNode.firstChildElement('streetname').text;
@@ -253,15 +266,17 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         
 
 
-        companyInfos[0] = startDate;
-        companyInfos[1] = endDate;
-        companyInfos[2] = basicCurrency;
-        companyInfos[3] = companyName;
-        companyInfos[4] = companyStreetName;
-        companyInfos[5] = companyStreetAddressCity;
-        companyInfos[6] = companyStreetAddressRegion;
-        companyInfos[7] = companyStreetAddressCountry;
-        companyInfos[8] = companyStreetAddressTaxReg;
+        companyInfos[0] = companyName+" "+companyIdentification;
+        companyInfos[1] = companyStreetName+", "+companyStreetAddressCity+","+companyStreetAddressRegion;
+        companyInfos[2] = startDate;
+        companyInfos[3] = endDate;
+        companyInfos[4] = basicCurrency;
+        companyInfos[5] = companyName;
+        companyInfos[6] = companyStreetName;
+        companyInfos[7] = companyStreetAddressCity;
+        companyInfos[8] = companyStreetAddressRegion;
+        companyInfos[9] = companyStreetAddressCountry;
+        companyInfos[10] = companyStreetAddressTaxReg;
         
 
         return companyInfos;
@@ -275,12 +290,18 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         var companyInfos = this.getCompanyInfo(headerNode,companyNode);
 
         for (var i = 0; i < fileInfoFields.length; i++) {
+            var sectionXml="";
+            if(i<=1)
+                sectionXml="Base";
+            else
+                sectionXml="AccountingDataBase";
+
             var row = {};
             row.operation = {};
             row.operation.name = "modify";
             row.operation.srcFileName = srcFileName;
             row.fields = {};
-            row.fields["SectionXml"] = "AccountingDataBase";
+            row.fields["SectionXml"] = sectionXml;
             row.fields["IdXml"] = fileInfoFields[i];
             row.fields["ValueXml"] = companyInfos[i];
 
@@ -348,15 +369,22 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 //if the next element has the same leadcode(gr) than the previous, i create a normal row
                 //otherwise, i create a grouping row.Same for the section(Bclass).
                 if (this.lead.code != gr) {
+                    //carried over groups
+                    var grCarriedOver=this.getGroupCarriedOver(this.lead.code);
+                    var grCarrOverRows = this.getGroupRow_carriedOver(grCarriedOver, this.lead.code);
+                    rows.push(grCarrOverRows.row);
+
+                    //normal groups
                     var grRows = this.getGroupRow(this.lead.code, accType);
                     rows.push(grRows.row);
                     rows.push(grRows.emptyRow);
                 }
                 if (this.bClass != bclass) {
-                    var secRows = this.getSectionRow(accType);
+                    var secRows = this.getSectionRow(accType,this.accountType);
                     rows.push(secRows.row);
                     rows.push(secRows.emptyRow);
                 }
+
                 //Take the "account___amount___amounttype" of each opening balance
                 for (var i = 0; i < openingBalanceList.length; i++) {
                     if (openingBalanceList[i].split("_____")[0] === accountNumber) {
@@ -389,6 +417,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
                 this.lead.code = gr;
                 this.lead.description = grDescription;
+                this.accountType=accType;
                 this.bClass = bclass;
             }
 
@@ -401,9 +430,20 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         rows.push(grRows.row);
         rows.push(grRows.emptyRow);
         //last section
-        var secRows = this.getSectionRow(accType)
+        var secRows = this.getSectionRow(accType,this.accountType)
         rows.push(secRows.row);
         rows.push(secRows.emptyRow);
+
+        //aggiungo il totale del CE (utile o perdita)
+        var totCeRow=this.getTotCeRow();
+        rows.push(totCeRow.row);
+        rows.push(totCeRow.emptyRow);
+
+        //aggiungo la differenza del Bilancio (dovrebbe essere zero)
+        var balanceDiff=this.getBalanceDiff();
+        rows.push(balanceDiff.row);
+        rows.push(balanceDiff.emptyRow);
+
 
         var dataUnitFilePorperties = {};
         dataUnitFilePorperties.nameXml = "Accounts";
@@ -418,32 +458,116 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
-    getGroupRow(leadCode, accType) {
+    getBalanceDiff(){
+        var balanceRows = {};
+        balanceRows.row = {};
+        balanceRows.row.operation = {};
+        balanceRows.row.operation.name = "add";
+        balanceRows.row.fields = {};
+        balanceRows.row.fields["Group"] = "00";
+        balanceRows.row.fields["Description"] = "Verschil moet = 0 (lege cel) zijn";
+        balanceRows.emptyRow=this.getEmpty
+
+        return balanceRows;
+    }
+    getTotCeRow(){
+        var ceRows = {};
+        ceRows.row = {};
+        ceRows.row.operation = {};
+        ceRows.row.operation.name = "add";
+        ceRows.row.fields = {};
+        ceRows.row.fields["Group"] = "02";
+        ceRows.row.fields["Description"] = "Winst (-) verlies (+) van winst- en verliesrekening";
+        ceRows.row.fields["Gr"] = "0511";
+        ceRows.emptyRow=this.getEmpty
+
+        return ceRows;
+    }
+
+    /* METODO MOMENTANEO, DA RIVEDERE QUANDO SAREMO IN POSSESSO DI UN PAIO DI AUDIT FILES DIVERSI   
+    -se il gruppo e 1E, prima del totale gruppo aggiungo un altro gruppo per contabilizzare i clienti
+    -se il gruppo é 2 A, prima del totale gruppo aggiungo un altro gruppo per contabilizzare l'utile o la perdita annuale
+    -se il gruppo è 2C, prima del totale del gruppo aggiungo un altro gruppo per contabilizzare i fornitori.
+    */
+    getGroupCarriedOver(){
+        var grCarriedOver={};
+        switch(this.lead.code){
+            case "1E":
+                grCarriedOver.gr="10"
+                grCarriedOver.description="Klanten Register";
+                return grCarriedOver;
+            case "2A":
+                grCarriedOver.gr="0511"
+                grCarriedOver.description="Leveranciers register";
+                return grCarriedOver;
+            case "2C":
+                grCarriedOver.gr="20"
+                grCarriedOver.description="Winst of verlies lopend jaar"
+                return grCarriedOver;
+            default:
+                return null;
+        }
+    }
+   getGroupRow_carriedOver(grCarriedOver,grCode) {
+        var grRows = {};
+        if(grCarriedOver!=null){
+            grRows.row = {};
+            grRows.row.operation = {};
+            grRows.row.operation.name = "add";
+            grRows.row.fields = {};
+            grRows.row.fields["Group"] = grCarriedOver.gr;
+            grRows.row.fields["Description"] = grCarriedOver.description;
+            grRows.row.fields["Gr"] = grCode;
+        }
+        return grRows;
+    }
+
+
+    getGroupRow(grCode, accType) {
         var grRows = {};
         grRows.row = {};
         grRows.row.operation = {};
         grRows.row.operation.name = "add";
         grRows.row.fields = {};
-        grRows.row.fields["Group"] = leadCode;
-        grRows.row.fields["Description"] = this.lead.description
+        grRows.row.fields["Group"] = grCode;
+        grRows.row.fields["Description"] = this.lead.description;
         grRows.row.fields["Gr"] = this.getGroupTotal(this.bClass, accType);
         grRows.emptyRow = this.getEmptyRow();
 
         return grRows;
     }
 
-    getSectionRow(accType) {
+    getSectionRow(currentAccType,previsousAccType) {
         var secRows = {};
         secRows.row = {};
         secRows.row.operation = {};
         secRows.row.operation.name = "add";
         secRows.row.fields = {};
-        secRows.row.fields["Group"] = this.getGroupTotal(this.bClass, accType);
-        secRows.row.fields["Description"] = this.getSectionDescription(this.bClass,accType);
+        secRows.row.fields["Group"] = this.getGroupTotal(this.bClass, currentAccType);
+        secRows.row.fields["Description"] = this.getSectionDescription(this.bClass,currentAccType);
+        secRows.row.fields["Gr"]=this.getSectionGr(previsousAccType);
         //create an empty row to append after the total row
         secRows.emptyRow = this.getEmptyRow();
         return secRows;
+    }
 
+    getSectionGr(previsousAccType){
+        var sectionTotal = "";
+        if (previsousAccType == "B") {
+            sectionTotal="00";
+            return sectionTotal;
+        }else if(previsousAccType=="P"){
+            sectionTotal="02";
+            return sectionTotal;
+        }else if(previsousAccType=="C"){
+            sectionTotal="10";
+            return sectionTotal;
+        }else if(previsousAccType=="S"){
+            sectionTotal="20";
+            return sectionTotal;
+        }else{
+            return sectionTotal;
+        }
     }
 
 
@@ -529,8 +653,9 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         //fare in modo che vengano divisi i clienti con i fornitori nel piano dei conti
 
         var rows = [];
-        //svuoto la variabile.
+        //svuoto la variabile già utilizzata per i conti del bilancio e conto economico
         this.bClass="";
+        this.accountType="";
 
         while (customerSupplierNode) { // For each customerSupplierNode
 
@@ -618,7 +743,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             }
 
             if (this.bClass != bclass) {
-                var secRows = this.getSectionRow(customerSupplierType);
+                var secRows = this.getSectionRow(customerSupplierType,this.accountType);
                 rows.push(secRows.row);
                 rows.push(secRows.emptyRow);
             }
@@ -649,12 +774,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             rows.push(row);
 
             this.bClass=bclass;
+            this.accountType=customerSupplierType;
 
             customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
         }
 
-        //add the last section
-        var secRows = this.getSectionRow(customerSupplierType);
+        //add the last section(queste sezioni finali vengono aggiunte quando i conti nel tag xml finiscono, ho le info dell'ultima riga salvate e uso quelle per definire il gruppo e la sezioni finali)
+        var secRows = this.getSectionRow(customerSupplierType,this.accountType);
         rows.push(secRows.row);
         rows.push(secRows.emptyRow);
 
@@ -710,7 +836,6 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         var transactionsNode = companyNode.firstChildElement('transactions');
         var journalNode = transactionsNode.firstChildElement('journal');
-
 
         while (journalNode) {
 
@@ -815,7 +940,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     row.fields["AccountCredit"] = transactionCreditAccount;
                     row.fields["Amount"] = Banana.SDecimal.abs(trLineAmnt);
                     row.fields["VatCode"] = "["+trLineVatId+"]";
-                    row.fields["VatRate"] = trLineVatPerc;
+
+
 
                     rows.push(row);
 
@@ -829,7 +955,14 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             } // transactionNode
 
             journalNode = journalNode.nextSiblingElement('journal'); // Next journal
+            
         } //journalNode
+
+
+        //se non è la versione advanced,limito le registrazioni importate a 100 righe
+        if (!this.isAdvanced) {
+            rows.slice(0,100);
+        }
 
         var dataUnitFilePorperties = {};
         dataUnitFilePorperties.nameXml = "Transactions";
@@ -975,19 +1108,83 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 this.accountingInfo.suppliersGroup = this.banDocument.info("AccountingDataBase", "SuppliersGroup");
         }
     }
-
-    getErrorMessage(errorId) {
-        switch (errorId) {
-            case this.ID_ERR_:
-                return "";
-        }
-        return "";
-    }
 }
+
+function getErrorMessage(errorId) {
+    if (!lang)
+        lang = 'en';
+    switch (errorId) {
+        case this.ID_ERR_LICENSE_NOTVALID:
+            return "This extension requires Banana Accounting+ Advanced, the import of Transactions is limited to 100 Rows";
+        case this.ID_ERR_VERSION_NOTSUPPORTED:
+            return "This script does not run with your current version of Banana Accounting.\nMinimum version required: %1.\nTo update or for more information click on Help";
+    }
+    return '';
+}
+
+function isBananaAdvanced() {
+    // Starting from version 10.0.7 it is possible to read the property Banana.application.license.isWithinMaxRowLimits 
+    // to check if all application functionalities are permitted
+    // the version Advanced returns isWithinMaxRowLimits always false
+    // other versions return isWithinMaxRowLimits true if the limit of transactions number has not been reached
+
+    if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, "10.0.9") >= 0) {
+        var license = Banana.application.license;
+        if (license.licenseType === "advanced" || license.isWithinMaxFreeLines) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function bananaRequiredVersion(requiredVersion, expmVersion) {
+    /**
+     * Check Banana version
+     */
+    if (expmVersion) {
+        requiredVersion = requiredVersion + "." + expmVersion;
+    }
+    if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, requiredVersion) >= 0) {
+        return true;
+    }
+    return false;
+}
+
+function verifyBananaVersion() {
+    if (!Banana.document)
+        return false;
+
+    var lang = this.getLang();
+
+    var ban_version_min = "10.0.9";
+    var ban_dev_version_min = "";
+    var curr_version = bananaRequiredVersion(ban_version_min, ban_dev_version_min);
+
+    if (!curr_version) {
+        var msg = this.getErrorMessage(this.ID_ERR_VERSION_NOTSUPPORTED, lang);
+        msg = msg.replace("%1", BAN_VERSION_MIN);
+        Banana.document.addMessage(msg, this.ID_ERR_VERSION_NOTSUPPORTED);
+        return false;
+    }
+    return true;
+}
+
+function getLang() {
+    var lang = 'en';
+    if (this.banDocument)
+        lang = this.banDocument.locale;
+    else if (Banana.application.locale)
+        lang = Banana.application.locale;
+    if (lang.length > 2)
+        lang = lang.substr(0, 2);
+    return lang;
+}
+
 
 function exec(inData) {
 
-    if (!Banana.document || inData.length <= 0)
+    if (!Banana.document || inData.length <= 0 || !verifyBananaVersion())
         return "@Cancel";
 
     var jsonData = {};
