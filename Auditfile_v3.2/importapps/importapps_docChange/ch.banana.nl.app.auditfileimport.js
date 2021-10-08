@@ -15,14 +15,13 @@
 //
 // @id = ch.banana.nl.app.auditfileimporttransactions.js
 // @api = 1.0
-// @pubdate = 2021-10-07
+// @pubdate = 2021-10-08
 // @publisher = Banana.ch SA
 // @description = Import audit file Netherlands
 // @doctype = *
 // @encoding = utf-8
-// @task = import.rows
-// @outputformat = tablewithheaders
-// @inputdatasource = openfiledialog
+// @task = import.file
+// @inputfilefilter = *.xml
 // @inputencoding = utf-8
 // @inputfilefilter = XML files (*.xml);;All files (*.*)
 
@@ -45,7 +44,7 @@ function setup() {}
 var NlAuditFilesImport = class NlAuditFilesImport {
     constructor(banDocument) {
         this.version = '1.0';
-        this.isAdvanced=isBananaAdvanced();
+        this.isAdvanced=this.isBananaAdvanced();
         this.banDocument = banDocument;
         this.lead = {};
         this.bClass = "";
@@ -70,6 +69,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     createJsonDocument(inData) {
 
         var jsonDoc = this.createJsonDocument_Init();
+        var lang = this.getLang();
 
         for (var srcFileName in inData) {
 
@@ -115,8 +115,9 @@ var NlAuditFilesImport = class NlAuditFilesImport {
              *********************************************************************/
                 this.createJsonDocument_AddTransactions(jsonDoc, xmlRoot, companyNode, srcFileName);
                 // se non è la versione, avverto che l'importazione delle registrazioni è limitata a 100 righe
+                //Banana.console.debug("is Advanced: "+this.isAdvanced);
                 if(!this.isAdvanced){
-                    var msg = getErrorMessage(this.ID_ERR_LICENSE_NOTVALID, lang);
+                    var msg = this.getErrorMessage(this.ID_ERR_LICENSE_NOTVALID, lang);
                     this.banDocument.addMessage(msg, this.ID_ERR_LICENSE_NOTVALID);
                 }
 
@@ -961,7 +962,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         //se non è la versione advanced,limito le registrazioni importate a 100 righe
         if (!this.isAdvanced) {
-            rows.slice(0,100);
+            rows=rows.slice(0,100);
         }
 
         var dataUnitFilePorperties = {};
@@ -1108,85 +1109,83 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 this.accountingInfo.suppliersGroup = this.banDocument.info("AccountingDataBase", "SuppliersGroup");
         }
     }
-}
 
-function getErrorMessage(errorId) {
-    if (!lang)
-        lang = 'en';
-    switch (errorId) {
-        case this.ID_ERR_LICENSE_NOTVALID:
-            return "This extension requires Banana Accounting+ Advanced, the import of Transactions is limited to 100 Rows";
-        case this.ID_ERR_VERSION_NOTSUPPORTED:
-            return "This script does not run with your current version of Banana Accounting.\nMinimum version required: %1.\nTo update or for more information click on Help";
-    }
-    return '';
-}
-
-function isBananaAdvanced() {
-    // Starting from version 10.0.7 it is possible to read the property Banana.application.license.isWithinMaxRowLimits 
-    // to check if all application functionalities are permitted
-    // the version Advanced returns isWithinMaxRowLimits always false
-    // other versions return isWithinMaxRowLimits true if the limit of transactions number has not been reached
-
-    if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, "10.0.9") >= 0) {
-        var license = Banana.application.license;
-        if (license.licenseType === "advanced" || license.isWithinMaxFreeLines) {
-            return true;
+    getErrorMessage(errorId,lang) {
+        if (!lang)
+            lang = 'en';
+        switch (errorId) {
+            case this.ID_ERR_LICENSE_NOTVALID:
+               // Banana.console.debug("advanced message: "+errorId);
+                return "This extension requires Banana Accounting+ Advanced, the import of Transactions is limited to 100 Rows";
+            case this.ID_ERR_VERSION_NOTSUPPORTED:
+                return "This script does not run with your current version of Banana Accounting.\nMinimum version required: %1.\nTo update or for more information click on Help";
+            default:
+                return '';
         }
     }
-
-    return false;
-}
-
-function bananaRequiredVersion(requiredVersion, expmVersion) {
-    /**
-     * Check Banana version
-     */
-    if (expmVersion) {
-        requiredVersion = requiredVersion + "." + expmVersion;
+    
+    isBananaAdvanced() {
+        // Starting from version 10.0.7 it is possible to read the property Banana.application.license.isWithinMaxRowLimits 
+        // to check if all application functionalities are permitted
+        // the version Advanced returns isWithinMaxRowLimits always false
+        // other versions return isWithinMaxRowLimits true if the limit of transactions number has not been reached
+    
+        if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, "10.0.9") >= 0) {
+            var license = Banana.application.license;
+            //Banana.console.debug(license.licenseType);
+            //tolgo il license.isWithinMaxFreeLines perchè siccome il file inizialmente e vuoto mi darà sempre true.
+            if (license.licenseType === "advanced") {
+                return true;
+            }
+        }
+        return false;
     }
-    if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, requiredVersion) >= 0) {
+    
+    verifyBananaVersion() {
+        if (!Banana.document)
+            return false;
+    
+        var lang = this.getLang();
+    
+        //Banana+ is required
+        var requiredVersion = "10.0.9";
+        if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, requiredVersion) < 0) {
+            var msg = this.getErrorMessage(this.ID_ERR_VERSION_NOTSUPPORTED,lang);
+            msg = msg.replace("%1", requiredVersion);
+            this.banDocument.addMessage(msg, this.ID_ERR_VERSION_NOTSUPPORTED);
+            return false;
+        }
         return true;
     }
-    return false;
-}
-
-function verifyBananaVersion() {
-    if (!Banana.document)
-        return false;
-
-    var lang = this.getLang();
-
-    var ban_version_min = "10.0.9";
-    var ban_dev_version_min = "";
-    var curr_version = bananaRequiredVersion(ban_version_min, ban_dev_version_min);
-
-    if (!curr_version) {
-        var msg = this.getErrorMessage(this.ID_ERR_VERSION_NOTSUPPORTED, lang);
-        msg = msg.replace("%1", BAN_VERSION_MIN);
-        Banana.document.addMessage(msg, this.ID_ERR_VERSION_NOTSUPPORTED);
-        return false;
+    
+    getLang() {
+        var lang = 'en';
+        if (this.banDocument)
+            lang = this.banDocument.locale;
+        else if (Banana.application.locale)
+            lang = Banana.application.locale;
+        if (lang.length > 2)
+            lang = lang.substr(0, 2);
+        return lang;
     }
-    return true;
-}
-
-function getLang() {
-    var lang = 'en';
-    if (this.banDocument)
-        lang = this.banDocument.locale;
-    else if (Banana.application.locale)
-        lang = Banana.application.locale;
-    if (lang.length > 2)
-        lang = lang.substr(0, 2);
-    return lang;
 }
 
 
 function exec(inData) {
 
-    if (!Banana.document || inData.length <= 0 || !verifyBananaVersion())
+    if (!Banana.document || inData.length <= 0){
         return "@Cancel";
+    }
 
+    Banana.application.clearMessages();
+    var nlAuditFilesImport = new NlAuditFilesImport(Banana.document);
+    if(!nlAuditFilesImport.verifyBananaVersion()){
+       // Banana.console.debug("not plus");
+        return "@Cancel";
+    }
+    
+    //Banana.console.debug("is plus");
+    
     var jsonData = {};
     try {
         jsonData = JSON.parse(inData);
@@ -1196,8 +1195,6 @@ function exec(inData) {
 
     if (!jsonData)
         return "@Cancel";
-
-    var nlAuditFilesImport = new NlAuditFilesImport(Banana.document);
 
     nlAuditFilesImport.createJsonDocument(jsonData);
 
