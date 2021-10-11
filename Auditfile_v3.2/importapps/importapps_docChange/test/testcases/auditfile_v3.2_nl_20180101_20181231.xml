@@ -68,7 +68,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>11010</custSupID>
-    <custSupName/>
+    <custSupName>Klant 2</custSupName>
     <contact>Pieter  Vermaas </contact>
     <telephone/>
     <fax/>
@@ -93,7 +93,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>11020</custSupID>
-    <custSupName/>
+    <custSupName>Klant 3</custSupName>
     <contact>Annelies Schenk</contact>
     <telephone/>
     <fax/>
@@ -118,7 +118,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>11030</custSupID>
-    <custSupName/>
+    <custSupName>Klant 4</custSupName>
     <contact>Pierre  Dupont</contact>
     <telephone/>
     <fax/>
@@ -143,7 +143,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>21000</custSupID>
-    <custSupName/>
+    <custSupName>Leverancier 1</custSupName>
     <contact>Cees Van Bekkum</contact>
     <telephone/>
     <fax/>
@@ -168,7 +168,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>21010</custSupID>
-    <custSupName/>
+    <custSupName>Leverancier 2</custSupName>
     <contact>Wim Manen</contact>
     <telephone/>
     <fax/>
@@ -193,7 +193,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>21020</custSupID>
-    <custSupName/>
+    <custSupName>Leverancier 3</custSupName>
     <contact>Jan Pietersen</contact>
     <telephone/>
     <fax/>
@@ -218,7 +218,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>21030</custSupID>
-    <custSupName/>
+    <custSupName>Leverancier 4</custSupName>
     <contact>Jean Lepage</contact>
     <telephone/>
     <fax/>
@@ -243,7 +243,7 @@
    </customerSupplier>
    <customerSupplier>
     <custSupID>21040</custSupID>
-    <custSupName/>
+    <custSupName>Leverancier 5</custSupName>
     <contact>aaa bbb</contact>
     <telephone/>
     <fax/>

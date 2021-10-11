@@ -15,7 +15,7 @@
 //
 // @id = ch.banana.nl.app.auditfileimporttransactions.js
 // @api = 1.0
-// @pubdate = 2021-10-08
+// @pubdate = 2021-10-11
 // @publisher = Banana.ch SA
 // @description = Import audit file Netherlands
 // @doctype = *
@@ -211,9 +211,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             propertyFields[5] = "Company";
             propertyFields[6] = "Address1";
             propertyFields[7] = "City";
-            propertyFields[8] = "State";
-            propertyFields[9] = "CountryCode";
-            propertyFields[10] = "FiscalNumber";
+            propertyFields[8] = "Zip";
+            propertyFields[9] = "State";
+            propertyFields[10] = "CountryCode";
+            propertyFields[11] = "FiscalNumber";
 
 
             return propertyFields;
@@ -236,6 +237,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         var companyIdentification="";
         var companyStreetName = "";
         var companyStreetAddressCity = "";
+        var companyStreetAddresspostalCode="";
         var companyStreetAddressRegion = "";
         var companyStreetAddressCountry = "";
         var companyStreetAddressTaxReg="";
@@ -258,6 +260,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             companyStreetName = streetAddressNode.firstChildElement('streetname').text;
         if (streetAddressNode.hasChildElements('city'))
             companyStreetAddressCity = streetAddressNode.firstChildElement('city').text;
+        if(streetAddressNode.hasChildElements('postalCode'))
+            companyStreetAddresspostalCode=streetAddressNode.firstChildElement('postalCode').text;
         if (streetAddressNode.hasChildElements('region'))
             companyStreetAddressRegion = streetAddressNode.firstChildElement('region').text;
         if (streetAddressNode.hasChildElements('country'))
@@ -268,16 +272,17 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
 
         companyInfos[0] = companyName+" "+companyIdentification;
-        companyInfos[1] = companyStreetName+", "+companyStreetAddressCity+","+companyStreetAddressRegion;
+        companyInfos[1] = companyStreetName+", "+companyStreetAddresspostalCode+" "+companyStreetAddressCity+","+companyStreetAddressRegion;
         companyInfos[2] = startDate;
         companyInfos[3] = endDate;
         companyInfos[4] = basicCurrency;
         companyInfos[5] = companyName;
         companyInfos[6] = companyStreetName;
         companyInfos[7] = companyStreetAddressCity;
-        companyInfos[8] = companyStreetAddressRegion;
-        companyInfos[9] = companyStreetAddressCountry;
-        companyInfos[10] = companyStreetAddressTaxReg;
+        companyInfos[8] = companyStreetAddresspostalCode;
+        companyInfos[9] = companyStreetAddressRegion;
+        companyInfos[10] = companyStreetAddressCountry;
+        companyInfos[11] = companyStreetAddressTaxReg;
         
 
         return companyInfos;
