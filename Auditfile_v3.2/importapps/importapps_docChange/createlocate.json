@@ -1,0 +1,18 @@
+{
+    "country": "Netherland",
+    "countryCode": "nl",
+    "description": "Import audit file(xml)",
+    "docUri": "",
+    "fileExtension": "xml",
+    "mimeType": "text/xml",
+    "script": {
+        "function": "exec",
+        "uri": "ch.banana.nl.app.auditfileimport.sbaa/createinit.js"
+    },
+    "xml": {
+        "namespace": "http://www.auditfiles.nl/XAF/3.2",
+        "rootItem": "auditfile"
+    },
+    "type": "text/json",
+    "version": "1.0"
+}

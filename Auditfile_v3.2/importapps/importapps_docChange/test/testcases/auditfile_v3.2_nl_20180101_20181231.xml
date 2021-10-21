@@ -1,0 +1,3345 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<auditfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.auditfiles.nl/XAF/3.2">
+ <header>
+  <fiscalYear>2018</fiscalYear>
+  <startDate>2018-01-01</startDate>
+  <endDate>2018-12-31</endDate>
+  <curCode>EUR</curCode>
+  <dateCreated>2019-01-23</dateCreated>
+  <softwareDesc>Banana Accounting</softwareDesc>
+  <softwareVersion>9.0.3.181221</softwareVersion>
+ </header>
+ <company>
+  <companyIdent/>
+  <companyName>Banana.ch SA</companyName>
+  <taxRegistrationCountry>NL</taxRegistrationCountry>
+  <taxRegIdent>0987654321</taxRegIdent>
+  <streetAddress>
+   <streetname>Via Trevano 7A</streetname>
+   <number/>
+   <numberExtension/>
+   <property/>
+   <city>Lugano</city>
+   <postalCode>6900</postalCode>
+   <region>Ticino</region>
+   <country>CH</country>
+  </streetAddress>
+  <postalAddress>
+   <streetname>Via Trevano 7A</streetname>
+   <number/>
+   <numberExtension/>
+   <property/>
+   <city>Lugano</city>
+   <postalCode>6900</postalCode>
+   <region>Ticino</region>
+   <country>CH</country>
+  </postalAddress>
+  <customersSuppliers>
+   <customerSupplier>
+    <custSupID>11000</custSupID>
+    <custSupName>Vermeulen BV</custSupName>
+    <contact>Matthijs Vermeulen</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>NL</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>C</custSupTp>
+    <custSupGrpID/>
+    <custCreditLimit>100000.00</custCreditLimit>
+    <streetAddress>
+     <streetname>Weena 75</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Rotterdam</city>
+     <postalCode>3014 AB</postalCode>
+     <region/>
+     <country>NL</country>
+    </streetAddress>
+    <bankAccount>
+     <bankAccNr>1234567890</bankAccNr>
+     <bankIdCd/>
+    </bankAccount>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>11010</custSupID>
+    <custSupName>Klant 2</custSupName>
+    <contact>Pieter  Vermaas </contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>NL</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>C</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>Meeuwenstraat 15</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Maassluis</city>
+     <postalCode>3142 BA</postalCode>
+     <region/>
+     <country>NL</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>11020</custSupID>
+    <custSupName>Klant 3</custSupName>
+    <contact>Annelies Schenk</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>NL</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>C</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>Achterveld 18</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Den Bosch</city>
+     <postalCode>4753 XP</postalCode>
+     <region/>
+     <country>NL</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>11030</custSupID>
+    <custSupName>Klant 4</custSupName>
+    <contact>Pierre  Dupont</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>FR</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>C</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>Avenue du Chateau 15</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Paris</city>
+     <postalCode>75001</postalCode>
+     <region/>
+     <country>FR</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>21000</custSupID>
+    <custSupName>Leverancier 1</custSupName>
+    <contact>Cees Van Bekkum</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>NL</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>S</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>Langedijk 200</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Vianen</city>
+     <postalCode>4132 XY</postalCode>
+     <region/>
+     <country>NL</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>21010</custSupID>
+    <custSupName>Leverancier 2</custSupName>
+    <contact>Wim Manen</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>NL</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>S</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>Seringenstraat 5</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Meerkerk</city>
+     <postalCode>4131 BC</postalCode>
+     <region/>
+     <country>NL</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>21020</custSupID>
+    <custSupName>Leverancier 3</custSupName>
+    <contact>Jan Pietersen</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>NL</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>S</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>De Kogge 72</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Tiel</city>
+     <postalCode>4002 GT</postalCode>
+     <region/>
+     <country>NL</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>21030</custSupID>
+    <custSupName>Leverancier 4</custSupName>
+    <contact>Jean Lepage</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>CA</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>S</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>Rue Ste-Anne 85</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Gatineau</city>
+     <postalCode>J9A 2KZ</postalCode>
+     <region>Québec</region>
+     <country>CA</country>
+    </streetAddress>
+   </customerSupplier>
+   <customerSupplier>
+    <custSupID>21040</custSupID>
+    <custSupName>Leverancier 5</custSupName>
+    <contact>aaa bbb</contact>
+    <telephone/>
+    <fax/>
+    <eMail/>
+    <website/>
+    <commerceNr/>
+    <taxRegistrationCountry>GG</taxRegistrationCountry>
+    <taxRegIdent/>
+    <relationshipID/>
+    <custSupTp>S</custSupTp>
+    <custSupGrpID/>
+    <streetAddress>
+     <streetname>ccc</streetname>
+     <number/>
+     <numberExtension/>
+     <property/>
+     <city>Eee</city>
+     <postalCode>9999 AA</postalCode>
+     <region/>
+     <country>GG</country>
+    </streetAddress>
+   </customerSupplier>
+  </customersSuppliers>
+  <generalLedger>
+   <ledgerAccount>
+    <accID>0100</accID>
+    <accDesc>Goodwill</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1A</leadCode>
+    <leadDescription>Totaal Immateriële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0105</accID>
+    <accDesc>Afschrijving goodwill</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1A</leadCode>
+    <leadDescription>Totaal Immateriële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0110</accID>
+    <accDesc>Aanloopkosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1A</leadCode>
+    <leadDescription>Totaal Immateriële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0115</accID>
+    <accDesc>Afschrijving aanloopkosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1A</leadCode>
+    <leadDescription>Totaal Immateriële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0150</accID>
+    <accDesc>Gebouwen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0155</accID>
+    <accDesc>Afschrijving gebouwen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0160</accID>
+    <accDesc>Verbouwing</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0165</accID>
+    <accDesc>Afschrijving verbouwingen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0200</accID>
+    <accDesc>Machines</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0205</accID>
+    <accDesc>Afschrijving machines</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0210</accID>
+    <accDesc>Inventaris</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0215</accID>
+    <accDesc>Afschrijving inventaris</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0220</accID>
+    <accDesc>Computers</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0225</accID>
+    <accDesc>Afschrijving computers</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0230</accID>
+    <accDesc>Auto's</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0235</accID>
+    <accDesc>Afschrijving auto's</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1B</leadCode>
+    <leadDescription>Totaal Materiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0300</accID>
+    <accDesc>Leningen u/g</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1C</leadCode>
+    <leadDescription>Totaal Financiële vaste activa</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1000</accID>
+    <accDesc>Kas</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1D</leadCode>
+    <leadDescription>Totaal Liquide middelen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1010</accID>
+    <accDesc>Rekening ING</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1D</leadCode>
+    <leadDescription>Totaal Liquide middelen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1020</accID>
+    <accDesc>Rekening Rabobank</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1D</leadCode>
+    <leadDescription>Totaal Liquide middelen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1050</accID>
+    <accDesc>Deposito's</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1D</leadCode>
+    <leadDescription>Totaal Liquide middelen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1100</accID>
+    <accDesc>Debiteuren</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1E</leadCode>
+    <leadDescription>Totaal Debiteuren</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1110</accID>
+    <accDesc>Dubieuze debiteuren</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1F</leadCode>
+    <leadDescription>Totaal Overige vorderingen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1120</accID>
+    <accDesc>Voorziening dubieuze debiteuren</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1F</leadCode>
+    <leadDescription>Totaal Overige vorderingen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1200</accID>
+    <accDesc>Waarborgsommen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1F</leadCode>
+    <leadDescription>Totaal Overige vorderingen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1300</accID>
+    <accDesc>Transitoria actief</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1F</leadCode>
+    <leadDescription>Totaal Overige vorderingen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1305</accID>
+    <accDesc>Te vorderen intrest</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1F</leadCode>
+    <leadDescription>Totaal Overige vorderingen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1310</accID>
+    <accDesc>Te vorderen diverse posten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1F</leadCode>
+    <leadDescription>Totaal Overige vorderingen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>2000</accID>
+    <accDesc>Kruisposten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1G</leadCode>
+    <leadDescription>Totaal Tussenrekeningen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>2100</accID>
+    <accDesc>Verschillenrekening</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1G</leadCode>
+    <leadDescription>Totaal Tussenrekeningen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>2200</accID>
+    <accDesc>Bankgiro betalingen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1G</leadCode>
+    <leadDescription>Totaal Tussenrekeningen</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>3000</accID>
+    <accDesc>Voorraad goederen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1H</leadCode>
+    <leadDescription>Totaal Voorraden</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>3100</accID>
+    <accDesc>Voorziening incourant</accDesc>
+    <accTp>B</accTp>
+    <leadCode>1H</leadCode>
+    <leadDescription>Totaal Voorraden</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0500</accID>
+    <accDesc>Eigen Vermogen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2A</leadCode>
+    <leadDescription>Totaal Eigen vermogen</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0505</accID>
+    <accDesc>Privé stortingen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2A</leadCode>
+    <leadDescription>Totaal Eigen vermogen</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0510</accID>
+    <accDesc>Privé opnamen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2A</leadCode>
+    <leadDescription>Totaal Eigen vermogen</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0400</accID>
+    <accDesc>Leningen o/g</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2B</leadCode>
+    <leadDescription>Totaal Schulden lang</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>0600</accID>
+    <accDesc>Hypotheek o/g</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2B</leadCode>
+    <leadDescription>Totaal Schulden lang</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1600</accID>
+    <accDesc>Crediteuren</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2C</leadCode>
+    <leadDescription>Totaal Crediteuren</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1400</accID>
+    <accDesc>Transitoria passief</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1500</accID>
+    <accDesc>BTW overeenkomstig het BTW overzicht</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1505</accID>
+    <accDesc>Verschuldigde BTW</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1800</accID>
+    <accDesc>Te betalen accountantskosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1805</accID>
+    <accDesc>Te betalen administratiekosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1815</accID>
+    <accDesc>Te betalen autokosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1820</accID>
+    <accDesc>Te betalen advieskosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1825</accID>
+    <accDesc>Te betalen huisvestingskosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1830</accID>
+    <accDesc>Te betalen intrest</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>1835</accID>
+    <accDesc>Te betalen diverse kosten</accDesc>
+    <accTp>B</accTp>
+    <leadCode>2D</leadCode>
+    <leadDescription>Totaal Overige schulden kort</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4400</accID>
+    <accDesc>Afschrijvingskosten goodwill</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4405</accID>
+    <accDesc>Afschrijvingskosten aanloopkosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4410</accID>
+    <accDesc>Afschrijvingskosten gebouwen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4415</accID>
+    <accDesc>Afschrijvingskosten verbouwingen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4420</accID>
+    <accDesc>Afschrijvingskosten machines</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4425</accID>
+    <accDesc>Afschrijvingskosten inventaris</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4430</accID>
+    <accDesc>Afschrijvingskosten computers</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4435</accID>
+    <accDesc>Afschrijvingskosten auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4450</accID>
+    <accDesc>Resultaten verkoop vaste activa</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3A</leadCode>
+    <leadDescription>Totaal Kosten vaste activa</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4500</accID>
+    <accDesc>Huur</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4505</accID>
+    <accDesc>Servicekosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4510</accID>
+    <accDesc>Energiekosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4515</accID>
+    <accDesc>Onderhoud bedrijfspand</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4520</accID>
+    <accDesc>Schoonmaakkosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4525</accID>
+    <accDesc>Verzekering bedrijfspand</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4530</accID>
+    <accDesc>Overige huisvestingskosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3B</leadCode>
+    <leadDescription>Totaal Huisvestingskosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4535</accID>
+    <accDesc>Onderhoud machines</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4540</accID>
+    <accDesc>Verzekering machines</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4545</accID>
+    <accDesc>Overige kosten machines</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4550</accID>
+    <accDesc>Onderhoud inventaris</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4555</accID>
+    <accDesc>Verzekering inventaris</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4560</accID>
+    <accDesc>Overige kosten inventaris</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4565</accID>
+    <accDesc>Onderhoud computers</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4570</accID>
+    <accDesc>Verzekering computers</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4575</accID>
+    <accDesc>Hosting</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4580</accID>
+    <accDesc>Kosten domeinnamen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4585</accID>
+    <accDesc>Onderhoud websites</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4590</accID>
+    <accDesc>Overige kosten computers</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3C</leadCode>
+    <leadDescription>Totaal Technische kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4600</accID>
+    <accDesc>Leasekosten auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4605</accID>
+    <accDesc>Brandstof auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4610</accID>
+    <accDesc>Onderhoud auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4615</accID>
+    <accDesc>Verzekering auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4620</accID>
+    <accDesc>Motorrijtuigenbelasting</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4625</accID>
+    <accDesc>Kilometervergoedingen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4630</accID>
+    <accDesc>Privé gebruik auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4635</accID>
+    <accDesc>Bijdragen auto's</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4640</accID>
+    <accDesc>Overige autokosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3D</leadCode>
+    <leadDescription>Totaal Autokosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4700</accID>
+    <accDesc>Kantoorartikelen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4705</accID>
+    <accDesc>Kleine aanschaffingen kantoor</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4710</accID>
+    <accDesc>Vakliteratuur</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4715</accID>
+    <accDesc>Administratiekosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4720</accID>
+    <accDesc>Advieskosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4725</accID>
+    <accDesc>Accountantskosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4730</accID>
+    <accDesc>Porti</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4735</accID>
+    <accDesc>Drukwerk</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4740</accID>
+    <accDesc>Bankkosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4745</accID>
+    <accDesc>Contributies en abonnementen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4750</accID>
+    <accDesc>Telefoonkosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4755</accID>
+    <accDesc>Representatiekosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4760</accID>
+    <accDesc>Verzekeringen algemeen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4765</accID>
+    <accDesc>Kasverschillen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4770</accID>
+    <accDesc>Reis- en verblijfkosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4775</accID>
+    <accDesc>Algemene kosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4800</accID>
+    <accDesc>Reklamekosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4805</accID>
+    <accDesc>Advertentiekosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4810</accID>
+    <accDesc>Relatiegeschenken</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4815</accID>
+    <accDesc>Verkoopkosten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3E</leadCode>
+    <leadDescription>Totaal Algemene kosten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>4900</accID>
+    <accDesc>Bijzondere baten en lasten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>3F</leadCode>
+    <leadDescription>Totaal Bijzondere resultaten</leadDescription>
+    <leadReference>3</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8000</accID>
+    <accDesc>Kostprijs verkopen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8010</accID>
+    <accDesc>Prijsverschillen bij inkoop</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8015</accID>
+    <accDesc>Hulprekening bij boeken ICP</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8100</accID>
+    <accDesc>Opbrengst verkopen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8101</accID>
+    <accDesc>Opbrengst Product A</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8102</accID>
+    <accDesc>Opbrengst Product B</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8103</accID>
+    <accDesc>Opbrengst Product C</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8104</accID>
+    <accDesc>Opbrengst Product D</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8105</accID>
+    <accDesc>Opbrengst diensten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4A</leadCode>
+    <leadDescription>Totaal Opbrengsten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8110</accID>
+    <accDesc>Kleine ondernemersregeling BTW</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4B</leadCode>
+    <leadDescription>Totaal Overige resultaten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8120</accID>
+    <accDesc>Kortingen bij verkoop</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4B</leadCode>
+    <leadDescription>Totaal Overige resultaten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8130</accID>
+    <accDesc>Oninbare vorderingen</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4B</leadCode>
+    <leadDescription>Totaal Overige resultaten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8140</accID>
+    <accDesc>DIVERSE BATEN EN LASTEN</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4B</leadCode>
+    <leadDescription>Totaal Overige resultaten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8200</accID>
+    <accDesc>Rentebaten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4C</leadCode>
+    <leadDescription>Totaal Renteresultaten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>8210</accID>
+    <accDesc>Rentelasten</accDesc>
+    <accTp>P</accTp>
+    <leadCode>4C</leadCode>
+    <leadDescription>Totaal Renteresultaten</leadDescription>
+    <leadReference>4</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>11000</accID>
+    <accDesc>Vermeulen BV</accDesc>
+    <accTp>B</accTp>
+    <leadCode>DEB</leadCode>
+    <leadDescription>Total</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>11010</accID>
+    <accDesc>Pieter Vermaas</accDesc>
+    <accTp>B</accTp>
+    <leadCode>DEB</leadCode>
+    <leadDescription>Total</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>11020</accID>
+    <accDesc>Annelies Schenk</accDesc>
+    <accTp>B</accTp>
+    <leadCode>DEB</leadCode>
+    <leadDescription>Total</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>11030</accID>
+    <accDesc>Pierre Dupont</accDesc>
+    <accTp>B</accTp>
+    <leadCode>DEB</leadCode>
+    <leadDescription>Total</leadDescription>
+    <leadReference>1</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>21000</accID>
+    <accDesc>Van Bekkum</accDesc>
+    <accTp>B</accTp>
+    <leadCode>CRE</leadCode>
+    <leadDescription>Totaal</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>21010</accID>
+    <accDesc>Manen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>CRE</leadCode>
+    <leadDescription>Totaal</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>21020</accID>
+    <accDesc>Pietersen</accDesc>
+    <accTp>B</accTp>
+    <leadCode>CRE</leadCode>
+    <leadDescription>Totaal</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>21030</accID>
+    <accDesc>Lepage</accDesc>
+    <accTp>B</accTp>
+    <leadCode>CRE</leadCode>
+    <leadDescription>Totaal</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+   <ledgerAccount>
+    <accID>21040</accID>
+    <accDesc>KPN</accDesc>
+    <accTp>B</accTp>
+    <leadCode>CRE</leadCode>
+    <leadDescription>Totaal</leadDescription>
+    <leadReference>2</leadReference>
+   </ledgerAccount>
+  </generalLedger>
+  <vatCodes>
+   <vatCode>
+    <vatID>V21</vatID>
+    <vatDesc>Leveringen/diensten 21%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>V6</vatID>
+    <vatDesc>Leveringen/diensten 6%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VOT</vatID>
+    <vatDesc>Leveringen/diensten overige tarieven, behalve 0% (vul % in)</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>OV21</vatID>
+    <vatDesc>Oninbare vorderingen</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>OV6</vatID>
+    <vatDesc>Oninbare vorderingen</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>PG12</vatID>
+    <vatDesc>Privégebruik</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>V0</vatID>
+    <vatDesc>Leveringen/diensten 0%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VR21</vatID>
+    <vatDesc>Verleggingsregelingen 21%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VR6</vatID>
+    <vatDesc>Verleggingsregelingen 6%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VX</vatID>
+    <vatDesc>Leveringen naar landen buiten de EU (uitvoer)</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VEU</vatID>
+    <vatDesc>Levering naar landen binnen de EU</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VEUI</vatID>
+    <vatDesc>Installatie/afstandsverkopen binnen de EU</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VIX21</vatID>
+    <vatDesc>Leveringen uit landen buiten de EU (invoer) 21%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>VIX6</vatID>
+    <vatDesc>Leveringen uit landen buiten de EU (invoer) 6%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>ICP21</vatID>
+    <vatDesc>Intracommunautaire prestaties 21% </vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>ICP6</vatID>
+    <vatDesc>Intracommunautaire prestaties 6%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>IG21</vatID>
+    <vatDesc>Voorbelasting 21%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>IG6</vatID>
+    <vatDesc>Voorbelasting 6%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>IG21-1</vatID>
+    <vatDesc>Voorbelasting 21% (BTW exclusief)</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>IG6-1</vatID>
+    <vatDesc>Voorbelasting 6% (BTW exclusief)</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>IG21-2</vatID>
+    <vatDesc>Voorbelasting 21% (BTW verlegd)</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>IG6-2</vatID>
+    <vatDesc>Voorbelasting 6%(BTW verlegd)</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>D21-2</vatID>
+    <vatDesc>BTW bij invoer betaald aan douane 21%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+   <vatCode>
+    <vatID>D6-2</vatID>
+    <vatDesc>BTW bij invoer betaald aan douane 6%</vatDesc>
+    <vatToPayAccID/>
+    <vatToClaimAccID/>
+   </vatCode>
+  </vatCodes>
+  <periods>
+   <period>
+    <periodNumber>1</periodNumber>
+    <startDatePeriod>2018-01-01</startDatePeriod>
+    <endDatePeriod>2018-01-31</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>2</periodNumber>
+    <startDatePeriod>2018-02-01</startDatePeriod>
+    <endDatePeriod>2018-02-28</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>3</periodNumber>
+    <startDatePeriod>2018-03-01</startDatePeriod>
+    <endDatePeriod>2018-03-31</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>4</periodNumber>
+    <startDatePeriod>2018-04-01</startDatePeriod>
+    <endDatePeriod>2018-04-30</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>5</periodNumber>
+    <startDatePeriod>2018-05-01</startDatePeriod>
+    <endDatePeriod>2018-05-31</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>6</periodNumber>
+    <startDatePeriod>2018-06-01</startDatePeriod>
+    <endDatePeriod>2018-06-30</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>7</periodNumber>
+    <startDatePeriod>2018-07-01</startDatePeriod>
+    <endDatePeriod>2018-07-31</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>8</periodNumber>
+    <startDatePeriod>2018-08-01</startDatePeriod>
+    <endDatePeriod>2018-08-31</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>9</periodNumber>
+    <startDatePeriod>2018-09-01</startDatePeriod>
+    <endDatePeriod>2018-09-30</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>10</periodNumber>
+    <startDatePeriod>2018-10-01</startDatePeriod>
+    <endDatePeriod>2018-10-31</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>11</periodNumber>
+    <startDatePeriod>2018-11-01</startDatePeriod>
+    <endDatePeriod>2018-11-30</endDatePeriod>
+   </period>
+   <period>
+    <periodNumber>12</periodNumber>
+    <startDatePeriod>2018-12-01</startDatePeriod>
+    <endDatePeriod>2018-12-31</endDatePeriod>
+   </period>
+  </periods>
+  <openingBalance>
+   <opBalDate>2018-01-01</opBalDate>
+   <opBalDesc>Beginsaldi</opBalDesc>
+   <linesCount>2</linesCount>
+   <totalDebit>5000.00</totalDebit>
+   <totalCredit>5000.00</totalCredit>
+   <obLine>
+    <nr>1</nr>
+    <accID>1010</accID>
+    <amnt>5000.00</amnt>
+    <amntTp>D</amntTp>
+   </obLine>
+   <obLine>
+    <nr>2</nr>
+    <accID>0500</accID>
+    <amnt>5000.00</amnt>
+    <amntTp>C</amntTp>
+   </obLine>
+  </openingBalance>
+  <transactions>
+   <linesCount>46</linesCount>
+   <totalDebit>91275.49</totalDebit>
+   <totalCredit>91275.49</totalCredit>
+   <journal>
+    <jrnID>1</jrnID>
+    <desc>Journal 1</desc>
+    <jrnTp>Z</jrnTp>
+    <offsetAccID/>
+    <bankAccNr/>
+    <transaction>
+     <nr>1</nr>
+     <desc>Contante verkoop van goederen</desc>
+     <periodNumber>1</periodNumber>
+     <trDt>2018-01-01</trDt>
+     <trLine>
+      <nr>1</nr>
+      <accID>1000</accID>
+      <docRef>1</docRef>
+      <effDate>2018-01-01</effDate>
+      <desc>Kas</desc>
+      <amnt>500.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>86.78</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>1</nr>
+      <accID>8100</accID>
+      <docRef>1</docRef>
+      <effDate>2018-01-01</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>413.22</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>86.78</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>1</nr>
+      <accID>1500</accID>
+      <docRef>1</docRef>
+      <effDate>2018-01-01</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>86.78</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>86.78</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>4</nr>
+     <desc>Aankoop verpakkingsmateriaal, factuur 15</desc>
+     <periodNumber>1</periodNumber>
+     <trDt>2018-01-19</trDt>
+     <trLine>
+      <nr>4</nr>
+      <accID>4815</accID>
+      <docRef>2</docRef>
+      <effDate>2018-01-19</effDate>
+      <desc>Verkoopkosten</desc>
+      <amnt>330.58</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>69.42</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>4</nr>
+      <accID>21000</accID>
+      <docRef>2</docRef>
+      <effDate>2018-01-19</effDate>
+      <desc>Van Bekkum</desc>
+      <amnt>400.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>69.42</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>4</nr>
+      <accID>1500</accID>
+      <docRef>2</docRef>
+      <effDate>2018-01-19</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>69.42</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>69.42</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>5</nr>
+     <desc>Betaling faktuur 15 aan leverancier Van Bekkum</desc>
+     <periodNumber>2</periodNumber>
+     <trDt>2018-02-19</trDt>
+     <trLine>
+      <nr>5</nr>
+      <accID>21000</accID>
+      <docRef>3</docRef>
+      <effDate>2018-02-19</effDate>
+      <desc>Van Bekkum</desc>
+      <amnt>400.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>5</nr>
+      <accID>1010</accID>
+      <docRef>3</docRef>
+      <effDate>2018-02-19</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>400.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>8</nr>
+     <desc>Verkoop van goederen, factuur 203</desc>
+     <periodNumber>2</periodNumber>
+     <trDt>2018-02-23</trDt>
+     <trLine>
+      <nr>8</nr>
+      <accID>11030</accID>
+      <docRef>4</docRef>
+      <effDate>2018-02-23</effDate>
+      <desc>Pierre Dupont</desc>
+      <amnt>12000.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>2082.64</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>8</nr>
+      <accID>8100</accID>
+      <docRef>4</docRef>
+      <effDate>2018-02-23</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>9917.36</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>2082.64</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>8</nr>
+      <accID>1500</accID>
+      <docRef>4</docRef>
+      <effDate>2018-02-23</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>2082.64</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>2082.64</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>9</nr>
+     <desc>Credit nota op factuur 203</desc>
+     <periodNumber>2</periodNumber>
+     <trDt>2018-02-27</trDt>
+     <trLine>
+      <nr>9</nr>
+      <accID>8100</accID>
+      <docRef>5</docRef>
+      <effDate>2018-02-27</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>165.29</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>-V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>34.71</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>9</nr>
+      <accID>11030</accID>
+      <docRef>5</docRef>
+      <effDate>2018-02-27</effDate>
+      <desc>Pierre Dupont</desc>
+      <amnt>200.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>-V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>34.71</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>9</nr>
+      <accID>1500</accID>
+      <docRef>5</docRef>
+      <effDate>2018-02-27</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>34.71</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>-V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>34.71</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>12</nr>
+     <desc>Omboeking "BTW volgens BTW overzicht" - 1ste kwartaal</desc>
+     <periodNumber>3</periodNumber>
+     <trDt>2018-03-31</trDt>
+     <trLine>
+      <nr>12</nr>
+      <accID>1500</accID>
+      <docRef>6</docRef>
+      <effDate>2018-03-31</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>2065.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>12</nr>
+      <accID>1505</accID>
+      <docRef>6</docRef>
+      <effDate>2018-03-31</effDate>
+      <desc>Verschuldigde BTW</desc>
+      <amnt>2065.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>13</nr>
+     <desc>afronding BTW 1ste kwartaal</desc>
+     <periodNumber>3</periodNumber>
+     <trDt>2018-03-31</trDt>
+     <trLine>
+      <nr>13</nr>
+      <accID>1500</accID>
+      <docRef>6</docRef>
+      <effDate>2018-03-31</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>0.29</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>13</nr>
+      <accID>8140</accID>
+      <docRef>6</docRef>
+      <effDate>2018-03-31</effDate>
+      <desc>DIVERSE BATEN EN LASTEN</desc>
+      <amnt>0.29</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>14</nr>
+     <desc>Betaling BTW 1ste kwartaal</desc>
+     <periodNumber>4</periodNumber>
+     <trDt>2018-04-10</trDt>
+     <trLine>
+      <nr>14</nr>
+      <accID>1505</accID>
+      <docRef>7</docRef>
+      <effDate>2018-04-10</effDate>
+      <desc>Verschuldigde BTW</desc>
+      <amnt>2065.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>14</nr>
+      <accID>1010</accID>
+      <docRef>7</docRef>
+      <effDate>2018-04-10</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>2065.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>17</nr>
+     <desc>Factuur van leverancier Manen</desc>
+     <periodNumber>4</periodNumber>
+     <trDt>2018-04-15</trDt>
+     <trLine>
+      <nr>17</nr>
+      <accID>21010</accID>
+      <docRef>8</docRef>
+      <effDate>2018-04-15</effDate>
+      <desc>Manen</desc>
+      <amnt>1300.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+     <trLine>
+      <nr>18</nr>
+      <accID>8000</accID>
+      <docRef>8</docRef>
+      <effDate>2018-04-15</effDate>
+      <desc>Kostprijs verkopen</desc>
+      <amnt>661.16</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>138.84</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>18</nr>
+      <accID>1500</accID>
+      <docRef>8</docRef>
+      <effDate>2018-04-15</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>138.84</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>138.84</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>19</nr>
+      <accID>8000</accID>
+      <docRef>8</docRef>
+      <effDate>2018-04-15</effDate>
+      <desc>Kostprijs verkopen</desc>
+      <amnt>471.70</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>28.30</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>19</nr>
+      <accID>1500</accID>
+      <docRef>8</docRef>
+      <effDate>2018-04-15</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>28.30</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>28.30</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>22</nr>
+     <desc>BTW contant betaald aan douane</desc>
+     <periodNumber>5</periodNumber>
+     <trDt>2018-05-01</trDt>
+     <trLine>
+      <nr>22</nr>
+      <accID>1000</accID>
+      <docRef>9</docRef>
+      <effDate>2018-05-01</effDate>
+      <desc>Kas</desc>
+      <amnt>209.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>D21-2</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>209.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>22</nr>
+      <accID>1500</accID>
+      <docRef>9</docRef>
+      <effDate>2018-05-01</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>209.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>D21-2</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>209.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>25</nr>
+     <desc>Rekening betaald aan vervoersdienst</desc>
+     <periodNumber>5</periodNumber>
+     <trDt>2018-05-15</trDt>
+     <trLine>
+      <nr>25</nr>
+      <accID>1010</accID>
+      <docRef>10</docRef>
+      <effDate>2018-05-15</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>359.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+     <trLine>
+      <nr>26</nr>
+      <accID>4775</accID>
+      <docRef>10</docRef>
+      <effDate>2018-05-15</effDate>
+      <desc>Algemene kosten</desc>
+      <amnt>150.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>27</nr>
+      <accID>1500</accID>
+      <docRef>10</docRef>
+      <effDate>2018-05-15</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>209.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>D21-2</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>209.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>30</nr>
+     <desc>Faktuur leverancier B (Duitsland)</desc>
+     <periodNumber>6</periodNumber>
+     <trDt>2018-06-12</trDt>
+     <trLine>
+      <nr>30</nr>
+      <accID>8000</accID>
+      <docRef>11</docRef>
+      <effDate>2018-06-12</effDate>
+      <desc>Kostprijs verkopen</desc>
+      <amnt>1210.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>ICP21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>210.00</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>30</nr>
+      <accID>1010</accID>
+      <docRef>11</docRef>
+      <effDate>2018-06-12</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>1000.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>ICP21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>210.00</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>30</nr>
+      <accID>1500</accID>
+      <docRef>11</docRef>
+      <effDate>2018-06-12</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>210.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>ICP21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>210.00</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>31</nr>
+     <desc>BTW op intercommunautaire verwerving</desc>
+     <periodNumber>6</periodNumber>
+     <trDt>2018-06-12</trDt>
+     <trLine>
+      <nr>31</nr>
+      <accID>8015</accID>
+      <docRef>11</docRef>
+      <effDate>2018-06-12</effDate>
+      <desc>Hulprekening bij boeken ICP</desc>
+      <amnt>1000.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21-1</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>210.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>31</nr>
+      <accID>8015</accID>
+      <docRef>11</docRef>
+      <effDate>2018-06-12</effDate>
+      <desc>Hulprekening bij boeken ICP</desc>
+      <amnt>1210.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>IG21-1</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>210.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>31</nr>
+      <accID>1500</accID>
+      <docRef>11</docRef>
+      <effDate>2018-06-12</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>210.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21-1</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>210.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>34</nr>
+     <desc>Factuur zonder BTW (BTW verlegd)</desc>
+     <periodNumber>7</periodNumber>
+     <trDt>2018-07-02</trDt>
+     <trLine>
+      <nr>34</nr>
+      <accID>3000</accID>
+      <docRef>12</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>Voorraad goederen</desc>
+      <amnt>2750.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>34</nr>
+      <accID>21030</accID>
+      <docRef>12</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>Lepage</desc>
+      <amnt>2750.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>35</nr>
+     <desc>Aankoop met BTW verlegd</desc>
+     <periodNumber>7</periodNumber>
+     <trDt>2018-07-02</trDt>
+     <trLine>
+      <nr>35</nr>
+      <accID>3000</accID>
+      <docRef>12</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>Voorraad goederen</desc>
+      <amnt>3327.50</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>VR21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>577.50</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>35</nr>
+      <accID>21030</accID>
+      <docRef>12</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>Lepage</desc>
+      <amnt>2750.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>VR21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>577.50</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>35</nr>
+      <accID>1500</accID>
+      <docRef>12</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>577.50</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>VR21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>577.50</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>36</nr>
+     <desc>Voorbelasting BTW verlegd</desc>
+     <periodNumber>7</periodNumber>
+     <trDt>2018-07-02</trDt>
+     <trLine>
+      <nr>36</nr>
+      <accID>21030</accID>
+      <docRef>13</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>Lepage</desc>
+      <amnt>2750.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21-2</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>577.50</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>36</nr>
+      <accID>3000</accID>
+      <docRef>13</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>Voorraad goederen</desc>
+      <amnt>3327.50</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>IG21-2</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>577.50</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>36</nr>
+      <accID>1500</accID>
+      <docRef>13</docRef>
+      <effDate>2018-07-02</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>577.50</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21-2</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>577.50</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>39</nr>
+     <desc>KOR 3e kwartaal</desc>
+     <periodNumber>9</periodNumber>
+     <trDt>2018-09-30</trDt>
+     <trLine>
+      <nr>39</nr>
+      <accID>1500</accID>
+      <docRef>14</docRef>
+      <effDate>2018-09-30</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>300.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>39</nr>
+      <accID>8110</accID>
+      <docRef>14</docRef>
+      <effDate>2018-09-30</effDate>
+      <desc>Kleine ondernemersregeling BTW</desc>
+      <amnt>300.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>42</nr>
+     <desc>afboeking van een oninbare vordering</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-04</trDt>
+     <trLine>
+      <nr>42</nr>
+      <accID>8130</accID>
+      <docRef>15</docRef>
+      <effDate>2018-10-04</effDate>
+      <desc>Oninbare vorderingen</desc>
+      <amnt>300.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>OV21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>63.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>42</nr>
+      <accID>11020</accID>
+      <docRef>15</docRef>
+      <effDate>2018-10-04</effDate>
+      <desc>Annelies Schenk</desc>
+      <amnt>363.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>OV21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>63.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>42</nr>
+      <accID>1500</accID>
+      <docRef>15</docRef>
+      <effDate>2018-10-04</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>63.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>OV21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>63.00</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>45</nr>
+     <desc>Verkoop in contanten</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-05</trDt>
+     <trLine>
+      <nr>45</nr>
+      <accID>1000</accID>
+      <docRef>16</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>Kas</desc>
+      <amnt>8000.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>1388.43</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>45</nr>
+      <accID>8100</accID>
+      <docRef>16</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>6611.57</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>1388.43</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>45</nr>
+      <accID>1500</accID>
+      <docRef>16</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>1388.43</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>1388.43</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>46</nr>
+     <desc>Storting contanten op Rabobank</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-05</trDt>
+     <trLine>
+      <nr>46</nr>
+      <accID>2000</accID>
+      <docRef>17</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>46</nr>
+      <accID>1000</accID>
+      <docRef>17</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>Kas</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>47</nr>
+     <desc>Storting contanten op ING</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-05</trDt>
+     <trLine>
+      <nr>47</nr>
+      <accID>2000</accID>
+      <docRef>18</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>47</nr>
+      <accID>1000</accID>
+      <docRef>18</docRef>
+      <effDate>2018-10-05</effDate>
+      <desc>Kas</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>48</nr>
+     <desc>Storting contanten op Rabobank</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-06</trDt>
+     <trLine>
+      <nr>48</nr>
+      <accID>1020</accID>
+      <docRef>19</docRef>
+      <effDate>2018-10-06</effDate>
+      <desc>Rekening Rabobank</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>48</nr>
+      <accID>2000</accID>
+      <docRef>19</docRef>
+      <effDate>2018-10-06</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>49</nr>
+     <desc>Storting contanten op ING</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-07</trDt>
+     <trLine>
+      <nr>49</nr>
+      <accID>1010</accID>
+      <docRef>20</docRef>
+      <effDate>2018-10-07</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>49</nr>
+      <accID>2000</accID>
+      <docRef>20</docRef>
+      <effDate>2018-10-07</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>3000.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>50</nr>
+     <desc>Opname van Rekening ING</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-08</trDt>
+     <trLine>
+      <nr>50</nr>
+      <accID>1000</accID>
+      <docRef>21</docRef>
+      <effDate>2018-10-08</effDate>
+      <desc>Kas</desc>
+      <amnt>300.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>50</nr>
+      <accID>2000</accID>
+      <docRef>21</docRef>
+      <effDate>2018-10-08</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>300.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>51</nr>
+     <desc>Betaling huur september</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-08</trDt>
+     <trLine>
+      <nr>51</nr>
+      <accID>4500</accID>
+      <docRef>22</docRef>
+      <effDate>2018-10-08</effDate>
+      <desc>Huur</desc>
+      <amnt>650.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>51</nr>
+      <accID>1020</accID>
+      <docRef>22</docRef>
+      <effDate>2018-10-08</effDate>
+      <desc>Rekening Rabobank</desc>
+      <amnt>650.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>52</nr>
+     <desc>Kasstorting</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-09</trDt>
+     <trLine>
+      <nr>52</nr>
+      <accID>2000</accID>
+      <docRef>23</docRef>
+      <effDate>2018-10-09</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>300.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>52</nr>
+      <accID>1010</accID>
+      <docRef>23</docRef>
+      <effDate>2018-10-09</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>300.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>53</nr>
+     <desc>Huishoudgeld</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-10</trDt>
+     <trLine>
+      <nr>53</nr>
+      <accID>0510</accID>
+      <docRef>24</docRef>
+      <effDate>2018-10-10</effDate>
+      <desc>Privé opnamen</desc>
+      <amnt>925.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>53</nr>
+      <accID>1000</accID>
+      <docRef>24</docRef>
+      <effDate>2018-10-10</effDate>
+      <desc>Kas</desc>
+      <amnt>925.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>54</nr>
+     <desc>Aankoop computer, factuur 1256</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-10</trDt>
+     <trLine>
+      <nr>54</nr>
+      <accID>0220</accID>
+      <docRef>25</docRef>
+      <effDate>2018-10-10</effDate>
+      <desc>Computers</desc>
+      <amnt>661.16</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>138.84</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>54</nr>
+      <accID>1600</accID>
+      <docRef>25</docRef>
+      <effDate>2018-10-10</effDate>
+      <desc>Crediteuren</desc>
+      <amnt>800.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>138.84</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>54</nr>
+      <accID>1500</accID>
+      <docRef>25</docRef>
+      <effDate>2018-10-10</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>138.84</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>138.84</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>55</nr>
+     <desc>KPN, factuur 345, aug/sep</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-11</trDt>
+     <trLine>
+      <nr>55</nr>
+      <accID>1835</accID>
+      <docRef>26</docRef>
+      <effDate>2018-10-11</effDate>
+      <desc>Te betalen diverse kosten</desc>
+      <amnt>41.32</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>8.68</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>55</nr>
+      <accID>1500</accID>
+      <docRef>26</docRef>
+      <effDate>2018-10-11</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>8.68</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>8.68</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>56</nr>
+      <accID>4750</accID>
+      <docRef>27</docRef>
+      <effDate>2018-10-11</effDate>
+      <desc>Telefoonkosten</desc>
+      <amnt>62.27</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>13.08</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>56</nr>
+      <accID>1500</accID>
+      <docRef>27</docRef>
+      <effDate>2018-10-11</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>13.08</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>13.08</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>57</nr>
+      <accID>21040</accID>
+      <docRef>28</docRef>
+      <effDate>2018-10-11</effDate>
+      <desc>KPN</desc>
+      <amnt>125.35</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>58</nr>
+     <desc>Benzine voor bedrijfsauto</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-12</trDt>
+     <trLine>
+      <nr>58</nr>
+      <accID>4605</accID>
+      <docRef>29</docRef>
+      <effDate>2018-10-12</effDate>
+      <desc>Brandstof auto's</desc>
+      <amnt>41.32</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>8.68</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>58</nr>
+      <accID>1000</accID>
+      <docRef>29</docRef>
+      <effDate>2018-10-12</effDate>
+      <desc>Kas</desc>
+      <amnt>50.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>8.68</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>58</nr>
+      <accID>1500</accID>
+      <docRef>29</docRef>
+      <effDate>2018-10-12</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>8.68</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>IG21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>8.68</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>59</nr>
+     <desc>Betaling factuur 1256 voor computer</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-13</trDt>
+     <trLine>
+      <nr>59</nr>
+      <accID>1600</accID>
+      <docRef>30</docRef>
+      <effDate>2018-10-13</effDate>
+      <desc>Crediteuren</desc>
+      <amnt>800.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>59</nr>
+      <accID>1010</accID>
+      <docRef>30</docRef>
+      <effDate>2018-10-13</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>800.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>60</nr>
+     <desc>Betaling factuur 345 KPN</desc>
+     <periodNumber>10</periodNumber>
+     <trDt>2018-10-14</trDt>
+     <trLine>
+      <nr>60</nr>
+      <accID>21040</accID>
+      <docRef>31</docRef>
+      <effDate>2018-10-14</effDate>
+      <desc>KPN</desc>
+      <amnt>125.35</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>60</nr>
+      <accID>1010</accID>
+      <docRef>31</docRef>
+      <effDate>2018-10-14</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>125.35</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>61</nr>
+     <desc>Betaling huur oktober </desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-01</trDt>
+     <trLine>
+      <nr>61</nr>
+      <accID>4500</accID>
+      <docRef>32</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Huur</desc>
+      <amnt>650.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>61</nr>
+      <accID>1020</accID>
+      <docRef>32</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Rekening Rabobank</desc>
+      <amnt>650.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>62</nr>
+     <desc>Verkoop maand oktober</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-01</trDt>
+     <trLine>
+      <nr>62</nr>
+      <accID>1000</accID>
+      <docRef>33</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Kas</desc>
+      <amnt>6500.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>63</nr>
+      <accID>8100</accID>
+      <docRef>34</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>3305.79</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>694.21</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>63</nr>
+      <accID>1500</accID>
+      <docRef>34</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>694.21</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>694.21</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>64</nr>
+      <accID>8100</accID>
+      <docRef>35</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>1886.79</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>113.21</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>64</nr>
+      <accID>1500</accID>
+      <docRef>35</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>113.21</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>113.21</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>65</nr>
+      <accID>8100</accID>
+      <docRef>36</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Opbrengst verkopen</desc>
+      <amnt>500.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V0</vatID>
+       <vatPerc>0.00</vatPerc>
+       <vatAmnt>0</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>66</nr>
+     <desc>Kostprijs van de verkopen oktober</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-01</trDt>
+     <trLine>
+      <nr>66</nr>
+      <accID>8000</accID>
+      <docRef>37</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Kostprijs verkopen</desc>
+      <amnt>2200.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>66</nr>
+      <accID>3000</accID>
+      <docRef>37</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Voorraad goederen</desc>
+      <amnt>2200.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>67</nr>
+     <desc>Gefactureerde diensten oktober</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-01</trDt>
+     <trLine>
+      <nr>67</nr>
+      <accID>1100</accID>
+      <docRef>38</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Debiteuren</desc>
+      <amnt>2250.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>390.50</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>67</nr>
+      <accID>8105</accID>
+      <docRef>38</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Opbrengst diensten</desc>
+      <amnt>1859.50</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>390.50</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>67</nr>
+      <accID>1500</accID>
+      <docRef>38</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>390.50</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>390.50</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>68</nr>
+     <desc>Factuur 8910 publiciteit </desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-01</trDt>
+     <trLine>
+      <nr>68</nr>
+      <accID>4815</accID>
+      <docRef>39</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Verkoopkosten</desc>
+      <amnt>1000.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>68</nr>
+      <accID>1600</accID>
+      <docRef>39</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Crediteuren</desc>
+      <amnt>1000.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>69</nr>
+     <desc>Betaling huur november</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-01</trDt>
+     <trLine>
+      <nr>69</nr>
+      <accID>4500</accID>
+      <docRef>40</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Huur</desc>
+      <amnt>650.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>69</nr>
+      <accID>1020</accID>
+      <docRef>40</docRef>
+      <effDate>2018-11-01</effDate>
+      <desc>Rekening Rabobank</desc>
+      <amnt>650.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>70</nr>
+     <desc>Storting contanten op bankrekening</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-02</trDt>
+     <trLine>
+      <nr>70</nr>
+      <accID>2000</accID>
+      <docRef>41</docRef>
+      <effDate>2018-11-02</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>7200.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>70</nr>
+      <accID>1000</accID>
+      <docRef>41</docRef>
+      <effDate>2018-11-02</effDate>
+      <desc>Kas</desc>
+      <amnt>7200.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>71</nr>
+     <desc>Betaling factuur 8910 publiciteit</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-02</trDt>
+     <trLine>
+      <nr>71</nr>
+      <accID>1600</accID>
+      <docRef>42</docRef>
+      <effDate>2018-11-02</effDate>
+      <desc>Crediteuren</desc>
+      <amnt>1000.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>71</nr>
+      <accID>1020</accID>
+      <docRef>42</docRef>
+      <effDate>2018-11-02</effDate>
+      <desc>Rekening Rabobank</desc>
+      <amnt>1000.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>72</nr>
+     <desc>Storting contanten op bankrekening</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-02</trDt>
+     <trLine>
+      <nr>72</nr>
+      <accID>1010</accID>
+      <docRef>43</docRef>
+      <effDate>2018-11-02</effDate>
+      <desc>Rekening ING</desc>
+      <amnt>7200.00</amnt>
+      <amntTp>D</amntTp>
+     </trLine>
+     <trLine>
+      <nr>72</nr>
+      <accID>2000</accID>
+      <docRef>43</docRef>
+      <effDate>2018-11-02</effDate>
+      <desc>Kruisposten</desc>
+      <amnt>7200.00</amnt>
+      <amntTp>C</amntTp>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>75</nr>
+     <desc>Artikel A</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-04</trDt>
+     <trLine>
+      <nr>75</nr>
+      <accID>11000</accID>
+      <docRef>44</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>Vermeulen BV</desc>
+      <amnt>540.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>93.72</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>75</nr>
+      <accID>8101</accID>
+      <docRef>44</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>Opbrengst Product A</desc>
+      <amnt>446.28</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>93.72</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>75</nr>
+      <accID>1500</accID>
+      <docRef>44</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>93.72</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>93.72</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>78</nr>
+     <desc>Artikel A</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-04</trDt>
+     <trLine>
+      <nr>78</nr>
+      <accID>11000</accID>
+      <docRef>45</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>Vermeulen BV</desc>
+      <amnt>216.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>37.49</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>78</nr>
+      <accID>8101</accID>
+      <docRef>45</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>Opbrengst Product A</desc>
+      <amnt>178.51</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>37.49</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>78</nr>
+      <accID>1500</accID>
+      <docRef>45</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>37.49</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>37.49</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>79</nr>
+     <desc>Artikel B</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-04</trDt>
+     <trLine>
+      <nr>79</nr>
+      <accID>11000</accID>
+      <docRef>46</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>Vermeulen BV</desc>
+      <amnt>307.50</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>17.41</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>79</nr>
+      <accID>8102</accID>
+      <docRef>46</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>Opbrengst Product B</desc>
+      <amnt>290.09</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>17.41</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>79</nr>
+      <accID>1500</accID>
+      <docRef>46</docRef>
+      <effDate>2018-11-04</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>17.41</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V6</vatID>
+       <vatPerc>6.00</vatPerc>
+       <vatAmnt>17.41</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>82</nr>
+     <desc>Artikel A </desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-05</trDt>
+     <trLine>
+      <nr>82</nr>
+      <accID>11020</accID>
+      <docRef>47</docRef>
+      <effDate>2018-11-05</effDate>
+      <desc>Annelies Schenk</desc>
+      <amnt>5000.00</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>867.77</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>82</nr>
+      <accID>8101</accID>
+      <docRef>47</docRef>
+      <effDate>2018-11-05</effDate>
+      <desc>Opbrengst Product A</desc>
+      <amnt>4132.23</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>867.77</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>82</nr>
+      <accID>1500</accID>
+      <docRef>47</docRef>
+      <effDate>2018-11-05</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>867.77</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>867.77</vatAmnt>
+       <vatAmntTp>C</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+    <transaction>
+     <nr>83</nr>
+     <desc>10 % korting</desc>
+     <periodNumber>11</periodNumber>
+     <trDt>2018-11-05</trDt>
+     <trLine>
+      <nr>83</nr>
+      <accID>8105</accID>
+      <docRef>48</docRef>
+      <effDate>2018-11-05</effDate>
+      <desc>Opbrengst diensten</desc>
+      <amnt>413.22</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>-V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>86.78</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>83</nr>
+      <accID>11020</accID>
+      <docRef>48</docRef>
+      <effDate>2018-11-05</effDate>
+      <desc>Annelies Schenk</desc>
+      <amnt>500.00</amnt>
+      <amntTp>C</amntTp>
+      <vat>
+       <vatID>-V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>86.78</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+     <trLine>
+      <nr>83</nr>
+      <accID>1500</accID>
+      <docRef>48</docRef>
+      <effDate>2018-11-05</effDate>
+      <desc>BTW overeenkomstig het BTW overzicht</desc>
+      <amnt>86.78</amnt>
+      <amntTp>D</amntTp>
+      <vat>
+       <vatID>-V21</vatID>
+       <vatPerc>21.00</vatPerc>
+       <vatAmnt>86.78</vatAmnt>
+       <vatAmntTp>D</vatAmntTp>
+      </vat>
+     </trLine>
+    </transaction>
+   </journal>
+  </transactions>
+ </company>
+</auditfile>
