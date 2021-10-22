@@ -87,6 +87,8 @@ AUDITFILE_NL.prototype.testBananaApp = function() {
 AUDITFILE_NL.prototype.xml_test = function(banDoc, startDate, endDate) {
   
   var xml = createXml(banDoc, startDate, endDate);
+  xml = xml.replace(/<dateCreated>[\s\S]*?<\/dateCreated>/, '<dateCreated>' + '2019-04-09' + '<\/dateCreated>');
+  xml = xml.replace(/<softwareVersion>[\s\S]*?<\/softwareVersion>/, '<softwareVersion>' + '#lastVersion' + '<\/softwareVersion>');
   Test.logger.addXml("This is a xml value", xml);
 
   this.xml_validate_test(xml, '../XmlAuditfileFinancieel3.2.xsd');
