@@ -62,8 +62,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     /**
-     * Il metodo createJsonDocument() riprende i dati dal file xml e li trasforma
-     * in formato json per essere importati nella tabella Registrazioni
+     * The createJsonDocument() method takes the data from the xml file and transforms it 
+     * into json format in order to be imported into the table Records
      * @param {*} inData 
      */
     createJsonDocument(inData) {
@@ -135,6 +135,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
+
+    /**
+     * Creates the document change for the vat table
+     * @param {*} jsonDoc initialized jsonDoc structure
+     * @param {*} srcFileName file name
+     * @param {*} companyNode xml company node
+     */
     createJsonDocument_AddVatCodes(jsonDoc, srcFileName, companyNode) {
         var rows = [];
         var vatCodesNode = "";
@@ -197,34 +204,35 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     /**
-     * 
+     * Set the field we want to modify in the file properties
      * @returns the list of the file properties fields i want to modify/add
      */
-    getFileInfoFields() {
-            var propertyFields = [];
+    setFileInfoFields() {
+        var propertyFields = [];
 
-            propertyFields[0] = "HeaderLeft";
-            propertyFields[1] = "HeaderRight";
-            propertyFields[2] = "OpeningDate";
-            propertyFields[3] = "ClosureDate";
-            propertyFields[4] = "BasicCurrency";
-            propertyFields[5] = "Company";
-            propertyFields[6] = "Address1";
-            propertyFields[7] = "City";
-            propertyFields[8] = "Zip";
-            propertyFields[9] = "State";
-            propertyFields[10] = "CountryCode";
-            propertyFields[11] = "FiscalNumber";
+        propertyFields[0] = "HeaderLeft";
+        propertyFields[1] = "HeaderRight";
+        propertyFields[2] = "OpeningDate";
+        propertyFields[3] = "ClosureDate";
+        propertyFields[4] = "BasicCurrency";
+        propertyFields[5] = "Company";
+        propertyFields[6] = "Address1";
+        propertyFields[7] = "City";
+        propertyFields[8] = "Zip";
+        propertyFields[9] = "State";
+        propertyFields[10] = "CountryCode";
+        propertyFields[11] = "FiscalNumber";
 
 
-            return propertyFields;
+        return propertyFields;
 
-        }
-        /**
-         * 
-         * @param {*} companyNode the xml company node
-         * @returns the values i want to put in the file properties fields
-         */
+    }
+
+    /**
+     * 
+     * @param {*} companyNode the xml company node
+     * @returns the values i want to put in the file properties fields
+     */
     getCompanyInfo(headerNode, companyNode) {
 
         var companyInfos = [];
@@ -288,11 +296,19 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return companyInfos;
     }
 
+    /**
+     * Creates the document change for the file properties
+     * @param {*} jsonDoc initialized jsonDoc structure
+     * @param {*} srcFileName file name
+     * @param {*} companyNode xml company node
+     * @param {*} headerNode xml header node
+     */
+
     createJsonDocument_AddFileProperties(jsonDoc, srcFileName, headerNode, companyNode) {
 
         var rows = [];
 
-        var fileInfoFields = this.getFileInfoFields();
+        var fileInfoFields = this.setFileInfoFields();
         var companyInfos = this.getCompanyInfo(headerNode, companyNode);
 
         for (var i = 0; i < fileInfoFields.length; i++) {
@@ -325,11 +341,20 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
+    /**
+     * Creates the document change structure for the file properties
+     * @param {*} jsonDoc initialized jsonDoc structure
+     * @param {*} srcFileName file name
+     * @param {*} companyNode xml company node
+     * @param {*} customersSuppliersList xml header node
+     * @param {*} openingBalanceList list of the opening balances
+     */
     createJsonDocument_AddAccounts(jsonDoc, srcFileName, companyNode, customersSuppliersList, openingBalanceList) {
 
         var rows = [];
         var generalLedgerNode = "";
         var ledgerAccountNode = "";
+        var counter=0;
 
         generalLedgerNode = companyNode.firstChildElement('generalLedger');
         ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount');
@@ -386,9 +411,19 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                     rows.push(grRows.emptyRow);
                 }
                 if (this.bClass != bclass) {
-                    var secRows = this.getSectionRow(accType, this.accountType);
-                    rows.push(secRows.row);
-                    rows.push(secRows.emptyRow);
+                    /**
+                     * with this control I make sure that I do not add a section total at the beginning of the chart of accounts (which would correspond to empty lines), 
+                     * since at the first loop the previous blcass is always different from the current one.
+                     * The getSectionRow() method build a row for the total of the section
+                     */
+                    if(counter!==0){
+                        var secRows = this.getSectionRow(accType, this.accountType);
+                        rows.push(secRows.row);
+                        rows.push(secRows.emptyRow);
+                    }
+
+                    //set back the counter to 0 because the bclass is changed.
+                    counter++;
                 }
 
                 //Take the "account___amount___amounttype" of each opening balance
@@ -403,6 +438,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                         }
                     }
                 }
+
+                /**
+                 * check if the counter is equal to zero, if it is zero means that this is the first loop of the first account with a difference bClass from the previous one.
+                 * if the counter is equal to zero, depending on the class, add the section title/delimiter defined for those class
+                 */
+
 
                 var row = {};
                 row.operation = {};
@@ -464,6 +505,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
+    /**
+     * Creates a row for totalize the balance
+     * @returns the row object
+     */
     getBalanceDiff() {
         var balanceRows = {};
         balanceRows.row = {};
@@ -476,6 +521,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         return balanceRows;
     }
+
+    /**
+     * Creates a row for the annual result (Profit and loss)
+     * @returns the row object
+     */
     getTotCeRow() {
         var ceRows = {};
         ceRows.row = {};
@@ -490,10 +540,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return ceRows;
     }
 
-    /* METODO MOMENTANEO, DA RIVEDERE QUANDO SAREMO IN POSSESSO DI UN PAIO DI AUDIT FILES DIVERSI   
-    -se il gruppo e 1E, prima del totale gruppo aggiungo un altro gruppo per contabilizzare i clienti
-    -se il gruppo é 2 A, prima del totale gruppo aggiungo un altro gruppo per contabilizzare l'utile o la perdita annuale
-    -se il gruppo è 2C, prima del totale del gruppo aggiungo un altro gruppo per contabilizzare i fornitori.
+    /* TEMPORARY METHOD, TO BE REVIEWED WHEN WE HAVE A COUPLE OF DIFFERENT AUDIT FILES  
+    sets the group in which the annual result, customers and suppliers are to be reported in the balance sheet or income statement
+    -if the group is 1E, before the group total I add another group to account for the customers
+    -if the group is 2A, before the group total I add another group to account for the annual profit or loss
+    -if the group is 2C, before the group total I add another group to account for suppliers.
     */
     getGroupCarriedOver() {
         var grCarriedOver = {};
@@ -514,6 +565,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 return null;
         }
     }
+
+    /**
+     * Creates the row for the carried over groups
+     * @param {*} grCarriedOver grCarriedOver object
+     * @param {*} grCode 
+     * @returns 
+     */
     getGroupRow_carriedOver(grCarriedOver, grCode) {
         var grRows = {};
         if (grCarriedOver != null) {
