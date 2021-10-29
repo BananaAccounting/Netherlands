@@ -67,6 +67,8 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
         var jsonDoc = this.createJsonDocument_Init();
         var lang = this.getLang();
+        var headerNode="";
+        var companyNode="";
 
         for (var srcFileName in inData) {
 
@@ -78,14 +80,15 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             var xmlRoot = xmlFile.firstChildElement('auditfile');
             if (!xmlRoot)
                 continue;
-
-            var headerNode = xmlRoot.firstChildElement('header');
-            var companyNode = xmlRoot.firstChildElement('company');
+            if(xmlRoot.hasChildElements('header'))
+                headerNode = xmlRoot.firstChildElement('header');
+            if(xmlRoot.hasChildElements('company'))
+                companyNode = xmlRoot.firstChildElement('company');
 
             var openingBalanceList = this.loadOpeningBalances(companyNode);
 
             var customersSuppliersList = [];
-            if (companyNode.hasChildElements('customersSuppliers')) {
+            if (companyNode && companyNode.hasChildElements('customersSuppliers')) {
                 var customersSuppliersNode = companyNode.firstChildElement('customersSuppliers');
                 if (customersSuppliersNode.hasChildElements('customerSupplier')) {
                     var customerSupplierNode = customersSuppliersNode.firstChildElement('customerSupplier'); // First customerSupplier
@@ -134,7 +137,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
 
     /**
-     * Creates the document change for the vat table
+     * Creates the document change object for the vat table
      * @param {*} jsonDoc initialized jsonDoc structure
      * @param {*} srcFileName file name
      * @param {*} companyNode xml company node
@@ -249,30 +252,38 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
 
         //take the information from the node: header
-        startDate = headerNode.firstChildElement('startDate').text;
-        startDate = startDate.replace(/-/g, "");
-        endDate = headerNode.firstChildElement('endDate').text;
-        endDate = endDate.replace(/-/g, "");
-        basicCurrency = headerNode.firstChildElement('curCode').text;
+        if(headerNode){
+            if(headerNode.hasChildElements('startDate'))
+                startDate = headerNode.firstChildElement('startDate').text;
+            startDate = startDate.replace(/-/g, "");
+            if(headerNode.hasChildElements('endDate'))
+                endDate = headerNode.firstChildElement('endDate').text;
+            endDate = endDate.replace(/-/g, "");
+            if(headerNode.hasChildElements('curCode'))
+                basicCurrency = headerNode.firstChildElement('curCode').text;
+        }
 
 
         //take the information from node: company
-        companyName = companyNode.firstChildElement('companyName').text;
-        if (companyNode.hasChildElements('companyIdent'))
-            companyIdentification = companyNode.firstChildElement('companyIdent').text;
-        if (companyNode.hasChildElements('streetAddress'))
-            streetAddressNode = companyNode.firstChildElement('streetAddress')
-        companyStreetName = streetAddressNode.firstChildElement('streetname').text;
-        if (streetAddressNode.hasChildElements('city'))
-            companyStreetAddressCity = streetAddressNode.firstChildElement('city').text;
-        if (streetAddressNode.hasChildElements('postalCode'))
-            companyStreetAddresspostalCode = streetAddressNode.firstChildElement('postalCode').text;
-        if (streetAddressNode.hasChildElements('region'))
-            companyStreetAddressRegion = streetAddressNode.firstChildElement('region').text;
-        if (streetAddressNode.hasChildElements('country'))
-            companyStreetAddressCountry = streetAddressNode.firstChildElement('country').text;
-        if (companyNode.hasChildElements('taxRegIdent'))
-            companyStreetAddressTaxReg = companyNode.firstChildElement('taxRegIdent').text;
+        if(companyNode){
+            if(companyNode.hasChildElements('companyName'))
+                companyName = companyNode.firstChildElement('companyName').text;
+            if (companyNode.hasChildElements('companyIdent'))
+                companyIdentification = companyNode.firstChildElement('companyIdent').text;
+            if (companyNode.hasChildElements('streetAddress'))
+                streetAddressNode = companyNode.firstChildElement('streetAddress')
+            companyStreetName = streetAddressNode.firstChildElement('streetname').text;
+            if (streetAddressNode.hasChildElements('city'))
+                companyStreetAddressCity = streetAddressNode.firstChildElement('city').text;
+            if (streetAddressNode.hasChildElements('postalCode'))
+                companyStreetAddresspostalCode = streetAddressNode.firstChildElement('postalCode').text;
+            if (streetAddressNode.hasChildElements('region'))
+                companyStreetAddressRegion = streetAddressNode.firstChildElement('region').text;
+            if (streetAddressNode.hasChildElements('country'))
+                companyStreetAddressCountry = streetAddressNode.firstChildElement('country').text;
+            if (companyNode.hasChildElements('taxRegIdent'))
+                companyStreetAddressTaxReg = companyNode.firstChildElement('taxRegIdent').text;
+        }
 
 
 
@@ -294,7 +305,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     /**
-     * Creates the document change for the file properties
+     * Creates the document change object for the file properties
      * @param {*} jsonDoc initialized jsonDoc structure
      * @param {*} srcFileName file name
      * @param {*} companyNode xml company node
@@ -339,7 +350,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     /**
-     * Creates the document change structure for the file properties
+     * Creates the document change object for the account table
      * @param {*} jsonDoc initialized jsonDoc structure
      * @param {*} srcFileName file name
      * @param {*} companyNode xml company node
@@ -352,163 +363,162 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         var generalLedgerNode = "";
         var ledgerAccountNode = "";
         var sectionsDelimitercounter=0;
+        var firstLoop=true;
         var _gr="";
         var _bClass="";
         var _accType="";
         var _grDescription="";
 
-        generalLedgerNode = companyNode.firstChildElement('generalLedger');
-        ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount');
+        if(companyNode){
+            generalLedgerNode = companyNode.firstChildElement('generalLedger');
+            ledgerAccountNode = generalLedgerNode.firstChildElement('ledgerAccount');
 
-        while (ledgerAccountNode) {
+            while (ledgerAccountNode) {
 
-            var accountNumber = "";
-            var accountDescription = "";
-            var accType = "";
-            var gr = "";
-            var bClass = "";
-            var totalGr = "";
-            var opening = "";
-            var grDescription = "";
+                var accountNumber = "";
+                var accountDescription = "";
+                var accType = "";
+                var gr = "";
+                var bClass = "";
+                var totalGr = "";
+                var opening = "";
+                var grDescription = "";
 
-            accountNumber = ledgerAccountNode.firstChildElement('accID').text;
-            if (ledgerAccountNode.hasChildElements('leadDescription'))
+                accountNumber = ledgerAccountNode.firstChildElement('accID').text;
+                if (ledgerAccountNode.hasChildElements('leadDescription'))
 
-                grDescription = ledgerAccountNode.firstChildElement('leadDescription').text;
-            if (accountDescription = ledgerAccountNode.hasChildElements('accDesc'))
-                accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
+                    grDescription = ledgerAccountNode.firstChildElement('leadDescription').text;
+                if (accountDescription = ledgerAccountNode.hasChildElements('accDesc'))
+                    accountDescription = ledgerAccountNode.firstChildElement('accDesc').text;
 
-            if (ledgerAccountNode.hasChildElements('accTp'))
-                accType = ledgerAccountNode.firstChildElement('accTp').text;
+                if (ledgerAccountNode.hasChildElements('accTp'))
+                    accType = ledgerAccountNode.firstChildElement('accTp').text;
 
-            if (ledgerAccountNode.hasChildElements('leadCode'))
-                gr = ledgerAccountNode.firstChildElement('leadCode').text;
-            else
-                gr = this.setGrByAccount(accountNumber);
+                if (ledgerAccountNode.hasChildElements('leadCode'))
+                    gr = ledgerAccountNode.firstChildElement('leadCode').text;
+                else
+                    gr = this.setGrByAccount(accountNumber);
 
-            if (ledgerAccountNode.hasChildElements('leadReference'))
-                bClass = ledgerAccountNode.firstChildElement('leadReference').text;
-            else
-                bClass = this.setBclassByAccount(gr, accType);
+                if (ledgerAccountNode.hasChildElements('leadReference'))
+                    bClass = ledgerAccountNode.firstChildElement('leadReference').text;
+                else
+                    bClass = this.setBclassByAccount(gr, accType);
 
-            if (ledgerAccountNode.hasChildElements('leadCrossRef'))
-                totalGr = ledgerAccountNode.firstChildElement('leadCrossRef').text;
+                if (ledgerAccountNode.hasChildElements('leadCrossRef'))
+                    totalGr = ledgerAccountNode.firstChildElement('leadCrossRef').text;
 
-            //We take all the accounts that are not customers or suppliers
-            //because we want all the normal accounts at the beginning,
-            //and customers/suppliers at the end.
-            if (customersSuppliersList.indexOf(accountNumber) < 0) {
-                //if the next element has the same leadcode(gr) than the previous, i create a normal row
-                //otherwise, i create a grouping row.Same for the section(Bclass).
+                //We take all the accounts that are not customers or suppliers
+                //because we want all the normal accounts at the beginning,
+                //and customers/suppliers at the end.
+                if (customersSuppliersList.indexOf(accountNumber) < 0) {
+                    //if the next element has the same leadcode(gr) than the previous, i create a normal row
+                    //otherwise, i create a grouping row.Same for the section(Bclass).
 
-                if (_gr != gr) {
-                    //carried over groups
-                    var grCarriedOver = this.getGroupCarriedOver(_gr);
-                    var grCarrOverRows = this.getGroupRow_carriedOver(grCarriedOver, _gr);
-                    rows.push(grCarrOverRows.row);
+                    if (_gr != gr && !firstLoop) {
+                        //carried over groups
+                        var grCarriedOver = this.setGroupCarriedOver(_gr);
+                        var grCarrOverRows = this.setGroupRow_carriedOver(grCarriedOver, _gr);
+                        rows.push(grCarrOverRows.row);
 
-                    //normal groups
-                    var grRows = this.getGroupRow(_gr,_bClass, _accType,_grDescription);
-                    rows.push(grRows.row);
-                    rows.push(grRows.emptyRow);
-                }
+                        //normal groups
+                        var grRows = this.setGroupRow(_gr,_bClass, _accType,_grDescription);
+                        rows.push(grRows.row);
+                        rows.push(grRows.emptyRow);
+                    }
 
-                if (_bClass != bClass) {
-                    /**
-                     * with this control I make sure that I do not add a section total at the beginning of the chart of accounts (which would correspond to empty lines), 
-                     * since at the first loop the previous blcass is always different from the current one.
-                     * The getSectionRow() method build a row for the total of the section.
-                     * The getSectionDelimiterRow build a row for the begin of the section.
-                     */
+                    if (_bClass != bClass) {
+                        /**
+                         * with this control I make sure that I do not add a section total at the beginning of the chart of accounts (which would correspond to empty lines), 
+                         * since at the first loop the previous blcass is always different from the current one.
+                         * The setSectionRow() method build a row for the total of the section.
+                         * The setSectionDelimiterRow build a row for the begin of the section.
+                         */
 
-                    if(sectionsDelimitercounter !=0){
-                        var secRows = this.getSectionRow(accType, _accType,_bClass);
+                        if(sectionsDelimitercounter !=0 && !firstLoop){
+                            var secRows = this.setSectionRow(accType, _accType,_bClass);
+                            rows.push(secRows.row);
+                            rows.push(secRows.emptyRow);
+                        }
+
+                        //Basically this condition happen in the first loop, so when we starts with the balance accounts and
+                        // when it comes the first profit and loss account.
+                        //when it happen, it is added a a title that delimits the Base Sections: Balance, Profit and Loss (Costumers and suppliers and Cost centers are not considered here)
+                        if(_accType!=accType){
+                            var secRows = this.setBaseSectionDelimiterRow(accType);
+                            rows.push(secRows.row);
+                            rows.push(secRows.emptyRow);
+                        }
+
+                        var secRows = this.setSectionDelimiterRow(bClass,accType);
                         rows.push(secRows.row);
                         rows.push(secRows.emptyRow);
+
+                        //set back the counter to 0 because the bclass is changed.
+                        sectionsDelimitercounter=0;
                     }
 
-                    var secRows = this.getSectionDelimiterRow(bClass,accType);
-                    rows.push(secRows.row);
-                    rows.push(secRows.emptyRow);
-
-                    //set back the counter to 0 because the bclass is changed.
-                    sectionsDelimitercounter=0;
-                }
-
-                //DA RIVEDERE
-                //Basically this condition happen in the first loop, so when we starts with the balance accounts and
-                // when it comes the first profit and loss account.
-                //when it happen, it is added a a title that delimits the Base Sections: Balance, Profit and Loss (Costumers and suppliers and Cost centers are not considered here)
-                /*if(this.accountType!=accType){
-                    var secRows = this.getBaseSectionDelimiterRow(accType);
-                    rows.push(secRows.row);
-                    rows.push(secRows.emptyRow);
-                }*/
-
-                //Take the "account___amount___amounttype" of each opening balance
-                for (var i = 0; i < openingBalanceList.length; i++) {
-                    if (openingBalanceList[i].split("_____")[0] === accountNumber) {
-                        var amnt = openingBalanceList[i].split("_____")[1];
-                        var amntTp = openingBalanceList[i].split("_____")[2];
-                        if (amntTp === "D") {
-                            opening = amnt;
-                        } else if (amntTp === "C") {
-                            opening = Banana.SDecimal.invert(amnt);
+                    //Take the "account___amount___amounttype" of each opening balance
+                    for (var i = 0; i < openingBalanceList.length; i++) {
+                        if (openingBalanceList[i].split("_____")[0] === accountNumber) {
+                            var amnt = openingBalanceList[i].split("_____")[1];
+                            var amntTp = openingBalanceList[i].split("_____")[2];
+                            if (amntTp === "D") {
+                                opening = amnt;
+                            } else if (amntTp === "C") {
+                                opening = Banana.SDecimal.invert(amnt);
+                            }
                         }
                     }
+
+
+                    var row = {};
+                    row.operation = {};
+                    row.operation.name = "add";
+                    row.operation.srcFileName = srcFileName;
+                    row.fields = {};
+                    row.fields["Account"] = accountNumber;
+                    row.fields["Description"] = accountDescription;
+                    row.fields["BClass"] = bClass;
+                    row.fields["Gr"] = gr;
+                    row.fields["Opening"] = opening;
+
+
+                    rows.push(row);
+
+                    //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
+                    //row=createJsonDocument_AddGrLine(gr)
+
+                    _gr = gr;
+                    _grDescription = grDescription;
+                    _accType = accType;
+                    _bClass = bClass;
+                    firstLoop=false;
+
+                    sectionsDelimitercounter++;
                 }
 
-
-                var row = {};
-                row.operation = {};
-                row.operation.name = "add";
-                row.operation.srcFileName = srcFileName;
-                row.fields = {};
-                row.fields["Account"] = accountNumber;
-                row.fields["Description"] = accountDescription;
-                row.fields["BClass"] = bClass;
-                row.fields["Gr"] = gr;
-                row.fields["Opening"] = opening;
-
-
-                rows.push(row);
-
-                //se il gruppo è diverso da quello precedente, allora inserisco una voce di raggruppamento
-                //row=createJsonDocument_AddGrLine(gr)
-
-                _gr = gr;
-                _grDescription = grDescription;
-                _accType = accType;
-                _bClass = bClass;
-
-                sectionsDelimitercounter++;
+                ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount');
             }
 
-            ledgerAccountNode = ledgerAccountNode.nextSiblingElement('ledgerAccount');
+            //last group
+            var grRows = this.setGroupRow(_gr,_bClass, _accType,_grDescription);
+            rows.push(grRows.row);
+            rows.push(grRows.emptyRow);
+            //last section
+            var secRows = this.setSectionRow(accType,_accType,_bClass);
+            rows.push(secRows.row);
+            rows.push(secRows.emptyRow);
+
+            //add the profit and loss result row
+            var totCeRow = this.setTotCeRow();
+            rows.push(totCeRow.row);
+            rows.push(totCeRow.emptyRow);
+
+            //add the balance result row
+            var balanceDiff = this.setBalanceDiffRow();
+            rows.push(balanceDiff.row);
+            rows.push(balanceDiff.emptyRow);
         }
-
-        //alla fine aggiungo ancora il raggruppamento e la sezione finale riprendendo gli ultimi elementi salvati
-        //last group
-        var grRows = this.getGroupRow(_gr,_bClass, _accType,_grDescription);
-        rows.push(grRows.row);
-        rows.push(grRows.emptyRow);
-        //last section
-        var secRows = this.getSectionRow(accType,_accType,_bClass);
-        Banana.console.debug(accType);
-        Banana.console.debug(_accType);
-        Banana.console.debug(_bClass);
-        rows.push(secRows.row);
-        rows.push(secRows.emptyRow);
-
-        //aggiungo il totale del CE (utile o perdita)
-        var totCeRow = this.getTotCeRow();
-        rows.push(totCeRow.row);
-        rows.push(totCeRow.emptyRow);
-
-        //aggiungo la differenza del Bilancio (dovrebbe essere zero)
-        var balanceDiff = this.getBalanceDiff();
-        rows.push(balanceDiff.row);
-        rows.push(balanceDiff.emptyRow);
 
 
         var dataUnitFilePorperties = {};
@@ -530,7 +540,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
      * @param {*} accType 
      * @returns 
      */
-    getBaseSectionDelimiterRow(accType){
+    setBaseSectionDelimiterRow(accType){
         //section
         var sectionDelimiterRows = {};
         sectionDelimiterRows.row = {};
@@ -538,7 +548,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         sectionDelimiterRows.row.operation.name = "add";
         sectionDelimiterRows.row.fields = {};
         sectionDelimiterRows.row.fields["Section"] = "*";
-        sectionDelimiterRows.row.fields["Description"] = this.getBaseSectionDescription(accType);
+        sectionDelimiterRows.row.fields["Description"] = this.setBaseSectionDescription(accType);
         sectionDelimiterRows.emptyRow = this.getEmptyRow();
 
         return sectionDelimiterRows;
@@ -551,17 +561,21 @@ var NlAuditFilesImport = class NlAuditFilesImport {
      * @param {*} accType 
      * @returns the section delemiter row
      */
-    getSectionDelimiterRow(bClass,accType){
+    setSectionDelimiterRow(bClass,accType){
         //section
+        //costumers and suppliers sections are 1 and 2, for the delimiter of section we want to have 01 and 02
+        if(accType=="C" || accType=="S"){
+            bClass="0"+bClass;
+        }
         var sectionDelimiterRows = {};
         sectionDelimiterRows.row = {};
         sectionDelimiterRows.row.operation = {};
         sectionDelimiterRows.row.operation.name = "add";
         sectionDelimiterRows.row.fields = {};
-        sectionDelimiterRows.row.fields["Section"] = bClass;
+        sectionDelimiterRows.row.fields["Section"] = bClass
         //get the description but take only the word after the space.
         //example TOTAL AKTIVA--> AKTIVA
-        let descr=this.getSectionDescription(bClass,accType);
+        let descr=this.setSectionDescription(bClass,accType);
         let startPos=descr.indexOf(" ");
         descr=descr.substr(startPos);
         sectionDelimiterRows.row.fields["Description"] = descr;
@@ -574,7 +588,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
      * Creates a row for totalize the balance
      * @returns the row object
      */
-    getBalanceDiff() {
+    setBalanceDiffRow() {
         var balanceRows = {};
         balanceRows.row = {};
         balanceRows.row.operation = {};
@@ -591,7 +605,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
      * Creates a row for the annual result (Profit and loss)
      * @returns the row object
      */
-    getTotCeRow() {
+    setTotCeRow() {
         var ceRows = {};
         ceRows.row = {};
         ceRows.row.operation = {};
@@ -606,12 +620,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     }
 
     /* TEMPORARY METHOD, TO BE REVIEWED WHEN WE HAVE A COUPLE OF DIFFERENT AUDIT FILES  
-    sets the group in which the annual result, customers and suppliers are to be reported in the balance sheet or income statement
+    sets the group in which the annual result, customers and suppliers are to be reported in the balance sheet.
     -if the group is 1E, before the group total I add another group to account for the customers
     -if the group is 2A, before the group total I add another group to account for the annual profit or loss
     -if the group is 2C, before the group total I add another group to account for suppliers.
     */
-    getGroupCarriedOver(gr) {
+    setGroupCarriedOver(gr) {
         var grCarriedOver = {};
         switch (gr) {
             case "1E":
@@ -620,11 +634,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 return grCarriedOver;
             case "2A":
                 grCarriedOver.gr = "0511"
-                grCarriedOver.description = "Leveranciers register";
+                grCarriedOver.description = "Winst of verlies lopend jaar";
                 return grCarriedOver;
             case "2C":
                 grCarriedOver.gr = "20"
-                grCarriedOver.description = "Winst of verlies lopend jaar"
+                grCarriedOver.description = "Leveranciers register";
                 return grCarriedOver;
             default:
                 return null;
@@ -634,10 +648,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
     /**
      * Creates the row for the carried over groups
      * @param {*} grCarriedOver grCarriedOver object
-     * @param {*} grCode 
+     * @param {*} grCode
      * @returns 
      */
-    getGroupRow_carriedOver(grCarriedOver, grCode) {
+    setGroupRow_carriedOver(grCarriedOver, grCode) {
         var grRows = {};
         if (grCarriedOver != null) {
             grRows.row = {};
@@ -651,8 +665,15 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return grRows;
     }
 
-
-    getGroupRow(grCode,bClass,accType,descr) {
+    /**
+     * Creates a gr row
+     * @param {*} grCode
+     * @param {*} bClass 
+     * @param {*} accType 
+     * @param {*} descr 
+     * @returns 
+     */
+    setGroupRow(grCode,bClass,accType,descr) {
         var grRows = {};
         grRows.row = {};
         grRows.row.operation = {};
@@ -660,27 +681,39 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         grRows.row.fields = {};
         grRows.row.fields["Group"] = grCode;
         grRows.row.fields["Description"] = descr;
-        grRows.row.fields["Gr"] = this.getGroupTotal(bClass, accType);
+        grRows.row.fields["Gr"] = this.setGroupTotal(bClass, accType);
         grRows.emptyRow = this.getEmptyRow();
 
         return grRows;
     }
 
-    getSectionRow(currentAccType, previsousAccType,bClass) {
+    /**
+     * creates a line for the total of the section
+     * @param {*} currentAccType 
+     * @param {*} previsousAccType 
+     * @param {*} bClass 
+     * @returns 
+     */
+    setSectionRow(currentAccType, previsousAccType,bClass) {
         var secRows = {};
         secRows.row = {};
         secRows.row.operation = {};
         secRows.row.operation.name = "add";
         secRows.row.fields = {};
-        secRows.row.fields["Group"] = this.getGroupTotal(bClass, currentAccType);
-        secRows.row.fields["Description"] = this.getSectionDescription(bClass, currentAccType);
-        secRows.row.fields["Gr"] = this.getSectionGr(previsousAccType);
+        secRows.row.fields["Group"] = this.setGroupTotal(bClass, currentAccType);
+        secRows.row.fields["Description"] = this.setSectionDescription(bClass, currentAccType);
+        secRows.row.fields["Gr"] = this.setSectionGr(previsousAccType);
         //create an empty row to append after the total row
         secRows.emptyRow = this.getEmptyRow();
         return secRows;
     }
 
-    getSectionGr(previsousAccType) {
+    /**
+     * Returns the gr of the section total line
+     * @param {*} previsousAccType 
+     * @returns 
+     */
+    setSectionGr(previsousAccType) {
         var sectionTotal = "";
         if (previsousAccType == "B") {
             sectionTotal = "00";
@@ -699,8 +732,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         }
     }
 
-
-    getGroupTotal(bClass, accType) {
+    /**
+     * returns the gr of the group total line according zo bclass and account type
+     * @param {*} bClass 
+     * @param {*} accType 
+     * @returns 
+     */
+    setGroupTotal(bClass, accType) {
         var groupTotal = "";
         if (accType == "B" || accType == "P") {
             switch (bClass) {
@@ -732,7 +770,14 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             }
         }
     }
-    getSectionDescription(bClass, accType) {
+
+    /**
+     * returns the section description according to bclass and account type 
+     * @param {*} bClass 
+     * @param {*} accType 
+     * @returns 
+     */
+    setSectionDescription(bClass, accType) {
         var descr = "";
         //Banana.console.debug(accType);
         if (accType == "B" || accType == "P") {
@@ -767,7 +812,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         }
 
     }
-    getBaseSectionDescription(accType) {
+    /**
+     * Returns the description of the basic section, based on the account type 
+     * @param {*} accType 
+     * @returns 
+     */
+    setBaseSectionDescription(accType) {
         var descr = "";
             switch (accType) {
                 case "B":
@@ -785,6 +835,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             }
     }
 
+    /**
+     * Return an empty rows, used as space between the other rows.
+     * @returns 
+     */
     getEmptyRow() {
         var emptyRow = {};
         emptyRow.operation = {};
@@ -794,6 +848,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return emptyRow;
     }
 
+    /**
+     * Creates the document change object for the customers and suppliers in the account table.
+     * @param {*} jsonDoc 
+     * @param {*} srcFileName 
+     * @param {*} customerSupplierNode 
+     * @param {*} customersSuppliersList 
+     */
     createJsonDocument_AddCostumersSuppliers(jsonDoc, srcFileName, customerSupplierNode, customersSuppliersList) {
 
         //creates the row that indicates
@@ -803,6 +864,7 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         var sectionsDelimitercounter="";
         var _bClass="";
         var _customerSupplierType="";
+        var firstLoop=true;
 
         while (customerSupplierNode) { // For each customerSupplierNode
 
@@ -889,14 +951,22 @@ var NlAuditFilesImport = class NlAuditFilesImport {
                 }
             }
 
+            //Create the base section delimiter only at the beginning
+            if(firstLoop){
+                var secRows = this.setBaseSectionDelimiterRow(customerSupplierType);
+                rows.push(secRows.row);
+                rows.push(secRows.emptyRow);
+            }
+
             if (_bClass != bClass) {
                 if(sectionsDelimitercounter!=0){
-                    var secRows = this.getSectionRow(customerSupplierType, _customerSupplierType,_bClass);
+                    var secRows = this.setSectionRow(customerSupplierType, _customerSupplierType,_bClass);
                     rows.push(secRows.row);
                     rows.push(secRows.emptyRow);
                 }
 
-                var secRows = this.getSectionDelimiterRow(bClass,customerSupplierType);
+
+                var secRows = this.setSectionDelimiterRow(bClass,customerSupplierType);
                 rows.push(secRows.row);
                 rows.push(secRows.emptyRow);
 
@@ -932,12 +1002,13 @@ var NlAuditFilesImport = class NlAuditFilesImport {
             _bClass = bClass;
             _customerSupplierType = customerSupplierType;
             sectionsDelimitercounter++
+            firstLoop=false;
 
             customerSupplierNode = customerSupplierNode.nextSiblingElement('customerSupplier'); // Next customerSupplier
         }
 
         //add the last section(queste sezioni finali vengono aggiunte quando i conti nel tag xml finiscono, ho le info dell'ultima riga salvate e uso quelle per definire il gruppo e la sezioni finali)
-        var secRows = this.getSectionRow(customerSupplierType, _customerSupplierType,_bClass);
+        var secRows = this.setSectionRow(customerSupplierType, _customerSupplierType,_bClass);
         rows.push(secRows.row);
         rows.push(secRows.emptyRow);
 
@@ -952,7 +1023,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
-    // Get a list of all the customers and suppliers accounts
+    /**
+     * Get a list of all the customers and suppliers accounts
+     * @param {*} customerSupplierNode 
+     * @returns 
+     */
     getCustomerSuppliers(customerSupplierNode) {
         var customersSuppliersList = [];
         while (customerSupplierNode) { // For each customerSupplierNode
@@ -972,6 +1047,11 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return customersSuppliersList;
     }
 
+/**
+ * set the group for the customers and suppliers according to class.
+ * @param {*} bClass 
+ * @returns 
+ */
     setCSGrByBclass(bClass) {
         var gr = "";
         switch (bClass) {
@@ -986,7 +1066,22 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         }
     }
 
+    //to define
+    setGrByAccount(account) {
+        var gr = "";
+        switch (account) {
+            case "prova":
+                return gr;
+        }
+        //...
+    }
 
+    /**
+     * Creates the document change object for the transactions table
+     * @param {*} jsonDoc 
+     * @param {*} srcFileName 
+     * @param {*} companyNode 
+     */
     createJsonDocument_AddTransactions(jsonDoc, srcFileName, companyNode) {
 
         var rows = [];
@@ -1132,45 +1227,46 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
     }
 
+    /**
+     * Saves and returns a list with the opening balances
+     * @param {*} companyNode 
+     * @returns 
+     */
     loadOpeningBalances(companyNode) {
 
         var openingBalanceList = [];
+            if (companyNode && companyNode.hasChildElements('openingBalance')) {
+                var openingBalanceNode = companyNode.firstChildElement('openingBalance');
 
-        if (companyNode.hasChildElements('openingBalance')) {
-            var openingBalanceNode = companyNode.firstChildElement('openingBalance');
+                if (openingBalanceNode.hasChildElements('obLine')) {
+                    var obLineNode = openingBalanceNode.firstChildElement('obLine');
 
-            if (openingBalanceNode.hasChildElements('obLine')) {
-                var obLineNode = openingBalanceNode.firstChildElement('obLine');
+                    while (obLineNode) { // For each openingBalance
 
-                while (obLineNode) { // For each openingBalance
+                        if (obLineNode.hasChildElements('accID')) {
+                            var accID = obLineNode.firstChildElement('accID').text;
+                        }
+                        if (obLineNode.hasChildElements('amnt')) {
+                            var amnt = obLineNode.firstChildElement('amnt').text;
+                        }
+                        if (obLineNode.hasChildElements('amntTp')) {
+                            var amntTp = obLineNode.firstChildElement('amntTp').text;
+                        }
 
-                    if (obLineNode.hasChildElements('accID')) {
-                        var accID = obLineNode.firstChildElement('accID').text;
+                        openingBalanceList.push(accID + "_____" + amnt + "_____" + amntTp);
+                        obLineNode = obLineNode.nextSiblingElement('obLine'); // Next obLine
                     }
-                    if (obLineNode.hasChildElements('amnt')) {
-                        var amnt = obLineNode.firstChildElement('amnt').text;
-                    }
-                    if (obLineNode.hasChildElements('amntTp')) {
-                        var amntTp = obLineNode.firstChildElement('amntTp').text;
-                    }
-
-                    openingBalanceList.push(accID + "_____" + amnt + "_____" + amntTp);
-                    obLineNode = obLineNode.nextSiblingElement('obLine'); // Next obLine
                 }
-            }
         }
         return openingBalanceList;
     }
 
-    setGrByAccount(account) {
-        var gr = "";
-        switch (account) {
-            case "lol":
-                return gr;
-        }
-        //...
-    }
-
+    /**
+     * Set bClass according to account type 
+     * @param {*} gr 
+     * @param {*} accType 
+     * @returns 
+     */
     setBclassByAccount(gr, accType) {
         /* from xml file:
         
@@ -1204,6 +1300,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return bClass;
     }
 
+    /**
+     * initialises the structure for document change.
+     * @returns 
+     */
     createJsonDocument_Init() {
 
         var jsonDoc = {};
@@ -1224,6 +1324,9 @@ var NlAuditFilesImport = class NlAuditFilesImport {
 
     }
 
+    /**
+     * Returns information to the accounting file.
+     */
     getAccountingInfo() {
         this.accountingInfo = {};
         this.accountingInfo.isDoubleEntry = false;
@@ -1268,6 +1371,12 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         }
     }
 
+    /**
+     * returns the error message
+     * @param {*} errorId 
+     * @param {*} lang 
+     * @returns 
+     */
     getErrorMessage(errorId, lang) {
         if (!lang)
             lang = 'en';
@@ -1282,6 +1391,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         }
     }
 
+    /**
+     * check Banana's licence
+     * @returns 
+     */
     isBananaAdvanced() {
         // Starting from version 10.0.7 it is possible to read the property Banana.application.license.isWithinMaxRowLimits 
         // to check if all application functionalities are permitted
@@ -1299,6 +1412,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return false;
     }
 
+    /**
+     * check Banana's version
+     * @returns 
+     */
     verifyBananaVersion() {
         if (!Banana.document)
             return false;
@@ -1316,6 +1433,10 @@ var NlAuditFilesImport = class NlAuditFilesImport {
         return true;
     }
 
+    /**
+     * returns the language code
+     * @returns 
+     */
     getLang() {
         var lang = 'en';
         if (this.banDocument)
