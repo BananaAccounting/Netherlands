@@ -1,0 +1,26 @@
+@page {
+    margin-top: 10mm;
+    margin-bottom: 10mm;
+    margin-left: 10mm;
+    margin-right: 10mm;
+}
+
+body {
+    font-size: 9pt;
+}
+
+table {
+    font-size: 9pt;
+    margin-bottom: 10px;
+    width: 100%;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+.styleAmount {
+    text-align: center;
+    background-color: aliceblue;
+}
+.styleRubriekTitle{
+    font-weight: bold;
+}
