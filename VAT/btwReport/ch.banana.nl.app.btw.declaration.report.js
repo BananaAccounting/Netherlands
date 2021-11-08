@@ -64,14 +64,16 @@
 
  var BTWDeclarationReport = class BTWDeclarationReport {
 
-    constructor(banDoc){
+    constructor(banDoc,startDate,endDate){
         this.banDoc=banDoc;
+        this.startDate=startDate;
+        this.endDate=endDate;
         this.rubSum="";
     }
 
     getReportTable(report) {
         var tableBalance = report.addTable('reportTable');
-        tableBalance.getCaption().addText("BTW Report 01.01.2021/31.12.2021", "");
+        tableBalance.getCaption().addText("BTW-vakken, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
         //columns
         tableBalance.addColumn("c1").setStyleAttributes("width:60%");
         tableBalance.addColumn("c2").setStyleAttributes("width:20%");
@@ -80,9 +82,11 @@
         return tableBalance;
     }
 
-    printReport(){
+    createBtwDeclarationReport(){
 
-        let codes=this.getBtwCodes();
+        let codesData=this.getCodesData();
+        var startDate=this.startDate;
+        var endDate=this.endDate;
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
 
@@ -99,57 +103,62 @@
         tableRow.addCell("Omzetbelasting", "");
 
         //1a. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"1a");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("1a. Leveringen/diensten belast met hoog tarief", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"1a");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"1a");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
         //1b. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"1b");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("1b. Leveringen/diensten belast met laag tarief", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"1b");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"1b");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
         //1c. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"1c");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("1c. Leveringen/diensten belast met overige tarieven, behalve 0%", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"1c");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"1c");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
         //1d. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"1d");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("1d. Privégebruik", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"1c");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"1d");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
         //1e. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"1d");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("1e. Leveringen/diensten belast met 0% of niet bij u belast", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"1e");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"1d");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
         //empty row
@@ -158,7 +167,7 @@
 
         //RUBRIEK 2
         var tableRow = reportTable.addRow("");
-        tableRow.addCell("Rubriek 2: Verleggingsregellingen", "styleRubriekTitle",3);
+        tableRow.addCell("Rubriek 2: Verleggingsregelingen", "styleRubriekTitle",3);
 
         var tableRow = reportTable.addRow("");
         tableRow.addCell("", "");
@@ -166,13 +175,14 @@
         tableRow.addCell("Omzetbelasting", "");
 
         //2a. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"2a");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("2a. Leveringen/diensten waarbij de omzetbelasting naas u is vergled", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"2a");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"2a");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
@@ -190,28 +200,31 @@
         tableRow.addCell("Omzetbelasting", "");
 
         //3a. Line
-        //Omzet
-        //Omzetbelasting
         var tableRow = reportTable.addRow("");
         tableRow.addCell("3a. Leveringen naar landen buiten de EU (uitvoer)", "");
-        tableRow.addCell("", "styleAmount");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"3a");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        tableRow.addCell("", "");
 
         //3b. Line
-        //Omzet
-        //Omzetbelasting
         var tableRow = reportTable.addRow("");
         tableRow.addCell("3b. Leveringen naar of diensten in landen binnen de EU", "");
-        tableRow.addCell("", "styleAmount");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"3b");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        tableRow.addCell("", "");
 
         //3c. Line
-        //Omzet
-        //Omzetbelasting
         var tableRow = reportTable.addRow("");
         tableRow.addCell("3c. Installatie/ afstandsverkopen binnen de EU", "");
-        tableRow.addCell("", "styleAmount");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"3c");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        tableRow.addCell("", "");
 
 
         //empty row
@@ -228,24 +241,26 @@
         tableRow.addCell("Omzetbelasting", "");
 
         //4a. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"4a");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("4a. Leveringen/diensten uit landen buiten de EU", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"4a");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"4a");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
         //4b. Line
-        //Omzet
-        //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"4b");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(lineParam);
         var tableRow = reportTable.addRow("");
         tableRow.addCell("4b. Leveringen/diensten uit landen binnen de EU", "");
-        tableRow.addCell("", "styleAmount");
+        //Omzet
+        var grTaxAmount=this.getAmountForGr1(codesData,"4b");
+        tableRow.addCell(grTaxAmount, "styleAmount");
+        //Omzetbelasting
+        var grVatAmount=this.setParamCodes(codesData,"4b");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
         this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
 
@@ -267,15 +282,15 @@
         //Omzetbelasting
         var tableRow = reportTable.addRow("");
         tableRow.addCell("5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)", "");
-        tableRow.addCell("", "styleAmount");
+        tableRow.addCell("", "");
         tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(this.rubSum,'0.00'),0,true), "styleAmount");
 
         //5b Line (chiedere cosa e)
         //Omzetbelasting
-        var lineParam=this.setParamCodes(codes,"4a");
+        var grVatAmount=this.setParamCodes(codesData,"4a");
         var tableRow = reportTable.addRow("");
         tableRow.addCell("5b. Voorbelasting", "");
-        tableRow.addCell("", "styleAmount");
+        tableRow.addCell("", "");
         tableRow.addCell("", "styleAmount");
 
 
@@ -287,7 +302,7 @@
         //total row
         var tableRow = reportTable.addRow("");
         tableRow.addCell("Eindtotaal", "");
-        tableRow.addCell("", "styleAmount");
+        tableRow.addCell("", "");
         tableRow.addCell("", "styleAmount");
 
 
@@ -301,11 +316,11 @@
      * all codes in the codes array that have the property gr1Code=gr1 are inserted into the string,
      * which is then formatted to match the structure expected by the current balance function.
      */
-    setParamCodes(vatCodes, gr1){
+    setParamCodes(codesData, gr1){
         var  paramCodes="";
 
-        for( var row in vatCodes ){
-            let code=vatCodes[row];
+        for( var row in codesData ){
+            let code=codesData[row];
             if(code.gr1Code==gr1)
                 paramCodes+=code.vatCode+"|";
         }
@@ -319,6 +334,16 @@
         return paramCodes;
     }
 
+    getAmountForGr1(codesData,gr1){
+        var gr1Amount="";
+        for(var key in codesData ){
+            if(codesData[key].gr1Code==gr1){
+                gr1Amount=Banana.SDecimal.add(gr1Amount,codesData[key].taxableAmount);
+            }
+        }
+        return Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(gr1Amount,'0.00'),0,true);
+    }
+
     /**
      * Retrieves from the vat codes table all the vat codes together with their associated gr1 group and saves everything in an object.
      * @returns 
@@ -327,7 +352,7 @@
         var codes=[];
         var table = this.banDoc.table("VatCodes");
         if (!table)
-            return btwCode;
+            return codes;
 
         for (var i = 0; i < table.rowCount; i++) {
             var btwCode={};
@@ -346,6 +371,85 @@
         }
 
         return codes;
+    }
+
+    /**
+     * Retrieves from the transactions table  all the rows with a BTW code and a taxable amounts.
+     * in a second time creates and object that extend 'codes' by summing the taxable amount for each code.
+     */
+    getTransactionsRows(){
+        var transData=[];
+        var from=this.getJsDate(this.startDate);
+        var to=this.getJsDate(this.endDate);
+
+        var table = this.banDoc.table("Transactions");
+        if (!table)
+            return transData;
+
+        for (var i = 0; i < table.rowCount; i++) {
+            var transRow={};
+            var tRow = table.row(i);
+            var vatCode = tRow.value("VatCode");
+            var vatTaxable= tRow.value("VatTaxable");
+            var trDate=tRow.value("Date");
+
+            if (vatCode && vatTaxable && trDate) {
+                trDate=this.getJsDate(trDate);
+                if(trDate>from && trDate<to){
+                    transRow.vatCode=vatCode;
+                    transRow.vatTaxable=vatTaxable;
+                    transData.push(transRow);
+                }
+            }
+        }
+        
+        return transData;
+                    
+    }
+
+    /**
+     * Takes a date and return a JS date object
+     */
+    getJsDate(date){
+
+        var jsDate=Banana.Converter.toDate(date);
+
+        return jsDate;
+
+    }
+
+    /**
+     * Cerca nei dati salvati dalle registrazioni, tutte le righe con il codice iva corrispondente a quello passato come parametro, 
+     * se il codice corrisponde somma l'importo di iva tassabile in una variabile.
+     * 
+     */
+    getVatTaxableAmounts(vatCode){
+        var trRows=this.getTransactionsRows();
+        var taxableAmount="";
+        if(!trRows)
+            return taxableAmount;
+
+        for(var key in trRows){
+            //Banana.console.debug("prova");
+            var row=trRows[key];
+            if(row.vatCode==vatCode){
+                taxableAmount=Banana.SDecimal.add(taxableAmount,row.vatTaxable);
+            }
+        }
+
+        return taxableAmount;
+    }
+
+    /**
+     * Aggiunge un nuovo campo agli oggetti dentro codes: l'oggetto Amount che contiene il totale di iva tassabile per calcolato per ogni codice iva.
+     */
+    getCodesData(){
+        var codesData=this.getBtwCodes();
+        for(var row in codesData){
+            codesData[row].taxableAmount=this.getVatTaxableAmounts(codesData[row].vatCode);
+        }
+        return codesData;
+
     }
 
     getReportStyle() {
@@ -368,13 +472,68 @@
     }
  }
 
+ function getPeriodSettings(param) {
+
+	//The formeters of the period that we need
+	var scriptform = {
+		"selectionStartDate": "",
+		"selectionEndDate": "",
+		"selectionChecked": "false"
+	};
+
+	//Read script settings
+	var data = Banana.document.getScriptSettings();
+
+	//Check if there are previously saved settings and read them
+	if (data.length > 0) {
+		try {
+			var readSettings = JSON.parse(data);
+
+			//We check if "readSettings" is not null, then we fill the formeters with the values just read
+			if (readSettings) {
+				scriptform = readSettings;
+			}
+		} catch (e) {}
+	}
+
+	//We take the accounting "starting date" and "ending date" from the document. These will be used as default dates
+	var docStartDate = Banana.document.startPeriod();
+	var docEndDate = Banana.document.endPeriod();
+
+	//A dialog window is opened asking the user to insert the desired period. By default is the accounting period
+	var selectedDates = Banana.Ui.getPeriod(param.reportName, docStartDate, docEndDate,
+			scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
+
+	//We take the values entered by the user and save them as "new default" values.
+	//This because the next time the script will be executed, the dialog window will contains the new values.
+	if (selectedDates) {
+		scriptform["selectionStartDate"] = selectedDates.startDate;
+		scriptform["selectionEndDate"] = selectedDates.endDate;
+		scriptform["selectionChecked"] = selectedDates.hasSelection;
+
+		//Save script settings
+		var formToString = JSON.stringify(scriptform);
+		var value = Banana.document.setScriptSettings(formToString);
+	} else {
+		//User clicked cancel
+		return;
+	}
+	return scriptform;
+}
+
  function exec(inData, options) {
+
+    var dateForm = getPeriodSettings("Select Date");
+   
+    if (!dateForm) {
+       return;
+    }
 
     if (!Banana.document)
         return "@Cancel";
 
-    var btwDeclarationReport= new BTWDeclarationReport(Banana.document);
-    var report = btwDeclarationReport.printReport();
+    var btwDeclarationReport= new BTWDeclarationReport(Banana.document,dateForm.selectionStartDate, dateForm.selectionEndDate);
+    var report = btwDeclarationReport.createBtwDeclarationReport();
     var stylesheet = btwDeclarationReport.getReportStyle();
     Banana.Report.preview(report,stylesheet);
 }
