@@ -17,10 +17,23 @@ table {
     border-color: rgb(0, 0, 0);
 }
 
+.styleNormalHeader{
+    text-align: right;
+}
+
+.styleNormalHeader.styleCompanyName{
+    font-weight: bold;
+    font-size: 10;
+}
+
 .styleAmount {
-    text-align: center;
+    text-align: right;
     background-color: aliceblue;
 }
 .styleRubriekTitle{
+    font-weight: bold;
+}
+.styleTableTitle{
+    text-align: right;
     font-weight: bold;
 }

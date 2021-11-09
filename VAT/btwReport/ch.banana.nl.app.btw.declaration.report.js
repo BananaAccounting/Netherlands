@@ -73,13 +73,32 @@
 
     getReportTable(report) {
         var tableBalance = report.addTable('reportTable');
-        tableBalance.getCaption().addText("BTW-vakken, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
+        tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
         //columns
         tableBalance.addColumn("c1").setStyleAttributes("width:60%");
         tableBalance.addColumn("c2").setStyleAttributes("width:20%");
         tableBalance.addColumn("c3").setStyleAttributes("width:20%");
 
         return tableBalance;
+    }
+
+    getReportHeader(report){
+        var documentInfo=this.getDocumentInfo();
+        var headerParagraph = report.getHeader().addSection();
+        headerParagraph.addParagraph(documentInfo.company, "styleNormalHeader styleCompanyName");
+        headerParagraph.addParagraph(documentInfo.address, "styleNormalHeader");
+        headerParagraph.addParagraph(documentInfo.zip+", "+documentInfo.city, "styleNormalHeader");
+        headerParagraph.addParagraph("", "");
+        headerParagraph.addParagraph("", "");
+        headerParagraph.addParagraph("", "");
+
+    }
+
+    getFormattedAmount(value){
+        var amount=Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.abs(value),"",false);
+
+        return amount;
+
     }
 
     createBtwDeclarationReport(){
@@ -89,6 +108,7 @@
         var endDate=this.endDate;
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
+        this.getReportHeader(report);
 
         //add the table
         var reportTable = this.getReportTable(report);
@@ -111,8 +131,11 @@
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"1a");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =Math.trunc(vatCurrBal.vatAmount);
+        //increment the totals
+        this.rubSum_trunc=Banana.SDecimal.add(this.rubSum,amount);
+        amount=this.getFormattedAmount(amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //1b. Line
         var tableRow = reportTable.addRow("");
@@ -123,8 +146,9 @@
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"1b");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //1c. Line
         var tableRow = reportTable.addRow("");
@@ -135,8 +159,9 @@
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"1c");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //1d. Line
         var tableRow = reportTable.addRow("");
@@ -147,8 +172,9 @@
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"1d");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //1e. Line
         var tableRow = reportTable.addRow("");
@@ -158,8 +184,9 @@
         tableRow.addCell(grTaxAmount, "styleAmount");
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"1d");
-        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //empty row
         var tableRow = reportTable.addRow("");
@@ -176,15 +203,16 @@
 
         //2a. Line
         var tableRow = reportTable.addRow("");
-        tableRow.addCell("2a. Leveringen/diensten waarbij de omzetbelasting naas u is vergled", "");
+        tableRow.addCell("2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd", "");
         //Omzet
         var grTaxAmount=this.getAmountForGr1(codesData,"2a");
         tableRow.addCell(grTaxAmount, "styleAmount");
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"2a");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //empty row
         var tableRow = reportTable.addRow("");
@@ -249,8 +277,9 @@
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"4a");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
         //4b. Line
         var tableRow = reportTable.addRow("");
@@ -261,8 +290,9 @@
         //Omzetbelasting
         var grVatAmount=this.setParamCodes(codesData,"4b");
         var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-        this.rubSum=Banana.SDecimal.add(this.rubSum,vatCurrBal.vatAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(vatCurrBal.vatAmount,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(vatCurrBal.vatAmount);
+        this.rubSum=Banana.SDecimal.add(this.rubSum,amount);
+        tableRow.addCell(amount, "styleAmount");
 
 
         //empty row
@@ -283,27 +313,36 @@
         var tableRow = reportTable.addRow("");
         tableRow.addCell("5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)", "");
         tableRow.addCell("", "");
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(this.rubSum,'0.00'),0,true), "styleAmount");
+        var amount =this.getFormattedAmount(this.rubSum);
+        tableRow.addCell(amount, "styleAmount");
 
-        //5b Line (chiedere cosa e)
+        //5b Line
         //Omzetbelasting
-        var grVatAmount=this.setParamCodes(codesData,"4a");
+        var grVatAmount=this.setParamCodes(codesData,"5b");
         var tableRow = reportTable.addRow("");
         tableRow.addCell("5b. Voorbelasting", "");
         tableRow.addCell("", "");
-        tableRow.addCell("", "styleAmount");
+        var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
+        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.abs(vatCurrBal.vatAmount),"",false), "styleAmount");
+        
 
 
         //empty row
         var tableRow = reportTable.addRow("");
         tableRow.addCell("", "",3);
 
-
         //total row
         var tableRow = reportTable.addRow("");
         tableRow.addCell("Eindtotaal", "");
         tableRow.addCell("", "");
-        tableRow.addCell("", "styleAmount");
+        var sheetTotal=Banana.SDecimal.subtract(Banana.SDecimal.abs(this.rubSum),vatCurrBal.vatAmount);
+        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(sheetTotal,"",false), "styleAmount");
+
+
+        //rounding difference
+
+
+        //accounting amount
 
 
         return report;
@@ -341,7 +380,7 @@
                 gr1Amount=Banana.SDecimal.add(gr1Amount,codesData[key].taxableAmount);
             }
         }
-        return Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(gr1Amount,'0.00'),0,true);
+        return Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(gr1Amount,'0.00'),0,false);
     }
 
     /**
@@ -371,6 +410,28 @@
         }
 
         return codes;
+    }
+
+    getDocumentInfo(){
+        var documentInfo = {};
+        documentInfo.company ="";
+        documentInfo.address ="";
+        documentInfo.zip ="";
+        documentInfo.city ="";
+
+
+        if (this.banDoc) {
+            if(this.banDoc.info("AccountingDataBase", "Company"));
+                documentInfo.company = this.banDoc.info("AccountingDataBase", "Company");
+            if(this.banDoc.info("AccountingDataBase", "Address1"))
+                documentInfo.address = this.banDoc.info("AccountingDataBase", "Address1");
+            if(this.banDoc.info("AccountingDataBase", "Zip"))
+                documentInfo.zip = this.banDoc.info("AccountingDataBase", "Zip");
+            if(this.banDoc.info("AccountingDataBase", "City"))
+                documentInfo.city = this.banDoc.info("AccountingDataBase", "City");
+        }
+
+        return documentInfo;
     }
 
     /**
