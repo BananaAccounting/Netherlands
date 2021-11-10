@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.nl.app.btw.declaration.report.js
+// @id = ch.banana.nl.app.btw.evaluation.report.js
 // @api = 1.0
-// @pubdate = 2021-11-05
+// @pubdate = 2021-11-10
 // @publisher = Banana.ch SA
-// @description.en = BTW Declaration NL [BETA]
-// @description.nl = BTW Verklaring NL [BETA]
+// @description.en = BTW Evaluation NL [BETA]
+// @description.nl = BTW Evaluatie NL [BETA]
 // @doctype = *.*
 // @outputformat = none
 // @inputdataform = none
@@ -32,7 +32,7 @@
 *
 *   specific:
 *   -All amounts should be without decimals and rounded down, for this reason it is necessary to indicate the accounting amount and the rounding difference.
-*   -User should decide the period
+*   -Divde the year in quarters
 */
 
 /**
@@ -42,32 +42,35 @@
  * 
  * 3 Columns table: from Rubriek1 to Rubriek 4
  * 
- *              Group description                           Sales           VAT     
  * 
- * |1a. Leveringen/diensten belast met hoog tarief      | 250'000    |   52'200
- * |1b. Leveringen/diensten belast met laag tarief      | 866'000    |   77'940
- * |1c. Leveringen/diensten belast met overige tarieven |  16'700    |       -
+ * 
+ *                                                               31.03.2021                 30.06.2021              ...for each quarter 
+ * 
+ *              Group description                            Sales        VAT           Sales         VAT
+ * 
+ * |1a. Leveringen/diensten belast met hoog tarief      | 250'000    |   52'200        500'000      104'400
+ * |1b. Leveringen/diensten belast met laag tarief      | 866'000    |   77'940        230'000       13'200
+ * |1c. Leveringen/diensten belast met overige tarieven |  16'700    |     -            20'000          -
  * |...                                                 |            |
  * |...                                                 |            |
  * 
- * 2 Columns Table: from rubriek 5
  * 
- *  *              Group description                                      VAT     
+ *  *              Group description                                       VAT                          VAT  
  * 
- * |5a. Verschuldigde omzetbelasting (rubrieken 1 t/m 4)|                130'140
- * |5b. Voorbelasting                                   |                16'000
- * |Eindtotaal                                          |                114'140             
+ * |5a. Verschuldigde omzetbelasting (rubrieken 1 t/m 4)|                130'140                       117'600
+ * |5b. Voorbelasting                                   |                16'000                        5400
+ * |Eindtotaal                                          |                114'140                       112'200
  * 
  * 
  */
 
 
- var BTWDeclarationReport = class BTWDeclarationReport {
+ var BTWEvaluationReport = class BTWEvaluationReport {
 
-    constructor(banDoc,startDate,endDate){
+    constructor(banDoc){
         this.banDoc=banDoc;
-        this.startDate=startDate;
-        this.endDate=endDate;
+        this.startDate=this.banDoc.startPeriod();
+        this.endDate=this.banDoc.endPeriod();
 
         //errors
         this.VATCODE_WITHOUT_GR1 = "VATCODE_WITHOUT_GR1";
@@ -78,8 +81,6 @@
         tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
         //columns
         tableBalance.addColumn("c1").setStyleAttributes("width:60%");
-        tableBalance.addColumn("c2").setStyleAttributes("width:20%");
-        tableBalance.addColumn("c3").setStyleAttributes("width:20%");
 
         return tableBalance;
     }
@@ -287,13 +288,15 @@
         var rubSum_report=""; //report value
         var reportTotal="";
         var accountingTotal="";
+        var startDate=this.startDate;
+        var endDate=this.endDate;
+
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
         this.getReportHeader(report);
 
         //add the table
         var reportTable = this.getReportTable(report);
-
 
         //I go through all the elements and print the values
         for(var row in btwGrList){
@@ -304,18 +307,27 @@
             if(rubriek!==element.gr){
                 //empty row
                 var tableRow = reportTable.addRow("");
-                tableRow.addCell("", "",3);
+                tableRow.addCell("", "",9);
 
                 //title row
                 var rubTitle=this.getRubriekTitle(element.gr);
                 var tableRow = reportTable.addRow("");
-                tableRow.addCell(rubTitle, "styleRubriekTitle",3);
+                tableRow.addCell(rubTitle, "styleRubriekTitle",8);
+
+                //period row //set an array with the periods
+                var tableRow = reportTable.addRow("");
+                tableRow.addCell("", "");
+                for(var i=0;i<4;i++){
+                    tableRow.addCell("31.03.2021", "");
+                }
 
                 //columns header row
                 var tableRow = reportTable.addRow("");
                 tableRow.addCell("", "");
-                tableRow.addCell("Omzet", "");
-                tableRow.addCell("Omzetbelasting", "");
+                for(var i=0;i<4;i++){
+                    tableRow.addCell("Omzet", "");
+                    tableRow.addCell("Omzetbelasting", "");
+                }
 
             }
 
@@ -343,14 +355,17 @@
                 if(element.code!="5a"){
 
                     var grVatAmount=this.setParamCodes(codesData,element.code);
-                    var vatCurrBal=this.banDoc.vatCurrentBalance(grVatAmount,startDate,endDate);
-                    var repAmount=this.getReportAmount(vatCurrBal.vatAmount);
-                    var accAmount=this.getAccountingAmount(vatCurrBal.vatAmount);
-                    if(element.code!=="5b"){// 5b not to sum in the total
-                        rubSum_report=Banana.SDecimal.add(rubSum_report,repAmount);
-                        rubSum_accounting=Banana.SDecimal.add(rubSum_accounting,accAmount);
+                    var vatCurrBal=this.banDoc.vatCurrentBalances(grVatAmount,"Q",startDate,endDate);
+                    for(var i=0;i<vatCurrBal.length;i++){
+                        Banana.console.debug(vatCurrBal[i].vatAmount);
+                        var repAmount=this.getReportAmount(vatCurrBal[i].vatAmount);
+                        var accAmount=this.getAccountingAmount(vatCurrBal[i].vatAmount);
+                        if(element.code!=="5b"){// 5b not to sum in the total
+                            rubSum_report=Banana.SDecimal.add(rubSum_report,repAmount);
+                            rubSum_accounting=Banana.SDecimal.add(rubSum_accounting,accAmount);
+                        }
+                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(repAmount,"",false), "styleAmount");
                     }
-                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(repAmount,"",false), "styleAmount");
 
                 }else{
                     tableRow.addCell(Banana.Converter.toLocaleNumberFormat(rubSum_report,"",false), "styleAmount");
@@ -504,6 +519,7 @@
      * in a second time creates and object that extend 'codes' by summing the taxable amount for each code.
      */
     getTransactionsRows(){
+        //fare in modo di salvare i dati in un array suddiviso per il periodo
         var transData=[];
         var from=this.getJsDate(this.startDate);
         var to=this.getJsDate(this.endDate);
@@ -598,68 +614,14 @@
     }
  }
 
- function getPeriodSettings(param) {
-
-	//The formeters of the period that we need
-	var scriptform = {
-		"selectionStartDate": "",
-		"selectionEndDate": "",
-		"selectionChecked": "false"
-	};
-
-	//Read script settings
-	var data = Banana.document.getScriptSettings();
-
-	//Check if there are previously saved settings and read them
-	if (data.length > 0) {
-		try {
-			var readSettings = JSON.parse(data);
-
-			//We check if "readSettings" is not null, then we fill the formeters with the values just read
-			if (readSettings) {
-				scriptform = readSettings;
-			}
-		} catch (e) {}
-	}
-
-	//We take the accounting "starting date" and "ending date" from the document. These will be used as default dates
-	var docStartDate = Banana.document.startPeriod();
-	var docEndDate = Banana.document.endPeriod();
-
-	//A dialog window is opened asking the user to insert the desired period. By default is the accounting period
-	var selectedDates = Banana.Ui.getPeriod(param.reportName, docStartDate, docEndDate,
-			scriptform.selectionStartDate, scriptform.selectionEndDate, scriptform.selectionChecked);
-
-	//We take the values entered by the user and save them as "new default" values.
-	//This because the next time the script will be executed, the dialog window will contains the new values.
-	if (selectedDates) {
-		scriptform["selectionStartDate"] = selectedDates.startDate;
-		scriptform["selectionEndDate"] = selectedDates.endDate;
-		scriptform["selectionChecked"] = selectedDates.hasSelection;
-
-		//Save script settings
-		var formToString = JSON.stringify(scriptform);
-		var value = Banana.document.setScriptSettings(formToString);
-	} else {
-		//User clicked cancel
-		return;
-	}
-	return scriptform;
-}
-
  function exec(inData, options) {
 
-    var dateForm = getPeriodSettings("Select Date");
-   
-    if (!dateForm) {
-       return;
-    }
 
     if (!Banana.document)
         return "@Cancel";
 
-    var btwDeclarationReport= new BTWDeclarationReport(Banana.document,dateForm.selectionStartDate, dateForm.selectionEndDate);
-    var report = btwDeclarationReport.createBtwDeclarationReport();
-    var stylesheet = btwDeclarationReport.getReportStyle();
+    var btwEvaluationReport= new BTWEvaluationReport(Banana.document);
+    var report = btwEvaluationReport.createBtwDeclarationReport();
+    var stylesheet = btwEvaluationReport.getReportStyle();
     Banana.Report.preview(report,stylesheet);
 }
