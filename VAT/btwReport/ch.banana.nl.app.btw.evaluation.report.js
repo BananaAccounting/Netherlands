@@ -280,7 +280,6 @@
     createBtwDeclarationReport(){
 
         var btwGrList=this.setBtwGrList();
-        let codesData=this.getCodesData();
         var startDate=this.startDate;
         var endDate=this.endDate;
         var rubriek="";
@@ -288,8 +287,7 @@
         var rubSum_report=""; //report value
         var reportTotal="";
         var accountingTotal="";
-        var startDate=this.startDate;
-        var endDate=this.endDate;
+        var quarters=4;
 
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
@@ -303,7 +301,7 @@
 
             var element=btwGrList[row];
 
-            //each time the group (the rubriek) change, i add the the rubriek title
+            //if change group we add rubriek description
             if(rubriek!==element.gr){
                 //empty row
                 var tableRow = reportTable.addRow("");
@@ -312,98 +310,74 @@
                 //title row
                 var rubTitle=this.getRubriekTitle(element.gr);
                 var tableRow = reportTable.addRow("");
-                tableRow.addCell(rubTitle, "styleRubriekTitle",8);
-
-                //period row //set an array with the periods
-                var tableRow = reportTable.addRow("");
-                tableRow.addCell("", "");
-                for(var i=0;i<4;i++){
-                    tableRow.addCell("31.03.2021", "");
-                }
-
-                //columns header row
-                var tableRow = reportTable.addRow("");
-                tableRow.addCell("", "");
-                for(var i=0;i<4;i++){
-                    tableRow.addCell("Omzet", "");
-                    tableRow.addCell("Omzetbelasting", "");
-                }
+                tableRow.addCell(rubTitle, "styleRubriekTitle",9);
 
             }
 
+            //add groups
             var tableRow = reportTable.addRow("");
             tableRow.addCell(element.description,"");
-
-            //Omzet
-            if(element.hasOmzet){
-                var grTaxAmount=this.getAmountForGr1(codesData,element.code);
-                tableRow.addCell(grTaxAmount, "styleAmount");
-
-                if(element.hasOmzet && !element.hasOmzetBelasting ){
-                    //add an empty cell
-                    tableRow.addCell("", "");
-                }
-            }
-
-            //Omzetbelasting
-            if(element.hasOmzetBelasting){
-                if(element.hasOmzetBelasting && !element.hasOmzet){
-                    //add an empty cell
-                    tableRow.addCell("", "");
-                }
-
-                if(element.code!="5a"){
-
-                    var grVatAmount=this.setParamCodes(codesData,element.code);
-                    var vatCurrBal=this.banDoc.vatCurrentBalances(grVatAmount,"Q",startDate,endDate);
-                    for(var i=0;i<vatCurrBal.length;i++){
-                        Banana.console.debug(vatCurrBal[i].vatAmount);
-                        var repAmount=this.getReportAmount(vatCurrBal[i].vatAmount);
-                        var accAmount=this.getAccountingAmount(vatCurrBal[i].vatAmount);
-                        if(element.code!=="5b"){// 5b not to sum in the total
-                            rubSum_report=Banana.SDecimal.add(rubSum_report,repAmount);
-                            rubSum_accounting=Banana.SDecimal.add(rubSum_accounting,accAmount);
-                        }
-                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(repAmount,"",false), "styleAmount");
-                    }
-
-                }else{
-                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(rubSum_report,"",false), "styleAmount");
-                }
-
+            for(var i=0;i<vatBalances.length;i++){
+                    Banana.console.debug(vatBalances[i]);
+                    tableRow.addCell(vatBalances[i], "styleAmount");
             }
 
             rubriek=element.gr;
 
+
         }
-
-        //add the total
-        //empty row
-        var tableRow = reportTable.addRow("");
-        tableRow.addCell("", "",3);
-
-        //total row
-        var tableRow = reportTable.addRow("");
-        tableRow.addCell("Eindtotaal", "");
-        tableRow.addCell("", "");
-        reportTotal=Banana.SDecimal.subtract(rubSum_report,repAmount);
-        accountingTotal=Banana.SDecimal.subtract(rubSum_accounting,accAmount);
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(reportTotal,"",false), "styleAmount");
-
-
-        //accounting amount
-        var accAmountParagraph=report.addParagraph();
-        //check the accounting amount
-        accAmountParagraph.addText("Accounting end total: "+Banana.Converter.toLocaleNumberFormat(accountingTotal,"2",false),"styleFinalParagraphs");
-
-        //rounding difference
-        var roundingDifference=Banana.SDecimal.subtract(accountingTotal,reportTotal);
-        var roundDiffParagraph=report.addParagraph();
-        roundDiffParagraph.addText("Rounding difference: "+roundingDifference,"styleFinalParagraphs");
 
 
         return report;
 
+    }
+
+    getVatBalance(){
+
+        var vatBalances=[];
+        var codesFormattedList=[];
+        codesFormattedList=this.getCodesFormattedList();
+
+        for(var i=0;i<codesFormattedList.length;i++){
+
+            /**
+             * 
+             * per ogni elemento presente nella lista (gruppo 1a,1b...) trovo i bilanci di ogni trimestre (array) e li salvo in un array
+             * esempio:
+             * vatBalances[0][0]= 1a, bilancio vat al primo trimeestre (31.03.20XX)
+             * vatBalances[0][1]= 1a, bilancio vat al secondo trimeestre (30.06.20XX)
+             * vatBalances[1][0]= 2a, bilancio vat al primo trimeestre (31.03.20XX)
+             * ...
+             * .....
+             * 
+             */
+             var vatCurrBal=this.banDoc.vatCurrentBalances(codesFormattedList[i],'Q');
+            vatBalances.push(vatCurrBal[0].vatAmount);
+
+        }
+
+        return vatBalances;
+    }
+
+    setGr1List(){
+        var gr1List=["1a","1b","1c","1d","1e","2a","3a","3b","3c","4a","4b","5a","5b"];
+        return gr1List;
+
+
+    }
+
+    getCodesFormattedList(){
+        var codesData=this.getCodesData();
+        var grList=this.setGr1List();
+        var strList=[];
+
+        for(var i=0;i<grList.length;i++){
+
+            //per ogni gruppo chiamo il metodo che formatta la stringa per il vat balance, ed inserisco tutte le stringhe in un array che ritorno 
+            strList.push(this.setParamCodes(codesData,grList[i]));
+        }
+
+        return strList;
     }
 
     /**
