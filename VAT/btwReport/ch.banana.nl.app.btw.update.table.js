@@ -25,8 +25,6 @@
 // @inputdatasource = none
 // @timeout = -1
 
-const { group } = require("console");
-
 /*
 *   SUMMARY
 *
@@ -39,39 +37,64 @@ const { group } = require("console");
 
 function exec(inData, options){
 
+    var jsonDoc="";
     var newDocsArray=[];
     //prova, data da cambiare
-    var newestVersion="20211111";
+    var newestVersion=".20211111";
     var IsOutdated=false;
+    var msg="The VAT table is already updated to the latest version"
 
     IsOutdated=checkVatTableVersion(newestVersion);
 
+
     if(IsOutdated){
         newDocsArray=this.UpdateVatTable();
+        jsonDoc = { "format": "documentChange", "error": "" };
+        jsonDoc["data"] = newDocsArray;
+
     }else{
-        //message
+        Banana.document.addMessage(msg);
     }
 
-    var jsonDoc = { "format": "documentChange", "error": "" };
-    jsonDoc["data"] = newDocsArray;
 
-    return docChange;
+    return jsonDoc;
 
 }
 
 function UpdateVatTable(){
     var jsonDoc=[];
 
-    //create the document to add the column
-    jsonDoc.push(this.addColumnDocument());
-    //create the document to add the column
-    jsonDoc.pus(this.addGr1Document());
+
+    //Check if exists the column, or if we need to add it.
+    if(this.hasGr1Column()){
+        //create only the document to modify the rows
+        jsonDoc.push(this.addGr1Document());
+
+    }else{
+        //create the document to add the column and to modify the rows
+        jsonDoc.push(this.addColumnDocument());
+        jsonDoc.push(this.addGr1Document());
+    }
 
     return jsonDoc;
 
 }
 
+function hasGr1Column(){
+    var hasGr1Column=false;
+    var table = Banana.document.table("Accounts");
+    var tColumnNames = table.columnNames;
+
+    for (var i=0;i<tColumnNames.length;i++){
+        if(tColumnNames[i]=="Gr1")
+            hasGr1Column=true;
+    }
+
+    return hasGr1Column;
+}
+
 function addGr1Document(){
+
     var jsonDoc=initJsonDoc();
 
     //create rows
@@ -92,12 +115,18 @@ function createJsonDoc_addGr1Codes(jsonDoc){
     for(var key in vatCodesData){
         var vatData=vatCodesData[key];
 
+
+
         var row = {};
         row.operation = {};
-        row.operation.name = "add";
+        row.operation.name = "modify";
+        row.operation.sequence = vatData.rowNr;
         row.fields = {};
 
-        row.fields["Gr1"] = vatData;
+        row.fields["Gr1"] = vatData.gr1;
+
+        if(vatData.gr1)
+            rows.push(row);
 
 
     }
@@ -171,23 +200,21 @@ function getVatTable(){
 function getVatCodesData(){
 
     var vatCodes=[];
-    table=getVatTable();
+    var table=getVatTable();
 
     for (var i = 0; i < table.rowCount; i++) {
         var vatData={};
         var tRow = table.row(i);
         vatData.vatCode=tRow.value("VatCode");
-        //forse e meglio fare il +1
-        vatData.rowNr=tRow.rowNr;
+        //row+1
+        vatData.rowNr=tRow.rowNr.toString();
         //aggiungo ad ognuno il gr1
         vatData.gr1=getGr1(vatData.vatCode);
 
         if(vatData.vatCode){
             vatCodes.push(vatData);
-            Banana.console.debug(JSON.stringify(vatData));
         }
     }
-
 
     return vatCodes;
 
@@ -236,22 +263,50 @@ function getGr1(vatCode){
         case "VEUI":
             group="3c"
             return group;
-            
-        //METTERE QUELLI MANCANTI
+        case "VIX21":
+            group="4a"
+            return group;
+        case "VIX9":
+            group="4a"
+            return group;
+        case "ICP21":
+            group="4b"
+            return group;
+        case "ICP9":
+            group="4b"
+            return group;    
+        case "IG21":
+            group="5b"
+            return group;
+        case "IG9":
+            group="5b"
+            return group;
+        case "IG0":
+            group="5b"
+            return group;
+        case "IGV":
+            group="5b"
+            return group;
+        case "D21-2":
+            group="5b"
+            return group;
+        case "D9-2":
+            group="5b"
+            return group;
     }
 
 }
 
 function checkVatTableVersion(newestVersion){
 
-    table=getVatTable();
+    var table=getVatTable();
 
     for (var i = 0; i < table.rowCount; i++) {
         var tRow = table.row(i);
         var description=tRow.value("Description");
 
 
-        if(description.indexOf("id=vatcodes")>=0){
+        if(description.indexOf("id=vatcodes")>=0 || description==""){
             //find the position of the date
             var pos=description.indexOf('.');
             //extract the date

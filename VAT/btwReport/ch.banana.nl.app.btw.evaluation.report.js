@@ -111,6 +111,7 @@
         btwGrList.firstA={};
         btwGrList.firstA.gr="1";
         btwGrList.firstA.code="1a";
+        btwGrList.firstA.vatCodes="V21";
         btwGrList.firstA.description="1a. Leveringen/diensten belast met hoog tarief";
         btwGrList.firstA.hasOmzet=true;
         btwGrList.firstA.hasOmzetBelasting=true;
@@ -119,6 +120,7 @@
         btwGrList.firstB={};
         btwGrList.firstB.gr="1";
         btwGrList.firstB.code="1b";
+        btwGrList.firstB.vatCodes="V9";
         btwGrList.firstB.description="1b. Leveringen/diensten belast met laag tarief";
         btwGrList.firstB.hasOmzet=true;
         btwGrList.firstB.hasOmzetBelasting=true;
@@ -127,6 +129,7 @@
         btwGrList.firstC={};
         btwGrList.firstC.gr="1";
         btwGrList.firstC.code="1c";
+        btwGrList.firstC.vatCodes="VOT";
         btwGrList.firstC.description="1c. Leveringen/diensten belast met overige tarieven, behalve 0%";
         btwGrList.firstC.hasOmzet=true;
         btwGrList.firstC.hasOmzetBelasting=true;
@@ -135,6 +138,7 @@
         btwGrList.firstD={};
         btwGrList.firstD.gr="1";
         btwGrList.firstD.code="1d";
+        btwGrList.firstD.vatCodes="PG21;PG9;PG27;PG15";
         btwGrList.firstD.description="1d. Privégebruik";
         btwGrList.firstD.hasOmzet=true;
         btwGrList.firstD.hasOmzetBelasting=true;
@@ -143,6 +147,7 @@
         btwGrList.firstE={};
         btwGrList.firstE.gr="1";
         btwGrList.firstE.code="1e";
+        btwGrList.firstE.vatCodes="V0";
         btwGrList.firstE.description="1e. Leveringen/diensten belast met 0% of niet bij u belast";
         btwGrList.firstE.hasOmzet=true;
         btwGrList.firstE.hasOmzetBelasting=true;
@@ -152,6 +157,7 @@
         btwGrList.secondA={};
         btwGrList.secondA.gr="2";
         btwGrList.secondA.code="2a";
+        btwGrList.secondA.vatCodes="VR21;VR9";
         btwGrList.secondA.description="2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd";
         btwGrList.secondA.hasOmzet=true;
         btwGrList.secondA.hasOmzetBelasting=true;
@@ -162,6 +168,7 @@
         btwGrList.thirdA={};
         btwGrList.thirdA.gr="3";
         btwGrList.thirdA.code="3a";
+        btwGrList.thirdA.vatCodes="VX";
         btwGrList.thirdA.description="3a. Leveringen naar landen buiten de EU (uitvoer)";
         btwGrList.thirdA.hasOmzet=true;
         btwGrList.thirdA.hasOmzetBelasting=false;
@@ -170,6 +177,7 @@
         btwGrList.thirdB={};
         btwGrList.thirdB.gr="3";
         btwGrList.thirdB.code="3b";
+        btwGrList.thirdB.vatCodes="VEU";
         btwGrList.thirdB.description="3b. Leveringen naar of diensten in landen binnen de EU";
         btwGrList.thirdB.hasOmzet=true;
         btwGrList.thirdB.hasOmzetBelasting=false;
@@ -178,6 +186,7 @@
         btwGrList.thirdC={};
         btwGrList.thirdC.gr="3";
         btwGrList.thirdC.code="3c";
+        btwGrList.thirdC.vatCodes="VEUI";
         btwGrList.thirdC.description="3c. Installatie/ afstandsverkopen binnen de EU";
         btwGrList.thirdC.hasOmzet=true;
         btwGrList.thirdC.hasOmzetBelasting=false;
@@ -189,6 +198,7 @@
         btwGrList.fourthA={};
         btwGrList.fourthA.gr="4";
         btwGrList.fourthA.code="4a";
+        btwGrList.fourthA.vatCodes="VIX21;VIX9";
         btwGrList.fourthA.description="4a. Leveringen/diensten uit landen buiten de EU";
         btwGrList.fourthA.hasOmzet=true;
         btwGrList.fourthA.hasOmzetBelasting=true;
@@ -197,6 +207,7 @@
         btwGrList.fourthB={};
         btwGrList.fourthB.gr="4";
         btwGrList.fourthB.code="4b";
+        btwGrList.fourthB.vatCodes="ICP21;ICP9";
         btwGrList.fourthB.description="4b. Leveringen/diensten uit landen binnen de EU";
         btwGrList.fourthB.hasOmzet=true;
         btwGrList.fourthB.hasOmzetBelasting=true;
@@ -208,6 +219,7 @@
         btwGrList.fifthA={};
         btwGrList.fifthA.gr="5";
         btwGrList.fifthA.code="5a";
+        btwGrList.fifthA.vatCodes="";
         btwGrList.fifthA.description="5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)";
         btwGrList.fifthA.hasOmzet=false;
         btwGrList.fifthA.hasOmzetBelasting=true;
@@ -216,6 +228,7 @@
         btwGrList.fifthB={};
         btwGrList.fifthB.gr="5";
         btwGrList.fifthB.code="5b";
+        btwGrList.fifthA.vatCodes="IG21;IG9;IG0;IGV;D21-2;D9-2";
         btwGrList.fifthB.description="5b. Voorbelasting";
         btwGrList.fifthB.hasOmzet=false;
         btwGrList.fifthB.hasOmzetBelasting=true;
@@ -279,9 +292,7 @@
 
     createBtwDeclarationReport(){
 
-        var btwGrList=this.setBtwGrList();
-        var startDate=this.startDate;
-        var endDate=this.endDate;
+        var vatGrData=this.getVatGrData();
         var rubriek="";
         var rubSum_accounting=""; //accounting value
         var rubSum_report=""; //report value
@@ -297,18 +308,21 @@
         var reportTable = this.getReportTable(report);
 
         //I go through all the elements and print the values
-        for(var row in btwGrList){
+        for(var key in vatGrData){
 
-            var element=btwGrList[row];
+            Banana.console.debug(JSON.stringify(vatGrData[key]));
+            //Debug: "{\"gr\":\"1\",\"code\":\"1a\",\"vatCodes\":\"V21\",\"description\":\"1a. Leveringen/diensten belast met hoog tarief\",\"hasOmzet\":true,\"hasOmzetBelasting\":true,\"vatValues\":\"-4360.53;-4012.91;-4188.89;-4539.30;\"}"
+
+            var group=vatGrData[key];
 
             //if change group we add rubriek description
-            if(rubriek!==element.gr){
+            if(group.gr!==rubriek){
                 //empty row
                 var tableRow = reportTable.addRow("");
                 tableRow.addCell("", "",9);
 
                 //title row
-                var rubTitle=this.getRubriekTitle(element.gr);
+                var rubTitle=this.getRubriekTitle(group.gr);
                 var tableRow = reportTable.addRow("");
                 tableRow.addCell(rubTitle, "styleRubriekTitle",9);
 
@@ -316,13 +330,16 @@
 
             //add groups
             var tableRow = reportTable.addRow("");
-            tableRow.addCell(element.description,"");
-            for(var i=0;i<vatBalances.length;i++){
-                    Banana.console.debug(vatBalances[i]);
-                    tableRow.addCell(vatBalances[i], "styleAmount");
+            //add the description
+            tableRow.addCell(group.description,"");
+            //recupero gli importi 
+            var value=group.vatValues.toString();
+            var valuelist=value.split(";")
+            for(var i=0; i<valuelist.length;i++){
+                tableRow.addCell(valuelist[i],"styleAmount");
             }
 
-            rubriek=element.gr;
+            rubriek=group.gr;
 
 
         }
@@ -332,52 +349,25 @@
 
     }
 
-    getVatBalance(){
+    getVatGrData(){
 
-        var vatBalances=[];
-        var codesFormattedList=[];
-        codesFormattedList=this.getCodesFormattedList();
+        var btwGrList=this.setBtwGrList();
 
-        for(var i=0;i<codesFormattedList.length;i++){
+        for (var vat in btwGrList){
 
-            /**
-             * 
-             * per ogni elemento presente nella lista (gruppo 1a,1b...) trovo i bilanci di ogni trimestre (array) e li salvo in un array
-             * esempio:
-             * vatBalances[0][0]= 1a, bilancio vat al primo trimeestre (31.03.20XX)
-             * vatBalances[0][1]= 1a, bilancio vat al secondo trimeestre (30.06.20XX)
-             * vatBalances[1][0]= 2a, bilancio vat al primo trimeestre (31.03.20XX)
-             * ...
-             * .....
-             * 
-             */
-             var vatCurrBal=this.banDoc.vatCurrentBalances(codesFormattedList[i],'Q');
-            vatBalances.push(vatCurrBal[0].vatAmount);
+            var formattedCodes=this.setParamCodes(btwGrList[vat].vatCodes);
+
+            var vatCurrBal=this.banDoc.vatCurrentBalances(formattedCodes,'Q');
+            btwGrList[vat].vatValues="";
+            //salvo i i valori calcolati in una stringa separata da ';'
+            for(var i=0; i<vatCurrBal.length;i++){
+                if(vatCurrBal[i].vatAmount)
+                    btwGrList[vat].vatValues+=vatCurrBal[i].vatAmount+";";
+            }
+            
 
         }
-
-        return vatBalances;
-    }
-
-    setGr1List(){
-        var gr1List=["1a","1b","1c","1d","1e","2a","3a","3b","3c","4a","4b","5a","5b"];
-        return gr1List;
-
-
-    }
-
-    getCodesFormattedList(){
-        var codesData=this.getCodesData();
-        var grList=this.setGr1List();
-        var strList=[];
-
-        for(var i=0;i<grList.length;i++){
-
-            //per ogni gruppo chiamo il metodo che formatta la stringa per il vat balance, ed inserisco tutte le stringhe in un array che ritorno 
-            strList.push(this.setParamCodes(codesData,grList[i]));
-        }
-
-        return strList;
+        return btwGrList;
     }
 
     /**
@@ -386,22 +376,13 @@
      * all codes in the codes array that have the property gr1Code=gr1 are inserted into the string,
      * which is then formatted to match the structure expected by the current balance function.
      */
-    setParamCodes(codesData, gr1){
-        var  paramCodes="";
+    setParamCodes(codes){
 
-        for( var row in codesData ){
-            let code=codesData[row];
-            if(code.gr1Code==gr1)
-                paramCodes+=code.vatCode+"|";
-        }
+        var  formCodes="";
+        if(codes)
+        formCodes=codes.replace(";","|");
 
-        //in case the string ends with a '|' i cut off the last char.
-        var strLen=paramCodes.length;
-        if(paramCodes.substr(strLen-1)=="|"){
-            var slicePos=strLen-1
-            paramCodes=paramCodes.substr(0,slicePos);
-        }
-        return paramCodes;
+        return formCodes;
     }
 
     getAmountForGr1(codesData,gr1){
