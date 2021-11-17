@@ -44,7 +44,7 @@
  * 
  * 
  * 
- *                                                               31.03.2021                 30.06.2021              ...for each quarter 
+ *                                                               31.03.2021                 30.06.2021              ...same structurefor each quarter 
  * 
  *              Group description                            Sales        VAT           Sales         VAT
  * 
@@ -80,7 +80,17 @@
         var tableBalance = report.addTable('reportTable');
         tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
         //columns
-        tableBalance.addColumn("c1").setStyleAttributes("width:60%");
+        tableBalance.addColumn("c1").setStyleAttributes("width:50%");
+        tableBalance.addColumn("c2").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c3").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c4").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c5").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c6").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c7").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c8").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c9").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c8").setStyleAttributes("width:12%");
+        tableBalance.addColumn("c9").setStyleAttributes("width:12%");
 
         return tableBalance;
     }
@@ -91,6 +101,7 @@
         headerParagraph.addParagraph(documentInfo.company, "styleNormalHeader styleCompanyName");
         headerParagraph.addParagraph(documentInfo.address, "styleNormalHeader");
         headerParagraph.addParagraph(documentInfo.zip+", "+documentInfo.city, "styleNormalHeader");
+        headerParagraph.addParagraph(documentInfo.vatNumber, "styleNormalHeader");
         headerParagraph.addParagraph("", "");
         headerParagraph.addParagraph("", "");
         headerParagraph.addParagraph("", "");
@@ -150,7 +161,7 @@
         btwGrList.firstE.vatCodes="V0";
         btwGrList.firstE.description="1e. Leveringen/diensten belast met 0% of niet bij u belast";
         btwGrList.firstE.hasOmzet=true;
-        btwGrList.firstE.hasOmzetBelasting=true;
+        btwGrList.firstE.hasOmzetBelasting=false;
 
         //SECOND "RUBRIEK"
         //2a
@@ -219,6 +230,7 @@
         btwGrList.fifthA={};
         btwGrList.fifthA.gr="5";
         btwGrList.fifthA.code="5a";
+        //5a is the sum of the rubriek 1-4, so does not have any code.
         btwGrList.fifthA.vatCodes="";
         btwGrList.fifthA.description="5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)";
         btwGrList.fifthA.hasOmzet=false;
@@ -228,7 +240,7 @@
         btwGrList.fifthB={};
         btwGrList.fifthB.gr="5";
         btwGrList.fifthB.code="5b";
-        btwGrList.fifthA.vatCodes="IG21;IG9;IG0;IGV;D21-2;D9-2";
+        btwGrList.fifthB.vatCodes="IG21;IG9;IG0;IGV;D21-2;D9-2";
         btwGrList.fifthB.description="5b. Voorbelasting";
         btwGrList.fifthB.hasOmzet=false;
         btwGrList.fifthB.hasOmzetBelasting=true;
@@ -242,7 +254,7 @@
      * @param {*} rubriek 
      * @returns 
      */
-    getRubriekTitle(rubriek){
+    getRubricTitle(rubriek){
         var rubTitle="";
 
         switch(rubriek){
@@ -275,8 +287,8 @@
     getReportAmount(value){
         
         var reportAmount="";
-
-        reportAmount=Math.trunc(Banana.SDecimal.abs(value));
+        if(value && value!=" ")
+            reportAmount=Math.trunc(Banana.SDecimal.abs(value));
 
         return reportAmount;
     }
@@ -286,19 +298,54 @@
      */
     getAccountingAmount(value){
 
-        return Banana.SDecimal.abs(value);
+        if(value && value!=" ")
+            return Banana.SDecimal.abs(value);
+        else
+            return value;
+
+    }
+
+    /**
+     * Format and returns an array with the returns the final date of each quarter, alrea
+     */
+    getQuarters(){
+        var quarters=[];
+
+        //get the current year
+        var date = new Date();
+        var currentYear = date.getFullYear();
+
+        var q1=currentYear+"0331";
+        q1=Banana.Converter.toLocaleDateFormat(q1);
+        quarters.push(q1);
+
+        var q2=currentYear+"0630";
+        q2=Banana.Converter.toLocaleDateFormat(q2)
+        quarters.push(q2);
+
+        var q3=currentYear+"0930";
+        q3=Banana.Converter.toLocaleDateFormat(q3)
+        quarters.push(q3);
+
+        var q4=currentYear+"1231";
+        q4=Banana.Converter.toLocaleDateFormat(q4)
+        quarters.push(q4);
+
+        //last column (annual)
+        quarters.push("Jaarlijks");
+
+        return quarters;
 
     }
 
     createBtwDeclarationReport(){
 
         var vatGrData=this.getVatGrData();
-        var rubriek="";
-        var rubSum_accounting=""; //accounting value
-        var rubSum_report=""; //report value
-        var reportTotal="";
-        var accountingTotal="";
-        var quarters=4;
+        var vatDeductible=this.getTotalVatDeductible();//deductible vat
+        var vatPosted=this.getVatPosted();//VatAmount - VatNotDeductible
+        var reportAmount="";
+        var rubric="";
+        var quarters=this.getQuarters();
 
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
@@ -310,65 +357,225 @@
         //I go through all the elements and print the values
         for(var key in vatGrData){
 
-            Banana.console.debug(JSON.stringify(vatGrData[key]));
-            //Debug: "{\"gr\":\"1\",\"code\":\"1a\",\"vatCodes\":\"V21\",\"description\":\"1a. Leveringen/diensten belast met hoog tarief\",\"hasOmzet\":true,\"hasOmzetBelasting\":true,\"vatValues\":\"-4360.53;-4012.91;-4188.89;-4539.30;\"}"
-
+            //Banana.console.debug(JSON.stringify(vatGrData[key]));
+           
             var group=vatGrData[key];
 
             //if change group we add rubriek description
-            if(group.gr!==rubriek){
-                //empty row
-                var tableRow = reportTable.addRow("");
-                tableRow.addCell("", "",9);
+            if(group.gr!==rubric){
 
                 //title row
-                var rubTitle=this.getRubriekTitle(group.gr);
+                var rubTitle=this.getRubricTitle(group.gr);
                 var tableRow = reportTable.addRow("");
-                tableRow.addCell(rubTitle, "styleRubriekTitle",9);
+                tableRow.addCell(rubTitle, "styleRubriekTitle",11);
+
+                //quarter indication
+                var tableRow = reportTable.addRow("");
+                tableRow.addCell("");
+                for(var i=0; i<quarters.length;i++){
+                    tableRow.addCell(quarters[i], "styleQuarters",2);
+                }
+
+                //columns header row
+                var tableRow = reportTable.addRow("");
+                tableRow.addCell("", "");
+                for(var i=0; i<quarters.length;i++){
+                    if(group.gr=="5")
+                        tableRow.addCell("", "");
+                    else
+                        tableRow.addCell("Omzet", "");
+                        
+                    tableRow.addCell("Omzetbelasting", "");
+                }
 
             }
+                //add groups
+                var tableRow = reportTable.addRow("");
+                //add the description
+                tableRow.addCell(group.description,"");
+                if(group.code!="5a"){
+                    //recupero gli importi: VAT e Imponibile
+                    var vatValue=group.vatValues.toString();
+                    var vatValueList=vatValue.split(";");
+                    var taxableValue=group.vatTaxable.toString();
+                    var TaxableValuelist=taxableValue.split(";")
+                    for(var i=0; i<vatValueList.length-1;i++){
+                        //add Omzet amounts
+                        if(group.hasOmzet){
+                            reportAmount=this.getReportAmount(TaxableValuelist[i])
+                            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(reportAmount,"",false),"styleAmount");
+                        }else{
+                            tableRow.addCell("");
+                        }
+                        if(group.hasOmzetBelasting){
+                        //add Omzetbelasting amounts
+                            reportAmount=this.getReportAmount(vatValueList[i])
+                            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(reportAmount,"",false),"styleAmount");
+                        }else{
+                            tableRow.addCell("");
+                        }
+                    }
+                } else{//add the sum of rubriek 1 to 4 in the group 5a.
+                    for(var i=0; i<vatDeductible.length;i++){
+                        tableRow.addCell("","");
+                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatDeductible[i].report,"",false), "styleAmount");
+                    }
+                }
 
-            //add groups
-            var tableRow = reportTable.addRow("");
-            //add the description
-            tableRow.addCell(group.description,"");
-            //recupero gli importi 
-            var value=group.vatValues.toString();
-            var valuelist=value.split(";")
-            for(var i=0; i<valuelist.length;i++){
-                tableRow.addCell(valuelist[i],"styleAmount");
-            }
 
-            rubriek=group.gr;
+                rubric=group.gr;
 
 
         }
+
+        //add the total
+        //empty row
+        var tableRow = reportTable.addRow("");
+        tableRow.addCell("", "",11);
+        //total row
+        var tableRow = reportTable.addRow("");
+        tableRow.addCell("Eindtotaal", "");
+        for(var i=0;i<vatPosted.length;i++){
+            tableRow.addCell("","");
+            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatPosted[i].report,"",false), "styleAmount");
+        }
+
+        /*//add the accounting value and the rounding difference
+        //empty row
+        var tableRow = reportTable.addRow("");
+        tableRow.addCell("", "",13);
+        //Accounting value row
+        var tableRow = reportTable.addRow("");
+        tableRow.addCell("Accounting Value", "");
+        for(var i=0;i<vatPosted.length;i++){
+            tableRow.addCell("","");
+            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatPosted[i].accounting,"",false), "styleAmount");
+            tableRow.addCell(" | ","");
+        }
+        //Rounding difference row
+        var tableRow = reportTable.addRow("");
+        tableRow.addCell("Rounding difference", "");
+        for(var i=0;i<vatPosted.length;i++){
+            tableRow.addCell("","");
+            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatPosted[i].difference,"",false), "styleAmount");
+            tableRow.addCell(" | ","");
+        }*/
+
 
 
         return report;
 
     }
 
+    /**
+     * Adds to the object the property vatValues ord vatTaxable which contains a string with the quarterly values of the VAT amounts/tabxable calculated for each group divided by ';'.
+     * @param {*} isVat 
+     * @returns 
+     */
     getVatGrData(){
 
         var btwGrList=this.setBtwGrList();
 
-        for (var vat in btwGrList){
+        for (var gr in btwGrList){
 
-            var formattedCodes=this.setParamCodes(btwGrList[vat].vatCodes);
+            var formattedCodes=this.setParamCodes(btwGrList[gr].vatCodes);
+            btwGrList[gr].vatValues="";
+            btwGrList[gr].vatTaxable="";
 
+            //get quarters balance
             var vatCurrBal=this.banDoc.vatCurrentBalances(formattedCodes,'Q');
-            btwGrList[vat].vatValues="";
+
             //salvo i i valori calcolati in una stringa separata da ';'
             for(var i=0; i<vatCurrBal.length;i++){
-                if(vatCurrBal[i].vatAmount)
-                    btwGrList[vat].vatValues+=vatCurrBal[i].vatAmount+";";
+
+                btwGrList[gr].vatValues+=vatCurrBal[i].vatAmount+";";
+                if(btwGrList[gr].code!=="5b")//for 5b there is no taxable amount 
+                    btwGrList[gr].vatTaxable+=vatCurrBal[i].vatTaxable+";";
+
             }
+
+            //get complete year balance
+            var vatCurrBal=this.banDoc.vatCurrentBalance(formattedCodes);
+            btwGrList[gr].vatValues+=vatCurrBal.vatAmount+";";
+            if(btwGrList[gr].code!=="5b")//for 5b there is no taxable amount 
+                btwGrList[gr].vatTaxable+=vatCurrBal.vatTaxable+";";
+
             
 
         }
         return btwGrList;
     }
+
+    /**
+     * Get the total of the VAT vatDeductible.
+     * 5a-5b
+     * @param {*} vatGrData object with groups data 
+     * @param {*} rubricsSums array with rubrics sums
+     */
+
+     getTotalVatDeductible(){
+
+        var vatDeductible=[];
+
+
+        //calculate quarters
+        var vatCurrBal=this.banDoc.vatCurrentBalances("*","Q","","",onlyVatDeductible);
+
+        for(var i=0; i<vatCurrBal.length;i++){
+            var vatDeductibleAmounts={};
+            vatDeductibleAmounts.report=this.getReportAmount(vatCurrBal[i].vatAmount);
+            vatDeductibleAmounts.accounting=this.getAccountingAmount(vatCurrBal[i].vatAmount);
+
+            vatDeductible.push(vatDeductibleAmounts);
+
+        }
+
+        //calculate year
+        var vatCurrBal=this.banDoc.vatCurrentBalance("*","","",onlyVatDeductible);
+        var vatDeductibleAmounts={};
+        vatDeductibleAmounts.report=this.getReportAmount(vatCurrBal.vatAmount);
+        vatDeductibleAmounts.accounting=this.getAccountingAmount(vatCurrBal.vatAmount);
+        vatDeductible.push(vatDeductibleAmounts);
+
+        return vatDeductible;
+    }
+
+    /**
+     * Get the total of the VAT posted: VatAmount - VatNotDeductible.
+     * @param {*} vatGrData object with groups data 
+     * @returns an array with the results
+     */
+     getVatPosted(){
+        var vatPosted=[];
+
+        //calculate quarters
+        var vatCurrBal=this.banDoc.vatCurrentBalances("*","Q");
+
+
+        for(var i=0; i<vatCurrBal.length;i++){
+            var vatPostedAmounts={};
+            vatPostedAmounts.report=this.getReportAmount(vatCurrBal[i].vatPosted);
+            vatPostedAmounts.accounting=this.getAccountingAmount(vatCurrBal[i].vatPosted);
+            vatPostedAmounts.difference=Banana.SDecimal.subtract(vatPosted.accounting,vatPostedAmounts.accounting);
+
+            vatPosted.push(vatPostedAmounts);
+
+        }
+
+        //calculate year
+        var vatCurrBal=this.banDoc.vatCurrentBalance("*");
+        var vatPostedAmounts={};
+        vatPostedAmounts.report=this.getReportAmount(vatCurrBal.vatPosted);
+        vatPostedAmounts.accounting=this.getAccountingAmount(vatCurrBal.vatPosted);
+        Banana.console.debug( vatPostedAmounts.report);
+        vatPostedAmounts.difference=Banana.SDecimal.subtract(vatPostedAmounts.accounting,vatPostedAmounts.report);
+
+        vatPosted.push(vatPostedAmounts);
+
+        return vatPosted;
+    }
+
+    
 
     /**
      * This method sets the string that will be passed to the vatCurrentBalance() function. 
@@ -380,54 +587,9 @@
 
         var  formCodes="";
         if(codes)
-        formCodes=codes.replace(";","|");
+        formCodes=codes.replace(/[;]/g, '|');
 
         return formCodes;
-    }
-
-    getAmountForGr1(codesData,gr1){
-        var gr1Amount="";
-        for(var key in codesData ){
-            if(codesData[key].gr1Code==gr1){
-                gr1Amount=Banana.SDecimal.add(gr1Amount,codesData[key].taxableAmount);
-            }
-        }
-        return Banana.Converter.toLocaleNumberFormat(Banana.SDecimal.roundNearest(gr1Amount,'0.00'),0,false);
-    }
-
-    /**
-     * Retrieves from the vat codes table all the vat codes together with their associated gr1 group and saves everything in an object.
-     * @returns 
-     */
-    getBtwCodes(){
-        var codes=[];
-        var table = this.banDoc.table("VatCodes");
-        if (!table)
-            return codes;
-
-        for (var i = 0; i < table.rowCount; i++) {
-            var btwCode={};
-            var tRow = table.row(i);
-            var vatCode = tRow.value("VatCode");
-            var gr1Code= tRow.value("Gr1");
-
-            if(vatCode && ! gr1Code){
-                //error message: Warning code 'XYZ' without Gr1.
-                var msg =this.getErrorMessage(this.VATCODE_WITHOUT_GR1,"en",vatCode);
-                this.banDoc.addMessage(msg,this.VATCODE_WITHOUT_GR1);
-            }
-
-            if (vatCode && gr1Code) {
-  
-                btwCode.vatCode=vatCode;
-                btwCode.gr1Code=gr1Code;
-
-                codes.push(btwCode);
-                //Banana.console.debug(JSON.stringify(btwCode));
-            }
-        }
-
-        return codes;
     }
 
     /**
@@ -447,12 +609,33 @@
         }
     }
 
+    verifyifHasGr1(){
+        var codes=[];
+        var table = this.banDoc.table("VatCodes");
+        if (!table)
+            return codes;
+
+        for (var i = 0; i < table.rowCount; i++) {
+            var tRow = table.row(i);
+            var vatCode = tRow.value("VatCode");
+            var gr1Code= tRow.value("Gr1");
+
+            if(vatCode && !gr1Code){
+                //error message: Warning code 'XYZ' without Gr1.
+                var msg =this.getErrorMessage(this.VATCODE_WITHOUT_GR1,"en",vatCode);
+                this.banDoc.addMessage(msg,this.VATCODE_WITHOUT_GR1);
+            }
+        }
+        return true;
+    }
+
     getDocumentInfo(){
         var documentInfo = {};
         documentInfo.company ="";
         documentInfo.address ="";
         documentInfo.zip ="";
         documentInfo.city ="";
+        documentInfo.vatNumber="";
 
 
         if (this.banDoc) {
@@ -464,44 +647,11 @@
                 documentInfo.zip = this.banDoc.info("AccountingDataBase", "Zip");
             if(this.banDoc.info("AccountingDataBase", "City"))
                 documentInfo.city = this.banDoc.info("AccountingDataBase", "City");
+            if(this.banDoc.info("AccountingDataBase", "VatNumber"))
+                documentInfo.vatNumber = this.banDoc.info("AccountingDataBase", "VatNumber");
         }
 
         return documentInfo;
-    }
-
-    /**
-     * Retrieves from the transactions table  all the rows with a BTW code and a taxable amounts.
-     * in a second time creates and object that extend 'codes' by summing the taxable amount for each code.
-     */
-    getTransactionsRows(){
-        //fare in modo di salvare i dati in un array suddiviso per il periodo
-        var transData=[];
-        var from=this.getJsDate(this.startDate);
-        var to=this.getJsDate(this.endDate);
-
-        var table = this.banDoc.table("Transactions");
-        if (!table)
-            return transData;
-
-        for (var i = 0; i < table.rowCount; i++) {
-            var transRow={};
-            var tRow = table.row(i);
-            var vatCode = tRow.value("VatCode");
-            var vatTaxable= tRow.value("VatTaxable");
-            var trDate=tRow.value("Date");
-
-            if (vatCode && vatTaxable && trDate) {
-                trDate=this.getJsDate(trDate);
-                if(trDate>from && trDate<to){
-                    transRow.vatCode=vatCode;
-                    transRow.vatTaxable=vatTaxable;
-                    transData.push(transRow);
-                }
-            }
-        }
-        
-        return transData;
-                    
     }
 
     /**
@@ -515,43 +665,9 @@
 
     }
 
-    /**
-     * Cerca nei dati salvati dalle registrazioni, tutte le righe con il codice iva corrispondente a quello passato come parametro, 
-     * se il codice corrisponde somma l'importo di iva tassabile in una variabile.
-     * 
-     */
-    getVatTaxableAmounts(vatCode){
-        var trRows=this.getTransactionsRows();
-        var taxableAmount="";
-        if(!trRows)
-            return taxableAmount;
-
-        for(var key in trRows){
-            //Banana.console.debug("prova");
-            var row=trRows[key];
-            if(row.vatCode==vatCode){
-                taxableAmount=Banana.SDecimal.add(taxableAmount,row.vatTaxable);
-            }
-        }
-
-        return taxableAmount;
-    }
-
-    /**
-     * Aggiunge un nuovo campo agli oggetti dentro codes: l'oggetto Amount che contiene il totale di iva tassabile per calcolato per ogni codice iva.
-     */
-    getCodesData(){
-        var codesData=this.getBtwCodes();
-        for(var row in codesData){
-            codesData[row].taxableAmount=this.getVatTaxableAmounts(codesData[row].vatCode);
-        }
-        return codesData;
-
-    }
-
     getReportStyle() {
         var textCSS = "";
-        var file = Banana.IO.getLocalFile("file:script/ch.banana.nl.app.btw.declaration.report.css");
+        var file = Banana.IO.getLocalFile("file:script/ch.banana.nl.app.btw.evaluation.report.css");
         var fileContent = file.read();
         if (!file.errorString) {
             Banana.IO.openPath(fileContent);
@@ -569,6 +685,27 @@
     }
  }
 
+  /**
+  * This function is called from the vatCurrentBalance, if a vat code is of type Deductible, the value is taken in the calculation.
+  * @param {*} row 
+  * @param {*} rowNr 
+  * @param {*} table 
+  * @returns 
+  */
+   function onlyVatDeductible( row, rowNr, table){
+    switch(row.value('VatCode')){
+        case "IG21":
+        case"IG9":
+        case"IG0":
+        case"IGV":
+        case"D21-2":
+        case"D9-2":
+        return false;
+    }
+
+    return true;
+}
+
  function exec(inData, options) {
 
 
@@ -576,6 +713,7 @@
         return "@Cancel";
 
     var btwEvaluationReport= new BTWEvaluationReport(Banana.document);
+    btwEvaluationReport.verifyifHasGr1();
     var report = btwEvaluationReport.createBtwDeclarationReport();
     var stylesheet = btwEvaluationReport.getReportStyle();
     Banana.Report.preview(report,stylesheet);

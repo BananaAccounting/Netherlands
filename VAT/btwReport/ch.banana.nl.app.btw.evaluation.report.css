@@ -17,6 +17,11 @@ table {
     border-color: rgb(0, 0, 0);
 }
 
+table.reportTable td {
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
 .styleNormalHeader{
     text-align: right;
 }
