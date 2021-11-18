@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.btw.evaluation.report.js
 // @api = 1.0
-// @pubdate = 2021-11-10
+// @pubdate = 2021-11-18
 // @publisher = Banana.ch SA
 // @description.en = BTW Evaluation NL [BETA]
 // @description.nl = BTW Evaluatie NL [BETA]
@@ -76,6 +76,11 @@
         this.VATCODE_WITHOUT_GR1 = "VATCODE_WITHOUT_GR1";
     }
 
+    /**
+     * Defines and return the table structure
+     * @param {*} report 
+     * @returns 
+     */
     getReportTable(report) {
         var tableBalance = report.addTable('reportTable');
         tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
@@ -95,6 +100,10 @@
         return tableBalance;
     }
 
+    /**
+     * Defines and return the header
+     * @param {*} report 
+     */
     getReportHeader(report){
         var documentInfo=this.getDocumentInfo();
         var headerParagraph = report.getHeader().addSection();
@@ -109,12 +118,10 @@
     }
 
     /**
-     * Defines an object with information on vat code groupings.
+     * Defines the structure of the groups  
      */
     setBtwGrList(){
         var btwGrList={};
-
-        //se cambia gr, chiamo un metodo che a dipendenza del gruppo mi mette la descrizione.
 
         //FIRST RUBRIEK
 
@@ -340,12 +347,12 @@
 
     createBtwDeclarationReport(){
 
+        var quarters=this.getQuarters();
         var vatGrData=this.getVatGrData();
-        var vatDeductible=this.getTotalVatDeductible();//deductible vat
-        var vatPosted=this.getVatPosted();//VatAmount - VatNotDeductible
+        var VatDue=this.getTotalVatDue(vatGrData,quarters);
+        var VatDifference=this.getVatDifference(vatGrData,VatDue);
         var reportAmount="";
         var rubric="";
-        var quarters=this.getQuarters();
 
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
@@ -395,7 +402,7 @@
                 tableRow.addCell(group.description,"");
                 if(group.code!="5a"){
                     //recupero gli importi: VAT e Imponibile
-                    var vatValue=group.vatValues.toString();
+                    var vatValue=group.vatAmount_report.toString();
                     var vatValueList=vatValue.split(";");
                     var taxableValue=group.vatTaxable.toString();
                     var TaxableValuelist=taxableValue.split(";")
@@ -416,9 +423,9 @@
                         }
                     }
                 } else{//add the sum of rubriek 1 to 4 in the group 5a.
-                    for(var i=0; i<vatDeductible.length;i++){
+                    for(var i=0; i<VatDue.report.length;i++){
                         tableRow.addCell("","");
-                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatDeductible[i].report,"",false), "styleAmount");
+                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatDue.report[i],"",false), "styleAmount");
                     }
                 }
 
@@ -435,9 +442,9 @@
         //total row
         var tableRow = reportTable.addRow("");
         tableRow.addCell("Eindtotaal", "");
-        for(var i=0;i<vatPosted.length;i++){
+        for(var i=0;i<VatDifference.report.length;i++){
             tableRow.addCell("","");
-            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatPosted[i].report,"",false), "styleAmount");
+            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatDifference.report[i],"",false), "styleAmount");
         }
 
         /*//add the accounting value and the rounding difference
@@ -447,17 +454,17 @@
         //Accounting value row
         var tableRow = reportTable.addRow("");
         tableRow.addCell("Accounting Value", "");
-        for(var i=0;i<vatPosted.length;i++){
+        for(var i=0;i<VatDifference.length;i++){
             tableRow.addCell("","");
-            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatPosted[i].accounting,"",false), "styleAmount");
+            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatDifference[i].accounting,"",false), "styleAmount");
             tableRow.addCell(" | ","");
         }
         //Rounding difference row
         var tableRow = reportTable.addRow("");
         tableRow.addCell("Rounding difference", "");
-        for(var i=0;i<vatPosted.length;i++){
+        for(var i=0;i<VatDifference.length;i++){
             tableRow.addCell("","");
-            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatPosted[i].difference,"",false), "styleAmount");
+            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatDifference[i].difference,"",false), "styleAmount");
             tableRow.addCell(" | ","");
         }*/
 
@@ -468,7 +475,7 @@
     }
 
     /**
-     * Adds to the object the property vatValues ord vatTaxable which contains a string with the quarterly values of the VAT amounts/tabxable calculated for each group divided by ';'.
+     * Calculate and adds to the object the properties vatAmount and vatTaxable to each quarter, each result is stored in a string and the values are separated by ";"
      * @param {*} isVat 
      * @returns 
      */
@@ -479,16 +486,17 @@
         for (var gr in btwGrList){
 
             var formattedCodes=this.setParamCodes(btwGrList[gr].vatCodes);
-            btwGrList[gr].vatValues="";
+            btwGrList[gr].vatAmount_report="";
+            btwGrList[gr].vatAmount_accounting="";
             btwGrList[gr].vatTaxable="";
 
             //get quarters balance
             var vatCurrBal=this.banDoc.vatCurrentBalances(formattedCodes,'Q');
 
-            //salvo i i valori calcolati in una stringa separata da ';'
+            //save the calculated values in a string ';'
             for(var i=0; i<vatCurrBal.length;i++){
-
-                btwGrList[gr].vatValues+=vatCurrBal[i].vatAmount+";";
+                btwGrList[gr].vatAmount_report+=this.getReportAmount(vatCurrBal[i].vatAmount)+";";
+                btwGrList[gr].vatAmount_accounting+=this.getAccountingAmount(vatCurrBal[i].vatAmount)+";";
                 if(btwGrList[gr].code!=="5b")//for 5b there is no taxable amount 
                     btwGrList[gr].vatTaxable+=vatCurrBal[i].vatTaxable+";";
 
@@ -496,7 +504,8 @@
 
             //get complete year balance
             var vatCurrBal=this.banDoc.vatCurrentBalance(formattedCodes);
-            btwGrList[gr].vatValues+=vatCurrBal.vatAmount+";";
+            btwGrList[gr].vatAmount_report+=this.getReportAmount(vatCurrBal.vatAmount)+";";
+            btwGrList[gr].vatAmount_accounting+=this.getAccountingAmount(vatCurrBal.vatAmount)+";";
             if(btwGrList[gr].code!=="5b")//for 5b there is no taxable amount 
                 btwGrList[gr].vatTaxable+=vatCurrBal.vatTaxable+";";
 
@@ -507,72 +516,101 @@
     }
 
     /**
-     * Get the total of the VAT vatDeductible.
-     * 5a-5b
+     * Get the total of the VAT VatDue (rubrics 1-4).
      * @param {*} vatGrData object with groups data 
      * @param {*} rubricsSums array with rubrics sums
      */
 
-     getTotalVatDeductible(){
+     getTotalVatDue(btwGrList){
 
-        var vatDeductible=[];
-
-
-        //calculate quarters
-        var vatCurrBal=this.banDoc.vatCurrentBalances("*","Q","","",onlyVatDeductible);
-
-        for(var i=0; i<vatCurrBal.length;i++){
-            var vatDeductibleAmounts={};
-            vatDeductibleAmounts.report=this.getReportAmount(vatCurrBal[i].vatAmount);
-            vatDeductibleAmounts.accounting=this.getAccountingAmount(vatCurrBal[i].vatAmount);
-
-            vatDeductible.push(vatDeductibleAmounts);
-
+        var VatDue={};
+        
+        //report value
+        var reportValues=[];
+        for(var i=0; i<5;i++){
+            var sum="";
+            for (var gr in btwGrList){
+                if(btwGrList[gr].gr!="5"){
+                    var vatValue=btwGrList[gr].vatAmount_report.toString();
+                    var vatValueList=vatValue.split(";");
+                    if(vatValueList[i]){
+                        sum=Banana.SDecimal.add(sum,vatValueList[i]);
+                    }
+                }
+            }
+            reportValues.push(sum);
         }
 
-        //calculate year
-        var vatCurrBal=this.banDoc.vatCurrentBalance("*","","",onlyVatDeductible);
-        var vatDeductibleAmounts={};
-        vatDeductibleAmounts.report=this.getReportAmount(vatCurrBal.vatAmount);
-        vatDeductibleAmounts.accounting=this.getAccountingAmount(vatCurrBal.vatAmount);
-        vatDeductible.push(vatDeductibleAmounts);
+        //accounting value
+        //save the account value of every quarter
+        var vatCurrBal=this.banDoc.vatCurrentBalances("*","Q",onlyVatDue);
+        var accountingValues=[];
+        for(var i=0; i<vatCurrBal.length;i++){
+            var value=vatCurrBal[i].vatAmount;
+            accountingValues.push(value);
+        }
+        //add the annual accounting value
+        var vatCurrBal=this.banDoc.vatCurrentBalance("*",onlyVatDue);
+        accountingValues.push(vatCurrBal.vatAmount);
 
-        return vatDeductible;
+        //assegno i due array Ureport values e accounting values)all'oggetto vat Due
+        VatDue.report=reportValues;
+        VatDue.accounting=this.getAccountingAmount(accountingValues);
+
+        return VatDue;
     }
 
     /**
-     * Get the total of the VAT posted: VatAmount - VatNotDeductible.
+     * Get the Difference of the VAT, 5a (due vat)- 5b(deductible vat)
      * @param {*} vatGrData object with groups data 
      * @returns an array with the results
      */
-     getVatPosted(){
-        var vatPosted=[];
+     getVatDifference(btwGrList,VatDue){
+        var VatDifference={};
 
-        //calculate quarters
-        var vatCurrBal=this.banDoc.vatCurrentBalances("*","Q");
+        //Mettere a posto
 
+        //report
+        var vatDifferenceReport=[];
+        for(var i=0; i<5;i++){
+            var result="";
+            var vat_deductible_value=btwGrList.fifthB.vatAmount_report.toString();
+            var vat_deductible_valueList=vat_deductible_value.split(";");
+            result=Banana.SDecimal.subtract(VatDue.report[i],vat_deductible_valueList[i]);
 
-        for(var i=0; i<vatCurrBal.length;i++){
-            var vatPostedAmounts={};
-            vatPostedAmounts.report=this.getReportAmount(vatCurrBal[i].vatPosted);
-            vatPostedAmounts.accounting=this.getAccountingAmount(vatCurrBal[i].vatPosted);
-            vatPostedAmounts.difference=Banana.SDecimal.subtract(vatPosted.accounting,vatPostedAmounts.accounting);
+            Banana.console.debug(result);
 
-            vatPosted.push(vatPostedAmounts);
-
+            vatDifferenceReport.push(result);
         }
 
-        //calculate year
-        var vatCurrBal=this.banDoc.vatCurrentBalance("*");
-        var vatPostedAmounts={};
-        vatPostedAmounts.report=this.getReportAmount(vatCurrBal.vatPosted);
-        vatPostedAmounts.accounting=this.getAccountingAmount(vatCurrBal.vatPosted);
-        Banana.console.debug( vatPostedAmounts.report);
-        vatPostedAmounts.difference=Banana.SDecimal.subtract(vatPostedAmounts.accounting,vatPostedAmounts.report);
+        var vatDifferenceAccounting=[];
+        for(var i=0; i<5;i++){
+            var result="";
+            var vat_deductible_value=btwGrList.fifthB.vatAmount_accounting.toString();
+            var vat_deductible_valueList=vat_deductible_value.split(";");
+            result=Banana.SDecimal.subtract(VatDue.accounting[i],vat_deductible_valueList[i]);
 
-        vatPosted.push(vatPostedAmounts);
+            Banana.console.debug(result);
 
-        return vatPosted;
+            vatDifferenceAccounting.push(result);
+        }
+
+        var vatDifferenceRounding=[];
+        for(var i=0; i<vatDifferenceAccounting.length;i++){
+            var difference="";
+
+            difference=Banana.SDecimal.subtract(vatDifferenceAccounting[i],vatDifferenceReport[i]);
+
+            vatDifferenceRounding.push(difference);
+        }
+
+
+        VatDifference.report=vatDifferenceReport;
+        VatDifference.accounting=vatDifferenceAccounting;
+        VatDifference.difference=vatDifferenceRounding; 
+
+
+        return VatDifference;
     }
 
     
@@ -629,6 +667,10 @@
         return true;
     }
 
+    /**
+     * return the document info
+     * @returns 
+     */
     getDocumentInfo(){
         var documentInfo = {};
         documentInfo.company ="";
@@ -665,6 +707,10 @@
 
     }
 
+    /**
+     * Defines the style for the report
+     * @returns 
+     */
     getReportStyle() {
         var textCSS = "";
         var file = Banana.IO.getLocalFile("file:script/ch.banana.nl.app.btw.evaluation.report.css");
@@ -692,7 +738,7 @@
   * @param {*} table 
   * @returns 
   */
-   function onlyVatDeductible( row, rowNr, table){
+   function onlyVatDue( row, rowNr, table){
     switch(row.value('VatCode')){
         case "IG21":
         case"IG9":

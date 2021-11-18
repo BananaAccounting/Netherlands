@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.btw.evaluation.report.js
 // @api = 1.0
-// @pubdate = 2021-11-11
+// @pubdate = 2021-11-18
 // @publisher = Banana.ch SA
 // @description.en = Update BTW table NL [BETA]
 // @description.nl = BTW tabel update NL [BETA]
@@ -28,8 +28,8 @@
 /*
 *   SUMMARY
 *
-*   This Exstension check if the VAT table version, if the versione does not include the column Gr1, adds the column and assign the correct group
-*   to the vat codes (the standard ones). version is checked by comparing a string in the description column of the table, example string:id=vatcodes-nl-2019.20190121.
+*   This Exstension check if the VAT table version, if the column Gr1 is not present, adds the column and assign the correct group
+*   to the vat codes (the standard ones).
 *
 *   The extension could be reused for other VAT tables of other countries
 *   
@@ -39,20 +39,43 @@ function exec(inData, options){
 
     var jsonDoc="";
     var newDocsArray=[];
-    //prova, data da cambiare
-    var newestVersion=".20211111";
-    var IsOutdated=false;
-    var msg="The VAT table is already updated to the latest version"
+    var msg="The VAT table is already updated to the latest version";
 
-    IsOutdated=checkVatTableVersion(newestVersion);
+    newDocsArray=this.UpdateVatTable(msg);
+
+    jsonDoc = { "format": "documentChange", "error": "" };
+    jsonDoc["data"] = newDocsArray;
 
 
-    if(IsOutdated){
-        newDocsArray=this.UpdateVatTable();
-        jsonDoc = { "format": "documentChange", "error": "" };
-        jsonDoc["data"] = newDocsArray;
+    return jsonDoc;
 
-    }else{
+}
+
+/**
+ * Creates the JSON documents for update the table.
+ * if no changes are made means that the table is already the latest version and the user 
+ * is informed
+ * @returns 
+ */
+function UpdateVatTable(msg){
+    var jsonDoc=[];
+    var lastVersion=true;
+
+
+    //Check if exists the column, or if we need to add it.
+    if(!this.hasGr1Column()){
+        //create the document to add the column
+        jsonDoc.push(this.addColumnDocument());
+    }
+
+    var codesList=getVatCodesWithoutGr1();
+    if(codesList.length>0){
+
+        jsonDoc.push(this.addGr1Document(codesList));
+        lastVersion=false;
+    }
+
+    if(lastVersion){
         Banana.document.addMessage(msg);
     }
 
@@ -61,28 +84,13 @@ function exec(inData, options){
 
 }
 
-function UpdateVatTable(){
-    var jsonDoc=[];
-
-
-    //Check if exists the column, or if we need to add it.
-    if(this.hasGr1Column()){
-        //create only the document to modify the rows
-        jsonDoc.push(this.addGr1Document());
-
-    }else{
-        //create the document to add the column and to modify the rows
-        jsonDoc.push(this.addColumnDocument());
-        jsonDoc.push(this.addGr1Document());
-    }
-
-    return jsonDoc;
-
-}
-
+/**
+ * Check if Gr1 Column exists
+ * @returns 
+ */
 function hasGr1Column(){
     var hasGr1Column=false;
-    var table = Banana.document.table("Accounts");
+    var table = Banana.document.table("VatCodes");
     var tColumnNames = table.columnNames;
 
     for (var i=0;i<tColumnNames.length;i++){
@@ -93,29 +101,33 @@ function hasGr1Column(){
     return hasGr1Column;
 }
 
-function addGr1Document(){
+/**
+ * Creates the document that add the gr1 to the existing rows(vat codes)
+ * @param {*} codeList the list of the vat code with missing Gr1
+ * @returns 
+ */
+function addGr1Document(codeList){
 
     var jsonDoc=initJsonDoc();
 
     //create rows
-    createJsonDoc_addGr1Codes(jsonDoc);
+    createJsonDoc_addGr1Codes(jsonDoc,codeList);
 
     return jsonDoc;
 
 }
 
-function createJsonDoc_addGr1Codes(jsonDoc){
+/**
+ * Create Change rows
+ * @param {*} jsonDoc the change document
+ * @param {*} codeList the list of vat codes without gr1
+ */
+function createJsonDoc_addGr1Codes(jsonDoc,codeList){
 
     var rows=[];
-    var vatCodesData=getVatCodesData();
 
-    //devo aggiungere il gruppo all'indice dove si trova il codice giusto.
-    //il codice giusto è quello
-
-    for(var key in vatCodesData){
-        var vatData=vatCodesData[key];
-
-
+    for(var key in codeList){
+        var vatData=codeList[key];
 
         var row = {};
         row.operation = {};
@@ -123,10 +135,10 @@ function createJsonDoc_addGr1Codes(jsonDoc){
         row.operation.sequence = vatData.rowNr;
         row.fields = {};
 
-        row.fields["Gr1"] = vatData.gr1;
+        row.fields["Gr1"] = getGr1(vatData.vatCode);
 
-        if(vatData.gr1)
-            rows.push(row);
+        
+        rows.push(row);
 
 
     }
@@ -140,7 +152,10 @@ function createJsonDoc_addGr1Codes(jsonDoc){
     jsonDoc.document.dataUnits.push(dataUnitFilePorperties);
 }
 
-
+/**
+ * Initialise the Json document
+ * @returns 
+ */
 function initJsonDoc(){
     var jsonDoc = {};
     jsonDoc.document = {};
@@ -159,6 +174,10 @@ function initJsonDoc(){
     return jsonDoc;
 }
 
+/**
+ * Return the Json structure for add the Gr1 Column
+ * @returns 
+ */
 function addColumnDocument(){
     var columnDoc={
         "document": {
@@ -188,6 +207,10 @@ function addColumnDocument(){
     return columnDoc;
 }
 
+/**
+ * Returns the vat table
+ * @returns 
+ */
 function getVatTable(){
 
     var table = Banana.document.table("VatCodes");
@@ -197,29 +220,11 @@ function getVatTable(){
         return table;
 }
 
-function getVatCodesData(){
-
-    var vatCodes=[];
-    var table=getVatTable();
-
-    for (var i = 0; i < table.rowCount; i++) {
-        var vatData={};
-        var tRow = table.row(i);
-        vatData.vatCode=tRow.value("VatCode");
-        //row+1
-        vatData.rowNr=tRow.rowNr.toString();
-        //aggiungo ad ognuno il gr1
-        vatData.gr1=getGr1(vatData.vatCode);
-
-        if(vatData.vatCode){
-            vatCodes.push(vatData);
-        }
-    }
-
-    return vatCodes;
-
-}
-
+/**
+ * Return the group for each vat code
+ * @param {*} vatCode 
+ * @returns 
+ */
 function getGr1(vatCode){
     var group="";
 
@@ -234,14 +239,8 @@ function getGr1(vatCode){
             group="1c"
             return group;
         case "PG21":
-            group="1d"
-            return group;
         case "PG9":
-            group="1d"
-            return group;
         case "PG27":
-            group="1d"
-            return group;
         case "PG15":
             group="1d"
             return group;
@@ -249,8 +248,6 @@ function getGr1(vatCode){
             group="1e"
             return group;
         case "VR21":
-            group="2a"
-            return group;
         case "VR9":
             group="2a"
             return group;
@@ -264,8 +261,6 @@ function getGr1(vatCode){
             group="3c"
             return group;
         case "VIX21":
-            group="4a"
-            return group;
         case "VIX9":
             group="4a"
             return group;
@@ -276,47 +271,79 @@ function getGr1(vatCode){
             group="4b"
             return group;    
         case "IG21":
-            group="5b"
-            return group;
         case "IG9":
-            group="5b"
-            return group;
         case "IG0":
-            group="5b"
-            return group;
         case "IGV":
-            group="5b"
-            return group;
         case "D21-2":
-            group="5b"
-            return group;
         case "D9-2":
             group="5b"
             return group;
+        default:
+            return "";
     }
 
 }
 
-function checkVatTableVersion(newestVersion){
+/**
+ * Check that the code passed should have a gr1
+ */
+function shouldHaveGr1(vatCode){
+
+    switch(vatCode){
+        case "V21":
+        case "V9":
+        case "VOT":
+        case "PG21":
+        case "PG9":
+        case "PG27":
+        case "PG15":
+        case "V0":
+        case "VR21":
+        case "VR9":
+        case "VX":
+        case "VEU":
+        case "VEUI":
+        case "VIX21":
+        case "VIX9":
+        case "ICP21":
+        case "ICP9":
+        case "IG21":
+        case "IG9":
+        case "IG0":
+        case "IGV":
+        case "D21-2":
+        case "D9-2":
+            return true;
+        default:
+            return false
+    }
+
+}
+/**
+ * Check if every code has a Gr1, the codes are considerated if they are in the defined list.
+ * This list contains the codes that must have a gr1 because they need it for the vat declaration form.
+ * @param {*} newestVersion 
+ * @returns 
+ */
+function getVatCodesWithoutGr1(){
 
     var table=getVatTable();
+    var codesList=[];
+
+    Banana.console.debug(codesList.length);
 
     for (var i = 0; i < table.rowCount; i++) {
+        var vatData={};
         var tRow = table.row(i);
-        var description=tRow.value("Description");
+        vatData.vatCode=tRow.value("VatCode");
+        vatData.gr1=tRow.value("Gr1");
+        vatData.rowNr=tRow.rowNr.toString();
+        var shouldHavit =shouldHaveGr1(vatData.vatCode);
 
-
-        if(description.indexOf("id=vatcodes")>=0 || description==""){
-            //find the position of the date
-            var pos=description.indexOf('.');
-            //extract the date
-            var versionDate=description.substr(pos);
-            //check if it is equal to the newest one
-            if(versionDate==newestVersion){
-                return false;
-            }else{
-                return true;
-            }
+        if(vatData.vatCode && !vatData.gr1 && shouldHavit ){
+            codesList.push(vatData);
         }
     }
+    Banana.console.debug(codesList.length);
+    return codesList;
 }
