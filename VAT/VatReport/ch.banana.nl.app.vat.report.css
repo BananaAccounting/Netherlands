@@ -17,7 +17,7 @@ table {
     border-color: rgb(0, 0, 0);
 }
 
-table.reportTable td {
+table.evaluationTable td {
     border-style: solid;
     border-color: rgb(0, 0, 0);
 }
@@ -33,7 +33,6 @@ table.reportTable td {
 
 .styleAmount {
     text-align: right;
-    background-color: aliceblue;
 }
 .styleRubriekTitle{
     font-weight: bold;

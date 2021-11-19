@@ -16,8 +16,8 @@
 // @api = 1.0
 // @pubdate = 2021-11-18
 // @publisher = Banana.ch SA
-// @description.en = BTW Declaration NL [BETA]
-// @description.nl = BTW Verklaring NL [BETA]
+// @description.en = Netherlands VAT Declaration [BETA]
+// @description.nl = Netherlands VAT  Declaration [BETA]
 // @doctype = *.*
 // @outputformat = none
 // @inputdataform = none
@@ -32,7 +32,8 @@
 *
 *   specific:
 *   -All amounts should be without decimals and rounded down, for this reason it is necessary to indicate the accounting amount and the rounding difference.
-*   -User should decide the period
+*   -The vatCurrentBalance/vatCurrentBalances API is used to calculate the vat. of the properties it returns we use "vatPosted" as it is already net of non-deductible vat.
+*   -BTW=VAT
 */
 
 /**
@@ -78,8 +79,8 @@
      * @param {*} report 
      * @returns 
      */
-    getReportTable(report) {
-        var tableBalance = report.addTable('reportTable');
+    getDeclarationTable(report) {
+        var tableBalance = report.addTable('declarationTable');
         tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(this.startDate)+"/"+Banana.Converter.toLocaleDateFormat(this.endDate));
         //columns
         tableBalance.addColumn("c1").setStyleAttributes("width:60%");
@@ -307,15 +308,15 @@
     createBtwDeclarationReport(){
 
         var vatGrData=this.getVatGrData();
-        var VatDue=this.getTotalVatDue(vatGrData);
-        var VatDifference=this.getVatDifference(vatGrData,VatDue);
+        var vatDue=this.getTotalVatDue(vatGrData);
+        var VatTotal=this.getVatTotal(vatGrData,vatDue);
         var rubric="";
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
         this.getReportHeader(report);
 
         //add the table
-        var reportTable = this.getReportTable(report);
+        var declarationTable = this.getDeclarationTable(report);
 
 
         //I go through all the elements and print the values
@@ -326,16 +327,16 @@
             //each time the group (the rubriek) change, i add the the rubriek title
             if(rubric!==group.gr){
                 //empty row
-                var tableRow = reportTable.addRow("");
+                var tableRow = declarationTable.addRow("");
                 tableRow.addCell("", "",3);
 
                 //title row
                 var rubTitle=this.getRubriekTitle(group.gr);
-                var tableRow = reportTable.addRow("");
+                var tableRow = declarationTable.addRow("");
                 tableRow.addCell(rubTitle, "styleRubriekTitle",3);
 
                 //columns header row
-                var tableRow = reportTable.addRow("");
+                var tableRow = declarationTable.addRow("");
                 tableRow.addCell("", "");
                 tableRow.addCell("Omzet", "");
                 tableRow.addCell("Omzetbelasting", "");
@@ -343,7 +344,7 @@
             }
 
             //add groups
-            var tableRow = reportTable.addRow("");
+            var tableRow = declarationTable.addRow("");
             //add the description
             tableRow.addCell(group.description,"");
             if(group.code!="5a"){
@@ -361,7 +362,7 @@
                 }
             } else{//add the sum of rubriek 1 to 4 in the group 5a.
                 tableRow.addCell("","");
-                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatDue.report,"0",false), "styleAmount");
+                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatDue,"0",false), "styleAmount");
             }
 
             rubric=group.gr;
@@ -370,24 +371,24 @@
 
         //add the total
         //empty row
-        var tableRow = reportTable.addRow("");
+        var tableRow = declarationTable.addRow("");
         tableRow.addCell("", "",3);
 
         //total row
-        var tableRow = reportTable.addRow("");
+        var tableRow = declarationTable.addRow("");
         tableRow.addCell("Eindtotaal", "");
         tableRow.addCell("", "");
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatDifference.report,"",false), "styleAmount");
+        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatTotal.report,"",false), "styleAmount");
 
         
         //accounting amount
         var accAmountParagraph=report.addParagraph();
         //check the accounting amount
-        accAmountParagraph.addText("Accounting end total: "+Banana.Converter.toLocaleNumberFormat(VatDifference.accounting,"2",false),"styleFinalParagraphs");
+        accAmountParagraph.addText("Eindtotaal(accounting value): "+Banana.Converter.toLocaleNumberFormat(VatTotal.accounting,"2",false),"styleFinalParagraphs");
 
         //rounding difference
         var roundDiffParagraph=report.addParagraph();
-        roundDiffParagraph.addText("Rounding difference: "+VatDifference.difference,"styleFinalParagraphs");
+        roundDiffParagraph.addText("Rounding difference: "+VatTotal.difference,"styleFinalParagraphs");
 
 
         return report;
@@ -409,9 +410,7 @@
 
             var vatCurrBal=this.banDoc.vatCurrentBalance(formattedCodes,this.startDate,this.endDate);
 
-            //save the vat (amount with decimals for the accounting and trunc down for the report)
-            btwGrList[gr].vatAmount_report=this.getReportAmount(vatCurrBal.vatAmount);
-            btwGrList[gr].vatAmount_accounting=this.getAccountingAmount(vatCurrBal.vatAmount);
+            btwGrList[gr].vatAmount_report=this.getReportAmount(vatCurrBal.vatPosted);
 
             //for 5b there is no taxable amount 
             if(btwGrList[gr].code!=="5b")
@@ -423,45 +422,44 @@
 
     /**
      * Get the total of the VAT Due (rubriek 1-4)
-     * @param {*} vatGrData object with groups data 
-     * @param {*} rubricsSums array with rubrics sums
+     * The total displayed on the report (trunc) is calculated summing the vat amounts of the groups btwGrList object.
+     * @param {*} vatGrData object with groups data.
      */
 
     getTotalVatDue(btwGrList){
-        var VatDue={};
+        var vatDue="";
 
         for (var gr in btwGrList){
             if(btwGrList[gr].gr!="5")
-                VatDue.report=Banana.SDecimal.add(VatDue.report,btwGrList[gr].vatAmount_report);
+            vatDue=Banana.SDecimal.add(vatDue,btwGrList[gr].vatAmount_report);
         }
 
-        var vatCurrBal=this.banDoc.vatCurrentBalance("*",this.startDate,this.endDate,onlyVatDue);
+        vatDue=this.getReportAmount(vatDue);
 
-        VatDue.report=this.getReportAmount(VatDue.report);
-        VatDue.accounting=this.getAccountingAmount(vatCurrBal.vatAmount);
-
-        return VatDue;
+        return vatDue;
     }
 
     /**
-     * Get the total of the VAT posted: VatAmount - VatDue.
+     * Get the total of the VAT: Vat Due-Vat deductible, and the difference between the report amount and the accounting amount
+     * Vat Total Report: result taken by subtracting the calculated Vat due and the vat deductible calculated for the group 5b.
+     * Vat Total Accounting: total calculated with the vatCurrentBalance.
+     * Vat difference: the difference between the amount trunc calculated for the report and the accounting amount
      * @param {*} vatGrData object with groups data 
      * @returns an array with the results
      */
-    getVatDifference(btwGrList,VatDue){
-        var VatDifference={};
+    getVatTotal(btwGrList,vatDue){
+        var VatTotal={};
 
         //report total
         var vat_deductible=btwGrList.fifthB.vatAmount_report;
-        VatDifference.report=Banana.SDecimal.subtract(VatDue.report,vat_deductible);
-        //Banana.console.debug(VatDifference.report);
+        VatTotal.report=Banana.SDecimal.subtract(vatDue,vat_deductible);
         //accounting total
-        var vat_deductible=btwGrList.fifthB.vatAmount_accounting;
-        VatDifference.accounting=Banana.SDecimal.subtract(VatDue.accounting,vat_deductible);
+        var accTotal=this.banDoc.vatCurrentBalance("*",this.startDate,this.endDate);
+        VatTotal.accounting=this.getAccountingAmount(accTotal.vatPosted);
         //report/accounting difference
-        VatDifference.difference=Banana.SDecimal.subtract(VatDifference.accounting,VatDifference.report);
+        VatTotal.difference=Banana.SDecimal.subtract(VatTotal.accounting,VatTotal.report);
 
-        return VatDifference;
+        return VatTotal;
     }
 
     /**
@@ -477,23 +475,6 @@
         formCodes=codes.replace(/[;]/g, '|');
 
         return formCodes;
-    }
-
-    /**
-     * returns the error message
-     * @param {*} errorId 
-     * @param {*} lang 
-     * @returns 
-     */
-    getErrorMessage(errorId, lang,vatCode) {
-        if (!lang)
-            lang = 'en';
-        switch (errorId) {
-            case this.VATCODE_WITHOUT_GR1:
-                return "The following VAT code: "+ vatCode +" does not have a Gr1 assigned, check in your VAT codes Table";
-            default:
-                return '';
-        }
     }
 
     verifyifHasGr1(){
@@ -556,7 +537,7 @@
 
     getReportStyle() {
         var textCSS = "";
-        var file = Banana.IO.getLocalFile("file:script/ch.banana.nl.app.btw.declaration.report.css");
+        var file = Banana.IO.getLocalFile("file:script/ch.banana.nl.app.vat.report.css");
         var fileContent = file.read();
         if (!file.errorString) {
             Banana.IO.openPath(fileContent);
@@ -572,28 +553,93 @@
 
         return stylesheet;
     }
- }
 
- /**
-  * This function is called from the vatCurrentBalance, if a vat code is of type deductible vat, the value is taken in the calculation.
-  * @param {*} row 
-  * @param {*} rowNr 
-  * @param {*} table 
-  * @returns 
-  */
- function onlyVatDue( row, rowNr, table){
-    switch(row.value('VatCode')){
-        case "IG21":
-        case"IG9":
-        case"IG0":
-        case"IGV":
-        case"D21-2":
-        case"D9-2":
+    /**
+     * @description checks the type of error that has occurred and returns a message.
+     * @Param {*} errorId: the error identification
+     * @Param {*} lang: the language
+     * @returns empty
+     */
+    getErrorMessage(errorId, lang,vatCode) {
+        if (!lang)
+            lang = 'en';
+        switch (errorId) {
+            case this.VATCODE_WITHOUT_GR1:
+                return "The following VAT code: "+ vatCode +" does not have a Gr1 assigned, check in your VAT codes Table";
+            case this.ID_ERR_EXPERIMENTAL_REQUIRED:
+                return "The Experimental version is required";
+            case this.ID_ERR_LICENSE_NOTVALID:
+                return "This extension requires Banana Accounting+ Advanced";
+            case this.ID_ERR_VERSION_NOTSUPPORTED:
+                if (lang == 'it')
+                    return "Lo script non funziona con la vostra attuale versione di Banana Contabilità.\nVersione minimina richiesta: %1.\nPer aggiornare o per maggiori informazioni cliccare su Aiuto";
+                else if (lang == 'fr')
+                    return "Ce script ne s'exécute pas avec votre version actuelle de Banana Comptabilité.\nVersion minimale requise: %1.\nPour mettre à jour ou pour plus d'informations, cliquez sur Aide";
+                else if (lang == 'de')
+                    return "Das Skript wird mit Ihrer aktuellen Version von Banana Buchhaltung nicht ausgeführt.\nMindestversion erforderlich: %1.\nKlicken Sie auf Hilfe, um zu aktualisieren oder weitere Informationen zu bekommen";
+                else
+                    return "This script does not run with your current version of Banana Accounting.\nMinimum version required: %1.\nTo update or for more information click on Help";
+        }
+        return '';
+    }
+
+    isBananaAdvanced() {
+        // Starting from version 10.0.7 it is possible to read the property Banana.application.license.isWithinMaxRowLimits 
+        // to check if all application functionalities are permitted
+        // the version Advanced returns isWithinMaxRowLimits always false
+        // other versions return isWithinMaxRowLimits true if the limit of transactions number has not been reached
+
+        if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, "10.0.7") >= 0) {
+            var license = Banana.application.license;
+            if (license.licenseType === "advanced" || license.isWithinMaxFreeLines) {
+                return true;
+            }
+        }
+
         return false;
     }
 
-    return true;
-}
+    bananaRequiredVersion(requiredVersion, expmVersion) {
+        /**
+         * Check Banana version
+         */
+        if (expmVersion) {
+            requiredVersion = requiredVersion + "." + expmVersion;
+        }
+        if (Banana.compareVersion && Banana.compareVersion(Banana.application.version, requiredVersion) >= 0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @description checks the software version, only works with the latest version: 10.0.7, if the version is not the latest
+     * shows an error message
+     */
+    verifyBananaVersion() {
+        if (!this.banDoc)
+            return false;
+
+        var BAN_VERSION_MIN = "10.0.7";
+        var BAN_DEV_VERSION_MIN = "";
+        var CURR_VERSION = this.bananaRequiredVersion(BAN_VERSION_MIN, BAN_DEV_VERSION_MIN);
+        var CURR_LICENSE = this.isBananaAdvanced();
+
+        if (!CURR_VERSION) {
+            var msg = this.getErrorMessage(this.ID_ERR_VERSION_NOTSUPPORTED,"en","");
+            msg = msg.replace("%1", BAN_VERSION_MIN);
+            this.banDoc.addMessage(msg, this.ID_ERR_VERSION_NOTSUPPORTED);
+            return false;
+        }
+
+        if (!CURR_LICENSE) {
+            var msg = this.getErrorMessage(this.ID_ERR_LICENSE_NOTVALID, "en","");
+            this.banDoc.addMessage(msg, this.ID_ERR_LICENSE_NOTVALID);
+            return false;
+        }
+        return true;
+    }
+ }
 
  function getPeriodSettings(param) {
 
@@ -656,6 +702,11 @@
         return "@Cancel";
 
     var btwDeclarationReport= new BTWDeclarationReport(Banana.document,dateForm.selectionStartDate, dateForm.selectionEndDate);
+
+    if(!btwDeclarationReport.verifyBananaVersion()){
+        return "@Cancel";
+    }
+
     btwDeclarationReport.verifyifHasGr1();
     var report = btwDeclarationReport.createBtwDeclarationReport();
     var stylesheet = btwDeclarationReport.getReportStyle();
