@@ -350,19 +350,19 @@
             if(group.code!="5a"){
                 //add Omzet amounts
                 if(group.hasOmzet){
-                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatTaxable,"",false),"styleAmount");
+                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatTaxable,"",false),"styleAmount styleAmount_decl");
                 }else{
                     tableRow.addCell("");
                 }
                 if(group.hasOmzetBelasting){
                     //add Omzetbelasting amounts
-                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatAmount_report,"",false),"styleAmount");
+                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatAmount_report,"",false),"styleAmount styleAmount_decl");
                 }else{
                     tableRow.addCell("");
                 }
             } else{//add the sum of rubriek 1 to 4 in the group 5a.
                 tableRow.addCell("","");
-                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatDue,"0",false), "styleAmount");
+                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatDue,"0",false), "styleAmount styleAmount_decl");
             }
 
             rubric=group.gr;
@@ -378,7 +378,7 @@
         var tableRow = declarationTable.addRow("");
         tableRow.addCell("Eindtotaal", "");
         tableRow.addCell("", "");
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatTotal.report,"",false), "styleAmount");
+        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatTotal.report,"",false), "styleAmount styleAmount_decl");
 
         
         //accounting amount

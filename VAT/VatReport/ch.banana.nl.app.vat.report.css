@@ -34,6 +34,10 @@ table.evaluationTable td {
 .styleAmount {
     text-align: right;
 }
+.styleAmount.styleAmount_decl {
+    text-align: right;
+    background-color: aliceblue;
+}
 .styleRubriekTitle{
     font-weight: bold;
 }

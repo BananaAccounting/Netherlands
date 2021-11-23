@@ -40,8 +40,10 @@ function exec(inData, options){
     var jsonDoc="";
     var newDocsArray=[];
     var msg="The VAT table is already updated to the latest version";
+    var banDoc=Banana.document;
+    var vatTable=getVatTable(banDoc);
 
-    newDocsArray=this.UpdateVatTable(msg);
+    newDocsArray=UpdateVatTable(msg,banDoc,vatTable);
 
     jsonDoc = { "format": "documentChange", "error": "" };
     jsonDoc["data"] = newDocsArray;
@@ -57,26 +59,25 @@ function exec(inData, options){
  * is informed
  * @returns 
  */
-function UpdateVatTable(msg){
+function UpdateVatTable(msg,banDoc,vatTable){
     var jsonDoc=[];
     var lastVersion=true;
 
-
     //Check if exists the column, or if we need to add it.
-    if(!this.hasGr1Column()){
+    if(!hasGr1Column(vatTable)){
         //create the document to add the column
-        jsonDoc.push(this.addColumnDocument());
+        jsonDoc.push(addColumnDocument());
     }
 
-    var codesList=getVatCodesWithoutGr1();
+    var codesList=getVatCodesWithoutGr1(vatTable);
     if(codesList.length>0){
 
-        jsonDoc.push(this.addGr1Document(codesList));
+        jsonDoc.push(addGr1Document(codesList));
         lastVersion=false;
     }
 
     if(lastVersion){
-        Banana.document.addMessage(msg);
+        banDoc.addMessage(msg);
     }
 
 
@@ -88,9 +89,9 @@ function UpdateVatTable(msg){
  * Check if Gr1 Column exists
  * @returns 
  */
-function hasGr1Column(){
+function hasGr1Column(vatTable){
     var hasGr1Column=false;
-    var table = Banana.document.table("VatCodes");
+    var table = vatTable;
     var tColumnNames = table.columnNames;
 
     for (var i=0;i<tColumnNames.length;i++){
@@ -211,9 +212,9 @@ function addColumnDocument(){
  * Returns the vat table
  * @returns 
  */
-function getVatTable(){
+function getVatTable(banDoc){
 
-    var table = Banana.document.table("VatCodes");
+    var table = banDoc.table("VatCodes");
     if (!table)
         return "";
     else 
@@ -325,12 +326,9 @@ function shouldHaveGr1(vatCode){
  * @param {*} newestVersion 
  * @returns 
  */
-function getVatCodesWithoutGr1(){
-
-    var table=getVatTable();
+function getVatCodesWithoutGr1(vatTable){
     var codesList=[];
-
-    Banana.console.debug(codesList.length);
+    var table=vatTable;
 
     for (var i = 0; i < table.rowCount; i++) {
         var vatData={};
@@ -344,6 +342,5 @@ function getVatCodesWithoutGr1(){
             codesList.push(vatData);
         }
     }
-    Banana.console.debug(codesList.length);
     return codesList;
 }
