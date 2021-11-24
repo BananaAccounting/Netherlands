@@ -138,7 +138,6 @@ function createJsonDoc_addGr1Codes(jsonDoc,codeList){
 
         row.fields["Gr1"] = getGr1(vatData.vatCode);
 
-        
         rows.push(row);
 
 

@@ -31,7 +31,7 @@
 *   This Exstension creates a VAT delcaration report for Netherland.
 *
 *   specific:
-*   -All amounts should be without decimals and rounded down, for this reason it is necessary to indicate the accounting amount and the rounding difference.
+*   In the Dutch VAT return it is possible to round down the amounts of VAT due and round up the recoverable VAT
 *   -The vatCurrentBalance/vatCurrentBalances API is used to calculate the vat. of the properties it returns we use "vatPosted" as it is already net of non-deductible vat.
 *   -BTW=VAT
 */
@@ -113,8 +113,6 @@
      setBtwGrList(){
         var btwGrList={};
 
-        //se cambia gr, chiamo un metodo che a dipendenza del gruppo mi mette la descrizione.
-
         //FIRST RUBRIEK
 
         //1a
@@ -148,7 +146,7 @@
         btwGrList.firstD={};
         btwGrList.firstD.gr="1";
         btwGrList.firstD.code="1d";
-        btwGrList.firstD.vatCodes="PG21;PG9;PG27;PG15";
+        btwGrList.firstD.vatCodes="PG21|PG9|PG27|PG15";
         btwGrList.firstD.description="1d. Privégebruik";
         btwGrList.firstD.hasOmzet=true;
         btwGrList.firstD.hasOmzetBelasting=true;
@@ -167,7 +165,7 @@
         btwGrList.secondA={};
         btwGrList.secondA.gr="2";
         btwGrList.secondA.code="2a";
-        btwGrList.secondA.vatCodes="VR21;VR9";
+        btwGrList.secondA.vatCodes="VR21|VR9";
         btwGrList.secondA.description="2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd";
         btwGrList.secondA.hasOmzet=true;
         btwGrList.secondA.hasOmzetBelasting=true;
@@ -208,7 +206,7 @@
         btwGrList.fourthA={};
         btwGrList.fourthA.gr="4";
         btwGrList.fourthA.code="4a";
-        btwGrList.fourthA.vatCodes="VIX21;VIX9";
+        btwGrList.fourthA.vatCodes="VIX21|VIX9";
         btwGrList.fourthA.description="4a. Leveringen/diensten uit landen buiten de EU";
         btwGrList.fourthA.hasOmzet=true;
         btwGrList.fourthA.hasOmzetBelasting=true;
@@ -217,7 +215,7 @@
         btwGrList.fourthB={};
         btwGrList.fourthB.gr="4";
         btwGrList.fourthB.code="4b";
-        btwGrList.fourthB.vatCodes="ICP21;ICP9";
+        btwGrList.fourthB.vatCodes="ICP21|ICP9";
         btwGrList.fourthB.description="4b. Leveringen/diensten uit landen binnen de EU";
         btwGrList.fourthB.hasOmzet=true;
         btwGrList.fourthB.hasOmzetBelasting=true;
@@ -229,7 +227,6 @@
         btwGrList.fifthA={};
         btwGrList.fifthA.gr="5";
         btwGrList.fifthA.code="5a";
-        //5a is the sum of the rubriek 1-4, so does not have any code.
         btwGrList.fifthA.vatCodes="";
         btwGrList.fifthA.description="5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)";
         btwGrList.fifthA.hasOmzet=false;
@@ -239,10 +236,40 @@
         btwGrList.fifthB={};
         btwGrList.fifthB.gr="5";
         btwGrList.fifthB.code="5b";
-        btwGrList.fifthB.vatCodes="IG21;IG9;IG0;IGV;D21-2;D9-2";
+        btwGrList.fifthB.vatCodes="IG21|IG9|IG0|IGV|D21-2|D9-2";
         btwGrList.fifthB.description="5b. Voorbelasting";
         btwGrList.fifthB.hasOmzet=false;
         btwGrList.fifthB.hasOmzetBelasting=true;
+
+
+        //NINTH      * Group 9 does not exists in the vat declaration form, we created it olny for store totals (report total, accounting total and difference between those two)
+
+        //9a
+        btwGrList.ninthA={};
+        btwGrList.ninthA.gr="9";
+        btwGrList.ninthA.code="9a";
+        btwGrList.ninthA.vatCodes="";
+        btwGrList.ninthA.description="Eindtotaal";
+        btwGrList.ninthA.hasOmzet=false;
+        btwGrList.ninthA.hasOmzetBelasting=false;
+
+        //9b
+        btwGrList.ninthB={};
+        btwGrList.ninthB.gr="9";
+        btwGrList.ninthB.code="9b";
+        btwGrList.ninthB.vatCodes="";
+        btwGrList.ninthB.description="Eindtotaal(Accounting)";
+        btwGrList.ninthB.hasOmzet=false;
+        btwGrList.ninthB.hasOmzetBelasting=false;
+
+        //9c
+        btwGrList.ninthC={};
+        btwGrList.ninthC.gr="9";
+        btwGrList.ninthC.code="9c";
+        btwGrList.ninthC.vatCodes="";
+        btwGrList.ninthC.description="Rounding difference";
+        btwGrList.ninthC.hasOmzet=false;
+        btwGrList.ninthC.hasOmzetBelasting=false;
 
 
         return btwGrList;
@@ -279,37 +306,12 @@
     }
 
     /**
-     * Trunc the value as we want to see the amount in the report roundend down without decimals
-     * @param {*} value 
-     * @returns 
-     */
-    getReportAmount(value){
-        
-        var reportAmount="";
-
-        reportAmount=Math.trunc(Banana.SDecimal.abs(value));
-
-        return reportAmount;
-    }
-
-    /**
-     * Return the value taken from the accounting without sign
-     */
-    getAccountingAmount(value){
-
-        return Banana.SDecimal.abs(value);
-
-    }
-
-    /**
      * Creates the report
      * @returns 
      */
     createBtwDeclarationReport(){
 
-        var vatGrData=this.getVatGrData();
-        var vatDue=this.getTotalVatDue(vatGrData);
-        var VatTotal=this.getVatTotal(vatGrData,vatDue);
+        var results=this.getVatGrData();
         var rubric="";
         //create the report
         var report = Banana.Report.newReport('BTW declaration Report');
@@ -320,9 +322,9 @@
 
 
         //I go through all the elements and print the values
-        for(var row in vatGrData){
+        for(var row in results){
 
-            var group=vatGrData[row];
+            var group=results[row];
 
             //each time the group (the rubriek) change, i add the the rubriek title
             if(rubric!==group.gr){
@@ -342,54 +344,36 @@
                 tableRow.addCell("Omzetbelasting", "");
 
             }
+                //add the group fields
+                var tableRow = declarationTable.addRow("");
+                tableRow.addCell(group.description,"");
 
-            //add groups
-            var tableRow = declarationTable.addRow("");
-            //add the description
-            tableRow.addCell(group.description,"");
-            if(group.code!="5a"){
-                //add Omzet amounts
-                if(group.hasOmzet){
-                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatTaxable,"",false),"styleAmount styleAmount_decl");
-                }else{
-                    tableRow.addCell("");
-                }
-                if(group.hasOmzetBelasting){
+                if(group.gr!="9"){
+                    //add Omzet amounts
+                    if(group.hasOmzet){
+                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatBalance_formatted.vatTaxable,"",false),"styleAmount styleAmount_decl");
+                    }else{
+                        tableRow.addCell("","styleAmount");
+                    }   
+
+                    if(group.hasOmzetBelasting){
                     //add Omzetbelasting amounts
-                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatAmount_report,"",false),"styleAmount styleAmount_decl");
-                }else{
-                    tableRow.addCell("");
+                        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatBalance_formatted.vatPosted,"",false),"styleAmount styleAmount_decl");
+                    }else{
+                        tableRow.addCell("","styleAmount");
+                    }
+
+                }else{//add total amounts
+                    tableRow.addCell("","styleAmount");//Omzet is epmty
+                    var decimals="2"
+                    if(group.code=="9a")
+                        decimals="0";
+                    tableRow.addCell(Banana.Converter.toLocaleNumberFormat(group.vatBalance.vatAmount,decimals,false),"styleAmount styleAmount_decl");
                 }
-            } else{//add the sum of rubriek 1 to 4 in the group 5a.
-                tableRow.addCell("","");
-                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(vatDue,"0",false), "styleAmount styleAmount_decl");
-            }
 
             rubric=group.gr;
 
         }
-
-        //add the total
-        //empty row
-        var tableRow = declarationTable.addRow("");
-        tableRow.addCell("", "",3);
-
-        //total row
-        var tableRow = declarationTable.addRow("");
-        tableRow.addCell("Eindtotaal", "");
-        tableRow.addCell("", "");
-        tableRow.addCell(Banana.Converter.toLocaleNumberFormat(VatTotal.report,"",false), "styleAmount styleAmount_decl");
-
-        
-        //accounting amount
-        var accAmountParagraph=report.addParagraph();
-        //check the accounting amount
-        accAmountParagraph.addText("Eindtotaal(accounting value): "+Banana.Converter.toLocaleNumberFormat(VatTotal.accounting,"2",false),"styleFinalParagraphs");
-
-        //rounding difference
-        var roundDiffParagraph=report.addParagraph();
-        roundDiffParagraph.addText("Rounding difference: "+VatTotal.difference,"styleFinalParagraphs");
-
 
         return report;
 
@@ -402,79 +386,91 @@
      */
     getVatGrData(){
 
-        var btwGrList=this.setBtwGrList();
+        var periodData=this.setBtwGrList();
 
-        for (var gr in btwGrList){
+        //calculate vatAmounts
+        this.getVatGrData_GetVatAmount(periodData);
+        //format the amounts
+        this.getVatGrData_formatAmounts(periodData);
+        //5a
+        this.getVatGrData_CalcVatDue(periodData);
+        // 9 calc endtotals
+        this.getVatGrData_CalcVatTotal(periodData);
 
-            var formattedCodes=this.setParamCodes(btwGrList[gr].vatCodes);
-
-            var vatCurrBal=this.banDoc.vatCurrentBalance(formattedCodes,this.startDate,this.endDate);
-
-            btwGrList[gr].vatAmount_report=this.getReportAmount(vatCurrBal.vatPosted);
-
-            //for 5b there is no taxable amount 
-            if(btwGrList[gr].code!=="5b")
-                btwGrList[gr].vatTaxable=this.getReportAmount(vatCurrBal.vatTaxable);
-
-        }
-        return btwGrList;
+        return periodData;
     }
 
     /**
-     * Get the total of the VAT Due (rubriek 1-4)
-     * The total displayed on the report (trunc) is calculated summing the vat amounts of the groups btwGrList object.
-     * @param {*} vatGrData object with groups data.
+     * Calculate the vatBalance for each group
+     * @param {*} btwGrList 
      */
-
-    getTotalVatDue(btwGrList){
-        var vatDue="";
-
+    getVatGrData_GetVatAmount(btwGrList){
         for (var gr in btwGrList){
-            if(btwGrList[gr].gr!="5")
-            vatDue=Banana.SDecimal.add(vatDue,btwGrList[gr].vatAmount_report);
+            var vatCodes=btwGrList[gr].vatCodes;
+            var vatBalance=this.banDoc.vatCurrentBalance(vatCodes,this.startDate,this.endDate);
+            btwGrList[gr].vatBalance=vatBalance;
         }
-
-        vatDue=this.getReportAmount(vatDue);
-
-        return vatDue;
     }
 
+        /**
+     * Format all the amounts before the calculations, beacuse for them i need the right amounts
+     * @param {*} btwGrList 
+     */
+    getVatGrData_formatAmounts(btwGrList){
+        for (var gr in btwGrList){
+            var group=btwGrList[gr];
+            //format the amounts for the report, I format all values for rubrics 1 to 5 and put them in a new propertie. i do this for each property returned by currentBalance.
+            btwGrList[gr].vatBalance_formatted={};
+            if(group.code!=="5b"){
+                btwGrList[gr].vatBalance_formatted.vatPosted=Math.trunc(Banana.SDecimal.abs(group.vatBalance.vatPosted));
+                btwGrList[gr].vatBalance_formatted.vatAmount=Math.trunc(Banana.SDecimal.abs(group.vatBalance.vatAmount));
+                btwGrList[gr].vatBalance_formatted.vatTaxable=Math.trunc(Banana.SDecimal.abs(group.vatBalance.vatTaxable));
+            }else{
+                btwGrList[gr].vatBalance_formatted.vatPosted=Math.ceil(Banana.SDecimal.abs(group.vatBalance.vatPosted));
+                btwGrList[gr].vatBalance_formatted.vatAmount=Math.ceil(Banana.SDecimal.abs(group.vatBalance.vatAmount));
+                btwGrList[gr].vatBalance_formatted.vatTaxable=Math.ceil(Banana.SDecimal.abs(group.vatBalance.vatTaxable));
+            }
+        }
+
+    }
+
+    /* Get the total of the VAT Due (rubriek 1-4) for each quarter
+    * The total is calculated by adding up the amounts of the groups to which the VAT due codes belong.
+    * @param {*} vatGrData object with groups data.
+    */
+    getVatGrData_CalcVatDue(btwGrList){
+       var vatDue="";
+       //calculate the vat due value, i need only the formatted one
+       for (var gr in btwGrList){
+           if(btwGrList[gr].gr!="5"){
+               vatDue=Banana.SDecimal.add(vatDue,btwGrList[gr].vatBalance_formatted.vatPosted);
+           }
+       }
+       //add the value to the property
+       btwGrList.fifthA.vatBalance_formatted.vatPosted=vatDue;
+    }
     /**
      * Get the total of the VAT: Vat Due-Vat deductible, and the difference between the report amount and the accounting amount
      * Vat Total Report: result taken by subtracting the calculated Vat due and the vat deductible calculated for the group 5b.
      * Vat Total Accounting: total calculated with the vatCurrentBalance.
      * Vat difference: the difference between the amount trunc calculated for the report and the accounting amount
-     * @param {*} vatGrData object with groups data 
+     * @param {*} btwGrList object with groups data 
+     * @param {*} vatDue array with the calculated vat due for each quarter
      * @returns an array with the results
      */
-    getVatTotal(btwGrList,vatDue){
-        var VatTotal={};
+    getVatGrData_CalcVatTotal(btwGrList){
 
-        //report total
-        var vat_deductible=btwGrList.fifthB.vatAmount_report;
-        VatTotal.report=Banana.SDecimal.subtract(vatDue,vat_deductible);
+        //report total 5b
+        // 5a-5b assigned to group 9a
+        btwGrList.ninthA.vatBalance.vatAmount=Banana.SDecimal.subtract(btwGrList.fifthA.vatBalance_formatted.vatPosted,btwGrList.fifthB.vatBalance_formatted.vatPosted);
+
         //accounting total
-        var accTotal=this.banDoc.vatCurrentBalance("*",this.startDate,this.endDate);
-        VatTotal.accounting=this.getAccountingAmount(accTotal.vatPosted);
-        //report/accounting difference
-        VatTotal.difference=Banana.SDecimal.subtract(VatTotal.accounting,VatTotal.report);
+        var vatCurrBal=this.banDoc.vatCurrentBalance("*",this.startDate,this.endDate);
+        btwGrList.ninthB.vatBalance.vatAmount=Banana.SDecimal.abs(vatCurrBal.vatPosted);
 
-        return VatTotal;
-    }
-
-    /**
-     * This method sets the string that will be passed to the vatCurrentBalance() function. 
-     * The string is constructed on the basis of the gr1 parameter, 
-     * all codes in the codes array that have the property gr1Code=gr1 are inserted into the string,
-     * which is then formatted to match the structure expected by the current balance function.
-     */
-     setParamCodes(codes){
-
-        var  formCodes="";
-        if(codes)
-        formCodes=codes.replace(/[;]/g, '|');
-
-        return formCodes;
+        //difference
+        btwGrList.ninthC.vatBalance.vatAmount=Banana.SDecimal.subtract(btwGrList.ninthB.vatBalance.vatAmount,btwGrList.ninthA.vatBalance.vatAmount);
+        
     }
 
     verifyifHasGr1(){
@@ -522,17 +518,6 @@
         }
 
         return documentInfo;
-    }
-
-    /**
-     * Takes a date and return a JS date object
-     */
-    getJsDate(date){
-
-        var jsDate=Banana.Converter.toDate(date);
-
-        return jsDate;
-
     }
 
     getReportStyle() {

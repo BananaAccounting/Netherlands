@@ -57,9 +57,8 @@ VatEvaluationReportTest.prototype.cleanup = function() {
 VatEvaluationReportTest.prototype.testReport = function() {
 
     Test.logger.addComment("Test vatreport_declaration");
-    var currYear=getCurrentYear();
 
-    var fileAC2 = "file:script/../test/testcases/Bozza_per_IVA_NL.ac2";
+    var fileAC2 = "file:script/../test/testcases/Bozza_per_IVA_NL_Full_test.ac2";
     var banDoc = Banana.application.openDocument(fileAC2);
     if (!banDoc) {
         return;
@@ -67,7 +66,7 @@ VatEvaluationReportTest.prototype.testReport = function() {
 
   //Test current year
   Test.logger.addSubSection("Whole year report");
-  addReport(banDoc, "2021-01-01", "2021-12-31", "Whole year report");
+  addReport(banDoc, "2022-01-01", "2022-12-31", "Whole year report");
 
   //Test over two years..?
 
