@@ -1,10 +1,10 @@
 <!DOCTYPE RCC><RCC version="1.0">
  <qresource>
-    <file>ch.banana.nl.app.vat.declaration.report.js</file>
-    <file>ch.banana.nl.app.vat.evaluation.report.js</file>
+    <file>ch.banana.nl.app.vatstatement.report.js</file>
+    <file>ch.banana.nl.app.vatperiods.report.js</file>
     <file>ch.banana.nl.app.vat.report.manifest.json</file>
     <file>ch.banana.nl.app.vat.report.css</file>
-    <file>ch.banana.nl.app.vat.update.table.js</file>
+    <file>ch.banana.nl.app.vat.updatetable.js</file>
     <file>ch.banana.nl.app.vat.report.qrc</file>
  </qresource>
 </RCC>

@@ -16,8 +16,8 @@
 // @api = 1.0
 // @pubdate = 2021-11-18
 // @publisher = Banana.ch SA
-// @description.en = Update BTW table NL [BETA]
-// @description.nl = BTW tabel update NL [BETA]
+// @description.en = Update VAT table [BETA]
+// @description.nl = Update VAT table [BETA]
 // @doctype = *.*
 // @outputformat = none
 // @inputdataform = none
