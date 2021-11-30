@@ -12,24 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.nl.app.js
+// @id = ch.banana.nl.vat.js
 // @api = 1.0
-// @pubdate = 2021-11-18
+// @pubdate = 2021-11-29
 // @publisher = Banana.ch SA
 
 /*
 *   SUMMARY
 *
-*   this module defines class and methods used to print vat reports
+*   this module defines class and methods used to calculate and print vat reports
 */
 
 
  var VatReport = class VatReport {
 
-    constructor(banDoc,startDate,endDate){
+    constructor(banDoc,reportType){
         this.banDoc=banDoc;
-        this.startDate=startDate;
-        this.endDate=endDate;
+        this.reportType=reportType
 
         //errors
         this.VATCODE_WITHOUT_GR1 = "VATCODE_WITHOUT_GR1";
@@ -44,45 +43,43 @@
         //FIRST "RUBRIC"
         rubricsData[1]={};
         rubricsData[1].description='Rubriek 1: Prestaties binnenland';
-        rubricsData[1].style="styleRubriekTitle";
+        rubricsData[1].style="styleTotals styleRubriekTitle";
         rubricsData[1].isGroup = true;
         rubricsData[1].groups = this.setRubricsData_firstRubric();
 
         //SECOND "RUBRIC"
         rubricsData[2]={};
         rubricsData[2].description="Rubriek 2: Verleggingsregelingen";
-        rubricsData[2].style="styleRubriekTitle";
+        rubricsData[2].style="styleTotals styleRubriekTitle";
         rubricsData[2].isGroup = true;
         rubricsData[2].groups=this.setRubricsData_secondRubric();
 
         //THIRD "RUBRIC"
         rubricsData[3]={};
         rubricsData[3].description="Rubriek 3: Prestaties naar of in het buitenland";
-        rubricsData[3].style="styleRubriekTitle";
+        rubricsData[3].style="styleTotals styleRubriekTitle";
         rubricsData[3].isGroup = true;
         rubricsData[3].groups=this.setRubricsData_thirdRubric();
 
         //FOURTH "RUBRIC"
         rubricsData[4]={};
         rubricsData[4].description="Rubriek 4: Prestaties vanuit het buitenland aan u verricht";
-        rubricsData[4].style="styleRubriekTitle";
+        rubricsData[4].style="styleTotals styleRubriekTitle";
         rubricsData[4].groups=this.setRubricsData_fourthRubric();
 
-        //FIFTH "RUBRIEK"
+        //FIFTH "RUBRIC"
         rubricsData[5]={};
         rubricsData[5].description="Rubriek 5: Voorbelasting, kleineondernemersregeling en eindtotaal";
-        rubricsData[5].style="styleRubriekTitle";
+        rubricsData[5].style="styleTotals styleRubriekTitle";
         rubricsData[5].isGroup = true;
         rubricsData[5].groups=this.setRubricsData_fifthRubric();
 
-        //NINTH  * Group 9 does not exists in the vat declaration form, we created it olny for store totals (report total, accounting total and difference between those two)
+        //NINTH  * Rubric 9 does not exists in the vat declaration form, we created it olny for store totals (report total, accounting total and difference between those two)
         rubricsData[9]={};
-        rubricsData[9].description="Total section";
-        rubricsData[9].style="styleRubriekTitle";
+        rubricsData[9].description="";
+        rubricsData[9].style="styleTotals styleRubriekTitle";
         rubricsData[9].isGroup = true;
         rubricsData[9].groups=this.setRubricsData_ninthRubric();
-
-        //Banana.Ui.showText(JSON.stringify(rubricsData));
     
 
         return rubricsData;
@@ -102,6 +99,9 @@
         rubricsData_group['1a'].description="1a. Leveringen/diensten belast met hoog tarief";
         rubricsData_group['1a'].hasOmzet=true;
         rubricsData_group['1a'].hasOmzetBelasting=true;
+        rubricsData_group['1a'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['1a'].descriptionStyle="";
+
 
 
 
@@ -114,6 +114,8 @@
         rubricsData_group['1b'].description="1b. Leveringen/diensten belast met laag tarief";
         rubricsData_group['1b'].hasOmzet=true;
         rubricsData_group['1b'].hasOmzetBelasting=true;
+        rubricsData_group['1b'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['1b'].descriptionStyle="";
 
 
         //1c
@@ -125,6 +127,8 @@
         rubricsData_group['1c'].description="1c. Leveringen/diensten belast met overige tarieven, behalve 0%";
         rubricsData_group['1c'].hasOmzet=true;
         rubricsData_group['1c'].hasOmzetBelasting=true;
+        rubricsData_group['1c'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['1c'].descriptionStyle="";
 
 
         //1d
@@ -136,6 +140,8 @@
         rubricsData_group['1d'].description="1d. Privégebruik";
         rubricsData_group['1d'].hasOmzet=true;
         rubricsData_group['1d'].hasOmzetBelasting=true;
+        rubricsData_group['1d'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['1d'].descriptionStyle="";
 
         //1e
         rubricsData_group['1e']={};
@@ -146,6 +152,8 @@
         rubricsData_group['1e'].description="1e. Leveringen/diensten belast met 0% of niet bij u belast";
         rubricsData_group['1e'].hasOmzet=true;
         rubricsData_group['1e'].hasOmzetBelasting=false;
+        rubricsData_group['1e'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['1e'].descriptionStyle="";
 
 
         return rubricsData_group;
@@ -163,6 +171,8 @@
         rubricsData_group['2a'].description="2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd";
         rubricsData_group['2a'].hasOmzet=true;
         rubricsData_group['2a'].hasOmzetBelasting=true;
+        rubricsData_group['2a'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['2a'].descriptionStyle="";
 
 
         return rubricsData_group;
@@ -180,6 +190,8 @@
         rubricsData_group['3a'].description="3a. Leveringen naar landen buiten de EU (uitvoer)";
         rubricsData_group['3a'].hasOmzet=true;
         rubricsData_group['3a'].hasOmzetBelasting=false;
+        rubricsData_group['3a'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['3a'].descriptionStyle="";
 
 
         //3b
@@ -191,6 +203,8 @@
         rubricsData_group['3b'].description="3b. Leveringen naar of diensten in landen binnen de EU";
         rubricsData_group['3b'].hasOmzet=true;
         rubricsData_group['3b'].hasOmzetBelasting=false;
+        rubricsData_group['3b'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['3b'].descriptionStyle="";
 
 
         //3c
@@ -202,6 +216,8 @@
         rubricsData_group['3c'].description="3c. Installatie/ afstandsverkopen binnen de EU";
         rubricsData_group['3c'].hasOmzet=true;
         rubricsData_group['3c'].hasOmzetBelasting=false;
+        rubricsData_group['3c'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['3c'].descriptionStyle="";
 
 
         return rubricsData_group;
@@ -221,6 +237,8 @@
         rubricsData_group['4a'].description="4a. Leveringen/diensten uit landen buiten de EU";
         rubricsData_group['4a'].hasOmzet=true;
         rubricsData_group['4a'].hasOmzetBelasting=true;
+        rubricsData_group['4a'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['4a'].descriptionStyle="";
 
 
         //4b
@@ -232,6 +250,8 @@
         rubricsData_group['4b'].description="4b. Leveringen/diensten uit landen binnen de EU";
         rubricsData_group['4b'].hasOmzet=true;
         rubricsData_group['4b'].hasOmzetBelasting=true;
+        rubricsData_group['4b'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['4b'].descriptionStyle="";
 
 
         return rubricsData_group;
@@ -252,6 +272,8 @@
         rubricsData_group['5a'].description="5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)";
         rubricsData_group['5a'].hasOmzet=false;
         rubricsData_group['5a'].hasOmzetBelasting=true;
+        rubricsData_group['5a'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['5a'].descriptionStyle="";
 
 
         //5b
@@ -263,6 +285,8 @@
         rubricsData_group['5b'].description="5b. Voorbelasting";
         rubricsData_group['5b'].hasOmzet=false;
         rubricsData_group['5b'].hasOmzetBelasting=true;
+        rubricsData_group['5b'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['5b'].descriptionStyle="";
 
 
         return rubricsData_group;
@@ -282,6 +306,8 @@
         rubricsData_group['9a'].description="Eindtotaal";
         rubricsData_group['9a'].hasOmzet=false;
         rubricsData_group['9a'].hasOmzetBelasting=false;
+        rubricsData_group['9a'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['9a'].descriptionStyle="styleTotals styleRubriekTitle";
 
 
         //9b
@@ -293,6 +319,8 @@
         rubricsData_group['9b'].description="Eindtotaal(Accounting)";
         rubricsData_group['9b'].hasOmzet=false;
         rubricsData_group['9b'].hasOmzetBelasting=false;
+        rubricsData_group['9b'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['9b'].descriptionStyle="";
 
         //9c
         rubricsData_group['9c']={};
@@ -303,9 +331,27 @@
         rubricsData_group['9c'].description="Rounding difference";
         rubricsData_group['9c'].hasOmzet=false;
         rubricsData_group['9c'].hasOmzetBelasting=false;
+        rubricsData_group['9c'].amountStyle=this.setAmountStyle(this.reportType);
+        rubricsData_group['9c'].descriptionStyle="";
 
 
         return rubricsData_group;
+    }
+
+    /**
+     * set the style for the amounts
+     * @param {*} reportType
+     * @returns 
+     */
+    setAmountStyle(reportType){
+        var amountStyle="";
+        if(reportType=="statement"){
+            amountStyle="styleAmount styleAmount_statement"
+        }else{
+            amountStyle="styleAmount";
+        }
+
+        return amountStyle;
     }
 
     /**
@@ -323,13 +369,13 @@
             periodData.period=periods[p];
             //call this methods for each rubric
             //calculate the amounts
-            this.getVatGrData_GetVatAmount(periodData.rubricsData,periodData.period);
+            this.getPeriodsData_GetVatAmount(periodData.rubricsData,periodData.period);
             //round the amounts
-            this.getVatGrData_roundAmounts(periodData.rubricsData);
+            this.getPeriodsData_roundAmounts(periodData.rubricsData);
             //set the 5a
-            this.getVatGrData_CalcVatDue(periodData.rubricsData);
+            this.getPeriodsData_CalcVatDue(periodData.rubricsData);
             // 9 calc endtotals
-            this.getVatGrData_CalcVatTotal(periodData.rubricsData,periodData.period);
+            this.getPeriodsData_CalcVatTotal(periodData.rubricsData,periodData.period);
 
             periodsData.push(periodData);
         }
@@ -341,7 +387,7 @@
      * Calculate the vatBalance for each group
      * @param {*} rubricsData 
      */
-    getVatGrData_GetVatAmount(rubricsData,p){
+     getPeriodsData_GetVatAmount(rubricsData,p){
         for (var key1 in rubricsData){
             for(var key2 in rubricsData[key1].groups){
                 var vatCodes=rubricsData[key1].groups[key2].vatCodes;
@@ -360,7 +406,7 @@
      * The total is calculated by adding up the amounts of the groups to which the VAT due codes belong.
      * @param {*} vatGrData object with groups data.
      */
-    getVatGrData_CalcVatDue(rubricsData){
+     getPeriodsData_CalcVatDue(rubricsData){
         var vatDue="";
         for (var key1 in rubricsData){
             for(var key2 in rubricsData[key1].groups){
@@ -384,7 +430,7 @@
      * @param {*} vatDue array with the calculated vat due for each quarter
      * @returns an array with the results
      */
-    getVatGrData_CalcVatTotal(rubricsData,period){
+     getPeriodsData_CalcVatTotal(rubricsData,period){
 
         //report total 5b
         // 5a-5b assigned to group 9a
@@ -403,7 +449,7 @@
      * Trunc the vat due amounts and round up to the nearest whole number the recoverable vat amounts
      * @param {*} rubricsData 
      */
-     getVatGrData_roundAmounts(rubricsData){
+     getPeriodsData_roundAmounts(rubricsData){
         for (var key1 in rubricsData){
             for(var key2 in rubricsData[key1].groups){
                 if(rubricsData[key1].groups[key2].code!=="5b"){

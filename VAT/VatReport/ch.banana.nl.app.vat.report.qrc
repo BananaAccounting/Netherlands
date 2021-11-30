@@ -1,7 +1,8 @@
 <!DOCTYPE RCC><RCC version="1.0">
  <qresource>
-    <file>ch.banana.nl.app.vatstatement.report.js</file>
-    <file>ch.banana.nl.app.vatperiods.report.js</file>
+    <file>ch.banana.nl.app.vatstatementform.report.js</file>
+    <file>ch.banana.nl.app.vatannualoverview.report.js</file>
+    <file>ch.banana.nl.app.vat.js</file>
     <file>ch.banana.nl.app.vat.report.manifest.json</file>
     <file>ch.banana.nl.app.vat.report.css</file>
     <file>ch.banana.nl.app.vat.updatetable.js</file>

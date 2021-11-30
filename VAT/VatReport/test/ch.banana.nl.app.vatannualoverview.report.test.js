@@ -12,53 +12,54 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.nl.app.vat.evaluation.report.test
+// @id = ch.banana.nl.app.vatperiods.report.test
 // @api = 1.0
-// @pubdate = 2021-11-19
+// @pubdate = 2021-11-29
 // @publisher = Banana.ch SA
-// @description = <TEST ch.banana.nl.app.vat.evaluation.report.js>
+// @description = <TEST ch.banana.nl.app.vatperiods.report.js>
 // @task = app.command
 // @doctype = *.*
 // @docproperties = 
 // @outputformat = none
 // @inputdataform = none
-// @includejs = ../ch.banana.nl.app.vat.evaluation.report.js
+// @includejs = ../ch.banana.nl.app.vatannualoverview.report.js
+// @includejs = ../ch.banana.nl.app.vat.js
 // @timeout = -1
 
 
 // Register test case to be executed
-Test.registerTestCase(new VatEvaluationReportTest());
+Test.registerTestCase(new VatPeriodsReportTest());
 
 // Here we define the class, the name of the class is not important
-function VatEvaluationReportTest() {
+function VatPeriodsReportTest() {
 
 }
 
 // This method will be called at the beginning of the test case
-VatEvaluationReportTest.prototype.initTestCase = function() {
+VatPeriodsReportTest.prototype.initTestCase = function() {
 
 }
 
 // This method will be called at the end of the test case
-VatEvaluationReportTest.prototype.cleanupTestCase = function() {
+VatPeriodsReportTest.prototype.cleanupTestCase = function() {
 
 }
 
 // This method will be called before every test method is executed
-VatEvaluationReportTest.prototype.init = function() {
+VatPeriodsReportTest.prototype.init = function() {
 
 }
 
 // This method will be called after every test method is executed
-VatEvaluationReportTest.prototype.cleanup = function() {
+VatPeriodsReportTest.prototype.cleanup = function() {
 
 }
 
-VatEvaluationReportTest.prototype.testReport = function() {
+VatPeriodsReportTest.prototype.testReport = function() {
 
-    Test.logger.addComment("Test vatreport_declaration");
+    Test.logger.addComment("Test VAT Periods Report");
 
-    var fileAC2 = "file:script/../test/testcases/Bozza_per_IVA_NL_Full_test.ac2";
+    var fileAC2 = "file:script/../test/testcases/nl.vat.test.ac2";
     var banDoc = Banana.application.openDocument(fileAC2);
     if (!banDoc) {
         return;
@@ -68,18 +69,15 @@ VatEvaluationReportTest.prototype.testReport = function() {
   Test.logger.addSubSection("Whole year report");
   addReport(banDoc, "2022-01-01", "2022-12-31", "Whole year report");
 
-  //Test over two years..?
-
 }
 
 //Function that create the report for the test
 function addReport(banDoc, startDate, endDate, reportName) {
-    var btwEvaluationReport= new BTWEvaluationReport(banDoc,startDate, endDate);
-    var vatReport = btwEvaluationReport.createBtwEvaluationReport();
-    Test.logger.addReport(reportName, vatReport);
-}
-function getCurrentYear(){
-    var currYear=new Date()
-    currYear=currYear.getFullYear();
-    return currYear;
+    var reportType="periods";
+    var vatReport= new VatReport(banDoc,reportType);
+    var periods=getYearPeriods(startDate);
+    var periodsData=vatReport.getPeriodsData(periods);
+    var docInfo=vatReport.getDocumentInfo();
+    var report = createVatOverviewReport(periodsData,docInfo,startDate,endDate);
+    Test.logger.addReport(reportName, report);
 }

@@ -12,19 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.nl.app.vat.periods.report.js
+// @id = ch.banana.nl.vat.js
 // @api = 1.0
 // @pubdate = 2021-11-18
 // @publisher = Banana.ch SA
-// @description.en = VAT Periods [BETA]
-// @description.nl = VAT Periods [BETA]
+// @description.en = VAT Annual Overview
+// @description.nl = VAT Annual Overview
 // @doctype = *.*
 // @outputformat = none
 // @inputdataform = none
 // @task = app.command
+// @doctype = 100.110;110.110;130.110;100.130
 // @inputdatasource = none
 // @timeout = -1
-// @includejs=ch.banana.nl.app.js
+// @includejs=ch.banana.nl.app.vat.js
 
 /*
 *   SUMMARY
@@ -46,7 +47,7 @@
  * 
  * 
  * 
- *                                                               31.03.2021                 30.06.2021              ...same structurefor each quarter 
+ *                                                               31.03.2021                 30.06.2021              ...same structure for each quarter 
  * 
  *              Group description                            Sales        VAT           Sales         VAT
  * 
@@ -71,9 +72,9 @@
      * @param {*} report 
      * @returns 
      */
-    function getPeriodsTable(report,startDate,endDate) {
-        var tableBalance = report.addTable('periodsTable');
-        tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(startDate)+"/"+Banana.Converter.toLocaleDateFormat(endDate));
+    function getOverviewTable(report,startDate,endDate) {
+        var tableBalance = report.addTable('overviewTable');
+        tableBalance.getCaption().addText("Omzetbelasting, Aangifteperiode: "+Banana.Converter.toLocaleDateFormat(startDate)+" - "+Banana.Converter.toLocaleDateFormat(endDate));
         //columns
         tableBalance.addColumn("c1").setStyleAttributes("width:50%");
         tableBalance.addColumn("c2").setStyleAttributes("width:12%");
@@ -107,7 +108,7 @@
     }
 
    
-    function createVatPeriodsReport(periodsData,docInfo,startDate,endDate){
+    function createVatOverviewReport(periodsData,docInfo,startDate,endDate){
         var results=periodsData;
 
         //create the report
@@ -115,60 +116,69 @@
         getReportHeader(report,docInfo);
 
         //add the table
-        var periodsTable = getPeriodsTable(report,startDate,endDate);
+        var overviewTable = getOverviewTable(report,startDate,endDate);
 
         //quarter indication
-        var tableRow = periodsTable.addRow("");
+        var tableRow = overviewTable.addRow("");
         tableRow.addCell("");
         for(var i=0; i<results.length;i++){
             tableRow.addCell(results[i].period.description, "styleQuarters",2);
         }
         //titles row
-        var tableRow = periodsTable.addRow("");
+        var tableRow = overviewTable.addRow("");
         tableRow.addCell("", "");
         for(var i=0; i<results.length;i++){
             tableRow.addCell("Omzet", "styleColumnTitles");
-            tableRow.addCell("Omzetbelasting\n", "styleColumnTitles");
+            tableRow.addCell("Omzetbelasting", "styleColumnTitles");
         }
 
         for(var key1 in results[0].rubricsData){
 
                 //add title row
-                var tableRow = periodsTable.addRow("");
+                var tableRow = overviewTable.addRow("");
                 var rubTitle=results[0].rubricsData[key1].description;
                 tableRow.addCell(rubTitle, results[0].rubricsData[key1].style,11);
 
                 for(var key2 in results[0].rubricsData[key1].groups){
 
                     //add the group fields
-                    var tableRow = periodsTable.addRow("");
-                    tableRow.addCell(results[0].rubricsData[key1].groups[key2].description,"");
+                    var tableRow = overviewTable.addRow("");
+                    tableRow.addCell(results[0].rubricsData[key1].groups[key2].description,results[0].rubricsData[key1].groups[key2].descriptionStyle);
 
                     if(results[0].rubricsData[key1].groups[key2].gr!="9"){
                         for(var i=0; i<results.length;i++){
                             //add Omzet amounts
                             if(results[i].rubricsData[key1].groups[key2].hasOmzet){
-                                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatTaxable,"",false),"styleAmount");
+                                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatTaxable,"",false),results[i].rubricsData[key1].groups[key2].amountStyle);
                             }else{
-                                tableRow.addCell("","styleAmount");
+                                tableRow.addCell("");
                             }   
 
                             if(results[i].rubricsData[key1].groups[key2].hasOmzetBelasting){
                             //add Omzetbelasting amounts
-                                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatPosted,"",false),"styleAmount");
+                                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatPosted,"",false),results[i].rubricsData[key1].groups[key2].amountStyle);
                             }else{
-                                tableRow.addCell("","styleAmount");
+                                tableRow.addCell("");
                             }
 
                         }
                     }else{//add total amounts
-                        for(var i=0; i<results.length;i++){
-                            tableRow.addCell("","styleAmount");//Omzet is epmty
-                            var decimals="2"
-                            if(results[0].rubricsData[key1].groups[key2].code=="9a")
-                                decimals="0";
-                            tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatAmount,decimals,false),"styleAmount");
+                        var decimals="2"
+                        if(results[0].rubricsData[key1].groups[key2].code=="9a"){
+                            decimals="0";
+                            for(var i=0; i<results.length;i++){
+                                tableRow.addCell("");//Omzet is epmty
+                                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatAmount,decimals,false),results[i].rubricsData[key1].groups[key2].amountStyle);
 
+                            }
+                            var tableRow = overviewTable.addRow("");
+                            tableRow.addCell("Control section","styleTotals",11);//Omzet is epmty
+                        }else{
+                            for(var i=0; i<results.length;i++){
+                                tableRow.addCell("");//Omzet is epmty
+                                tableRow.addCell(Banana.Converter.toLocaleNumberFormat(results[i].rubricsData[key1].groups[key2].vatBalance.vatAmount,decimals,false),results[i].rubricsData[key1].groups[key2].amountStyle);
+
+                            }
                         }
                     }
                 }
@@ -183,10 +193,11 @@
      * @param {*} refDate a reference date
      * @returns 
      */
-    function getPeriods(refDate){
+    function getYearPeriods(refDate){
         var periods=[];
 
         //get the current year
+        //if the accounting is cover several years, takes the periods of the first year
         var currentYear = refDate.substring(0,4);
 
         //first quarter
@@ -238,16 +249,17 @@
     var startDate=Banana.document.startPeriod();
     var endDate=Banana.document.startPeriod();
 
-    var vatReport= new VatReport(Banana.document,startDate,endDate);
+    var reportType="periods";
+    var vatReport= new VatReport(Banana.document,reportType);
 
     if(!vatReport.verifyBananaVersion())
         return "@Cancel";
 
     vatReport.verifyifHasGr1();
-    var periods=getPeriods(startDate);
+    var periods=getYearPeriods(startDate);
     var periodsData=vatReport.getPeriodsData(periods);
     var docInfo=vatReport.getDocumentInfo();
-    var report = createVatPeriodsReport(periodsData,docInfo,startDate,endDate);
+    var report = createVatOverviewReport(periodsData,docInfo,startDate,endDate);
     var stylesheet = vatReport.getReportStyle();
     Banana.Report.preview(report,stylesheet);
 }

@@ -12,54 +12,54 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// @id = ch.banana.nl.app.vat.declaration.report.test
+// @id = ch.banana.nl.app.vatstatementform.report.test
 // @api = 1.0
-// @pubdate = 2021-11-19
+// @pubdate = 2021-11-26
 // @publisher = Banana.ch SA
-// @description = <TEST ch.banana.nl.app.vat.declaration.report.js>
+// @description = <TEST ch.banana.nl.app.vatstatementform.report.js>
 // @task = app.command
 // @doctype = *.*
 // @docproperties = 
 // @outputformat = none
 // @inputdataform = none
-// @includejs = ../ch.banana.nl.app.vat.declaration.report.js
+// @includejs = ../ch.banana.nl.app.vatstatementform.report.js
+// @includejs = ../ch.banana.nl.app.vat.js
 // @timeout = -1
 
 
 // Register test case to be executed
-Test.registerTestCase(new VatDeclarationReportTest());
+Test.registerTestCase(new VatStatementReportTest());
 
 // Here we define the class, the name of the class is not important
-function VatDeclarationReportTest() {
+function VatStatementReportTest() {
 
 }
 
 // This method will be called at the beginning of the test case
-VatDeclarationReportTest.prototype.initTestCase = function() {
+VatStatementReportTest.prototype.initTestCase = function() {
 
 }
 
 // This method will be called at the end of the test case
-VatDeclarationReportTest.prototype.cleanupTestCase = function() {
+VatStatementReportTest.prototype.cleanupTestCase = function() {
 
 }
 
 // This method will be called before every test method is executed
-VatDeclarationReportTest.prototype.init = function() {
+VatStatementReportTest.prototype.init = function() {
 
 }
 
 // This method will be called after every test method is executed
-VatDeclarationReportTest.prototype.cleanup = function() {
+VatStatementReportTest.prototype.cleanup = function() {
 
 }
 
-VatDeclarationReportTest.prototype.testReport = function() {
+VatStatementReportTest.prototype.testReport = function() {
 
-    Test.logger.addComment("Test vatreport_declaration");
-    var currYear=getCurrentYear();
+    Test.logger.addComment("Test VAT Statement");
 
-    var fileAC2 = "file:script/../test/testcases/Bozza_per_IVA_NL.ac2";
+    var fileAC2 = "file:script/../test/testcases/nl.vat.test.ac2";
     var banDoc = Banana.application.openDocument(fileAC2);
     if (!banDoc) {
         return;
@@ -67,42 +67,41 @@ VatDeclarationReportTest.prototype.testReport = function() {
 
   //Test year
   Test.logger.addSubSection("Whole year report");
-  addReport(banDoc, currYear+"-01-01", currYear+"-12-31", "Whole year report");
+  addReport(banDoc, "2022-01-01", "2022-12-31", "Whole year report");
 
  //Test 1. semester
  Test.logger.addSubSection("First semester report");
- addReport(banDoc, currYear+"-01-01", currYear+"-06-30", "First semester report");
+ addReport(banDoc, "2022-01-01", "2022-06-30", "First semester report");
 
  //Test 2. semester
  Test.logger.addSubSection("Second semester report");
- addReport(banDoc, currYear+"-07-01", currYear+"-12-31", "Second semester report");
+ addReport(banDoc, "2022-07-01", "2022-12-31", "Second semester report");
 
  //Test 1. quarter
  Test.logger.addSubSection("First quarter report");
- addReport(banDoc, currYear+"-01-01", currYear+"-03-31", "First quarter report");
+ addReport(banDoc, "2022-01-01", "2022-03-31", "First quarter report");
 
  //Test 2. quarter
  Test.logger.addSubSection("Second quarter report");
- addReport(banDoc, currYear+"-04-01", currYear+"-06-30", "Second quarter report");
+ addReport(banDoc, "2022-04-01", "2022-06-30", "Second quarter report");
 
  //Test 3. quarter
  Test.logger.addSubSection("Third quarter report");
- addReport(banDoc, currYear+"-07-01", currYear+"-09-30", "Third quarter report");
+ addReport(banDoc, "2022-07-01", "2022-09-30", "Third quarter report");
 
  //Test 4. quarter
  Test.logger.addSubSection("Fourth quarter report");
- addReport(banDoc, currYear+"-10-01", currYear+"-12-31", "Fourth quarter report");
+ addReport(banDoc,"2022-10-01", "2022-12-31", "Fourth quarter report");
 
 }
 
 //Function that create the report for the test
 function addReport(banDoc, startDate, endDate, reportName) {
-    var btwDeclarationReport= new BTWDeclarationReport(banDoc,startDate, endDate);
-    var vatReport = btwDeclarationReport.createBtwDeclarationReport();
-    Test.logger.addReport(reportName, vatReport);
-}
-function getCurrentYear(){
-    var currYear=new Date()
-    currYear=currYear.getFullYear();
-    return currYear;
+    var reportType="statement";
+    var vatReport= new VatReport(banDoc,reportType);
+    var periods=getYearPeriods(startDate,endDate);
+    var periodsData=vatReport.getPeriodsData(periods);
+    var docInfo=vatReport.getDocumentInfo();
+    var report = createVatStatementReport(periodsData,docInfo,startDate,endDate);
+    Test.logger.addReport(reportName, report);
 }
