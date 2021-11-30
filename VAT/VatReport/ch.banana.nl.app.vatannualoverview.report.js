@@ -247,7 +247,7 @@
         return "@Cancel";
 
     var startDate=Banana.document.startPeriod();
-    var endDate=Banana.document.startPeriod();
+    var endDate=Banana.document.endPeriod();
 
     var reportType="periods";
     var vatReport= new VatReport(Banana.document,reportType);
