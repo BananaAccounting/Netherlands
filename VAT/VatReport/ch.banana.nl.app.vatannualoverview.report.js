@@ -17,8 +17,7 @@
 // @pubdate = 2021-11-18
 // @publisher = Banana.ch SA
 // @description.en = VAT Annual Overview
-// @description.nl = VAT Annual Overview
-// @doctype = *.*
+// @description.nl = Jaarlijks BTW rapport
 // @outputformat = none
 // @inputdataform = none
 // @task = app.command
@@ -112,7 +111,7 @@
         var results=periodsData;
 
         //create the report
-        var report = Banana.Report.newReport('VAT Periods Report');
+        var report = Banana.Report.newReport('BTW Nederland');
         getReportHeader(report,docInfo);
 
         //add the table
@@ -172,7 +171,7 @@
 
                             }
                             var tableRow = overviewTable.addRow("");
-                            tableRow.addCell("Control section","styleTotals",11);//Omzet is epmty
+                            tableRow.addCell("Controle sectie","styleTotals",11);//Omzet is epmty
                         }else{
                             for(var i=0; i<results.length;i++){
                                 tableRow.addCell("");//Omzet is epmty
@@ -255,7 +254,6 @@
     if(!vatReport.verifyBananaVersion())
         return "@Cancel";
 
-    vatReport.verifyifHasGr1();
     var periods=getYearPeriods(startDate);
     var periodsData=vatReport.getPeriodsData(periods);
     var docInfo=vatReport.getDocumentInfo();

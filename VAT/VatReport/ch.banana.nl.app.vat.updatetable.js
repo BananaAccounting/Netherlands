@@ -17,8 +17,7 @@
 // @pubdate = 2021-11-29
 // @publisher = Banana.ch SA
 // @description.en = Update VAT table
-// @description.nl = Update VAT table
-// @doctype = *.*
+// @description.nl = BTW tabel bijwerken
 // @outputformat = none
 // @inputdataform = none
 // @task = app.command
@@ -296,8 +295,9 @@ function setGr1(vatCode){
         var element=currentCodesData[c];
         //if the element doesn't have any gr1
         if(!element.gr1){
-            element.gr1=setGr1(element.vatCode);
-            codesList.push(element);
+            element.gr1=setGr1(element.vatCode);//set the group only to the standard code
+            if(element.gr1)
+                codesList.push(element);
         }
     }
     return codesList;

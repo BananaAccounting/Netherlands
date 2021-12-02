@@ -95,11 +95,9 @@
         rubricsData_group['1a'].gr="1";
         rubricsData_group['1a'].multiply=-1;
         rubricsData_group['1a'].code="1a";
-        rubricsData_group['1a'].vatCodes="V21";
         rubricsData_group['1a'].description="1a. Leveringen/diensten belast met hoog tarief";
         rubricsData_group['1a'].hasOmzet=true;
         rubricsData_group['1a'].hasOmzetBelasting=true;
-        rubricsData_group['1a'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['1a'].descriptionStyle="";
 
 
@@ -110,11 +108,9 @@
         rubricsData_group['1b'].gr="1";
         rubricsData_group['1b'].multiply=-1;
         rubricsData_group['1b'].code="1b";
-        rubricsData_group['1b'].vatCodes="V9";
         rubricsData_group['1b'].description="1b. Leveringen/diensten belast met laag tarief";
         rubricsData_group['1b'].hasOmzet=true;
         rubricsData_group['1b'].hasOmzetBelasting=true;
-        rubricsData_group['1b'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['1b'].descriptionStyle="";
 
 
@@ -123,11 +119,9 @@
         rubricsData_group['1c'].gr="1";
         rubricsData_group['1c'].multiply=-1;
         rubricsData_group['1c'].code="1c";
-        rubricsData_group['1c'].vatCodes="VOT";
         rubricsData_group['1c'].description="1c. Leveringen/diensten belast met overige tarieven, behalve 0%";
         rubricsData_group['1c'].hasOmzet=true;
         rubricsData_group['1c'].hasOmzetBelasting=true;
-        rubricsData_group['1c'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['1c'].descriptionStyle="";
 
 
@@ -136,11 +130,9 @@
         rubricsData_group['1d'].gr="1";
         rubricsData_group['1d'].multiply=-1;
         rubricsData_group['1d'].code="1d";
-        rubricsData_group['1d'].vatCodes="PG21|PG9|PG27|PG15";
         rubricsData_group['1d'].description="1d. Privégebruik";
         rubricsData_group['1d'].hasOmzet=true;
         rubricsData_group['1d'].hasOmzetBelasting=true;
-        rubricsData_group['1d'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['1d'].descriptionStyle="";
 
         //1e
@@ -148,11 +140,9 @@
         rubricsData_group['1e'].gr="1";
         rubricsData_group['1e'].multiply=-1;
         rubricsData_group['1e'].code="1e";
-        rubricsData_group['1e'].vatCodes="V0";
         rubricsData_group['1e'].description="1e. Leveringen/diensten belast met 0% of niet bij u belast";
         rubricsData_group['1e'].hasOmzet=true;
         rubricsData_group['1e'].hasOmzetBelasting=false;
-        rubricsData_group['1e'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['1e'].descriptionStyle="";
 
 
@@ -167,11 +157,9 @@
         rubricsData_group['2a'].gr="2";
         rubricsData_group['2a'].multiply=-1;
         rubricsData_group['2a'].code="2a";
-        rubricsData_group['2a'].vatCodes="VR21|VR9";
         rubricsData_group['2a'].description="2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd";
         rubricsData_group['2a'].hasOmzet=true;
         rubricsData_group['2a'].hasOmzetBelasting=true;
-        rubricsData_group['2a'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['2a'].descriptionStyle="";
 
 
@@ -186,11 +174,9 @@
         rubricsData_group['3a'].gr="3";
         rubricsData_group['3a'].multiply=-1;
         rubricsData_group['3a'].code="3a";
-        rubricsData_group['3a'].vatCodes="VX";
         rubricsData_group['3a'].description="3a. Leveringen naar landen buiten de EU (uitvoer)";
         rubricsData_group['3a'].hasOmzet=true;
         rubricsData_group['3a'].hasOmzetBelasting=false;
-        rubricsData_group['3a'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['3a'].descriptionStyle="";
 
 
@@ -199,11 +185,9 @@
         rubricsData_group['3b'].gr="3";
         rubricsData_group['3b'].multiply=-1;
         rubricsData_group['3b'].code="3b";
-        rubricsData_group['3b'].vatCodes="VEU";
         rubricsData_group['3b'].description="3b. Leveringen naar of diensten in landen binnen de EU";
         rubricsData_group['3b'].hasOmzet=true;
         rubricsData_group['3b'].hasOmzetBelasting=false;
-        rubricsData_group['3b'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['3b'].descriptionStyle="";
 
 
@@ -212,11 +196,9 @@
         rubricsData_group['3c'].gr="3";
         rubricsData_group['3b'].multiply=-1;
         rubricsData_group['3c'].code="3c";
-        rubricsData_group['3c'].vatCodes="VEUI";
         rubricsData_group['3c'].description="3c. Installatie/ afstandsverkopen binnen de EU";
         rubricsData_group['3c'].hasOmzet=true;
         rubricsData_group['3c'].hasOmzetBelasting=false;
-        rubricsData_group['3c'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['3c'].descriptionStyle="";
 
 
@@ -233,11 +215,9 @@
         rubricsData_group['4a'].gr="4";
         rubricsData_group['4a'].multiply=-1;
         rubricsData_group['4a'].code="4a";
-        rubricsData_group['4a'].vatCodes="VIX21|VIX9";
         rubricsData_group['4a'].description="4a. Leveringen/diensten uit landen buiten de EU";
         rubricsData_group['4a'].hasOmzet=true;
         rubricsData_group['4a'].hasOmzetBelasting=true;
-        rubricsData_group['4a'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['4a'].descriptionStyle="";
 
 
@@ -246,11 +226,9 @@
         rubricsData_group['4b'].gr="4";
         rubricsData_group['4b'].multiply=-1;
         rubricsData_group['4b'].code="4b";
-        rubricsData_group['4b'].vatCodes="ICP21|ICP9";
         rubricsData_group['4b'].description="4b. Leveringen/diensten uit landen binnen de EU";
         rubricsData_group['4b'].hasOmzet=true;
         rubricsData_group['4b'].hasOmzetBelasting=true;
-        rubricsData_group['4b'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['4b'].descriptionStyle="";
 
 
@@ -268,11 +246,9 @@
         rubricsData_group['5a'].gr="5";
         rubricsData_group['5a'].multiply=-1;
         rubricsData_group['5a'].code="5a";
-        rubricsData_group['5a'].vatCodes="";
         rubricsData_group['5a'].description="5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)";
         rubricsData_group['5a'].hasOmzet=false;
         rubricsData_group['5a'].hasOmzetBelasting=true;
-        rubricsData_group['5a'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['5a'].descriptionStyle="";
 
 
@@ -281,11 +257,9 @@
         rubricsData_group['5b'].gr="5";
         rubricsData_group['5b'].multiply=-1;
         rubricsData_group['5b'].code="5b";
-        rubricsData_group['5b'].vatCodes="IG21|IG9|IG0|IGV|D21-2|D9-2";
         rubricsData_group['5b'].description="5b. Voorbelasting";
         rubricsData_group['5b'].hasOmzet=false;
         rubricsData_group['5b'].hasOmzetBelasting=true;
-        rubricsData_group['5b'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['5b'].descriptionStyle="";
 
 
@@ -302,11 +276,9 @@
         rubricsData_group['9a'].gr="9";
         rubricsData_group['9a'].multiply=-1;
         rubricsData_group['9a'].code="9a";
-        rubricsData_group['9a'].vatCodes="";
         rubricsData_group['9a'].description="Eindtotaal";
         rubricsData_group['9a'].hasOmzet=false;
         rubricsData_group['9a'].hasOmzetBelasting=false;
-        rubricsData_group['9a'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['9a'].descriptionStyle="styleTotals styleRubriekTitle";
 
 
@@ -315,11 +287,9 @@
         rubricsData_group['9b'].gr="9";
         rubricsData_group['9b'].multiply=-1;
         rubricsData_group['9b'].code="9b";
-        rubricsData_group['9b'].vatCodes="";
-        rubricsData_group['9b'].description="Eindtotaal(Accounting)";
+        rubricsData_group['9b'].description="Eindtotaal(Boekhouding)";
         rubricsData_group['9b'].hasOmzet=false;
         rubricsData_group['9b'].hasOmzetBelasting=false;
-        rubricsData_group['9b'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['9b'].descriptionStyle="";
 
         //9c
@@ -327,11 +297,9 @@
         rubricsData_group['9c'].gr="9";
         rubricsData_group['9c'].multiply=-1;
         rubricsData_group['9c'].code="9c";
-        rubricsData_group['9c'].vatCodes="";
-        rubricsData_group['9c'].description="Rounding difference";
+        rubricsData_group['9c'].description="Afrondingsverschil";
         rubricsData_group['9c'].hasOmzet=false;
         rubricsData_group['9c'].hasOmzetBelasting=false;
-        rubricsData_group['9c'].amountStyle=this.setAmountStyle(this.reportType);
         rubricsData_group['9c'].descriptionStyle="";
 
 
@@ -362,12 +330,14 @@
      getPeriodsData(periods){
        
        var periodsData = [];
+       var vatDataList=this.loadVatData();
 
         for (var p = 0; p <periods.length ; p++){
             var periodData={};
             periodData.rubricsData=this.setRubricsData();
             periodData.period=periods[p];
-            //call this methods for each rubric
+            //get vat codes for each group
+            this.getVatCodes(periodData.rubricsData,vatDataList);
             //calculate the amounts
             this.getPeriodsData_GetVatAmount(periodData.rubricsData,periodData.period);
             //round the amounts
@@ -377,10 +347,68 @@
             // 9 calc endtotals
             this.getPeriodsData_CalcVatTotal(periodData.rubricsData,periodData.period);
 
+            this.getAmountStyle(periodData.rubricsData)
+
             periodsData.push(periodData);
         }
+        //Banana.Ui.showText(JSON.stringify(periodsData));
 
         return periodsData;
+    }
+
+    /**
+     * load the vat data from the vat table
+     * @returns 
+     */
+    loadVatData(){
+        var vatDataList=[];
+        var table=this.banDoc.table('VatCodes');
+        for (var i = 0; i < table.rowCount; i++) {
+            var vatData={};
+            var tRow = table.row(i);
+            vatData.vatCode=tRow.value("VatCode");
+            vatData.gr1=tRow.value("Gr1");
+            if(vatData.vatCode){
+                if(vatData.vatCode && vatData.gr1){
+                    vatDataList.push(vatData);
+                }
+                else{
+                    //error message: Warning code 'XYZ' without Gr1.
+                    var msg =this.getErrorMessage(this.VATCODE_WITHOUT_GR1,"en",vatData.vatCode);
+                    this.banDoc.addMessage(msg,this.VATCODE_WITHOUT_GR1);
+                }
+            }
+            
+        }
+    
+        return vatDataList;
+    
+    }
+
+    /**
+     * returns the vat codes belonging to that group 
+     * @param {*} gr1 
+     */
+    setVatCodes(vatDataList,gr1){
+        var vatCodes="";
+        for (var row in vatDataList ){
+            let element=vatDataList[row]
+            if(element.gr1==gr1){
+                vatCodes+=element.vatCode+"|"
+            }
+        }
+        //slice the last char "|" because we dont need it
+        vatCodes=vatCodes.slice(0,-1);
+        return vatCodes;
+    }
+
+    getVatCodes(rubricsData,vatDataList){
+        for (var key1 in rubricsData){
+            for(var key2 in rubricsData[key1].groups){
+                var codes=this.setVatCodes(vatDataList,rubricsData[key1].groups[key2].code);
+                rubricsData[key1].groups[key2].vatCodes=codes;
+            }
+        }
     }
 
     /**
@@ -465,24 +493,12 @@
 
     }
 
-    verifyifHasGr1(){
-        var codes=[];
-        var table = this.banDoc.table("VatCodes");
-        if (!table)
-            return codes;
-
-        for (var i = 0; i < table.rowCount; i++) {
-            var tRow = table.row(i);
-            var vatCode = tRow.value("VatCode");
-            var gr1Code= tRow.value("Gr1");
-
-            if(vatCode && !gr1Code){
-                //error message: Warning code 'XYZ' without Gr1.
-                var msg =this.getErrorMessage(this.VATCODE_WITHOUT_GR1,"en",vatCode);
-                this.banDoc.addMessage(msg,this.VATCODE_WITHOUT_GR1);
+    getAmountStyle(rubricsData){
+        for (var key1 in rubricsData){
+            for(var key2 in rubricsData[key1].groups){
+                rubricsData[key1].groups[key2].amountStyle=this.setAmountStyle(this.reportType);
             }
         }
-        return true;
     }
 
     /**

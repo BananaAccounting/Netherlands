@@ -17,8 +17,7 @@
 // @pubdate = 2021-11-29
 // @publisher = Banana.ch SA
 // @description.en =  VAT Statement Form
-// @description.nl = VAT Statement Form
-// @doctype = *.*
+// @description.nl = Formulier BTW aangifte
 // @outputformat = none
 // @inputdataform = none
 // @task = app.command
@@ -103,7 +102,7 @@ function createVatStatementReport(periodsData,docInfo,startDate,endDate){
 
     var results=periodsData;
     //create the report
-    var report = Banana.Report.newReport('VAT Statement Report');
+    var report = Banana.Report.newReport('BTW Nederland');
     getReportHeader(report,docInfo);
 
     //add the table
@@ -250,7 +249,6 @@ function createVatStatementReport(periodsData,docInfo,startDate,endDate){
     if(!vatReport.verifyBananaVersion())
         return "@Cancel";
 
-    vatReport.verifyifHasGr1();
     var periods=getYearPeriods(dateForm.selectionStartDate,dateForm.selectionEndDate);
     var periodsData=vatReport.getPeriodsData(periods);
     var docInfo=vatReport.getDocumentInfo();
