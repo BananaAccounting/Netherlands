@@ -148,7 +148,7 @@ function createVatStatementReport(periodsData,docInfo,startDate,endDate){
 
                     }
                     var tableRow = statementTable.addRow("");
-                    tableRow.addCell("Control section","styleTotals",3);//Omzet is epmty
+                    tableRow.addCell("Controle sectie","styleTotals",3);//Omzet is epmty
                 }else{
                     for(var i=0; i<results.length;i++){
                         tableRow.addCell("","styleAmount");//Omzet is epmty

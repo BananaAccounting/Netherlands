@@ -49,7 +49,7 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 2'552 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 5'466 \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & 5'468.77 \\
 Afrondingsverschil  &  & 2.77 \\
 \end{longtable}
@@ -80,7 +80,7 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 30.06.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 1'941 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 4'837 \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & 4'839.70 \\
 Afrondingsverschil  &  & 2.70 \\
 \end{longtable}
@@ -111,7 +111,7 @@ Omzetbelasting, Aangifteperiode: 01.07.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 611 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 628 \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & 629.07 \\
 Afrondingsverschil  &  & 1.07 \\
 \end{longtable}
@@ -142,7 +142,7 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 31.03.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 1'343 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 4'835 \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & 4'837.82 \\
 Afrondingsverschil  &  & 2.82 \\
 \end{longtable}
@@ -173,7 +173,7 @@ Omzetbelasting, Aangifteperiode: 01.04.2022 - 30.06.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 599 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 1 \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & 1.88 \\
 Afrondingsverschil  &  & 0.88 \\
 \end{longtable}
@@ -204,7 +204,7 @@ Omzetbelasting, Aangifteperiode: 01.07.2022 - 30.09.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 611 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 628 \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & 629.07 \\
 Afrondingsverschil  &  & 1.07 \\
 \end{longtable}
@@ -235,7 +235,7 @@ Omzetbelasting, Aangifteperiode: 01.10.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & \\
-\multicolumn{3}{l}{Control section }\\
+\multicolumn{3}{l}{Controle sectie }\\
 Eindtotaal(Boekhouding)  &  & \\
 Afrondingsverschil  &  & \\
 \end{longtable}
