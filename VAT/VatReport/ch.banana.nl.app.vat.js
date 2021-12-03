@@ -11,11 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
-// @id = ch.banana.nl.vat.js
-// @api = 1.0
-// @pubdate = 2021-11-29
-// @publisher = Banana.ch SA
 
 /*
 *   SUMMARY
@@ -28,7 +23,7 @@
 
     constructor(banDoc,reportType){
         this.banDoc=banDoc;
-        this.reportType=reportType
+        this.reportType=reportType;
 
         //errors
         this.VATCODE_WITHOUT_GR1 = "VATCODE_WITHOUT_GR1";
