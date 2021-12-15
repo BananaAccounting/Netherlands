@@ -36,7 +36,7 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 1d. Privégebruik  & 1'600  & 124 \\
 1e. Leveringen/diensten belast met 0\% of niet bij u belast  & 400  & \\
 \multicolumn{3}{l}{Rubriek 2: Verleggingsregelingen }\\
-2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd  & 9'400  & 1'746 \\
+2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd  & 10'177  & 1'909 \\
 \multicolumn{3}{l}{Rubriek 3: Prestaties naar of in het buitenland }\\
 3a. Leveringen naar landen buiten de EU (uitvoer)  & 10'000  & \\
 3b. Leveringen naar of diensten in landen binnen de EU  & 4'000  & \\
@@ -45,13 +45,13 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 4a. Leveringen/diensten uit landen buiten de EU  & 8'000  & 1'200 \\
 4b. Leveringen/diensten uit landen binnen de EU  & 4'100  & 633 \\
 \multicolumn{3}{l}{Rubriek 5: Voorbelasting, kleineondernemersregeling en eindtotaal }\\
-5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 7'855 \\
-5b. Voorbelasting  &  & 1'810 \\
+5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 8'018 \\
+5b. Voorbelasting  &  & 2'552 \\
 \multicolumn{3}{l}{}\\
-Eindtotaal  &  & 6'045 \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & 6'047.65 \\
-Rounding difference  &  & 2.65 \\
+Eindtotaal  &  & 5'466 \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & 5'468.77 \\
+Afrondingsverschil  &  & 2.77 \\
 \end{longtable}
 \end{reportvalue}
 \subsection{First semester report}
@@ -67,7 +67,7 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 30.06.2022 \multicolumn{3}{l}{Rubr
 1d. Privégebruik  & 800  & 62 \\
 1e. Leveringen/diensten belast met 0\% of niet bij u belast  & 400  & \\
 \multicolumn{3}{l}{Rubriek 2: Verleggingsregelingen }\\
-2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd  & 6'650  & 1'168 \\
+2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd  & 7'427  & 1'331 \\
 \multicolumn{3}{l}{Rubriek 3: Prestaties naar of in het buitenland }\\
 3a. Leveringen naar landen buiten de EU (uitvoer)  & 5'000  & \\
 3b. Leveringen naar of diensten in landen binnen de EU  & 2'000  & \\
@@ -76,13 +76,13 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 30.06.2022 \multicolumn{3}{l}{Rubr
 4a. Leveringen/diensten uit landen buiten de EU  & 4'000  & 600 \\
 4b. Leveringen/diensten uit landen binnen de EU  & 4'100  & 633 \\
 \multicolumn{3}{l}{Rubriek 5: Voorbelasting, kleineondernemersregeling en eindtotaal }\\
-5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 6'615 \\
-5b. Voorbelasting  &  & 1'777 \\
+5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 6'778 \\
+5b. Voorbelasting  &  & 1'941 \\
 \multicolumn{3}{l}{}\\
-Eindtotaal  &  & 4'838 \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & 4'841.08 \\
-Rounding difference  &  & 3.08 \\
+Eindtotaal  &  & 4'837 \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & 4'839.70 \\
+Afrondingsverschil  &  & 2.70 \\
 \end{longtable}
 \end{reportvalue}
 \subsection{Second semester report}
@@ -108,12 +108,12 @@ Omzetbelasting, Aangifteperiode: 01.07.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 4b. Leveringen/diensten uit landen binnen de EU  &  & \\
 \multicolumn{3}{l}{Rubriek 5: Voorbelasting, kleineondernemersregeling en eindtotaal }\\
 5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 1'239 \\
-5b. Voorbelasting  &  & 34 \\
+5b. Voorbelasting  &  & 611 \\
 \multicolumn{3}{l}{}\\
-Eindtotaal  &  & 1'205 \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & 1'206.57 \\
-Rounding difference  &  & 1.57 \\
+Eindtotaal  &  & 628 \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & 629.07 \\
+Afrondingsverschil  &  & 1.07 \\
 \end{longtable}
 \end{reportvalue}
 \subsection{First quarter report}
@@ -129,7 +129,7 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 31.03.2022 \multicolumn{3}{l}{Rubr
 1d. Privégebruik  & 800  & 62 \\
 1e. Leveringen/diensten belast met 0\% of niet bij u belast  & 400  & \\
 \multicolumn{3}{l}{Rubriek 2: Verleggingsregelingen }\\
-2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd  & 4'650  & 868 \\
+2a. Leveringen/diensten waarbij de omzetbelasting naar u is verlegd  & 5'427  & 1'031 \\
 \multicolumn{3}{l}{Rubriek 3: Prestaties naar of in het buitenland }\\
 3a. Leveringen naar landen buiten de EU (uitvoer)  & 5'000  & \\
 3b. Leveringen naar of diensten in landen binnen de EU  & 2'000  & \\
@@ -138,13 +138,13 @@ Omzetbelasting, Aangifteperiode: 01.01.2022 - 31.03.2022 \multicolumn{3}{l}{Rubr
 4a. Leveringen/diensten uit landen buiten de EU  & 4'000  & 600 \\
 4b. Leveringen/diensten uit landen binnen de EU  & 2'100  & 333 \\
 \multicolumn{3}{l}{Rubriek 5: Voorbelasting, kleineondernemersregeling en eindtotaal }\\
-5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 6'015 \\
-5b. Voorbelasting  &  & 1'179 \\
+5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 6'178 \\
+5b. Voorbelasting  &  & 1'343 \\
 \multicolumn{3}{l}{}\\
-Eindtotaal  &  & 4'836 \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & 4'839.20 \\
-Rounding difference  &  & 3.20 \\
+Eindtotaal  &  & 4'835 \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & 4'837.82 \\
+Afrondingsverschil  &  & 2.82 \\
 \end{longtable}
 \end{reportvalue}
 \subsection{Second quarter report}
@@ -173,9 +173,9 @@ Omzetbelasting, Aangifteperiode: 01.04.2022 - 30.06.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & 599 \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & 1 \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & 1.88 \\
-Rounding difference  &  & 0.88 \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & 1.88 \\
+Afrondingsverschil  &  & 0.88 \\
 \end{longtable}
 \end{reportvalue}
 \subsection{Third quarter report}
@@ -201,12 +201,12 @@ Omzetbelasting, Aangifteperiode: 01.07.2022 - 30.09.2022 \multicolumn{3}{l}{Rubr
 4b. Leveringen/diensten uit landen binnen de EU  &  & \\
 \multicolumn{3}{l}{Rubriek 5: Voorbelasting, kleineondernemersregeling en eindtotaal }\\
 5a. Verschuldigde omzetbelasting (rubrieken 1t/m 4)  &  & 1'239 \\
-5b. Voorbelasting  &  & 34 \\
+5b. Voorbelasting  &  & 611 \\
 \multicolumn{3}{l}{}\\
-Eindtotaal  &  & 1'205 \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & 1'206.57 \\
-Rounding difference  &  & 1.57 \\
+Eindtotaal  &  & 628 \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & 629.07 \\
+Afrondingsverschil  &  & 1.07 \\
 \end{longtable}
 \end{reportvalue}
 \subsection{Fourth quarter report}
@@ -235,9 +235,9 @@ Omzetbelasting, Aangifteperiode: 01.10.2022 - 31.12.2022 \multicolumn{3}{l}{Rubr
 5b. Voorbelasting  &  & \\
 \multicolumn{3}{l}{}\\
 Eindtotaal  &  & \\
-\multicolumn{3}{l}{Control section }\\
-Eindtotaal(Accounting)  &  & \\
-Rounding difference  &  & \\
+\multicolumn{3}{l}{Controle sectie }\\
+Eindtotaal(Boekhouding)  &  & \\
+Afrondingsverschil  &  & \\
 \end{longtable}
 \end{reportvalue}
 \keyvalue{Result}{Passed}

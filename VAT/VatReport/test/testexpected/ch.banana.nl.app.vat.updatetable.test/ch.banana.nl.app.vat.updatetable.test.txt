@@ -68,47 +68,11 @@
                                         },
                                         {
                                             "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "7"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
                                                 "Gr1": "1c"
                                             },
                                             "operation": {
                                                 "name": "modify",
                                                 "sequence": "8"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "9"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "10"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "11"
                                             }
                                         },
                                         {
@@ -127,15 +91,6 @@
                                             "operation": {
                                                 "name": "modify",
                                                 "sequence": "13"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "14"
                                             }
                                         },
                                         {
@@ -185,15 +140,6 @@
                                         },
                                         {
                                             "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "22"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
                                                 "Gr1": "3a"
                                             },
                                             "operation": {
@@ -239,15 +185,6 @@
                                         },
                                         {
                                             "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "32"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
                                                 "Gr1": "4b"
                                             },
                                             "operation": {
@@ -262,15 +199,6 @@
                                             "operation": {
                                                 "name": "modify",
                                                 "sequence": "34"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "35"
                                             }
                                         },
                                         {
@@ -293,69 +221,6 @@
                                         },
                                         {
                                             "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "41"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "42"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "43"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "44"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "45"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "46"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "47"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
                                                 "Gr1": "5b"
                                             },
                                             "operation": {
@@ -370,15 +235,6 @@
                                             "operation": {
                                                 "name": "modify",
                                                 "sequence": "49"
-                                            }
-                                        },
-                                        {
-                                            "fields": {
-                                                "Gr1": ""
-                                            },
-                                            "operation": {
-                                                "name": "modify",
-                                                "sequence": "50"
                                             }
                                         }
                                     ]
