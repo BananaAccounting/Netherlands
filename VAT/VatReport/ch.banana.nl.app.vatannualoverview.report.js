@@ -87,6 +87,7 @@
         tableBalance.addColumn("c8").setStyleAttributes("width:12%");
         tableBalance.addColumn("c9").setStyleAttributes("width:12%");
 
+
         return tableBalance;
     }
 
