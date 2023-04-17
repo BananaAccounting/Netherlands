@@ -1,0 +1,21 @@
+{
+    "category": "import",
+    "country": "netherlands",
+    "countryCode": "nl",
+    "description": "ING Bank - Import bank account statement (*.csv)",
+    "description.en": "ING Bank - Import bank account statement (*.csv)",
+    "description.nl": "ING Bank - Bankafschrift importeren (*.csv)",
+    "description.de": "ING Bank - Kontoauszug importieren (*.csv)",
+    "description.fr": "ING Bank - Importer un relevé de compte bancaire (*.csv)",
+    "description.it": "ING Bank - Importa movimenti estratto conto bancario (*.csv)",
+    "id": "ch.banana.netherlands.import.ing",
+    "language": "nl",
+    "publisher": "Banana.ch",
+    "title": "ING Bank - Import bank account statement (*.csv)",
+    "title.en": "ING Bank - Import bank account statement (*.csv)",
+    "title.nl": "ING Bank - Bankafschrift importeren (*.csv)",
+    "title.de": "ING Bank - Kontoauszug importieren (*.csv)",
+    "title.fr": "ING Bank - Importer un relevé de compte bancaire (*.csv)",
+    "title.it": "ING Bank - Importa movimenti estratto conto bancario(*.csv)",
+    "version": "1.0"
+}
