@@ -1,0 +1,329 @@
+%%info_test_name{csv_ing_example_format3_20230418}
+\documentclass{report}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[margin=1cm]{geometry}
+\begin{document}
+\newenvironment{tablevalue}[2]{\textbf{Table: #1}\begin{longtable}[l]{#2}}{\end{longtable}}
+\newenvironment{reportvalue}[1]{\textbf{Report: #1}\\}{}
+\lstnewenvironment{jsonvalue}[1]{\textbf{Json: #1}\lstset{language=Java}}{}
+\lstnewenvironment{xmlvalue}[1]{\textbf{Xml: #1}\lstset{language=Xml}}{}
+\newcommand{\info}[2]{\textit{#1: #2}\\}
+\newcommand{\fatalerror}[1]{\textbf{\textcolor[rgb]{1,0,0}{Fatal error: #1}}\\}
+\newcommand{\keyvalue}[2]{\textbf{Keyvalue: #1} #2\\}
+\newcommand{\textvalue}[1]{#1\\}
+\newcommand{\excltest}[1]{\\Excluded from compare: #1}
+\newcommand{\lognewpage}{\newpage}
+\newenvironment{testcase}[1]{\section*{Test: #1}}{\newpage}
+\newenvironment{test}[1]{\section*{Test case: #1}}{}
+%Begin test data
+\begin{tablevalue}{}{ l  l  l  l  l  l }
+Date & DateValue & Doc & Description & Income & Expenses\\
+2023-01-01 &  &  & Iptingrucendux Albuli Ex Ditiae Cosum Ditiae &  & 16.56\\
+2023-01-01 &  &  & Iptingrucendux Htoobscooogjp8321 Mox Despila &  & 416.64\\
+2023-01-01 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 20.53\\
+2023-01-01 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 93.67\\
+2023-01-01 &  &  & Iptingrucendux Kchp6153 Despila Despila Sto &  & 55.09\\
+2023-01-02 &  &  & Iptingrucendux Test Vescriculurbiem Despila Sto &  & 110.83\\
+2023-01-02 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 21.46\\
+2023-01-02 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 27.70\\
+2023-01-02 &  &  & Iptingrucendux Intiruci Recutium Ut Rentri Sto &  & 8.43\\
+2023-01-02 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-02 &  &  & Iptingrucendux Ponitquit Despila Sto &  & 94.81\\
+2023-01-02 &  &  & Iptingrucendux Xxx Mentum Plum Ditiae Sto &  & 6.65\\
+2023-01-02 &  &  & Iptingrucendux Ponitquit Despila Sto &  & 176.41\\
+2023-01-02 &  &  & Iptingrucendux Ponitquit Despila Sto &  & 13.41\\
+2023-01-03 &  &  & Nerere Labicutis Orsit Vi Caudiunges Millucere &  & 258.40\\
+2023-01-03 &  &  & Iptingrucendux Get Acturba By Rentri Rentri Sto &  & 59.07\\
+2023-01-03 &  &  & Iptingrucendux Get Novessubsec Ceps Sto &  & 46.31\\
+2023-01-03 &  &  & Iptingrucendux Orsit Serit Ut Trine Supa Sto &  & 41.68\\
+2023-01-03 &  &  & Iptingrucendux Orsit Par Spor Trine Mago Sto &  & 1.36\\
+2023-01-03 &  &  & Iptingrucendux Sepere Ticerumby At Rentri Sto &  & 12.25\\
+2023-01-03 &  &  & Iptingrucendux Sepere Ticerumby At Rentri Sto &  & 13.89\\
+2023-01-03 &  &  & Iptingrucendux Fervem Trucecum 1255 O &  & 174.94\\
+2023-01-04 &  &  & Iptingrucendux Orsit Popus Ut Trine Supa Sto &  & 102.03\\
+2023-01-04 &  &  & Iptingrucendux Caedes Popus Offiervit Call Eo 5 &  & 6.45\\
+2023-01-04 &  &  & Iptingrucendux Fundula Molutura Ut Ditiae Sto &  & 50.71\\
+2023-01-04 &  &  & Pirea Nomulis Plutatem Xxx &  & 1000.00\\
+2023-01-05 &  &  & Iptingrucendux Orsit Popus Ut Trine Supa Sto &  & 159.84\\
+2023-01-05 &  &  & Iptingrucendux Esculo Actustincum Ostervo Sto &  & 8.31\\
+2023-01-05 &  &  & Iptingrucendux Los Trine Supa Lategit &  & 129.33\\
+2023-01-05 &  &  & Iptingrucendux Get Novessubsec Ceps Sto &  & 64.97\\
+2023-01-05 &  &  & Iptingrucendux Get Novessubsec Ceps Sto &  & 31.97\\
+2023-01-06 &  &  & Nerere Labicutis P. Res &  & 20.00\\
+2023-01-06 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-06 &  &  & Pirea Nomulis Plutatem Xxx &  & 800.00\\
+2023-01-06 &  &  & Pirea Nomulis Plutatem Xxx &  & 500.00\\
+2023-01-06 &  &  & Iptingrucendux Miurylava Exper Boniud Sto &  & 21.66\\
+2023-01-06 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 79.42\\
+2023-01-06 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 148.52\\
+2023-01-07 &  &  & Iptingrucendux Miuryimo Lavasto Flundactia &  & 59.74\\
+2023-01-07 &  &  & Iptingrucendux Zucelebregrede Hariam Sto &  & 86.65\\
+2023-01-07 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 143.17\\
+2023-01-07 &  &  & Pirea Nomulis Plutatem Xxx &  & 200.00\\
+2023-01-07 &  &  & Nerere Labicutis Ime Res Ut & 5000.00 & \\
+2023-01-08 &  &  & Iptingrucendux Miurylava Exper Boniud Sto &  & 37.08\\
+2023-01-08 &  &  & Iptingrucendux Miuryimo Lavasto Flundactia &  & 60.77\\
+2023-01-08 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 92.70\\
+2023-01-08 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 65.92\\
+2023-01-08 &  &  & Pirea Nomulis Plutatem Xxx &  & 200.00\\
+2023-01-09 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-09 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 200.85\\
+2023-01-09 &  &  & Iptingrucendux Recutium Si Disto Ut Hariam Sto &  & 12.77\\
+2023-01-09 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 82.40\\
+2023-01-09 &  &  & Iptingrucendux Orsit Suadivicum Veset &  & 430.58\\
+2023-01-09 &  &  & Iptingrucendux Miurylava Lor Hariam Sto &  & 13.39\\
+2023-01-09 &  &  & Iptingrucendux Miuryimo Lavasto Flundactia &  & 59.74\\
+2023-01-09 &  &  & Opuganem Inere.Riunarvit:FIQ516EY74A02Y4J &  & 5.56\\
+2023-01-09 &  &  & Inabituungulam Inere.Riunarvit:FIQ516EY74A02Y4J &  & 1810.52\\
+2023-01-10 &  &  & Iptingrucendux Arisquareveniunita Liquaddupa &  & 94.97\\
+2023-01-10 &  &  & Iptingrucendux Mulumulo Ex Adde Manatus Ine &  & 3.56\\
+2023-01-10 &  &  & Iptingrucendux Get Novessubsec Ceps Sto &  & 21.82\\
+2023-01-10 &  &  & Iptingrucendux Materra Caneiurumenest Despila &  & 101.98\\
+2023-01-10 &  &  & Iptingrucendux Varect Orsit Hariam Hariam Sto &  & 90.58\\
+2023-01-10 &  &  & Iptingrucendux Apus Ut At Ustaludo Ine &  & 15.50\\
+2023-01-10 &  &  & Iptingrucendux Pentem Lava Liquaddupa Paura Ine &  & 6.35\\
+2023-01-11 &  &  & Opuganem Scucat Succhostanta &  & 1.83\\
+2023-01-11 &  &  & Iptingrucendux Alenianti 270 Manatus Ine &  & 50.98\\
+2023-01-11 &  &  & Iptingrucendux Elica Stintra Manatus Ine &  & 1.35\\
+2023-01-11 &  &  & Iptingrucendux Comineriam Atore Cauto Mintum &  & 0.47\\
+2023-01-11 &  &  & Iptingrucendux Elica Stintra Manatus Ine &  & 14.50\\
+2023-01-11 &  &  & Iptingrucendux Holo Figine Manatus Ine &  & 1.15\\
+2023-01-11 &  &  & Iptingrucendux Facta 1203 An 47 Manatus Ine &  & 7.17\\
+2023-01-11 &  &  & Iptingrucendux Miuryvica Mita Andundit Ine &  & 24.56\\
+2023-01-11 &  &  & Iptingrucendux Graph Zucenitone Pror Liquaddupa &  & 5.43\\
+2023-01-11 &  &  & Iptingrucendux Freque Illuvide Vapterrunto Ine &  & 8.43\\
+2023-01-11 &  &  & Iptingrucendux Graph Zucenitone Pror Liquaddupa &  & 8.43\\
+2023-01-11 &  &  & Iptingrucendux Miurymeta Mintum Ine &  & 24.56\\
+2023-01-11 &  &  & Iptingrucendux 315Hotel Des Indes Den Haag Nld &  & 60.70\\
+2023-01-11 &  &  & Iptingrucendux Cerrum Xxx Rali Ine &  & 6.62\\
+2023-01-11 &  &  & Iptingrucendux Molfabstatuit Qualis Xxx Rali &  & 15.00\\
+2023-01-11 &  &  & Iptingrucendux Cutis Vapterrunto Ine &  & 8.56\\
+2023-01-11 &  &  & Iptingrucendux Cutis Vapterrunto Ine &  & 20.20\\
+2023-01-12 &  &  & Iptingrucendux Panginituro 2683 Vapterrunto Ine &  & 14.50\\
+2023-01-12 &  &  & Iptingrucendux FBUYHM4LBVVH O Dicundisto Ine &  & 13.50\\
+2023-01-12 &  &  & Iptingrucendux Vocentione Fortiavio Multini Ine &  & 400.00\\
+2023-01-12 &  &  & Iptingrucendux Facta Via 7400 Vapterrunto Ine &  & 1.15\\
+2023-01-12 &  &  & Iptingrucendux Adeat Rali I333 Vapterrunto Ine &  & 14.00\\
+2023-01-13 &  &  & Iptingrucendux Xxx Bell Imagraximissa Millucere &  & 11.90\\
+2023-01-13 &  &  & Iptingrucendux Xxx Bell Imagraximissa Millucere &  & 3.83\\
+2023-01-13 &  &  & Iptingrucendux Religatem Ex 260 Multini Ine &  & 14.00\\
+2023-01-13 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-13 &  &  & Iptingrucendux MiuRyGija02mwnqh Grade Ine &  & 77.25\\
+2023-01-13 &  &  & Iptingrucendux Congullampute Solos Multini Ine &  & 30.00\\
+2023-01-13 &  &  & Iptingrucendux Miurypest Lava Plum Ut Sto &  & 16.25\\
+2023-01-13 &  &  & Iptingrucendux Runt Acirum Grundo O Dicundisto &  & 8.15\\
+2023-01-13 &  &  & Iptingrucendux 315Hotel Des Indes Den Haag Nld & 38.75 & \\
+2023-01-13 &  &  & Iptingrucendux Inubsignumquibo Vapterrunto Ine &  & 11.65\\
+2023-01-14 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 5.26\\
+2023-01-15 &  &  & Iptingrucendux Muryrelliquotean Rentri Sto &  & 271.33\\
+2023-01-15 &  &  & Iptingrucendux Utiunium Conare Plum Despila Sto &  & 1.80\\
+2023-01-16 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-16 &  &  & Iptingrucendux Offig Plique Sulumens Ostervo &  & 7.66\\
+2023-01-17 &  &  & Iptingrucendux Itrum Experustere X4 Numentuunis &  & 10.50\\
+2023-01-17 &  &  & Iptingrucendux Facitalbulus MnanoqW4 Rentri Sto &  & 10.14\\
+2023-01-18 &  &  & Iptingrucendux Prietuus Diontinti Que &  & 5.54\\
+2023-01-18 &  &  & Iptingrucendux Orsit Percuto Singi Poruniursali &  & 7.66\\
+2023-01-18 &  &  & Iptingrucendux Miurycususa Pro By Tritis Ine &  & 1.15\\
+2023-01-20 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-20 &  &  & Nerere Labicutis P. Res &  & 20.00\\
+2023-01-21 &  &  & Nerere Labicutis Ime Res Ut & 5000.00 & \\
+2023-01-21 &  &  & Nerere Labicutis Ostimusto Grantire - Loginta &  & 1000.00\\
+2023-01-21 &  &  & Iptingrucendux Winte Rentri Rentri Sto &  & 20.48\\
+2023-01-22 &  &  & Iptingrucendux Sone Os Despila Despila Sto &  & 78.89\\
+2023-01-22 &  &  & Nerere Labicutis Facit Rentri &  & 250.00\\
+2023-01-23 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-23 &  &  & Iptingrucendux Zucali Suadivicum Rentri Sto &  & 79.88\\
+2023-01-23 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 46.44\\
+2023-01-23 &  &  & Iptingrucendux Sone Os Despila Despila Sto &  & 43.83\\
+2023-01-23 &  &  & Iptingrucendux Prietuus Osimus Rentri Sto &  & 5.26\\
+2023-01-23 &  &  & Opuganem Inere.Riunarvit:7316D6QBU0I07021 &  & 21.00\\
+2023-01-23 &  &  & Opuganem Inere.Riunarvit:436X10678PS30403 &  & 21.00\\
+2023-01-23 &  &  & Inabituungulam Inere.Riunarvit:7316D6QBU0I07021 &  & 271.10\\
+2023-01-23 &  &  & Inabituungulam Inere.Riunarvit:436X10678PS30403 &  & 123.41\\
+2023-01-23 &  &  & Iptingrucendux Agitio Citto Xxx Rentri Sto &  & 14.03\\
+2023-01-23 &  &  & Iptingrucendux Cargaufer Ellum Calbus Rentri &  & 273.65\\
+2023-01-23 &  &  & Iptingrucendux Subitaber Vi Men Offigione Sto &  & 165.40\\
+2023-01-23 &  &  & Iptingrucendux Suadivicum Vide Perte Offigione &  & 164.37\\
+2023-01-25 &  &  & Iptingrucendux Hic Aquition Ut Oraessicar Sto &  & 53.17\\
+2023-01-25 &  &  & Iptingrucendux Numenturbirepe Elensi Sto &  & 1.50\\
+2023-01-25 &  &  & Iptingrucendux Destribulucem Offere Ditiae Sto &  & 8.66\\
+2023-01-26 &  &  & Midetas Varuntem Cipsigit Ut &  & 111.75\\
+2023-01-26 &  &  & Nerere Labicutis Flue &  & 291.56\\
+2023-01-26 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 39.00\\
+2023-01-26 &  &  & Iptingrucendux Clamunt Ut Dicappost Rentri Sto &  & 420.31\\
+2023-01-26 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 106.51\\
+2023-01-26 &  &  & Iptingrucendux Miurymunget Lava Molus Sto &  & 42.54\\
+2023-01-26 &  &  & Iptingrucendux Diuvivideo Ostervo Ostervo Sto &  & 37.98\\
+2023-01-26 &  &  & Iptingrucendux Miurylava Dulla Alenturaer Sto &  & 21.47\\
+2023-01-27 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-27 &  &  & Iptingrucendux Pervarte Winientio Dit Sto &  & 24.37\\
+2023-01-27 &  &  & Iptingrucendux Stio Ut Despila Sto &  & 114.23\\
+2023-01-27 &  &  & Iptingrucendux Caliuviviction Si Ditiae Sto &  & 13.71\\
+2023-01-27 &  &  & Iptingrucendux Caliuviviction Si Ditiae Sto &  & 48.74\\
+2023-01-28 &  &  & Iptingrucendux 3Pjpvc8 Rentri Sto &  & 44.64\\
+2023-01-28 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 6.28\\
+2023-01-28 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 22.32\\
+2023-01-29 &  &  & Iptingrucendux Austratotis Sandis Ut Saestini &  & 347.05\\
+2023-01-29 &  &  & Iptingrucendux Austratotis Sandis Ut Saestini &  & 52.76\\
+2023-01-29 &  &  & Nerere Labicutis Ime Res Ut & 5000.00 & \\
+2023-01-29 &  &  & Nerere Labicutis Inere.Riunarvit:FIQ516EY74A02Y4J &  & 1825.00\\
+2023-01-30 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-01-31 &  &  & Midetas Raell Ut Raell Apponcuibulis N.L. &  & 69.38\\
+2023-01-31 &  &  & Iptingrucendux Xxx Bell Imagraximissa Millucere &  & 6.15\\
+2023-01-31 &  &  & Iptingrucendux Canditas Xxx Splum O Xxx Rali &  & 30.00\\
+2023-01-31 &  &  & Iptingrucendux Curba Sugar Millucere Poepavive &  & 12.25\\
+2023-01-31 &  &  & Iptingrucendux Fundula Molutura Ut Ditiae Sto &  & 39.03\\
+2023-01-31 &  &  & Iptingrucendux Curba Sugar Millucere Poepavive &  & 41.75\\
+2023-01-31 &  &  & Iptingrucendux Fundula Molutura Ut Ditiae Sto &  & 8.52\\
+2023-02-01 &  &  & Midetas Horaesere Vitaliurrall Caratima &  & 1.43\\
+2023-02-01 &  &  & Inabituungulam Inere.Riunarvit:FIQ516EY74A02Y4J & 1825.00 & \\
+2023-02-01 &  &  & Iptingrucendux 001323460014 Dubai Are &  & 25.51\\
+2023-02-01 &  &  & Iptingrucendux 114400000002659 Dubai Are &  & 12.75\\
+2023-02-01 &  &  & Iptingrucendux Curba Sugar Millucere Poepavive &  & 5.35\\
+2023-02-02 &  &  & Iptingrucendux 054000000075 Dubai Are &  & 16.00\\
+2023-02-02 &  &  & Iptingrucendux 001000103737 Dubai Are &  & 15.24\\
+2023-02-02 &  &  & Iptingrucendux 001000103737 Dubai Are &  & 3.20\\
+2023-02-02 &  &  & Iptingrucendux 054000000075 Dubai Are &  & 3.46\\
+2023-02-02 &  &  & Iptingrucendux 054000000074 Dubai Are &  & 16.38\\
+2023-02-02 &  &  & Iptingrucendux 001000103737 Dubai Are &  & 11.43\\
+2023-02-02 &  &  & Iptingrucendux 001000076297 Dubai Are &  & 1.51\\
+2023-02-02 &  &  & Iptingrucendux 054000000073 Dubai Are &  & 8.47\\
+2023-02-02 &  &  & Iptingrucendux 001000103737 Dubai Are &  & 33.02\\
+2023-02-03 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-02-03 &  &  & Nerere Labicutis P. Res &  & 20.00\\
+2023-02-03 &  &  & Opuganem Inere.Riunarvit:4J4H47G2368B5Q52 &  & 5.56\\
+2023-02-03 &  &  & Inabituungulam Inere.Riunarvit:4J4H47G2368B5Q52 &  & 1838.08\\
+2023-02-03 &  &  & Iptingrucendux 054000000075 Dubai Are &  & 7.27\\
+2023-02-03 &  &  & Iptingrucendux 054000000072 Dubai Are &  & 7.26\\
+2023-02-03 &  &  & Iptingrucendux 200600286355 Dubai Are &  & 15.94\\
+2023-02-03 &  &  & Iptingrucendux 200000005291 Dubai Are &  & 25.32\\
+2023-02-03 &  &  & Iptingrucendux 221000000200 Dubai Are &  & 6.47\\
+2023-02-04 &  &  & Nerere Labicutis Ime Res Ut & 5000.00 & \\
+2023-02-04 &  &  & Iptingrucendux 054000000075 Dubai Are &  & 3.51\\
+2023-02-05 &  &  & Iptingrucendux Miuryeo Numium Stio Plebrenis &  & 25.48\\
+2023-02-05 &  &  & Iptingrucendux Miurylava Sericurea &  & 19.57\\
+2023-02-05 &  &  & Iptingrucendux Unal Ut Cor Suadivicum Rentri &  & 68.30\\
+2023-02-06 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-02-06 &  &  & Iptingrucendux Inceptuunis Cargerem O Rentri &  & 146.28\\
+2023-02-06 &  &  & Iptingrucendux Suadivicum Visilase Rentri Sto &  & 23.96\\
+2023-02-06 &  &  & Opuganem Inere.Riunarvit:14H38011P8457084 &  & 5.56\\
+2023-02-06 &  &  & Inabituungulam Inere.Riunarvit:14H38011P8457084 &  & 128.67\\
+2023-02-06 &  &  & Opuganem Inere.Riunarvit:587QI74OSI5484FX &  & 21.00\\
+2023-02-06 &  &  & Inabituungulam Inere.Riunarvit:587QI74OSI5484FX &  & 1012.32\\
+2023-02-07 &  &  & Iptingrucendux Miurylava Status Faccibo Horte &  & 16.93\\
+2023-02-07 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 76.00\\
+2023-02-08 &  &  & Iptingrucendux Miurysaede Ditiae Sto &  & 12.33\\
+2023-02-08 &  &  & Iptingrucendux Ungitunisse Mideo 5 By Rentri &  & 18.49\\
+2023-02-08 &  &  & Iptingrucendux Suadivicum Glartas Ditiae Sto &  & 38.83\\
+2023-02-08 &  &  & Iptingrucendux Numemo Forunt Rentri Sto &  & 38.93\\
+2023-02-08 &  &  & Iptingrucendux Prontum Tinticutur Tinticutur &  & 29.95\\
+2023-02-08 &  &  & Iptingrucendux Prontum Tinticutur Tinticutur &  & 5.18\\
+2023-02-09 &  &  & Iptingrucendux Prontum Tinticutur Tinticutur &  & 14.50\\
+2023-02-09 &  &  & Iptingrucendux Prontum Tinticutur Tinticutur &  & 17.50\\
+2023-02-09 &  &  & Iptingrucendux Facta Sex 8475 Caneserum Ine &  & 8.51\\
+2023-02-09 &  &  & Iptingrucendux Bredeinge Træ 1766 Occilla Ine &  & 8.35\\
+2023-02-09 &  &  & Iptingrucendux Facta Sex 8475 Caneserum Ine &  & 1.43\\
+2023-02-09 &  &  & Iptingrucendux Facta Sex 8475 Caneserum Ine &  & 1.35\\
+2023-02-09 &  &  & Iptingrucendux Orduobscem Quam 7701 Ustaludo &  & 0.24\\
+2023-02-09 &  &  & Iptingrucendux Vocentione Cuntudo O Millucere &  & 29.50\\
+2023-02-10 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-02-10 &  &  & Iptingrucendux Sone Os Despila Despila Sto &  & 21.80\\
+2023-02-10 &  &  & Iptingrucendux Testo 7286 Ut Rentri Sto &  & 56.05\\
+2023-02-10 &  &  & Iptingrucendux Iuniant Utxxx Postabiit Eo Sto &  & 8.43\\
+2023-02-10 &  &  & Iptingrucendux Xxx Imerestoducere Rentri Sto &  & 1.52\\
+2023-02-10 &  &  & Iptingrucendux 080 Terlinden Horgen Che &  & 116.65\\
+2023-02-10 &  &  & Iptingrucendux Iuniant Utxxx Postabiit Eo Sto &  & 7.82\\
+2023-02-10 &  &  & Iptingrucendux Domendacitae Percurrucect Sto &  & 7.12\\
+2023-02-10 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 23.14\\
+2023-02-10 &  &  & Iptingrucendux Miurypecutiantiuva Despila Sto &  & 27.67\\
+2023-02-10 &  &  & Iptingrucendux Miurynumn Pluva Men Rentri Sto &  & 19.13\\
+2023-02-11 &  &  & Iptingrucendux Iples Ellum E088 Rentri Sto &  & 56.55\\
+2023-02-11 &  &  & Iptingrucendux Iples Ellum E088 Rentri Sto &  & 134.28\\
+2023-02-11 &  &  & Iptingrucendux Offig Plique Sulumens Ostervo &  & 7.40\\
+2023-02-11 &  &  & Iptingrucendux Miurylava Stelia Rentri Sto &  & 30.02\\
+2023-02-11 &  &  & Iptingrucendux Miuryvispitum Perit Moraestam &  & 19.74\\
+2023-02-11 &  &  & Iptingrucendux Miurycem Lava Rentri Sto &  & 14.81\\
+2023-02-11 &  &  & Iptingrucendux Simunge Suadivicum Ostervo Sto &  & 144.97\\
+2023-02-11 &  &  & Iptingrucendux Vell Capta Lava Plum Ostanequo &  & 19.33\\
+2023-02-11 &  &  & Iptingrucendux Pest More Rentri Rentri Sto &  & 11.31\\
+2023-02-11 &  &  & Iptingrucendux Naraestræ Lava Despila Sto &  & 49.56\\
+2023-02-11 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 21.08\\
+2023-02-11 &  &  & Iptingrucendux Credde Ascula Ut Rentri Sto &  & 31.87\\
+2023-02-11 &  &  & Iptingrucendux Viculex Nocusum Rentri Sto &  & 20.56\\
+2023-02-13 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-02-13 &  &  & Iptingrucendux Atent Igisimune Ditiae Sto &  & 11.31\\
+2023-02-13 &  &  & Iptingrucendux Sone Os Despila Despila Sto &  & 56.79\\
+2023-02-13 &  &  & Iptingrucendux Miurylava Vespor Rentri Sto &  & 27.97\\
+2023-02-13 &  &  & Opuganem Scucat Succhostanta &  & 8.62\\
+2023-02-13 &  &  & Iptingrucendux Orsit Scresegi Comnuto &  & 41.13\\
+2023-02-13 &  &  & Iptingrucendux Orsit Scresegi Comnuto &  & 125.44\\
+2023-02-13 &  &  & Iptingrucendux Orsit Scresegi Comnuto &  & 645.69\\
+2023-02-14 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 21.12\\
+2023-02-14 &  &  & Iptingrucendux Iuniant Utxxx Postabiit Eo Sto &  & 7.54\\
+2023-02-14 &  &  & Iptingrucendux Miurylava Pedas Pem Oraessicar &  & 17.92\\
+2023-02-14 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 20.60\\
+2023-02-14 &  &  & Iptingrucendux Iuniant Utxxx Postabiit Eo Sto &  & 7.55\\
+2023-02-14 &  &  & Iptingrucendux Tone Lava Plum Rentri Sto &  & 18.13\\
+2023-02-14 &  &  & Iptingrucendux Miurytri Lava Curum Ditiae Sto &  & 16.48\\
+2023-02-14 &  &  & Iptingrucendux Iride Lava Liavisi Ocascrendo &  & 13.60\\
+2023-02-15 &  &  & Iptingrucendux Miurylava Rentri Rentri Sto &  & 52.52\\
+2023-02-15 &  &  & Iptingrucendux Enta Param Ditiae Sto &  & 8.35\\
+2023-02-15 &  &  & Iptingrucendux Miurytubit Lava Regerestas Sto &  & 33.57\\
+2023-02-15 &  &  & Iptingrucendux Audum Trunguntia Ostervo Sto &  & 7.32\\
+2023-02-15 &  &  & Iptingrucendux Tegro Plum Despila Sto &  & 427.16\\
+2023-02-15 &  &  & Iptingrucendux Cone Curba Rentri Rentri Sto &  & 69.00\\
+2023-02-15 &  &  & Iptingrucendux Albuli O Evologiturrum Rentri &  & 0.62\\
+2023-02-16 &  &  & Iptingrucendux Suadivicum Rone Pupite Rentri &  & 319.65\\
+2023-02-16 &  &  & Iptingrucendux 4 Leoni Zurich Che &  & 211.77\\
+2023-02-17 &  &  & Nerere Labicutis P. Res &  & 20.00\\
+2023-02-17 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-02-17 &  &  & Iptingrucendux Par Invemo Ultis Rentri Sto &  & 33.93\\
+2023-02-17 &  &  & Iptingrucendux Suadivicum Tanem Sone Oraessicar &  & 107.96\\
+2023-02-17 &  &  & Iptingrucendux Par Invemo Ultis Rentri Sto &  & 117.48\\
+2023-02-17 &  &  & Iptingrucendux Car Eantræ Rentri Sto &  & 10.28\\
+2023-02-17 &  &  & Iptingrucendux Miuryarda Mineque Ditiae Sto &  & 127.49\\
+2023-02-18 &  &  & Iptingrucendux Miurylava Liavisi O &  & 17.67\\
+2023-02-18 &  &  & Iptingrucendux Unal Ut Cor Suadivicum Rentri &  & 85.34\\
+2023-02-19 &  &  & Iptingrucendux Numenturbirepe Elensi Sto &  & 10.27\\
+2023-02-19 &  &  & Iptingrucendux Bit Fabulet Par Ut Rentri Sto &  & 27.73\\
+2023-02-19 &  &  & Iptingrucendux Muryrelliquotean Rentri Sto &  & 122.74\\
+2023-02-19 &  &  & Iptingrucendux Orsit Tata Ut Cor Rentri Sto &  & 45.19\\
+2023-02-20 &  &  & Opuganem Inere.Riunarvit:TP8R043670552468 &  & 21.00\\
+2023-02-20 &  &  & Inabituungulam Inere.Riunarvit:TP8R043670552468 &  & 295.80\\
+2023-02-20 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-02-20 &  &  & Iptingrucendux Numenturbirepe Elensi Sto &  & 10.27\\
+2023-02-20 &  &  & Iptingrucendux Prietuus Habit Rentri Sto &  & 43.14\\
+2023-02-20 &  &  & Iptingrucendux Ponitquit Despila Sto &  & 19.00\\
+2023-02-21 &  &  & Iptingrucendux Orsit Tata Ut Cor Rentri Sto &  & 90.70\\
+2023-02-21 &  &  & Iptingrucendux Bis Lava Ut Ituris Sto &  & 52.69\\
+2023-02-21 &  &  & Pirea Nomulis Tant Xxx &  & 500.00\\
+2023-02-23 &  &  & Iptingrucendux Potiquateginvenigro Me Litipse &  & 3.42\\
+2023-02-28 &  &  & Opuganem Tam Tant Si Equiundintanno &  & 1352.08\\
+2023-03-02 &  &  & Midetas Raell Ut Raell Apponcuibulis N.L. & 69.38 & \\
+2023-03-02 &  &  & Midetas Varuntem Cipsigit Ut & 111.75 & \\
+2023-03-02 &  &  & Midetas Horaesere Vitaliurrall Caratima &  & 1.43\\
+2023-03-02 &  &  & Pirea Nomulis Tant Xxx &  & 170.00\\
+2023-03-06 &  &  & Nerere Labicutis Par Reque Stintra N.L. & 800.00 & \\
+2023-03-06 &  &  & Pirea Nomulis Tant Xxx &  & 800.00\\
+2023-03-11 &  &  & Opuganem Scucat Succhostanta &  & 8.62\\
+2023-03-17 &  &  & Opuganem Scucat Ligium Tam, Pro Cor Tando &  & 80.00\\
+2023-03-27 &  &  & Inabituungulam Opro Amenetri- K. Tibultire Plum & 2605.80 & \\
+2023-03-28 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-03-28 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-03-28 &  &  & Midetas Varuntem Cipsigit Ut &  & 233.32\\
+2023-03-28 &  &  & Nerere Labicutis Flue &  & 291.56\\
+2023-03-29 &  &  & Pirea Volo Midetas Sec Clangullunal &  & 1327.11\\
+2023-03-31 &  &  & Midetas Horaesere Vitaliurrall Caratima &  & 1.43\\
+2023-03-31 &  &  & Nerere Labicutis P. Res &  & 20.00\\
+2023-03-31 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-03-31 &  &  & Nerere Labicutis Ralatequadisit Millucere Ine &  & 234.90\\
+2023-03-31 &  &  & Iptingrucendux Inum Mago Medica Ide &  & 0.72\\
+2023-04-01 &  &  & Opuganem Quare Tine Conam Inquid Ticentimint &  & 8.67\\
+2023-04-03 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-04-07 &  &  & Nerere Labicutis P. Res &  & 70.00\\
+2023-04-11 &  &  & Opuganem Scucat Succhostanta &  & 8.62\\
+\\
+\end{tablevalue}
+\end{document}

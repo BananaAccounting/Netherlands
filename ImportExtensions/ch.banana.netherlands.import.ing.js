@@ -39,7 +39,6 @@ function exec(inData, isTest) {
     // Format 3
     var format3 = new IngFormat3();
     if (format3.match(transactions)) {
-        Banana.console.debug(transactions[1].length);
         transactions = format3.convert(transactions);
         return Banana.Converter.arrayToTsv(transactions);
     }
@@ -64,11 +63,11 @@ function exec(inData, isTest) {
 
 /**
  * ING Format 3
- *  ******** DA ANONIMIZZAREEEE *******
  * "Datum";"Naam / Omschrijving";"Rekening";"Tegenrekening";"Code";"Af Bij";"Bedrag (EUR)";"Mutatiesoort";"Mededelingen";"Saldo na mutatie";"Tag"
- * "20230411";"Kosten OranjePakket";"NL46INGB0794414060";"";"DV";"Af";"3,15";"Diversen";"1 mrt t/m 31 mrt 2023 ING BANK N.V. Valutadatum: 11-04-2023";"66,15";""
- * "20230407";"S. Bos";"NL46INGB0794414060";"NL22ABNA0101387377";"GT";"Af";"70,00";"Online bankieren";"Naam: S. Bos Omschrijving: Weekgeld IBAN: NL22ABNA0101387377 Valutadatum: 07-04-2023";"69,30";""
- * "20230403";"S. Bos";"NL46INGB0794414060";"NL22ABNA0101387377";"GT";"Af";"70,00";"Online bankieren";"Naam: S. Bos Omschrijving: Weekgeld IBAN: NL22ABNA0101387377 Valutadatum: 03-04-2023";"139,30";""
+ * "20230411";"Videre RiplasCrecem";"SK05NDRQ5381638231";"";"EX";"Eo";"3,37";"Postinos";"1 mrt t/m 31 mrt 2023 ING BANK N.V. Valutadatum: 11-04-2023";"66,15";""
+ * "20230407";"H. Cor";"SK05NDRQ5381638231";"NY65PIMM4533828454";"ET";"Eo";"70,00";"Teribi morunaret";"Numn: H. Cor Vitrascentio: Niundita VERE: NY65PIMM4533828454 Raheturriem: 47-52-7637";"69,30";""
+ * "20230403";"H. Cor";"SK05NDRQ5381638231";"NY65PIMM4533828454";"ET";"Eo";"70,00";"Teribi morunaret";"Numn: H. Cor Vitrascentio: Niundita VERE: NY65PIMM4533828454 Raheturriem: 42-52-7637";"139,30";""
+ * "20230401";"Tuunt gent aucat albulo metincitino";"SK05NDRQ5381638231";"";"EX";"Eo";"8,65";"Postinos";"Posusta 26-42-7637 x/f 58-42-7637 86,12% (8,53% foratiam) nos cita Raheturriem: 26-52-7637";"209,30";""
  */
 function IngFormat3() {
     this.colDate = 0;
@@ -161,7 +160,6 @@ function IngFormat2() {
 
     /** Return true if the transactions match this format */
     this.match = function(transactions) {
-        Banana.console.debug(transactions[1].length);
         if (transactions.length === 0)
             return false;
         if (transactions[1].length === (this.colMessage2 + 1))
@@ -254,7 +252,6 @@ function IngFormat1() {
 
     /** Return true if the transactions match this format */
     this.match = function(transactions) {
-        Banana.console.debug(transactions[1].length);
         if (transactions.length === 0)
             return false;
         if (transactions[0].length === (this.colMessage + 1))
@@ -322,7 +319,35 @@ function defineConversionParam(inData) {
     //get text delimiter
     convertionParam.textDelim = '"';
     // get separator
-    convertionParam.separator = ";";
+    convertionParam.separator = findSeparator(inData);
 
     return convertionParam;
+}
+
+/**
+ * The function findSeparator is used to find the field separator.
+ */
+function findSeparator( string) {
+
+    var commaCount=0;
+    var semicolonCount=0;
+    var tabCount=0;
+
+    for(var i = 0; i < 1000 && i < string.length; i++) {
+        var c = string[i];
+        if (c === ',')
+            commaCount++;
+        else if (c === ';')
+            semicolonCount++;
+        else if (c === '\t')
+            tabCount++;
+    }
+
+    if (tabCount > commaCount && tabCount > semicolonCount) {
+        return '\t';
+    } else if (semicolonCount > commaCount)	{
+        return ';';
+    }
+
+    return ',';
 }

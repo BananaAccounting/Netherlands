@@ -24,8 +24,8 @@
 // @docproperties = 
 // @outputformat = none
 // @inputdataform = none
-// @includejs = ../ch.banana.filter.import.ing.sbaa/import.utilities.js
-// @includejs = ../ch.banana.filter.import.ing.sbaa/ch.banana.filter.import.ing.js
+// @includejs = ../ch.banana.netherlands.import.ing.sbaa/import.utilities.js
+// @includejs = ../ch.banana.netherlands.import.ing.sbaa/ch.banana.netherlands.import.ing.js
 // @timeout = -1
 
 // Register test case to be executed
@@ -58,9 +58,10 @@ TestImportIngBankTrans.prototype.cleanup = function() {
 TestImportIngBankTrans.prototype.testImport = function() {
     var fileNameList = [];
 
-    fileNameList.push("file:script/../test/testcases/ch.banana.revolut.transactions.business1_20222609.csv");
-    fileNameList.push("file:script/../test/testcases/ch.banana.revolut.transactions.private1_20222609.csv");
-    fileNameList.push("file:script/../test/testcases/ch.banana.revolut.transactions.business2_20222410.csv");
+    fileNameList.push("file:script/../test/testcases/csv_ing_example_format1_20090202.csv");
+    fileNameList.push("file:script/../test/testcases/csv_ing_example_format1_20150224.csv");
+    fileNameList.push("file:script/../test/testcases/csv_ing_example_format2_20100910.csv");
+    fileNameList.push("file:script/../test/testcases/csv_ing_example_format3_20230418.csv");
 
     var parentLogger = this.testLogger;
     this.progressBar.start(fileNameList.length);
