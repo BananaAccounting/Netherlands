@@ -35,33 +35,31 @@ function ImportFileSafFileTest() {
 }
 
 // This method will be called at the beginning of the test case
-ImportFileSafFileTest.prototype.initTestCase = function() {
+ImportFileSafFileTest.prototype.initTestCase = function () {
 
 }
 
 // This method will be called at the end of the test case
-ImportFileSafFileTest.prototype.cleanupTestCase = function() {
+ImportFileSafFileTest.prototype.cleanupTestCase = function () {
 
 }
 
 // This method will be called before every test method is executed
-ImportFileSafFileTest.prototype.init = function() {
+ImportFileSafFileTest.prototype.init = function () {
 
 }
 
 // This method will be called after every test method is executed
-ImportFileSafFileTest.prototype.cleanup = function() {
+ImportFileSafFileTest.prototype.cleanup = function () {
 
 }
 
-ImportFileSafFileTest.prototype.testDoChange = function() {
+ImportFileSafFileTest.prototype.testDoChange = function () {
 
     var fileXml = Banana.IO.getLocalFile("file:script/../test/testcases/auditfile_v3.2_nl_20180101_20181231.xml");
     let fileContent = fileXml.read();
     if (fileContent.errorString) {
         Banana.Ui.showInformation("Read error", fileContent.errorString);
-    } else {
-        Banana.Ui.showInformation("OK", fileContent);
     }
     // var parsedfile = JSON.stringify(fileXml.read(), "", "");
     // var xmlfile = JSON.parse(parsedfile);
