@@ -1,11 +1,11 @@
 Test Banana Apps
 ----------------
 
-Date:        2019-04-09 14:28:14.913
-Duration:    00:00:41.491
-Application: Banana90 9.0.4
-OS:          macOS Mojave (10.14)
-Qt:          5.12.1
+Date:        2024-04-17 14:41:21.758
+Duration:    00:00:52.598
+Application: BananaPlus 10.1.20.24108
+OS:          Windows-11
+Qt:          6.6.2
 
 Test summary
 ------------
@@ -16,7 +16,7 @@ Test succesfully completed
 > Differences:   0
 > Added:         0
 > Deleted:       0
-> Identical:     10774
-> Total results: 10774
+> Identical:     10795
+> Total results: 10795
 > Total files:   1
 

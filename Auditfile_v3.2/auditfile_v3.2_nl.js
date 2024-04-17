@@ -14,7 +14,7 @@
 //
 // @id = ch.banana.nl.app.auditfile
 // @api = 1.0
-// @pubdate = 2019-04-09
+// @pubdate = 2024-04-17
 // @publisher = Banana.ch SA
 // @description = Export to Netherlands Financial Auditfile (BETA)
 // @description.nl = Export naar Nederland Auditfile Financiëel (BETA)
@@ -1213,7 +1213,7 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 
 	/* Create transaction element */
 	var journal = banDoc.journal(banDoc.ORIGINTYPE_CURRENT, banDoc.ACCOUNTTYPE_NORMAL);
-	var transactionNode = '';
+	var transactionNode = null;
 	var trLineNode = '';
 	var tmpTransactionGroup = '';
 	var len = journal.rowCount;
@@ -1300,7 +1300,8 @@ function addJournal(transactionsNode, banDoc, startDate, endDate) {
 			}
 
 			//In every case, independently from the 'If...Else Statements', for each transactions rows we create the <trLine> element
-			trLineNode = createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate);
+			if (transactionNode)
+				trLineNode = createTransactionLine(tRow, transactionNode, banDoc, startDate, endDate);
 		}
 	}
 
